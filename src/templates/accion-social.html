@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% set a = contenido.accion_social %}
+{% block lede %}La carrera llega más allá del aula: desarrolla sistemas para instituciones públicas, capacita a comunidades y acompaña a personas emprendedoras en cada región donde se imparte.{% endblock %}
+{% block contenido %}
+<section class="seccion" aria-labelledby="h-as-cifras">
+  <div class="contenedor">
+    <h2 id="h-as-cifras">La acción social en cifras</h2>
+    <p class="muted">Período del Proyecto Especial de Mejora, de noviembre de 2024 a abril de 2026.</p>
+    <div class="cifras" style="margin-top:20px">
+      <div class="cifra"><b>{{ site.cifras.proyectos_accion_social }}</b><span>proyectos de acción social con participación de docentes de la carrera</span></div>
+      <div class="cifra"><b>8</b><span>proyectos por año en promedio entre 2018 y 2022, la línea base de la autoevaluación</span></div>
+      <div class="cifra"><b>6</b><span>regiones del país con proyectos activos, de Guanacaste al Caribe y el Pacífico Sur</span></div>
+      <div class="cifra"><b>300 h</b><span>de Trabajo Comunal Universitario en la formación de cada estudiante</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion seccion-tenue" aria-labelledby="h-as-modos">
+  <div class="contenedor">
+    <h2 id="h-as-modos">Cómo se hace</h2>
+    <div class="tres-col" style="margin-top:20px;gap:28px">
+      {% for m in a.modalidades %}
+      <div class="caja"><h3 style="font-size:var(--t-md)">{{ m.nombre }}</h3><p class="small" style="margin:0">{{ m.texto }}</p></div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="seccion" aria-labelledby="h-as-proy">
+  <div class="contenedor con-indice">
+    <nav class="indice" aria-label="Regiones">
+      <p>Por región</p>
+      <ol>{% for r in a.regiones %}<li><a href="#region-{{ loop.index }}">{{ r.region }}</a></li>{% endfor %}</ol>
+    </nav>
+    <div>
+      <h2 id="h-as-proy">Proyectos por región</h2>
+      <p class="muted">Los códigos TC corresponden a Trabajo Comunal Universitario, ED a extensión docente y Pry01 a propuestas en trámite ante la Vicerrectoría de Acción Social.</p>
+      {% for r in a.regiones %}
+      <section id="region-{{ loop.index }}" class="region-as" aria-labelledby="h-reg-{{ loop.index }}">
+        <h3 id="h-reg-{{ loop.index }}">{{ r.region }} <span class="muted small" style="font-weight:500">{{ r.recintos }}</span></h3>
+        <div class="proyectos-as">
+          {% for p in r.proyectos %}
+          <article class="proyecto-as{% if p.codigo.startswith('Pry') %} propuesta{% endif %}">
+            <p class="proyecto-as-meta">{% if p.codigo %}<span class="codigo">{{ p.codigo }}</span>{% endif %}<span class="estado">{{ p.estado }}</span></p>
+            <h4>{{ p.titulo }}</h4>
+            <p class="small">{{ p.texto }}</p>
+            {% if p.codigo == 'TC-518' %}
+            <ul class="mini-cifras" aria-label="Productos del TC-518 en 2023">{% for n, t in a.tc518_2023 %}<li><b>{{ n }}</b> {{ t }}</li>{% endfor %}</ul>
+            {% endif %}
+          </article>
+          {% endfor %}
+        </div>
+      </section>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="seccion seccion-tenue" aria-labelledby="h-as-tcu">
+  <div class="contenedor dos-col" style="gap:40px">
+    <div class="prosa">
+      <h2 id="h-as-tcu">Trabajo Comunal Universitario</h2>
+      <p>El TCU es requisito de graduación del bachillerato: 300 horas de trabajo con una comunidad o institución, bajo la guía de un proyecto inscrito en la Vicerrectoría de Acción Social. El estudiantado puede matricularlo en cualquiera de los proyectos de su sede, no solo en los de la carrera, y ahí es donde muchas veces pone a prueba por primera vez lo que aprendió en desarrollo de software, bases de datos o gestión de proyectos.</p>
+      <p>En el XIV Simposio, celebrado en Liberia en agosto de 2026, la carrera abrió un conversatorio de TCU para discutir la pertinencia, la metodología, el impacto y la participación de las comunidades en estos proyectos.</p>
+      <p class="small muted">Quienes al 2030 solo adeuden el TCU permanecen en el Plan 01. <a href="plan-de-estudios.html#transicion">Ver reglas de transición</a>.</p>
+    </div>
+    <div>
+      <h3>Proyectos de TCU disponibles en las sedes, 2024</h3>
+      <p class="small muted">Total de programas de cada sede abiertos al estudiantado de la carrera: {{ a.tcu_por_sede|sum(attribute=1) }}.</p>
+      {% set max_tcu = a.tcu_por_sede[0][1] %}
+      <ul class="barras" style="list-style:none;padding:0;margin:16px 0 0">
+        {% for s, n in a.tcu_por_sede %}
+        <li style="display:grid;grid-template-columns:7.5rem minmax(0,1fr) 2rem;gap:10px;align-items:center;margin-bottom:8px">
+          <span class="small">{{ s }}</span>
+          <span aria-hidden="true" style="display:block;height:12px;border-radius:3px;background:var(--celeste);width:{{ (n / max_tcu * 100)|round(1) }}%"></span>
+          <b class="small" style="text-align:right">{{ n }}</b>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" aria-labelledby="h-as-metas">
+  <div class="contenedor">
+    <h2 id="h-as-metas">Compromisos de la carrera</h2>
+    <div class="tres-col" style="margin-top:20px;gap:28px">
+      {% for m in a.metas %}
+      <div><p class="categoria" style="margin:0 0 6px">{{ m.fuente }}</p><p style="margin:0">{{ m.texto }}</p></div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="seccion seccion-tenue" aria-labelledby="h-as-reportar">
+  <div class="contenedor prosa">
+    <h2 id="h-as-reportar">¿Su proyecto no aparece?</h2>
+    <p>Si usted coordina o participa en un proyecto de acción social con docentes o estudiantes de la carrera, envíe el código, el título, la sede o recinto, la vigencia, la población atendida y un resumen de no más de 80 palabras. Las fotografías son bienvenidas si cuentan con el consentimiento de las personas que aparecen.</p>
+    <p><a class="boton boton-claro" href="mailto:{{ site.correo }}?subject=Proyecto%20de%20acci%C3%B3n%20social%20para%20el%20sitio">Enviar datos del proyecto</a></p>
+  </div>
+</section>
+{% endblock %}

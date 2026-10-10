@@ -1,81 +1,239 @@
 {
   "proposito": "Formar profesionales en Informática Empresarial, especializados en las áreas de la computación, la informática y la gestión de las tecnologías de información, con una perspectiva humanista, crítica e integral, capaces de ofrecer, mejorar y administrar soluciones tecnológicas para facilitar el proceso de toma de decisiones, optimizar la gestión de la información en las organizaciones y mejorar la calidad de vida de la sociedad.",
   "aspiracion": "Ser una carrera referente en el ámbito nacional, regional e internacional en la formación de profesionales en informática empresarial, capaces de transformar la sociedad mediante soluciones tecnológicas innovadoras, sostenibles y alineadas con las necesidades actuales y futuras.",
-
   "hitos": [
-    {"fecha": "1986", "titulo": "Diplomados en computación en las Sedes Regionales", "texto": "Las sedes regionales comienzan a ofrecer diplomados en computación e informática."},
-    {"fecha": "1995", "titulo": "Se cuestiona la pertinencia de los diplomados", "texto": "El Consejo Universitario solicita evaluar si los programas cortos siguen respondiendo a las necesidades del país. El análisis concluye que se requiere una formación más profunda y profesionalizante."},
-    {"fecha": "17 nov 1997", "titulo": "Nace el Bachillerato en Informática Empresarial", "texto": "La Resolución VD-R-6426-97 autoriza la carrera como propia de las Sedes de Guanacaste, del Atlántico, de Limón y del Pacífico. Un equipo intersedes de coordinadores, el primer Consejo de Carrera, diseña un plan común que integra informática, sistemas de información y negocios."},
-    {"fecha": "10 dic 1997", "titulo": "Se suma la Sede de Occidente", "texto": "Una adición a la resolución incluye la carrera como propia de la Sede Regional de Occidente."},
-    {"fecha": "1998", "titulo": "Primer ciclo lectivo", "texto": "La carrera inicia en el I ciclo de 1998, administrada por el Consejo de Área de Sedes Regionales."},
-    {"fecha": "2006", "titulo": "Llega al Recinto de Golfo Dulce", "texto": "La carrera, código 600002, comienza a impartirse en el Recinto de Golfo Dulce, hoy Sede del Sur."},
-    {"fecha": "25 abr 2019", "titulo": "Primer Plan Estratégico de la carrera", "texto": "El Consejo de Carrera Intersedes aprueba el Plan Estratégico 2019–2023, construido con docentes y estudiantes de todas las sedes. Una de sus metas era contar con un portal web común."},
-    {"fecha": "10 dic 2019", "titulo": "Primera acreditación ante SINAES", "texto": "Tras el proceso de autoevaluación (Proceso 187), la carrera obtiene su primera acreditación, con un Compromiso de Mejoramiento de 14 objetivos."},
-    {"fecha": "27 ago 2021", "titulo": "La Sede del Sur se vuelve propietaria", "texto": "La Vicerrectoría de Docencia modifica la resolución de creación: la carrera es propia de seis sedes regionales."},
-    {"fecha": "Nov 2024", "titulo": "Proyecto Especial de Mejora", "texto": "Mediante el ACUERDO-CNA-410-2024, SINAES difiere la decisión de reacreditación y ordena un Proyecto Especial de Mejora de 18 meses."},
-    {"fecha": "2025", "titulo": "Un año de reformas estructurales", "texto": "Se aprueban el Registro Intersedes de Docentes Elegibles y el Plan Estratégico 2026–2030. La Resolución VD-13456-2025 aprueba el Plan 07, la primera actualización integral de una malla con más de 20 años."},
-    {"fecha": "III ciclo 2025", "titulo": "Entra en vigor el Plan 07", "texto": "Comienza la transición gradual del Plan 01 al Plan 07."},
-    {"fecha": "13 abr 2026", "titulo": "Estructura organizativa y plan estratégico aprobados", "texto": "El oficio CASR-8-2026 aprueba el Plan Estratégico 2026–2030 y la estructura organizativa de la carrera."},
-    {"fecha": "May 2026", "titulo": "Informe de Logros ante SINAES", "texto": "La carrera entrega el Informe de Logros del PEM y el Compromiso de Mejora 2027–2030."},
-    {"fecha": "II ciclo 2026", "titulo": "Visita de pares evaluadores", "texto": "Evaluación externa de SINAES para decidir sobre la reacreditación.", "futuro": true}
+    {
+      "fecha": "1986",
+      "titulo": "Diplomados en computación en las Sedes Regionales",
+      "texto": "Las sedes regionales comienzan a ofrecer diplomados en computación e informática."
+    },
+    {
+      "fecha": "1995",
+      "titulo": "Se cuestiona la pertinencia de los diplomados",
+      "texto": "El Consejo Universitario solicita evaluar si los programas cortos siguen respondiendo a las necesidades del país. El análisis concluye que se requiere una formación más profunda y profesionalizante."
+    },
+    {
+      "fecha": "17 nov 1997",
+      "titulo": "Nace el Bachillerato en Informática Empresarial",
+      "texto": "La Resolución VD-R-6426-97 autoriza la carrera como propia de las Sedes de Guanacaste, del Atlántico, de Limón y del Pacífico. Un equipo intersedes de coordinadores, el primer Consejo de Carrera, diseña un plan común que integra informática, sistemas de información y negocios."
+    },
+    {
+      "fecha": "10 dic 1997",
+      "titulo": "Se suma la Sede de Occidente",
+      "texto": "Una adición a la resolución incluye la carrera como propia de la Sede Regional de Occidente."
+    },
+    {
+      "fecha": "1998",
+      "titulo": "Primer ciclo lectivo",
+      "texto": "La carrera inicia en el I ciclo de 1998, administrada por el Consejo de Área de Sedes Regionales."
+    },
+    {
+      "fecha": "2006",
+      "titulo": "Llega al Recinto de Golfo Dulce",
+      "texto": "La carrera, código 600002, comienza a impartirse en el Recinto de Golfo Dulce, hoy Sede del Sur."
+    },
+    {
+      "fecha": "25 abr 2019",
+      "titulo": "Primer Plan Estratégico de la carrera",
+      "texto": "El Consejo de Carrera Intersedes aprueba el Plan Estratégico 2019–2023, construido con docentes y estudiantes de todas las sedes. Una de sus metas era contar con un portal web común."
+    },
+    {
+      "fecha": "10 dic 2019",
+      "titulo": "Primera acreditación ante SINAES",
+      "texto": "Tras el proceso de autoevaluación (Proceso 187), la carrera obtiene su primera acreditación, con un Compromiso de Mejoramiento de 14 objetivos."
+    },
+    {
+      "fecha": "27 ago 2021",
+      "titulo": "La Sede del Sur se vuelve propietaria",
+      "texto": "La Vicerrectoría de Docencia modifica la resolución de creación: la carrera es propia de seis sedes regionales."
+    },
+    {
+      "fecha": "Nov 2024",
+      "titulo": "Proyecto Especial de Mejora",
+      "texto": "Mediante el ACUERDO-CNA-410-2024, SINAES difiere la decisión de reacreditación y ordena un Proyecto Especial de Mejora de 18 meses."
+    },
+    {
+      "fecha": "2025",
+      "titulo": "Un año de reformas estructurales",
+      "texto": "Se aprueban el Registro Intersedes de Docentes Elegibles y el Plan Estratégico 2026–2030. La Resolución VD-13456-2025 aprueba el Plan 07, la primera actualización integral de una malla con más de 20 años."
+    },
+    {
+      "fecha": "III ciclo 2025",
+      "titulo": "Entra en vigor el Plan 07",
+      "texto": "Comienza la transición gradual del Plan 01 al Plan 07."
+    },
+    {
+      "fecha": "13 abr 2026",
+      "titulo": "Estructura organizativa y plan estratégico aprobados",
+      "texto": "El oficio CASR-8-2026 aprueba el Plan Estratégico 2026–2030 y la estructura organizativa de la carrera."
+    },
+    {
+      "fecha": "May 2026",
+      "titulo": "Informe de Logros ante SINAES",
+      "texto": "La carrera entrega el Informe de Logros del PEM y el Compromiso de Mejora 2027–2030."
+    },
+    {
+      "fecha": "II ciclo 2026",
+      "titulo": "Visita de pares evaluadores",
+      "texto": "Evaluación externa de SINAES para decidir sobre la reacreditación.",
+      "futuro": true
+    }
   ],
-
   "eventos": [
-    {"inicio": "2026-10-20", "fin": "2026-11-20", "titulo": "Convocatoria 2026 al Registro de Docentes Elegibles", "lugar": "Formulario en línea", "modalidad": "Virtual", "estado": "Prevista", "enlace": "docentes.html#convocatoria"},
-    {"inicio": "2026-11-02", "fin": "2026-11-08", "titulo": "Charla de actualización para la población graduada, II ciclo 2026", "lugar": "Por confirmar", "modalidad": "Virtual", "estado": "Por confirmar", "enlace": "graduados.html"},
-    {"inicio": "2026-08-01", "fin": "2026-12-15", "titulo": "Visita de pares evaluadores de SINAES", "lugar": "Sedes y recintos", "modalidad": "Presencial", "estado": "Fecha por confirmar", "texto_fecha": "II ciclo 2026", "enlace": "acreditacion.html"},
-    {"inicio": "2027-08-01", "fin": "2027-08-31", "titulo": "XV Simposio de Informática Empresarial", "lugar": "Sede por definir", "modalidad": "Presencial", "estado": "En organización", "texto_fecha": "2027", "enlace": "simposio.html"}
+    {
+      "inicio": "2026-10-20",
+      "fin": "2026-11-20",
+      "titulo": "Convocatoria 2026 al Registro de Docentes Elegibles",
+      "lugar": "Formulario en línea",
+      "modalidad": "Virtual",
+      "estado": "Prevista",
+      "enlace": "docentes.html#convocatoria"
+    },
+    {
+      "inicio": "2026-11-02",
+      "fin": "2026-11-08",
+      "titulo": "Charla de actualización para la población graduada, II ciclo 2026",
+      "lugar": "Por confirmar",
+      "modalidad": "Virtual",
+      "estado": "Por confirmar",
+      "enlace": "graduados.html"
+    },
+    {
+      "inicio": "2026-08-01",
+      "fin": "2026-12-15",
+      "titulo": "Visita de pares evaluadores de SINAES",
+      "lugar": "Sedes y recintos",
+      "modalidad": "Presencial",
+      "estado": "Fecha por confirmar",
+      "texto_fecha": "II ciclo 2026",
+      "enlace": "acreditacion.html"
+    },
+    {
+      "inicio": "2027-08-01",
+      "fin": "2027-08-31",
+      "titulo": "XV Simposio de Informática Empresarial",
+      "lugar": "Sede por definir",
+      "modalidad": "Presencial",
+      "estado": "En organización",
+      "texto_fecha": "2027",
+      "enlace": "simposio.html"
+    }
   ],
-
   "estructura": [
-    {"nombre": "Consejo de Área de Sedes Regionales (CASR)", "nivel": 0,
-     "texto": "Administra la carrera según la Resolución VD-R-6426-97. Articula la docencia, la investigación y la acción social de las sedes regionales."},
-    {"nombre": "Consejo de Carrera Intersedes", "nivel": 1,
-     "texto": "Reúne a las personas coordinadoras de cada sede y recinto. Atiende convalidaciones, planificación de cursos y comisiones, lidera la articulación intersedes y da seguimiento a la autoevaluación y al plan estratégico."},
-    {"nombre": "Coordinación y subcoordinación del Consejo", "nivel": 2,
-     "texto": "Convoca y conduce las sesiones, firma actas y oficios, y representa al Consejo ante las instancias universitarias."},
-    {"nombre": "Coordinaciones de carrera por sede y recinto", "nivel": 2,
-     "texto": "Gestión académica local: programación de cursos, inducción docente, comunicación y seguimiento estudiantil. Son el enlace entre el Consejo y cada recinto."},
-    {"nombre": "Comisión Curricular Intersedes", "nivel": 2,
-     "texto": "Representación docente de cada sede. Revisa la estructura curricular, analiza cursos y propone actualizaciones del plan de estudios."},
-    {"nombre": "Comisión Intersedes de Autoevaluación y Gestión de la Calidad", "nivel": 2,
-     "texto": "Representación de cada sede y del estudiantado. Conduce la autoevaluación, recolecta evidencias y elabora los informes y el compromiso de mejora para la acreditación."},
-    {"nombre": "Comité Organizador del Simposio", "nivel": 2,
-     "texto": "Organiza el simposio anual rotativo entre sedes: agenda, difusión y logística."}
+    {
+      "nombre": "Consejo de Área de Sedes Regionales (CASR)",
+      "nivel": 0,
+      "texto": "Administra la carrera según la Resolución VD-R-6426-97. Articula la docencia, la investigación y la acción social de las sedes regionales."
+    },
+    {
+      "nombre": "Consejo de Carrera Intersedes",
+      "nivel": 1,
+      "texto": "Reúne a las personas coordinadoras de cada sede y recinto. Atiende convalidaciones, planificación de cursos y comisiones, lidera la articulación intersedes y da seguimiento a la autoevaluación y al plan estratégico."
+    },
+    {
+      "nombre": "Coordinación y subcoordinación del Consejo",
+      "nivel": 2,
+      "texto": "Convoca y conduce las sesiones, firma actas y oficios, y representa al Consejo ante las instancias universitarias."
+    },
+    {
+      "nombre": "Coordinaciones de carrera por sede y recinto",
+      "nivel": 2,
+      "texto": "Gestión académica local: programación de cursos, inducción docente, comunicación y seguimiento estudiantil. Son el enlace entre el Consejo y cada recinto."
+    },
+    {
+      "nombre": "Comisión Curricular Intersedes",
+      "nivel": 2,
+      "texto": "Representación docente de cada sede. Revisa la estructura curricular, analiza cursos y propone actualizaciones del plan de estudios."
+    },
+    {
+      "nombre": "Comisión Intersedes de Autoevaluación y Gestión de la Calidad",
+      "nivel": 2,
+      "texto": "Representación de cada sede y del estudiantado. Conduce la autoevaluación, recolecta evidencias y elabora los informes y el compromiso de mejora para la acreditación."
+    },
+    {
+      "nombre": "Comité Organizador del Simposio",
+      "nivel": 2,
+      "texto": "Organiza el simposio anual rotativo entre sedes: agenda, difusión y logística."
+    }
   ],
-
   "plan_estrategico": {
     "aprobacion": "Aprobado por el Consejo de Carrera en la sesión 04-2025 (23 de mayo de 2025) y por el Consejo de Área de Sedes Regionales mediante el oficio CASR-8-2026 (13 de abril de 2026).",
     "proceso": "Construido de febrero a abril de 2025 con la Oficina de Planificación Universitaria (OPLAU), en talleres con docentes, representación estudiantil y comisiones de la carrera.",
     "ejes": [
-      {"nombre": "Excelencia académica", "metas": 12, "ejemplos": [
-        "Aprobar y evaluar el funcionamiento de la nueva estructura organizativa",
-        "Implementar el Plan 07 en todas las sedes y recintos",
-        "Diseñar un protocolo para revisar y actualizar periódicamente el plan de estudios",
-        "Obtener la reacreditación de la carrera",
-        "Mantener al menos un proyecto de investigación activo por recinto cada año",
-        "Lograr que el 50 % del personal docente a tiempo completo participe en publicaciones, investigación y acción social",
-        "Mantener vigente el Plan de Desarrollo Docente Intersedes"]},
-      {"nombre": "Excelencia en la gestión", "metas": 3, "ejemplos": [
-        "Desarrollar un sitio web institucional que divulgue el quehacer académico, investigativo y de proyección social de toda la carrera",
-        "Garantizar equipo tecnológico actualizado en laboratorios especializados y de uso común",
-        "Analizar con cada sede la gestión organizativa según la Resolución VD-12928-2024"]},
-      {"nombre": "Vida universitaria", "metas": 1, "ejemplos": [
-        "Realizar dos actividades de actualización por año para la población graduada"]}
+      {
+        "nombre": "Excelencia académica",
+        "metas": 12,
+        "ejemplos": [
+          "Aprobar y evaluar el funcionamiento de la nueva estructura organizativa",
+          "Implementar el Plan 07 en todas las sedes y recintos",
+          "Diseñar un protocolo para revisar y actualizar periódicamente el plan de estudios",
+          "Obtener la reacreditación de la carrera",
+          "Mantener al menos un proyecto de investigación activo por recinto cada año",
+          "Lograr que el 50 % del personal docente a tiempo completo participe en publicaciones, investigación y acción social",
+          "Mantener vigente el Plan de Desarrollo Docente Intersedes"
+        ]
+      },
+      {
+        "nombre": "Excelencia en la gestión",
+        "metas": 3,
+        "ejemplos": [
+          "Desarrollar un sitio web institucional que divulgue el quehacer académico, investigativo y de proyección social de toda la carrera",
+          "Garantizar equipo tecnológico actualizado en laboratorios especializados y de uso común",
+          "Analizar con cada sede la gestión organizativa según la Resolución VD-12928-2024"
+        ]
+      },
+      {
+        "nombre": "Vida universitaria",
+        "metas": 1,
+        "ejemplos": [
+          "Realizar dos actividades de actualización por año para la población graduada"
+        ]
+      }
     ]
   },
-
   "acreditacion": [
-    {"fecha": "2018–2022", "titulo": "Autoevaluación", "texto": "Informe de autoevaluación de la carrera, Proceso 187 de SINAES."},
-    {"fecha": "10 dic 2019", "titulo": "Primera acreditación", "texto": "Con un Compromiso de Mejoramiento 2019–2023 de 14 objetivos y 57 actividades."},
-    {"fecha": "May 2022", "titulo": "Revisión de avance", "texto": "SINAES revisa el avance de medio período del compromiso (ACUERDO-CNA-139-2022)."},
-    {"fecha": "Nov 2024", "titulo": "Decisión diferida", "texto": "El ACUERDO-CNA-410-2024 ordena un Proyecto Especial de Mejora de 18 meses con cinco acciones mínimas."},
-    {"fecha": "21 abr 2026", "titulo": "Aprobación del ILPEM", "texto": "El Consejo aprueba el Informe de Logros y el Compromiso de Mejora 2027–2030 (sesión extraordinaria 07-2026)."},
-    {"fecha": "4 may 2026", "titulo": "Presentación ante el CASR", "texto": "El Consejo de Área de Sedes Regionales conoce el informe."},
-    {"fecha": "May 2026", "titulo": "Entrega a SINAES", "texto": "Envío por medio del Centro de Evaluación Académica, la Vicerrectoría de Docencia y la Rectoría."},
-    {"fecha": "II ciclo 2026", "titulo": "Visita de pares", "texto": "Evaluación externa y decisión sobre la reacreditación.", "futuro": true}
+    {
+      "fecha": "2018–2022",
+      "titulo": "Autoevaluación",
+      "texto": "Informe de autoevaluación de la carrera, Proceso 187 de SINAES."
+    },
+    {
+      "fecha": "10 dic 2019",
+      "titulo": "Primera acreditación",
+      "texto": "Con un Compromiso de Mejoramiento 2019–2023 de 14 objetivos y 57 actividades."
+    },
+    {
+      "fecha": "May 2022",
+      "titulo": "Revisión de avance",
+      "texto": "SINAES revisa el avance de medio período del compromiso (ACUERDO-CNA-139-2022)."
+    },
+    {
+      "fecha": "Nov 2024",
+      "titulo": "Decisión diferida",
+      "texto": "El ACUERDO-CNA-410-2024 ordena un Proyecto Especial de Mejora de 18 meses con cinco acciones mínimas."
+    },
+    {
+      "fecha": "21 abr 2026",
+      "titulo": "Aprobación del ILPEM",
+      "texto": "El Consejo aprueba el Informe de Logros y el Compromiso de Mejora 2027–2030 (sesión extraordinaria 07-2026)."
+    },
+    {
+      "fecha": "4 may 2026",
+      "titulo": "Presentación ante el CASR",
+      "texto": "El Consejo de Área de Sedes Regionales conoce el informe."
+    },
+    {
+      "fecha": "May 2026",
+      "titulo": "Entrega a SINAES",
+      "texto": "Envío por medio del Centro de Evaluación Académica, la Vicerrectoría de Docencia y la Rectoría."
+    },
+    {
+      "fecha": "II ciclo 2026",
+      "titulo": "Visita de pares",
+      "texto": "Evaluación externa y decisión sobre la reacreditación.",
+      "futuro": true
+    }
   ],
-
   "pem_mandato": [
     "Concretar todas las acciones pendientes del compromiso de mejora anterior",
     "Presentar el plan de estudios aprobado por las instancias correspondientes",
@@ -83,123 +241,422 @@
     "Elaborar e implementar un plan estratégico actualizado",
     "Valorar la jornada asignada a la coordinación de la carrera en cada recinto"
   ],
-
   "pem": [
-    {"obj": "1", "nombre": "Plan de estudios actualizado", "estado": "Completo", "nota": "Plan 07 aprobado (VD-13456-2025, CONARE CNR-367-2025, OPES 28-2025) y en ejecución desde el III ciclo 2025."},
-    {"obj": "4 y 5", "nombre": "Investigación, acción social y publicaciones", "estado": "Parcial", "nota": "19 proyectos de investigación, 14 de acción social y unas 35 publicaciones. Un proyecto de investigación en trámite y propuestas de acción social en dos sedes."},
-    {"obj": "6", "nombre": "Registro Intersedes de Docentes Elegibles", "estado": "Completo", "nota": "Aprobado y en uso para contrataciones en varias sedes."},
-    {"obj": "7", "nombre": "Plan de desarrollo docente", "estado": "Completo", "nota": "153 de 185 docentes capacitados (82,7 %), frente a una meta del 50 %."},
-    {"obj": "8", "nombre": "Desarrollo del personal administrativo", "estado": "Parcial", "nota": "Avance heterogéneo: varias sedes inician sus planes 2026–2030."},
-    {"obj": "9", "nombre": "Taller de redes en la Sede de Guanacaste", "estado": "Mitigado", "nota": "El nuevo pabellón no se entregó; se acondicionaron los laboratorios 1 y 2 en febrero de 2026."},
-    {"obj": "10", "nombre": "Plan de actualización de equipos", "estado": "Completo", "nota": "Planes aprobados en todas las sedes. Por ejemplo, 31 computadoras nuevas en San Ramón y 51 equipos en el Caribe."},
-    {"obj": "11", "nombre": "Plan Estratégico 2026–2030", "estado": "Completo", "nota": "Aprobado mediante CASR-8-2026, con Plan Anual Operativo 2026."},
-    {"obj": "12", "nombre": "Estructura organizativa y jornada", "estado": "Completo", "nota": "Estructura aprobada de forma ajustada; la jornada queda sujeta a la disponibilidad presupuestaria."},
-    {"obj": "14", "nombre": "Vínculo con la población graduada", "estado": "Completo", "nota": "Protocolo en ejecución, encuestas con 474 y 399 respuestas y cuatro charlas en 2024–2025."}
+    {
+      "obj": "1",
+      "nombre": "Plan de estudios actualizado",
+      "estado": "Completo",
+      "nota": "Plan 07 aprobado (VD-13456-2025, CONARE CNR-367-2025, OPES 28-2025) y en ejecución desde el III ciclo 2025."
+    },
+    {
+      "obj": "4 y 5",
+      "nombre": "Investigación, acción social y publicaciones",
+      "estado": "Parcial",
+      "nota": "19 proyectos de investigación, 14 de acción social y unas 35 publicaciones. Un proyecto de investigación en trámite y propuestas de acción social en dos sedes."
+    },
+    {
+      "obj": "6",
+      "nombre": "Registro Intersedes de Docentes Elegibles",
+      "estado": "Completo",
+      "nota": "Aprobado y en uso para contrataciones en varias sedes."
+    },
+    {
+      "obj": "7",
+      "nombre": "Plan de desarrollo docente",
+      "estado": "Completo",
+      "nota": "153 de 185 docentes capacitados (82,7 %), frente a una meta del 50 %."
+    },
+    {
+      "obj": "8",
+      "nombre": "Desarrollo del personal administrativo",
+      "estado": "Parcial",
+      "nota": "Avance heterogéneo: varias sedes inician sus planes 2026–2030."
+    },
+    {
+      "obj": "9",
+      "nombre": "Taller de redes en la Sede de Guanacaste",
+      "estado": "Mitigado",
+      "nota": "El nuevo pabellón no se entregó; se acondicionaron los laboratorios 1 y 2 en febrero de 2026."
+    },
+    {
+      "obj": "10",
+      "nombre": "Plan de actualización de equipos",
+      "estado": "Completo",
+      "nota": "Planes aprobados en todas las sedes. Por ejemplo, 31 computadoras nuevas en San Ramón y 51 equipos en el Caribe."
+    },
+    {
+      "obj": "11",
+      "nombre": "Plan Estratégico 2026–2030",
+      "estado": "Completo",
+      "nota": "Aprobado mediante CASR-8-2026, con Plan Anual Operativo 2026."
+    },
+    {
+      "obj": "12",
+      "nombre": "Estructura organizativa y jornada",
+      "estado": "Completo",
+      "nota": "Estructura aprobada de forma ajustada; la jornada queda sujeta a la disponibilidad presupuestaria."
+    },
+    {
+      "obj": "14",
+      "nombre": "Vínculo con la población graduada",
+      "estado": "Completo",
+      "nota": "Protocolo en ejecución, encuestas con 474 y 399 respuestas y cuatro charlas en 2024–2025."
+    }
   ],
-
   "compromiso": [
-    {"n": 1, "nombre": "Estrategia de comunicación intersedes", "texto": "Estandarizar la información de la carrera en los sitios web de sedes y recintos (malla curricular, ficha profesiográfica, créditos) y divulgar los manuales de seguridad, higiene y salud ocupacional.", "plazo": "2027–2030"},
-    {"n": 2, "nombre": "Seguimiento a la accesibilidad", "texto": "Dar seguimiento a las obras que garantizan el acceso de personas con discapacidad en Paraíso, Liberia y la Sede del Sur.", "plazo": "2027–2030"},
-    {"n": 3, "nombre": "Vinculación académica", "texto": "Formalizar la vinculación con convenios, redes y programas, y publicar un boletín digital con los resultados de investigación.", "plazo": "2027–2028"},
-    {"n": 4, "nombre": "Protocolo de revisión del plan de estudios", "texto": "Crear un mecanismo formal de evaluación, reflexión y actualización periódica del Plan 07.", "plazo": "2028–2030"},
-    {"n": 5, "nombre": "Inserción laboral", "texto": "Consultar a la población graduada sobre el mercado laboral y preparar al estudiantado de cuarto año para insertarse en él.", "plazo": "2028–2030"}
+    {
+      "n": 1,
+      "nombre": "Estrategia de comunicación intersedes",
+      "texto": "Estandarizar la información de la carrera en los sitios web de sedes y recintos (malla curricular, ficha profesiográfica, créditos) y divulgar los manuales de seguridad, higiene y salud ocupacional.",
+      "plazo": "2027–2030"
+    },
+    {
+      "n": 2,
+      "nombre": "Seguimiento a la accesibilidad",
+      "texto": "Dar seguimiento a las obras que garantizan el acceso de personas con discapacidad en Paraíso, Liberia y la Sede del Sur.",
+      "plazo": "2027–2030"
+    },
+    {
+      "n": 3,
+      "nombre": "Vinculación académica",
+      "texto": "Formalizar la vinculación con convenios, redes y programas, y publicar un boletín digital con los resultados de investigación.",
+      "plazo": "2027–2028"
+    },
+    {
+      "n": 4,
+      "nombre": "Protocolo de revisión del plan de estudios",
+      "texto": "Crear un mecanismo formal de evaluación, reflexión y actualización periódica del Plan 07.",
+      "plazo": "2028–2030"
+    },
+    {
+      "n": 5,
+      "nombre": "Inserción laboral",
+      "texto": "Consultar a la población graduada sobre el mercado laboral y preparar al estudiantado de cuarto año para insertarse en él.",
+      "plazo": "2028–2030"
+    }
   ],
-
   "desarrollo_docente": {
-    "capacitados": 153, "total": 185,
-    "modulos": ["Evaluación del aprendizaje", "Inclusión educativa", "Entornos virtuales", "Innovación docente", "Elaboración de material didáctico multimedia", "Temáticas y herramientas de los cursos de la carrera"],
-    "aliados": ["DEDUN", "METICS", "CASED"]
+    "capacitados": 153,
+    "total": 185,
+    "modulos": [
+      "Evaluación del aprendizaje",
+      "Inclusión educativa",
+      "Entornos virtuales",
+      "Innovación docente",
+      "Elaboración de material didáctico multimedia",
+      "Temáticas y herramientas de los cursos de la carrera"
+    ],
+    "aliados": [
+      "DEDUN",
+      "METICS",
+      "CASED"
+    ]
   },
-
   "registro": {
     "fases": [
-      {"titulo": "Boletín", "texto": "El Consejo elabora el boletín con los perfiles por área académica."},
-      {"titulo": "Publicación", "texto": "El boletín se publica en los medios oficiales de las sedes y de la carrera."},
-      {"titulo": "Postulación", "texto": "Las personas interesadas completan el formulario y adjuntan carta de interés, currículo, títulos y constancias en un solo archivo .zip."},
-      {"titulo": "Evaluación", "texto": "El Consejo aplica la matriz de evaluación objetiva y clasifica a quienes alcanzan el puntaje mínimo."},
-      {"titulo": "Registro", "texto": "Los perfiles elegibles se incorporan por área académica y por sede o recinto de disponibilidad."},
-      {"titulo": "Terna", "texto": "Cuando surge una necesidad docente, cada coordinación solicita al Consejo la terna que mejor se ajusta al curso."}
+      {
+        "titulo": "Boletín",
+        "texto": "El Consejo elabora el boletín con los perfiles por área académica."
+      },
+      {
+        "titulo": "Publicación",
+        "texto": "El boletín se publica en los medios oficiales de las sedes y de la carrera."
+      },
+      {
+        "titulo": "Postulación",
+        "texto": "Las personas interesadas completan el formulario y adjuntan carta de interés, currículo, títulos y constancias en un solo archivo .zip."
+      },
+      {
+        "titulo": "Evaluación",
+        "texto": "El Consejo aplica la matriz de evaluación objetiva y clasifica a quienes alcanzan el puntaje mínimo."
+      },
+      {
+        "titulo": "Registro",
+        "texto": "Los perfiles elegibles se incorporan por área académica y por sede o recinto de disponibilidad."
+      },
+      {
+        "titulo": "Terna",
+        "texto": "Cuando surge una necesidad docente, cada coordinación solicita al Consejo la terna que mejor se ajusta al curso."
+      }
     ],
     "criterios": [
-      {"nombre": "Bachillerato en el área", "puntos": 10},
-      {"nombre": "Grado superior (licenciatura, maestría o doctorado)", "puntos": 35},
-      {"nombre": "Experiencia profesional", "puntos": 10},
-      {"nombre": "Experiencia docente universitaria", "puntos": 10},
-      {"nombre": "Publicaciones", "puntos": 16},
-      {"nombre": "Certificaciones técnicas", "puntos": 5},
-      {"nombre": "Investigación", "puntos": 3},
-      {"nombre": "Acción social", "puntos": 3},
-      {"nombre": "Capacitación", "puntos": 3},
-      {"nombre": "Dominio de inglés certificado", "puntos": 3},
-      {"nombre": "Formación didáctica", "puntos": 1}
+      {
+        "nombre": "Bachillerato en el área",
+        "puntos": 10
+      },
+      {
+        "nombre": "Grado superior (licenciatura, maestría o doctorado)",
+        "puntos": 35
+      },
+      {
+        "nombre": "Experiencia profesional",
+        "puntos": 10
+      },
+      {
+        "nombre": "Experiencia docente universitaria",
+        "puntos": 10
+      },
+      {
+        "nombre": "Publicaciones",
+        "puntos": 16
+      },
+      {
+        "nombre": "Certificaciones técnicas",
+        "puntos": 5
+      },
+      {
+        "nombre": "Investigación",
+        "puntos": 3
+      },
+      {
+        "nombre": "Acción social",
+        "puntos": 3
+      },
+      {
+        "nombre": "Capacitación",
+        "puntos": 3
+      },
+      {
+        "nombre": "Dominio de inglés certificado",
+        "puntos": 3
+      },
+      {
+        "nombre": "Formación didáctica",
+        "puntos": 1
+      }
     ],
     "areas": [
-      {"id": "CBI", "titulos": ["Ciencia de datos", "Ciencias de la computación", "Enseñanza de la matemática", "Enseñanza del inglés", "Lingüística", "Matemática aplicada", "Métodos numéricos"]},
-      {"id": "GIO", "titulos": ["Administración de empresas", "Arquitectura empresarial", "Ciberseguridad", "Ciencias sociales con especialidad en TIC", "Computación e informática", "Dirección de empresas", "Emprendimiento", "Gestión de proyectos", "Gobierno de TI", "Informática empresarial", "Ingeniería en sistemas", "Inteligencia de negocios", "Tecnologías de información", "Transformación digital"]},
-      {"id": "DS", "titulos": ["Calidad de software", "Computación e informática"]},
-      {"id": "ID", "titulos": ["Ciencia de datos", "Computación e informática", "Estadística", "Ingeniería con énfasis en datos", "Ingeniería de software", "Inteligencia artificial", "Inteligencia de negocios", "Minería de datos", "Sistemas de información"]},
-      {"id": "AISC", "titulos": ["Arquitectura de computadores", "Automatización industrial", "Ciberseguridad", "Criptografía", "Derecho informático", "Ingeniería de software", "Ingeniería informática", "Redes", "Robótica", "Seguridad informática", "Sistemas ciberfísicos", "Sistemas distribuidos", "Telecomunicaciones"]}
+      {
+        "id": "CBI",
+        "titulos": [
+          "Ciencia de datos",
+          "Ciencias de la computación",
+          "Enseñanza de la matemática",
+          "Enseñanza del inglés",
+          "Lingüística",
+          "Matemática aplicada",
+          "Métodos numéricos"
+        ]
+      },
+      {
+        "id": "GIO",
+        "titulos": [
+          "Administración de empresas",
+          "Arquitectura empresarial",
+          "Ciberseguridad",
+          "Ciencias sociales con especialidad en TIC",
+          "Computación e informática",
+          "Dirección de empresas",
+          "Emprendimiento",
+          "Gestión de proyectos",
+          "Gobierno de TI",
+          "Informática empresarial",
+          "Ingeniería en sistemas",
+          "Inteligencia de negocios",
+          "Tecnologías de información",
+          "Transformación digital"
+        ]
+      },
+      {
+        "id": "DS",
+        "titulos": [
+          "Calidad de software",
+          "Computación e informática"
+        ]
+      },
+      {
+        "id": "ID",
+        "titulos": [
+          "Ciencia de datos",
+          "Computación e informática",
+          "Estadística",
+          "Ingeniería con énfasis en datos",
+          "Ingeniería de software",
+          "Inteligencia artificial",
+          "Inteligencia de negocios",
+          "Minería de datos",
+          "Sistemas de información"
+        ]
+      },
+      {
+        "id": "AISC",
+        "titulos": [
+          "Arquitectura de computadores",
+          "Automatización industrial",
+          "Ciberseguridad",
+          "Criptografía",
+          "Derecho informático",
+          "Ingeniería de software",
+          "Ingeniería informática",
+          "Redes",
+          "Robótica",
+          "Seguridad informática",
+          "Sistemas ciberfísicos",
+          "Sistemas distribuidos",
+          "Telecomunicaciones"
+        ]
+      }
     ],
     "uso": [
-      {"sede": "Occidente", "texto": "Grecia y San Ramón concretaron contrataciones."},
-      {"sede": "Caribe", "texto": "Limón concretó contrataciones."},
-      {"sede": "Atlántico", "texto": "Paraíso concretó contrataciones. Turrialba y Guápiles consultaron el registro, pero la disponibilidad horaria de las personas candidatas no permitió contratar."},
-      {"sede": "Pacífico", "texto": "Uso previsto para el II ciclo 2026."},
-      {"sede": "Guanacaste y Sur", "texto": "No han requerido usar el registro."}
+      {
+        "sede": "Occidente",
+        "texto": "Grecia y San Ramón concretaron contrataciones."
+      },
+      {
+        "sede": "Caribe",
+        "texto": "Limón concretó contrataciones."
+      },
+      {
+        "sede": "Atlántico",
+        "texto": "Paraíso concretó contrataciones. Turrialba y Guápiles consultaron el registro, pero la disponibilidad horaria de las personas candidatas no permitió contratar."
+      },
+      {
+        "sede": "Pacífico",
+        "texto": "Uso previsto para el II ciclo 2026."
+      },
+      {
+        "sede": "Guanacaste y Sur",
+        "texto": "No han requerido usar el registro."
+      }
     ],
     "elegibles_2025": 22
   },
-
   "convalidacion": {
     "pasos": [
-      {"titulo": "Solicitud", "texto": "La persona estudiante presenta la solicitud con los programas de los cursos aprobados en la otra carrera o institución, por los canales oficiales de su sede o recinto."},
-      {"titulo": "Asignación", "texto": "El Consejo distribuye los casos entre las coordinaciones y define al menos dos personas expertas por curso."},
-      {"titulo": "Análisis", "texto": "Cada persona experta compara el programa externo con el del Plan 07 mediante el instrumento de equivalencia curricular."},
-      {"titulo": "Ponderación", "texto": "La coordinación responsable integra los criterios de las personas expertas y prepara la recomendación."},
-      {"titulo": "Resolución", "texto": "El Consejo conoce y vota los resultados en sesión, y comunica el acuerdo por oficio."}
+      {
+        "titulo": "Solicitud",
+        "texto": "La persona estudiante presenta la solicitud con los programas de los cursos aprobados en la otra carrera o institución, por los canales oficiales de su sede o recinto."
+      },
+      {
+        "titulo": "Asignación",
+        "texto": "El Consejo distribuye los casos entre las coordinaciones y define al menos dos personas expertas por curso."
+      },
+      {
+        "titulo": "Análisis",
+        "texto": "Cada persona experta compara el programa externo con el del Plan 07 mediante el instrumento de equivalencia curricular."
+      },
+      {
+        "titulo": "Ponderación",
+        "texto": "La coordinación responsable integra los criterios de las personas expertas y prepara la recomendación."
+      },
+      {
+        "titulo": "Resolución",
+        "texto": "El Consejo conoce y vota los resultados en sesión, y comunica el acuerdo por oficio."
+      }
     ],
     "pesos": [
-      {"criterio": "Contenidos y subtemas", "peso": 60},
-      {"criterio": "Horas lectivas", "peso": 20},
-      {"criterio": "Objetivos y resultados de aprendizaje", "peso": 20}
+      {
+        "criterio": "Contenidos y subtemas",
+        "peso": 60
+      },
+      {
+        "criterio": "Horas lectivas",
+        "peso": 20
+      },
+      {
+        "criterio": "Objetivos y resultados de aprendizaje",
+        "peso": 20
+      }
     ],
     "umbral": 80
   },
-
   "transicion": [
-    {"titulo": "Nuevo ingreso y traslados", "texto": "Quien ingresa a la carrera o se traslada desde otra queda inscrito en el Plan 07."},
-    {"titulo": "Estudiantes de primer año del Plan 01", "texto": "Quien no ha completado el primer año y no tiene cursos de segundo año aprobados, o quien aprobó todo el primer año, puede trasladarse al Plan 07 desde el III ciclo 2025, previa firma del consentimiento informado."},
-    {"titulo": "Casos mixtos", "texto": "Quien debe cursos de primer año y tiene cursos de segundo año aprobados puede trasladarse, previo estudio del expediente por la unidad académica."},
-    {"titulo": "Avance desde segundo año", "texto": "A quien debe materias de segundo año en adelante no se le recomienda el traslado. Si lo solicita, la unidad académica estudia el expediente y firma el consentimiento informado."},
-    {"titulo": "Cierre del Plan 01", "texto": "El Plan 01 se ofrece hasta el III ciclo 2029. En el I ciclo 2030, quien siga en el Plan 01 con materias pendientes pasará al Plan 07 con las convalidaciones correspondientes. Se exceptúa a quien solo deba el Trabajo Comunal Universitario (circular VD-18-2015)."},
-    {"titulo": "Apertura gradual", "texto": "2026: primero y segundo año. 2027: hasta tercer año. 2028 en adelante: los cuatro años."}
+    {
+      "titulo": "Nuevo ingreso y traslados",
+      "texto": "Quien ingresa a la carrera o se traslada desde otra queda inscrito en el Plan 07."
+    },
+    {
+      "titulo": "Estudiantes de primer año del Plan 01",
+      "texto": "Quien no ha completado el primer año y no tiene cursos de segundo año aprobados, o quien aprobó todo el primer año, puede trasladarse al Plan 07 desde el III ciclo 2025, previa firma del consentimiento informado."
+    },
+    {
+      "titulo": "Casos mixtos",
+      "texto": "Quien debe cursos de primer año y tiene cursos de segundo año aprobados puede trasladarse, previo estudio del expediente por la unidad académica."
+    },
+    {
+      "titulo": "Avance desde segundo año",
+      "texto": "A quien debe materias de segundo año en adelante no se le recomienda el traslado. Si lo solicita, la unidad académica estudia el expediente y firma el consentimiento informado."
+    },
+    {
+      "titulo": "Cierre del Plan 01",
+      "texto": "El Plan 01 se ofrece hasta el III ciclo 2029. En el I ciclo 2030, quien siga en el Plan 01 con materias pendientes pasará al Plan 07 con las convalidaciones correspondientes. Se exceptúa a quien solo deba el Trabajo Comunal Universitario (circular VD-18-2015)."
+    },
+    {
+      "titulo": "Apertura gradual",
+      "texto": "2026: primero y segundo año. 2027: hasta tercer año. 2028 en adelante: los cuatro años."
+    }
   ],
-
   "faq": [
-    {"p": "¿En qué sedes y recintos se imparte la carrera?", "r": "En diez: Limón y Siquirres (Sede del Caribe); Guápiles, Turrialba y Paraíso (Sede del Atlántico); San Ramón y Grecia (Sede de Occidente); la Sede del Pacífico, Liberia (Sede de Guanacaste) y la Sede del Sur."},
-    {"p": "¿Cuánto dura la carrera y cuántos créditos tiene?", "r": "El Plan 07 tiene 144 créditos distribuidos en cuatro años: ocho ciclos lectivos y dos ciclos de verano. Además, para graduarse se deben completar 300 horas de Trabajo Comunal Universitario."},
-    {"p": "¿Qué título se obtiene?", "r": "Bachillerato en Informática Empresarial de la Universidad de Costa Rica, código de carrera 600002."},
-    {"p": "¿Debo trasladarme del Plan 01 al Plan 07?", "r": "Depende de su avance. Revise las reglas del plan de transición y consulte con la coordinación de su recinto antes de firmar el consentimiento informado."},
-    {"p": "¿Cómo solicito una convalidación?", "r": "Presente la solicitud con los programas oficiales de los cursos aprobados por los canales de su sede. El Consejo analiza cada curso con el instrumento de equivalencia curricular y resuelve en sesión."},
-    {"p": "¿El inglés de la carrera se puede convalidar?", "r": "Los cursos de inglés del Plan 07 tienen objetivos de nivel definidos (A2 a B2+). Cada solicitud se analiza con el mismo instrumento; el curso LM-1030 del Plan 01 no convalida ninguno de los nuevos cursos de inglés."},
-    {"p": "¿Cómo puedo dar clases en la carrera?", "r": "Inscríbase en el Registro Intersedes de Docentes Elegibles mediante el formulario de la convocatoria vigente, enlazado en la página Docencia; la de 2026 recibe postulaciones del 20 de octubre al 20 de noviembre. Las coordinaciones consultan el registro cuando tienen una necesidad docente."},
-    {"p": "¿Dónde se publican los acuerdos del Consejo?", "r": "Las noticias de este sitio resumen los acuerdos principales. Las actas oficiales se custodian en el archivo del Consejo y pueden solicitarse por correo."}
+    {
+      "p": "¿En qué sedes y recintos se imparte la carrera?",
+      "r": "En diez: Limón y Siquirres (Sede del Caribe); Guápiles, Turrialba y Paraíso (Sede del Atlántico); San Ramón y Grecia (Sede de Occidente); la Sede del Pacífico, Liberia (Sede de Guanacaste) y la Sede del Sur."
+    },
+    {
+      "p": "¿Cuánto dura la carrera y cuántos créditos tiene?",
+      "r": "El Plan 07 tiene 144 créditos distribuidos en cuatro años: ocho ciclos lectivos y dos ciclos de verano. Además, para graduarse se deben completar 300 horas de Trabajo Comunal Universitario."
+    },
+    {
+      "p": "¿Qué título se obtiene?",
+      "r": "Bachillerato en Informática Empresarial de la Universidad de Costa Rica, código de carrera 600002."
+    },
+    {
+      "p": "¿Debo trasladarme del Plan 01 al Plan 07?",
+      "r": "Depende de su avance. Revise las reglas del plan de transición y consulte con la coordinación de su recinto antes de firmar el consentimiento informado."
+    },
+    {
+      "p": "¿Cómo solicito una convalidación?",
+      "r": "Presente la solicitud con los programas oficiales de los cursos aprobados por los canales de su sede. El Consejo analiza cada curso con el instrumento de equivalencia curricular y resuelve en sesión."
+    },
+    {
+      "p": "¿El inglés de la carrera se puede convalidar?",
+      "r": "Los cursos de inglés del Plan 07 tienen objetivos de nivel definidos (A2 a B2+). Cada solicitud se analiza con el mismo instrumento; el curso LM-1030 del Plan 01 no convalida ninguno de los nuevos cursos de inglés."
+    },
+    {
+      "p": "¿Cómo puedo dar clases en la carrera?",
+      "r": "Inscríbase en el Registro Intersedes de Docentes Elegibles mediante el formulario de la convocatoria vigente, enlazado en la página Docencia; la de 2026 recibe postulaciones del 20 de octubre al 20 de noviembre. Las coordinaciones consultan el registro cuando tienen una necesidad docente."
+    },
+    {
+      "p": "¿Dónde se publican los acuerdos del Consejo?",
+      "r": "Las noticias de este sitio resumen los acuerdos principales. Las actas oficiales se custodian en el archivo del Consejo y pueden solicitarse por correo."
+    }
   ],
-
   "charlas": [
-    {"periodo": "I ciclo 2024", "titulo": "Inteligencia artificial: introducción y experiencias prácticas", "persona": ""},
-    {"periodo": "II ciclo 2024", "titulo": "Finding Your Path in Cybersecurity", "persona": "Borosh y Mejía"},
-    {"periodo": "I ciclo 2025", "titulo": "Evolución de la ingeniería de sistemas: Cloud + AI", "persona": "Ing. López Falcón"},
-    {"periodo": "II ciclo 2025", "titulo": "Ética e IA responsable", "persona": "M.Sc. Wells, Amazon"},
-    {"periodo": "I ciclo 2026", "titulo": "Agentic AI: Acelerando la Transformación Digital", "persona": "Andrea Blanco Flores, Microsoft", "detalle": "9 de julio de 2026. Unas 75 personas; recomendación promedio de 9,02 sobre 10."}
+    {
+      "periodo": "I ciclo 2024",
+      "titulo": "Inteligencia artificial: introducción y experiencias prácticas",
+      "persona": ""
+    },
+    {
+      "periodo": "II ciclo 2024",
+      "titulo": "Finding Your Path in Cybersecurity",
+      "persona": "Borosh y Mejía"
+    },
+    {
+      "periodo": "I ciclo 2025",
+      "titulo": "Evolución de la ingeniería de sistemas: Cloud + AI",
+      "persona": "Ing. López Falcón"
+    },
+    {
+      "periodo": "II ciclo 2025",
+      "titulo": "Ética e IA responsable",
+      "persona": "M.Sc. Wells, Amazon"
+    },
+    {
+      "periodo": "I ciclo 2026",
+      "titulo": "Agentic AI: Acelerando la Transformación Digital",
+      "persona": "Andrea Blanco Flores, Microsoft",
+      "detalle": "9 de julio de 2026. Unas 75 personas; recomendación promedio de 9,02 sobre 10."
+    }
   ],
-
   "investigacion_destacada": [
-    {"codigo": "580-C6-181", "titulo": "Factores que influyen en la intención de investigar de docentes de la carrera de Bachillerato en Informática Empresarial de las sedes regionales de la Universidad de Costa Rica",
-     "sede": "Sede del Sur", "equipo": "Mag. Mainor Cruz Alvarado, Mag. Emilio Montero Núñez, MGH. Luis Carlos Núñez Masís, Mag. Yendry Lezcano Calderón",
-     "resumen": "Busca evidencia empírica sobre por qué las personas docentes deciden investigar o no, con la Teoría del Comportamiento Planificado como marco."}
+    {
+      "codigo": "580-C6-181",
+      "titulo": "Factores que influyen en la intención de investigar de docentes de la carrera de Bachillerato en Informática Empresarial de las sedes regionales de la Universidad de Costa Rica",
+      "sede": "Sede del Sur",
+      "equipo": "Mag. Mainor Cruz Alvarado, Mag. Emilio Montero Núñez, MGH. Luis Carlos Núñez Masís, Mag. Yendry Lezcano Calderón",
+      "resumen": "Busca evidencia empírica sobre por qué las personas docentes deciden investigar o no, con la Teoría del Comportamiento Planificado como marco."
+    }
   ],
-
   "perfil": {
     "areas": "La formación se construye a partir de la computación, la informática y la administración, con el apoyo de la matemática, la estadística y la lógica, y con la ética y el humanismo como ejes.",
     "capacidades": [
@@ -209,6 +666,204 @@
       "Modelar procesos empresariales y apoyar la toma de decisiones con datos",
       "Participar en investigación multidisciplinaria aplicada"
     ],
-    "mercado": ["Empresas privadas", "Gobierno central e instituciones autónomas", "Industria", "Educación superior estatal y privada", "Centros de investigación", "Consultoría y servicios computacionales", "Emprendimientos propios de base tecnológica"]
+    "mercado": [
+      "Empresas privadas",
+      "Gobierno central e instituciones autónomas",
+      "Industria",
+      "Educación superior estatal y privada",
+      "Centros de investigación",
+      "Consultoría y servicios computacionales",
+      "Emprendimientos propios de base tecnológica"
+    ]
+  },
+  "accion_social": {
+    "modalidades": [
+      {
+        "nombre": "Trabajo Comunal Universitario (TCU)",
+        "texto": "Requisito de graduación de 300 horas. El estudiantado aplica lo aprendido en proyectos con comunidades, instituciones públicas y organizaciones sin fines de lucro de su región."
+      },
+      {
+        "nombre": "Extensión docente",
+        "texto": "Cursos libres, capacitaciones, talleres y encuentros abiertos a la comunidad, a docentes de otros niveles educativos y a personas emprendedoras."
+      },
+      {
+        "nombre": "Educación permanente y servicios",
+        "texto": "Propuestas de formación continua y de apoyo a escuelas, colegios y organizaciones, con énfasis en alfabetización digital y pensamiento computacional."
+      }
+    ],
+    "regiones": [
+      {
+        "region": "Guanacaste",
+        "recintos": "Liberia",
+        "proyectos": [
+          {
+            "codigo": "TC-764",
+            "titulo": "Desarrollo de habilidades tecnológicas y empresariales en mujeres emprendedoras de la zona de Guanacaste",
+            "estado": "Vigente 2025–2028",
+            "texto": "Acompaña a mujeres emprendedoras en riesgo social de la región Chorotega en el uso de herramientas tecnológicas y de gestión."
+          }
+        ]
+      },
+      {
+        "region": "Pacífico",
+        "recintos": "Puntarenas",
+        "proyectos": [
+          {
+            "codigo": "",
+            "titulo": "Herramientas tecnológicas y conocimiento libre para la comunidad puntarenense",
+            "estado": "Renovado en 2025",
+            "texto": "Foros, talleres y capacitaciones sobre software libre para la población de Puntarenas."
+          }
+        ]
+      },
+      {
+        "region": "Occidente",
+        "recintos": "San Ramón y Grecia",
+        "proyectos": [
+          {
+            "codigo": "ED-2980",
+            "titulo": "Alfabetización tecnológica en la región de Occidente",
+            "estado": "Vigente",
+            "texto": "Proyecto conjunto de San Ramón y Grecia que atiende a la comunidad y a docentes y estudiantes de instituciones educativas de la zona."
+          },
+          {
+            "codigo": "TC-762",
+            "titulo": "Capacitación en manejo de herramientas tecnológicas e informáticas a comunidades de la región de Occidente",
+            "estado": "Vigente",
+            "texto": "Trabajo comunal compartido por ambos recintos. Un tercer proyecto se encuentra en revisión."
+          }
+        ]
+      },
+      {
+        "region": "Atlántico",
+        "recintos": "Turrialba, Paraíso y Guápiles",
+        "proyectos": [
+          {
+            "codigo": "ED-2993",
+            "titulo": "VIII Encuentro Regional de Enseñanza de la Matemática, Guápiles 2025",
+            "estado": "Realizado en 2025",
+            "texto": "Encuentro para docentes de matemática de la región organizado desde el Recinto de Guápiles."
+          },
+          {
+            "codigo": "TC-751",
+            "titulo": "Gestión con actores sociales",
+            "estado": "Vigente",
+            "texto": "Trabajo comunal del Recinto de Guápiles."
+          },
+          {
+            "codigo": "Pry01-279-2027",
+            "titulo": "Explorador@s de píxeles: habilidades escolares en ciencias y matemáticas mediante el diseño 3D",
+            "estado": "En trámite ante la Comisión de Acción Social",
+            "texto": "Propuesta del Recinto de Turrialba en la modalidad de educación permanente y servicios."
+          },
+          {
+            "codigo": "Pry01-328-2027",
+            "titulo": "Semillas de pensamiento computacional",
+            "estado": "En formalización",
+            "texto": "Propuesta del Recinto de Guápiles."
+          },
+          {
+            "codigo": "Pry01-330-2027",
+            "titulo": "Feria tecnológica como estrategia de alfabetización digital y formación STEAM en educación primaria y secundaria",
+            "estado": "Propuesta",
+            "texto": "Propuesta del Recinto de Paraíso."
+          }
+        ]
+      },
+      {
+        "region": "Caribe",
+        "recintos": "Limón y Siquirres",
+        "proyectos": [
+          {
+            "codigo": "TC-518",
+            "titulo": "Informática para el desarrollo comunal",
+            "estado": "Vigente",
+            "texto": "Desarrolla aplicaciones para entidades públicas y organizaciones de Limón y capacita a grupos comunitarios de Limón, Matina y Siquirres. Entre 2020 y 2023 produjo sitios web para escuelas y un comité distrital, sistemas para la Biblioteca Pública y el CAIS de Siquirres y para el Poder Judicial de Limón, y apoyó a la CCSS después de los ataques informáticos."
+          },
+          {
+            "codigo": "ED-2673",
+            "titulo": "Cursos libres",
+            "estado": "Vigente",
+            "texto": "Cursos gratuitos para la comunidad, como Introducción al desarrollo web y Aplicación de la IA para la mejora del desempeño profesional, ambos en 2026. Es un proyecto de la Sede del Caribe en el que participa la carrera."
+          },
+          {
+            "codigo": "ED-204",
+            "titulo": "Educación continua",
+            "estado": "Vigente",
+            "texto": "Cursos cortos autofinanciados de la Sede del Caribe. En 2025 llevó trece grupos a Talamanca."
+          }
+        ]
+      },
+      {
+        "region": "Sur",
+        "recintos": "Golfito",
+        "proyectos": [
+          {
+            "codigo": "ED-3676",
+            "titulo": "Solución informática integral para optimizar la coordinación y respuesta del Comité Municipal de Emergencias del cantón de Golfito ante inundaciones",
+            "estado": "Prorrogado hasta diciembre de 2027",
+            "texto": "Apoya la gestión del riesgo por inundaciones con una herramienta para el comité municipal. La sede reporta tres proyectos de acción social activos."
+          }
+        ]
+      }
+    ],
+    "tc518_2023": [
+      [
+        "8",
+        "sitios web"
+      ],
+      [
+        "6",
+        "sistemas"
+      ],
+      [
+        "7",
+        "cursos"
+      ],
+      [
+        "5",
+        "talleres"
+      ]
+    ],
+    "tcu_por_sede": [
+      [
+        "Occidente",
+        20
+      ],
+      [
+        "Atlántico",
+        13
+      ],
+      [
+        "Guanacaste",
+        9
+      ],
+      [
+        "Caribe",
+        8
+      ],
+      [
+        "Pacífico",
+        7
+      ],
+      [
+        "Sur",
+        4
+      ]
+    ],
+    "metas": [
+      {
+        "fuente": "Proyecto Especial de Mejora, meta 2",
+        "texto": "Incrementar en al menos un proyecto de acción social formalmente inscrito o aprobado por docentes de la carrera en cada recinto para enero de 2026."
+      },
+      {
+        "fuente": "Plan Estratégico 2026–2030, meta 1.1.2.1",
+        "texto": "Incentivar la participación del 50 % del personal docente a tiempo completo en publicaciones académicas, proyectos de investigación y acción social."
+      },
+      {
+        "fuente": "Compromiso de Mejora 2027–2030, objetivo 3",
+        "texto": "Dar continuidad a la vinculación académica mediante convenios, redes y programas de docencia, investigación y acción social, con un listado anual de docentes vinculados y un boletín digital, ambos en 2028."
+      }
+    ]
   }
 }
