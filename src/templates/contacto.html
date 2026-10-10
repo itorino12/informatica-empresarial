@@ -5,7 +5,7 @@
   <div class="contenedor dos-col">
     <div>
       <h2 id="h-form">Escribir al Consejo</h2>
-      <p class="muted">El formulario prepara un correo en su aplicación de correo, dirigido a {{ site.correo }}.</p>
+      <p class="muted">El formulario prepara el mensaje para enviarlo desde Gmail, Outlook o su aplicación de correo, dirigido a {{ site.correo }}.</p>
       <form class="formulario" id="form-contacto" data-destino="{{ site.correo }}" novalidate>
         <div class="fila">
           <label class="campo" for="c-nombre">Nombre<input id="c-nombre" name="nombre" autocomplete="name" required></label>
@@ -22,7 +22,7 @@
         </div>
         <label class="campo" for="c-mensaje">Mensaje<textarea id="c-mensaje" name="mensaje" required></textarea></label>
         <p id="form-error" class="aviso" role="alert" hidden></p>
-        <p id="form-ok" class="small" role="status" hidden>Se abrió su aplicación de correo con el mensaje listo para enviar.</p>
+        <p id="form-ok" class="small" role="status" hidden>Elija con qué servicio enviar el mensaje. El texto ya va incluido.</p>
         <div><button class="boton boton-primario" type="submit">Preparar correo</button></div>
       </form>
     </div>

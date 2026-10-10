@@ -271,7 +271,66 @@
     }
   });
 
-  /* ---------- Formulario de contacto (abre el correo) ---------- */
+  /* ---------- Correo: selector de servicio ----------
+     Un enlace mailto: no hace nada si el equipo no tiene una aplicación de correo configurada
+     (lo común en Windows con Chrome). Por eso cada correo ofrece Gmail, Outlook, la aplicación
+     del equipo o copiar la dirección. */
+  var selector = document.createElement('div');
+  selector.className = 'selector-correo'; selector.hidden = true;
+  selector.setAttribute('role', 'dialog'); selector.setAttribute('aria-label', 'Escribir un correo');
+  document.body.appendChild(selector);
+  var origenSelector = null;
+
+  function abrirSelector(destino, asunto, cuerpo, ancla) {
+    var q = function (k, v) { return v ? k + '=' + encodeURIComponent(v) : ''; };
+    var une = function (arr) { return arr.filter(Boolean).join('&'); };
+    var gmail = 'https://mail.google.com/mail/?' + une(['view=cm', 'fs=1', q('to', destino), q('su', asunto), q('body', cuerpo)]);
+    var outlook = 'https://outlook.office.com/mail/deeplink/compose?' + une([q('to', destino), q('subject', asunto), q('body', cuerpo)]);
+    var mailto = 'mailto:' + destino + (asunto || cuerpo ? '?' + une([q('subject', asunto), q('body', cuerpo)]) : '');
+    selector.innerHTML =
+      '<p class="selector-correo-dir"><span>Escribir a</span><b>' + esc(destino) + '</b></p>' +
+      '<a href="' + gmail + '" target="_blank" rel="noopener">Abrir en Gmail<span class="visually-hidden"> (pestaña nueva)</span></a>' +
+      '<a href="' + outlook + '" target="_blank" rel="noopener">Abrir en Outlook<span class="visually-hidden"> (pestaña nueva)</span></a>' +
+      '<a href="' + esc(mailto) + '" data-mailto-directo>Abrir en la aplicación de correo</a>' +
+      '<button type="button" data-copiar>Copiar la dirección</button>' +
+      '<button type="button" class="selector-cerrar" data-cerrar-selector>Cancelar</button>';
+    selector.hidden = false;
+    // posición: debajo del enlace, sin salirse de la pantalla
+    var r = ancla.getBoundingClientRect(), ancho = selector.offsetWidth, alto = selector.offsetHeight;
+    var x = Math.min(Math.max(8, r.left), innerWidth - ancho - 8);
+    var y = r.bottom + 8; if (y + alto > innerHeight - 8) y = Math.max(8, r.top - alto - 8);
+    selector.style.left = x + scrollX + 'px'; selector.style.top = y + scrollY + 'px';
+    origenSelector = ancla;
+    $('a', selector).focus();
+    $('[data-copiar]', selector).addEventListener('click', function () {
+      var btn = this;
+      var listo = function () { btn.textContent = 'Dirección copiada'; setTimeout(cerrarSelector, 900); };
+      if (navigator.clipboard) navigator.clipboard.writeText(destino).then(listo, function () { prompt('Copie la dirección:', destino); });
+      else prompt('Copie la dirección:', destino);
+    });
+    $('[data-cerrar-selector]', selector).addEventListener('click', cerrarSelector);
+    $$('a', selector).forEach(function (a) { a.addEventListener('click', function () { setTimeout(cerrarSelector, 50); }); });
+  }
+  function cerrarSelector() {
+    if (selector.hidden) return;
+    selector.hidden = true;
+    if (origenSelector && document.contains(origenSelector)) origenSelector.focus();
+    origenSelector = null;
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="mailto:"]');
+    if (a && !a.hasAttribute('data-mailto-directo')) {
+      e.preventDefault();
+      var url = a.getAttribute('href').slice(7), partes = url.split('?'), params = new URLSearchParams(partes[1] || '');
+      abrirSelector(decodeURIComponent(partes[0]), params.get('subject'), params.get('body'), a);
+      return;
+    }
+    if (!selector.hidden && !selector.contains(e.target)) cerrarSelector();
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !selector.hidden) { e.stopPropagation(); cerrarSelector(); } }, true);
+  addEventListener('resize', cerrarSelector);
+
+  /* ---------- Formulario de contacto ---------- */
   var form = $('#form-contacto');
   if (form) form.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -280,7 +339,7 @@
     err.hidden = true;
     var asunto = '[' + d.get('tema') + '] Consulta de ' + d.get('nombre');
     var cuerpo = d.get('mensaje') + '\n\n' + d.get('nombre') + '\n' + d.get('correo') + (d.get('sede') ? '\nSede o recinto: ' + d.get('sede') : '');
-    location.href = 'mailto:' + form.dataset.destino + '?subject=' + encodeURIComponent(asunto) + '&body=' + encodeURIComponent(cuerpo);
+    abrirSelector(form.dataset.destino, asunto, cuerpo, $('button[type="submit"], [type="submit"]', form) || form);
     $('#form-ok').hidden = false;
   });
 

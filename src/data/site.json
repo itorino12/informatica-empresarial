@@ -5,7 +5,7 @@
   "universidad": "Universidad de Costa Rica",
   "sigla": "SR-CIE",
   "codigo_carrera": "600002",
-  "base_url": "https://DOMINIO-POR-DEFINIR.ucr.ac.cr",
+  "base_url": "https://itorino12.github.io/informatica-empresarial",
   "correo": "consejoinformaticaempresarial@ucr.ac.cr",
   "telefono": "2511-7330",
   "telefono_nota": "Coordinación del Consejo, Universidad de Costa Rica, Sede del Caribe",
@@ -38,19 +38,23 @@
       "hijos": [
         {
           "titulo": "Historia y propósito",
-          "url": "carrera.html"
+          "url": "carrera.html",
+          "desc": "Desde 1998 en las Sedes Regionales"
         },
         {
           "titulo": "Plan de estudios 07",
-          "url": "plan-de-estudios.html"
+          "url": "plan-de-estudios.html",
+          "desc": "Malla interactiva de 144 créditos"
         },
         {
           "titulo": "Sedes y recintos",
-          "url": "sedes.html"
+          "url": "sedes.html",
+          "desc": "Diez recintos y sus coordinaciones"
         },
         {
           "titulo": "Cómo ingresar",
-          "url": "carrera.html#admision"
+          "url": "carrera.html#admision",
+          "desc": "Admisión, perfil y salida profesional"
         }
       ]
     },
@@ -60,19 +64,23 @@
       "hijos": [
         {
           "titulo": "Convalidaciones y equiparaciones",
-          "url": "tramites.html"
+          "url": "tramites.html",
+          "desc": "Requisitos, pasos y criterios"
         },
         {
           "titulo": "Traslado del Plan 01 al Plan 07",
-          "url": "plan-de-estudios.html#transicion"
+          "url": "plan-de-estudios.html#transicion",
+          "desc": "Reglas y equivalencias de transición"
         },
         {
           "titulo": "Información para el estudiantado",
-          "url": "tramites.html#informacion"
+          "url": "tramites.html#informacion",
+          "desc": "Trámites y servicios de la carrera"
         },
         {
           "titulo": "Preguntas frecuentes",
-          "url": "tramites.html#preguntas"
+          "url": "tramites.html#preguntas",
+          "desc": "Respuestas a las consultas comunes"
         }
       ]
     },
@@ -82,15 +90,18 @@
       "hijos": [
         {
           "titulo": "Registro de docentes elegibles",
-          "url": "docentes.html"
+          "url": "docentes.html",
+          "desc": "Convocatoria 2026 y requisitos"
         },
         {
           "titulo": "Perfiles por área",
-          "url": "docentes.html#areas"
+          "url": "docentes.html#areas",
+          "desc": "Formación requerida en cada área"
         },
         {
           "titulo": "Desarrollo docente",
-          "url": "docentes.html#desarrollo"
+          "url": "docentes.html#desarrollo",
+          "desc": "Capacitación del personal docente"
         }
       ]
     },
@@ -101,22 +112,22 @@
         {
           "titulo": "Producción académica",
           "url": "investigacion.html",
-          "desc": "Proyectos y publicaciones del período de mejora"
+          "desc": "Proyectos y publicaciones recientes"
         },
         {
           "titulo": "Proyectos destacados",
           "url": "investigacion.html#destacados",
-          "desc": "Lo que investigan los equipos docentes"
+          "desc": "Lo que investigan los equipos"
         },
         {
           "titulo": "Metas y vinculación",
           "url": "investigacion.html#metas",
-          "desc": "Compromisos al 2030 y redes académicas"
+          "desc": "Compromisos al 2030 y redes"
         },
         {
           "titulo": "Reporte su proyecto",
           "url": "investigacion.html#reportar",
-          "desc": "Sume su investigación o publicación al sitio"
+          "desc": "Sume su investigación al sitio"
         }
       ]
     },
@@ -127,27 +138,27 @@
         {
           "titulo": "Panorama y cifras",
           "url": "accion-social.html",
-          "desc": "14 proyectos y cómo trabaja la carrera con las comunidades"
+          "desc": "14 proyectos con las comunidades"
         },
         {
           "titulo": "Proyectos por región",
           "url": "accion-social.html#proyectos",
-          "desc": "De Guanacaste al Caribe y el Pacífico Sur"
+          "desc": "De Guanacaste al Caribe y el Sur"
         },
         {
           "titulo": "Trabajo Comunal Universitario",
           "url": "accion-social.html#tcu",
-          "desc": "Las 300 horas de TCU y dónde realizarlas"
+          "desc": "Las 300 horas y dónde realizarlas"
         },
         {
           "titulo": "Compromisos de la carrera",
           "url": "accion-social.html#compromisos",
-          "desc": "Metas del Plan Estratégico y del Compromiso de Mejora"
+          "desc": "Metas del Plan y del Compromiso"
         },
         {
           "titulo": "Proponga su proyecto",
           "url": "accion-social.html#proponer",
-          "desc": "Envíe un proyecto para publicarlo aquí"
+          "desc": "Envíe un proyecto para publicarlo"
         }
       ]
     },
@@ -157,19 +168,23 @@
       "hijos": [
         {
           "titulo": "Acreditación SINAES",
-          "url": "acreditacion.html"
+          "url": "acreditacion.html",
+          "desc": "Trayectoria desde 2019"
         },
         {
           "titulo": "Proyecto Especial de Mejora",
-          "url": "acreditacion.html#pem"
+          "url": "acreditacion.html#pem",
+          "desc": "Diez objetivos y sus resultados"
         },
         {
           "titulo": "Compromiso de Mejora 2027–2030",
-          "url": "acreditacion.html#compromiso"
+          "url": "acreditacion.html#compromiso",
+          "desc": "Lo que sigue tras la visita de pares"
         },
         {
           "titulo": "Plan Estratégico 2026–2030",
-          "url": "gobierno.html#plan-estrategico"
+          "url": "gobierno.html#plan-estrategico",
+          "desc": "Ejes y metas de la carrera"
         }
       ]
     },
@@ -179,15 +194,18 @@
       "hijos": [
         {
           "titulo": "Noticias",
-          "url": "noticias.html"
+          "url": "noticias.html",
+          "desc": "Acuerdos, logros y actividades"
         },
         {
           "titulo": "Simposio de Informática Empresarial",
-          "url": "simposio.html"
+          "url": "simposio.html",
+          "desc": "El encuentro anual de la carrera"
         },
         {
           "titulo": "Población graduada",
-          "url": "graduados.html"
+          "url": "graduados.html",
+          "desc": "Charlas y vínculo con la carrera"
         }
       ]
     },
@@ -197,15 +215,18 @@
       "hijos": [
         {
           "titulo": "Gestión y gobierno",
-          "url": "gobierno.html"
+          "url": "gobierno.html",
+          "desc": "Consejo, estructura y coordinaciones"
         },
         {
           "titulo": "Repositorio de documentos",
-          "url": "documentos.html"
+          "url": "documentos.html",
+          "desc": "Normativa, planes e informes"
         },
         {
           "titulo": "Contacto",
-          "url": "contacto.html"
+          "url": "contacto.html",
+          "desc": "Escriba al Consejo o a su sede"
         }
       ]
     }
