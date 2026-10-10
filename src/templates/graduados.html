@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block lede %}La carrera mantiene el vínculo con sus personas graduadas con dos charlas de actualización al año y consultas que orientan el plan de estudios.{% endblock %}
+{% block contenido %}
+<section class="seccion" aria-labelledby="h-prox">
+  <div class="contenedor dos-col">
+    <div>
+      <h2 id="h-prox">Próxima actividad</h2>
+      <p class="lede">Charla de actualización del II ciclo 2026, prevista para la primera semana de noviembre. La invitación se enviará por correo a la población graduada y se publicará aquí.</p>
+      <p>¿Cambió su correo o su lugar de trabajo? Actualice sus datos con la coordinación de la sede o recinto donde se graduó para recibir las invitaciones.</p>
+      <p><a class="boton boton-claro" href="contacto.html">Actualizar mis datos</a></p>
+    </div>
+    <div class="caja">
+      <h3>Lo que dicen las consultas</h3>
+      <div class="cifras" style="grid-template-columns:1fr 1fr;border:0">
+        <div class="cifra"><b>{{ site.cifras.encuesta_graduados_2024 }}</b><span>respuestas a la consulta de 2024</span></div>
+        <div class="cifra"><b>{{ site.cifras.encuesta_graduados_2025 }}</b><span>respuestas a la consulta de 2025</span></div>
+      </div>
+      <p class="small muted" style="margin:0">Cada año se consulta qué temas de capacitación interesan, en qué horario y qué aspectos del perfil de salida conviene mejorar.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion seccion-tenue" aria-labelledby="h-charlas">
+  <div class="contenedor">
+    <h2 id="h-charlas">Charlas realizadas</h2>
+    <ol class="linea-tiempo" style="margin-top:28px">
+      {% for c in contenido.charlas|reverse %}
+      <li><div class="cuando">{{ c.periodo }}</div><div class="que"><h3>{{ c.titulo }}</h3><p>{{ c.persona }}{% if c.detalle %}{{ '. ' if c.persona }}{{ c.detalle }}{% endif %}</p></div></li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="seccion" aria-labelledby="h-posgrado">
+  <div class="contenedor dos-col">
+    <div class="prosa">
+      <h2 id="h-posgrado">Seguir estudiando</h2>
+      <p>El Consejo colabora en la divulgación de la Maestría en Tecnologías de la Información y Comunicación para la Gestión Organizacional (PPTICGO) del Sistema de Estudios de Posgrado de la UCR, una opción natural de continuidad para la carrera.</p>
+      <p><a href="https://www.sep.ucr.ac.cr/">Sistema de Estudios de Posgrado</a></p>
+    </div>
+    <div class="prosa">
+      <h2>Proponga un tema</h2>
+      <p>Las charlas se definen a partir de lo que pide la población graduada. Si quiere proponer un tema o ser conferencista, escriba al Consejo.</p>
+      <p><a href="mailto:{{ site.correo }}?subject=Propuesta%20de%20charla%20para%20graduados">Proponer una charla</a></p>
+    </div>
+  </div>
+</section>
+{% endblock %}

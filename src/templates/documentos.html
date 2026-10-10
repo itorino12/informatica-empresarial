@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block lede %}Normativa, planes, protocolos e informes que sustentan la gestión de la carrera. Los documentos con enlace pueden descargarse; los demás se solicitan al Consejo.{% endblock %}
+{% block contenido %}
+<section class="seccion" aria-labelledby="h-docs">
+  <div class="contenedor">
+    <h2 id="h-docs" class="visually-hidden">Documentos</h2>
+    <div class="buscador-docs">
+      <label class="campo" for="doc-texto">Buscar<input id="doc-texto" type="search" placeholder="Código, título o instancia"></label>
+      <label class="campo" for="doc-tipo">Tipo
+        <select id="doc-tipo"><option value="">Todos los tipos</option>
+          {% for t in documentos|map(attribute='tipo')|unique|sort %}<option>{{ t }}</option>{% endfor %}
+        </select></label>
+      <p id="doc-contador" class="muted small" aria-live="polite" style="align-self:end;margin:0 0 12px"></p>
+    </div>
+    <div class="tabla-envoltura">
+      <table class="tabla" id="tabla-documentos">
+        <thead><tr><th scope="col">Documento</th><th scope="col">Tipo</th><th scope="col">Año</th><th scope="col">Instancia</th><th scope="col">Estado</th><th scope="col">Acceso</th></tr></thead>
+        <tbody>
+          {% for d in documentos|sort(attribute='anio', reverse=true) %}
+          <tr data-tipo="{{ d.tipo }}">
+            <td><b>{{ d.codigo }}</b><br>{{ d.titulo }}</td><td>{{ d.tipo }}</td><td class="num">{{ d.anio or "—" }}</td><td>{{ d.emisor }}</td><td>{{ d.estado }}</td>
+            <td>{% if d.url %}<a href="{{ d.url }}">Descargar</a>{% else %}<a href="mailto:{{ site.correo }}?subject={{ ('Solicitud de documento: ' ~ d.codigo)|urlencode }}">Solicitar</a>{% endif %}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <p class="small muted" style="margin-top:16px">Las actas del Consejo se custodian en su archivo oficial y se identifican con la sigla SR-CIE. Los documentos con datos personales del estudiantado no se publican.</p>
+  </div>
+</section>
+{% endblock %}

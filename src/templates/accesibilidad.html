@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block contenido %}
+<section class="seccion"><div class="contenedor prosa">
+  <h2>Nuestro compromiso</h2>
+  <p>Este sitio busca cumplir las Pautas de Accesibilidad para el Contenido Web (WCAG) 2.2 en el nivel AA, en coherencia con la Ley 7600 de Igualdad de Oportunidades para las Personas con Discapacidad y con las políticas de accesibilidad de la Universidad de Costa Rica.</p>
+  <h2>Herramientas disponibles</h2>
+  <ul>
+    <li>Panel de accesibilidad, en la barra superior: tamaño del texto, modo oscuro, alto contraste, subrayado de enlaces, detener animaciones y escala de grises.</li>
+    <li>Enlace para saltar directamente al contenido y navegación completa con teclado, con foco visible.</li>
+    <li>Buscador interno, que se abre con la tecla <kbd>/</kbd>.</li>
+    <li>Textos alternativos en imágenes y descripciones en los gráficos.</li>
+    <li>Respeto de la preferencia del sistema operativo para reducir el movimiento.</li>
+  </ul>
+  <h2>¿Encontró una barrera?</h2>
+  <p>Si alguna parte del sitio no le resulta accesible, escriba a <a href="mailto:{{ site.correo }}?subject=Barrera%20de%20accesibilidad">{{ site.correo }}</a> e indique la página y el problema. Lo atenderemos y le ofreceremos la información en un formato alternativo.</p>
+</div></section>
+{% endblock %}

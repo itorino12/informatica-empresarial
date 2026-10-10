@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% block lede %}Una carrera que nació en 1997 para dar a las regiones una formación profesional en informática y gestión, y que hoy se imparte en seis sedes regionales.{% endblock %}
+{% block contenido %}
+<div class="seccion">
+  <div class="contenedor con-indice">
+    <nav class="indice" aria-label="En esta página">
+      <p>En esta página</p>
+      <ol>
+        <li><a href="#proposito">Propósito y aspiración</a></li>
+        <li><a href="#historia">Historia</a></li>
+        <li><a href="#perfil">Perfil profesional</a></li>
+        <li><a href="#mercado">Dónde trabaja</a></li>
+        <li><a href="#admision">Cómo ingresar</a></li>
+      </ol>
+    </nav>
+    <div>
+      <section id="proposito" aria-labelledby="h-proposito">
+        <h2 id="h-proposito">Propósito y aspiración</h2>
+        <p class="muted">Definidos en el taller participativo del 21 de febrero de 2025 para el Plan Estratégico 2026–2030.</p>
+        <div class="dos-col" style="gap:32px;margin-top:24px">
+          <div><h3>Propósito</h3><blockquote class="cita-grande">{{ contenido.proposito }}</blockquote></div>
+          <div><h3>Aspiración</h3><blockquote class="cita-grande">{{ contenido.aspiracion }}</blockquote></div>
+        </div>
+      </section>
+
+      <section id="historia" aria-labelledby="h-historia">
+        <h2 id="h-historia">Historia</h2>
+        <p class="lede" style="margin-bottom:32px">Los diplomados en computación de los años ochenta ya no bastaban. Las sedes regionales pidieron una carrera que integrara informática, sistemas de información, negocios y análisis cuantitativo: así nació Informática Empresarial.</p>
+        <ol class="linea-tiempo">
+          {% for h in contenido.hitos %}
+          <li class="{{ 'futuro' if h.futuro }}">
+            <div class="cuando">{{ h.fecha }}</div>
+            <div class="que"><h3>{{ h.titulo }}</h3><p>{{ h.texto }}</p></div>
+          </li>
+          {% endfor %}
+        </ol>
+      </section>
+
+      <section id="perfil" aria-labelledby="h-perfil">
+        <h2 id="h-perfil">Perfil profesional</h2>
+        <p class="prosa">{{ contenido.perfil.areas }}</p>
+        <h3>Al graduarse, la persona profesional puede</h3>
+        <ul class="lista-marcas">{% for c in contenido.perfil.capacidades %}<li>{{ c }}</li>{% endfor %}</ul>
+        <h3 style="margin-top:32px">Cinco áreas académicas</h3>
+        <div class="tres-col" style="gap:24px">
+          {% for id, a in plan07.areas.items() if id != 'FG' %}
+          <div style="border-top:4px solid {{ a.color }};padding-top:12px">
+            <h4>{{ a.nombre }}</h4><p class="small muted">{{ a.descripcion }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+
+      <section id="mercado" aria-labelledby="h-mercado">
+        <h2 id="h-mercado">Dónde trabaja</h2>
+        <p>Las personas graduadas se desempeñan en organizaciones públicas y privadas de todo tamaño, tanto en las regiones como en el Valle Central.</p>
+        <ul class="etiquetas">{% for m in contenido.perfil.mercado %}<li>{{ m }}</li>{% endfor %}</ul>
+      </section>
+
+      <section id="admision" aria-labelledby="h-admision">
+        <h2 id="h-admision">Cómo ingresar</h2>
+        <div class="dos-col" style="gap:32px">
+          <div class="prosa">
+            <p>El ingreso a la Universidad de Costa Rica se gestiona por medio del proceso de admisión institucional. Al elegir carrera, busque <strong>Bachillerato en Informática Empresarial, código {{ site.codigo_carrera }}</strong>, y el recinto donde desea estudiar.</p>
+            <p>La Universidad también recibe traslados de otras carreras. Quien ingresa hoy lo hace en el Plan 07.</p>
+            <p><a class="boton boton-claro" href="https://ori.ucr.ac.cr/">Ir a la Oficina de Registro e Información</a></p>
+          </div>
+          <div class="caja">
+            <h3>Datos clave</h3>
+            <dl style="display:grid;grid-template-columns:auto 1fr;gap:10px 18px;margin:0">
+              <dt class="muted">Grado</dt><dd style="margin:0">Bachillerato universitario</dd>
+              <dt class="muted">Duración</dt><dd style="margin:0">Cuatro años: ocho ciclos lectivos y dos de verano</dd>
+              <dt class="muted">Créditos</dt><dd style="margin:0">{{ plan07.total_creditos }}</dd>
+              <dt class="muted">Requisito de graduación</dt><dd style="margin:0">{{ plan07.tcu_horas }} horas de Trabajo Comunal Universitario</dd>
+              <dt class="muted">Dónde</dt><dd style="margin:0"><a href="sedes.html">Diez sedes y recintos</a></dd>
+            </dl>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,5 @@
+<svg class="patron" viewBox="0 0 {{ red.ancho }} {{ red.alto }}" aria-hidden="true" focusable="false">
+  <path d="{{ red.contorno }}" fill="none" stroke="#41ADE7" stroke-width="1.5"/>
+  {% for e in red.enlaces %}<line x1="{{ e.x1 }}" y1="{{ e.y1 }}" x2="{{ e.x2 }}" y2="{{ e.y2 }}" stroke="#41ADE7" stroke-width="1.5"/>{% endfor %}
+  {% for n in red.nodos %}<circle cx="{{ n.x }}" cy="{{ n.y }}" r="6" fill="#41ADE7"/>{% endfor %}
+</svg>

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% from "_macros.html" import red_svg %}
+{% block lede %}La carrera es propia de seis sedes regionales y se imparte en diez sedes y recintos, del Caribe al Pacífico Sur. Cada uno tiene una coordinación que forma parte del Consejo de Carrera Intersedes.{% endblock %}
+{% block contenido %}
+<section class="seccion" aria-labelledby="h-mapa">
+  <div class="contenedor">
+    <h2 id="h-mapa" class="visually-hidden">Mapa de sedes y recintos</h2>
+    <div class="mapa-sedes">
+      <div class="mapa-lienzo">{{ red_svg(red, interactiva=true, titulo="Mapa interactivo: elija un recinto para ver su coordinación") }}</div>
+      <div class="ficha-sede" id="ficha-sede" aria-live="polite">
+        <h3>Elija un recinto</h3>
+        <p class="muted">Seleccione un punto del mapa, o un recinto de la lista, para ver su coordinación y sus datos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion seccion-tenue" aria-labelledby="h-lista">
+  <div class="contenedor">
+    <h2 id="h-lista">Sedes y recintos</h2>
+    <div class="tres-col" style="margin-top:24px">
+      {% for sede, grupo in sedes|groupby('sede') %}
+      <div class="grupo-sede">
+        <h3>{{ sede }}</h3>
+        <ul class="lista-marcas">
+          {% for s in grupo %}
+          <li><button type="button" class="enlace-boton" data-ver-sede="{{ s.id }}" style="all:unset;cursor:pointer;color:var(--enlace);font-weight:600">{{ s.recinto }}</button><br><span class="small muted">{{ s.coordinacion }}</span><br><a class="small" href="mailto:{{ s.correo }}">{{ s.correo }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
+    <p class="small muted">Las coordinaciones corresponden a la integración del Consejo en 2026. La Sede del Sur es propietaria de la carrera desde la modificación de la Resolución VD-R-6426-97 del 27 de agosto de 2021.</p>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}<script src="assets/js/datos.js" defer></script>{% endblock %}

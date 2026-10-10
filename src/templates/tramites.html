@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block lede %}Cómo analiza el Consejo cada solicitud de convalidación o equiparación, qué información debe conocer el estudiantado y respuestas a las consultas más comunes.{% endblock %}
+{% block contenido %}
+<div class="seccion">
+  <div class="contenedor con-indice">
+    <nav class="indice" aria-label="En esta página">
+      <p>En esta página</p>
+      <ol>
+        <li><a href="#convalidaciones">Convalidaciones</a></li>
+        <li><a href="#instrumento">Cómo se compara un curso</a></li>
+        <li><a href="#informacion">Información para el estudiantado</a></li>
+        <li><a href="#preguntas">Preguntas frecuentes</a></li>
+      </ol>
+    </nav>
+    <div>
+      <section id="convalidaciones" aria-labelledby="h-conv">
+        <h2 id="h-conv">Convalidaciones y equiparaciones</h2>
+        <p class="lede" style="margin-bottom:28px">Si aprobó cursos en otra carrera o institución, puede solicitar que se reconozcan en el Plan 07. El Consejo de Carrera Intersedes analiza cada curso con el mismo procedimiento, sin importar la sede.</p>
+        <ol class="pasos">
+          {% for p in contenido.convalidacion.pasos %}<li><h3>{{ p.titulo }}</h3><p>{{ p.texto }}</p></li>{% endfor %}
+        </ol>
+      </section>
+
+      <section id="instrumento" aria-labelledby="h-inst">
+        <h2 id="h-inst">Cómo se compara un curso</h2>
+        <div class="dos-col" style="gap:32px">
+          <div class="prosa">
+            <p>Desde la sesión ordinaria 12-2026, cada curso se compara con un instrumento de criterio experto. Pesa más lo que se aprende que el nombre del curso: los contenidos y subtemas cuentan el 60 % de la valoración.</p>
+            <p>Para recomendar la convalidación, el curso aprobado debe alcanzar al menos un <strong>{{ contenido.convalidacion.umbral }} % de similitud</strong> con el curso del Plan 07. Si no lo alcanza, el acuerdo indica qué contenidos faltaron.</p>
+            <p>Para que el análisis sea ágil, adjunte los programas oficiales completos: objetivos, contenidos, horas y bibliografía, firmados o sellados por la institución de origen.</p>
+          </div>
+          <div class="caja">
+            <h3>Peso de cada criterio</h3>
+            {% for p in contenido.convalidacion.pesos %}
+            <div style="margin-bottom:16px">
+              <div style="display:flex;justify-content:space-between"><span>{{ p.criterio }}</span><b>{{ p.peso }} %</b></div>
+              <div class="barra-progreso" role="img" aria-label="{{ p.criterio }}: {{ p.peso }} %"><span style="width:{{ p.peso }}%"></span></div>
+            </div>
+            {% endfor %}
+            <p class="small muted" style="margin:0">Umbral para convalidar: {{ contenido.convalidacion.umbral }} %. Cada curso lo valoran al menos dos personas expertas.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="informacion" aria-labelledby="h-info">
+        <h2 id="h-info">Información para el estudiantado</h2>
+        <p>Lo que toda persona estudiante debe conocer de su carrera, en un solo lugar.</p>
+        <div class="tabla-envoltura">
+          <table class="tabla">
+            <tbody>
+              <tr><th scope="row">Plan de estudios</th><td>Plan 07, {{ plan07.total_creditos }} créditos. <a href="plan-de-estudios.html">Ver la malla curricular</a>.</td></tr>
+              <tr><th scope="row">Duración</th><td>Cuatro años: ocho ciclos lectivos y dos ciclos de verano.</td></tr>
+              <tr><th scope="row">Requisito de graduación</th><td>{{ plan07.tcu_horas }} horas de Trabajo Comunal Universitario.</td></tr>
+              <tr><th scope="row">Normativa</th><td>Reglamento de Régimen Académico Estudiantil de la UCR, Resolución VD-13456-2025 y reglamento de cada sede. <a href="documentos.html">Repositorio de documentos</a>.</td></tr>
+              <tr><th scope="row">Costos</th><td>El costo por crédito y el sistema de becas los define la Universidad. Consulte la Oficina de Becas y Atención Socioeconómica y la Oficina de Administración Financiera.</td></tr>
+              <tr><th scope="row">Fechas y trámites</th><td>Matrícula, retiros y calendario universitario: <a href="https://ori.ucr.ac.cr/">Oficina de Registro e Información</a>.</td></tr>
+              <tr><th scope="row">Servicios</th><td>Cada sede cuenta con Vida Estudiantil, biblioteca, orientación y salud. Consulte en su recinto.</td></tr>
+              <tr><th scope="row">Seguridad e higiene</th><td>Los manuales de seguridad, higiene y salud ocupacional de los laboratorios se publicarán en esta sección como parte del Compromiso de Mejora 2027–2030.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="preguntas" aria-labelledby="h-faq">
+        <h2 id="h-faq">Preguntas frecuentes</h2>
+        {% for f in contenido.faq %}
+        <details class="pregunta"><summary>{{ f.p }}</summary><div>{{ f.r }}</div></details>
+        {% endfor %}
+        <p style="margin-top:24px">¿No encontró su respuesta? <a href="contacto.html">Escriba al Consejo o a su coordinación</a>.</p>
+      </section>
+    </div>
+  </div>
+</div>
+{% endblock %}

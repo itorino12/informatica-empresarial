@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% block lede %}Un proceso público, estandarizado y con criterios objetivos para los nombramientos interinos de la carrera en todas sus sedes y recintos.{% endblock %}
+{% block contenido %}
+<div class="seccion">
+  <div class="contenedor con-indice">
+    <nav class="indice" aria-label="En esta página">
+      <p>En esta página</p>
+      <ol>
+        <li><a href="#convocatoria">Convocatoria 2026</a></li>
+        <li><a href="#proceso">Cómo funciona</a></li>
+        <li><a href="#requisitos">Requisitos</a></li>
+        <li><a href="#areas">Perfiles por área</a></li>
+        <li><a href="#evaluacion">Evaluación</a></li>
+        <li><a href="#uso">Uso del registro</a></li>
+        <li><a href="#desarrollo">Desarrollo docente</a></li>
+      </ol>
+    </nav>
+    <div>
+      <section id="convocatoria" aria-labelledby="h-conv">
+        <h2 id="h-conv">Convocatoria 2026</h2>
+        <div class="aviso">
+          <p><strong>Período previsto:</strong> del 20 de octubre al 20 de noviembre de 2026, hasta las 11:00 p. m. La convocatoria se concentra en los perfiles del Plan 07. El enlace al formulario se publicará aquí cuando se abra la recepción.</p>
+        </div>
+        <div class="dos-col" style="gap:32px">
+          <div class="prosa">
+            <p>El Registro Intersedes de Docentes Elegibles es una de las acciones del proceso de acreditación: asegura que quienes enseñan en la carrera se seleccionen con transparencia, trazabilidad y criterios iguales en todo el país.</p>
+            <p>La inscripción no implica nombramiento. Cuando una sede o recinto tiene una necesidad docente, su coordinación solicita al Consejo una terna del área correspondiente.</p>
+          </div>
+          <div class="caja">
+            <h3>Prepare un único archivo .zip con</h3>
+            <ul class="lista-marcas" style="margin:0">
+              <li>Carta de interés</li>
+              <li>Currículo actualizado</li>
+              <li>Títulos reconocidos por CONESUP o CONARE</li>
+              <li>Certificaciones y constancias de experiencia</li>
+              <li>Comprobante de dominio de inglés, si lo tiene</li>
+            </ul>
+            <p class="small muted" style="margin:12px 0 0">Tamaño máximo: 100 MB. Puede editar su postulación hasta la fecha de cierre.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="proceso" aria-labelledby="h-proc">
+        <h2 id="h-proc">Cómo funciona</h2>
+        <ol class="pasos">{% for f in contenido.registro.fases %}<li><h3>{{ f.titulo }}</h3><p>{{ f.texto }}</p></li>{% endfor %}</ol>
+      </section>
+
+      <section id="requisitos" aria-labelledby="h-req">
+        <h2 id="h-req">Requisitos</h2>
+        <div class="tabla-envoltura">
+          <table class="tabla">
+            <tbody>
+              <tr><th scope="row">Grado base</th><td>Bachillerato reconocido por CONESUP o CONARE en una titulación del área solicitada</td></tr>
+              <tr><th scope="row">Grado mínimo</th><td>Licenciatura o maestría reconocida por CONESUP o CONARE en el área solicitada</td></tr>
+              <tr><th scope="row">Grado deseable</th><td>Doctorado reconocido por CONESUP o CONARE en el área solicitada</td></tr>
+              <tr><th scope="row">Se valora</th><td>Experiencia profesional y docente universitaria, investigación, publicaciones indexadas, acción social, certificaciones técnicas recientes, capacitaciones de al menos 30 horas y dominio de inglés certificado (B1 a C2)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="areas" aria-labelledby="h-areas">
+        <h2 id="h-areas">Perfiles por área</h2>
+        <p>Titulaciones aceptadas en cada área del Plan 07. La afinidad de cada candidatura con el curso específico la valora la coordinación al conformar la terna.</p>
+        {% for a in contenido.registro.areas %}
+        {% set area = plan07.areas[a.id] %}
+        <details class="pregunta">
+          <summary><span style="display:inline-block;width:12px;height:12px;border-radius:3px;background:{{ area.color }};margin-right:10px"></span>{{ area.nombre }}</summary>
+          <div>
+            <p>{{ area.descripcion }}</p>
+            <p><b>Cursos:</b>
+            {% for c in plan07.cursos if c.area == a.id and not c.optativo %}{{ c.sigla }} {{ c.nombre }}{{ ', ' if not loop.last }}{% endfor %}{% if plan07.optativos[a.id] %}; optativos: {% for o in plan07.optativos[a.id] %}{{ o.sigla }} {{ o.nombre }}{{ ', ' if not loop.last }}{% endfor %}{% endif %}.</p>
+            <p><b>Titulaciones:</b></p>
+            <ul class="etiquetas">{% for t in a.titulos %}<li>{{ t }}</li>{% endfor %}</ul>
+          </div>
+        </details>
+        {% endfor %}
+      </section>
+
+      <section id="evaluacion" aria-labelledby="h-eval">
+        <h2 id="h-eval">Evaluación de las candidaturas</h2>
+        <p>La matriz objetiva aprobada por el Consejo asigna estos puntajes máximos. Ingresan al registro quienes alcanzan el puntaje mínimo establecido.</p>
+        <div class="tabla-envoltura">
+          <table class="tabla">
+            <thead><tr><th scope="col">Criterio</th><th scope="col" style="text-align:right">Puntaje máximo</th><th scope="col" style="width:40%"><span class="visually-hidden">Proporción</span></th></tr></thead>
+            <tbody>
+              {% for c in contenido.registro.criterios %}
+              <tr><td>{{ c.nombre }}</td><td class="num">{{ c.puntos }}</td><td><div class="barra-progreso" aria-hidden="true"><span style="width:{{ (c.puntos / 35 * 100)|round }}%"></span></div></td></tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="uso" aria-labelledby="h-uso">
+        <h2 id="h-uso">Uso del registro</h2>
+        <p>La convocatoria 2025 dejó <strong>{{ contenido.registro.elegibles_2025 }} personas elegibles</strong> para el Plan 07. Así se usó el registro en el III ciclo 2025 y el I ciclo 2026:</p>
+        <ul class="lista-marcas">{% for u in contenido.registro.uso %}<li><b>{{ u.sede }}.</b> {{ u.texto }}</li>{% endfor %}</ul>
+      </section>
+
+      <section id="desarrollo" aria-labelledby="h-des">
+        <h2 id="h-des">Plan de Desarrollo Docente Intersedes</h2>
+        <div class="dos-col" style="gap:32px">
+          <div>
+            <p class="lede">{{ contenido.desarrollo_docente.capacitados }} de {{ contenido.desarrollo_docente.total }} docentes participaron en capacitaciones de formación docente: un {{ (contenido.desarrollo_docente.capacitados / contenido.desarrollo_docente.total * 100)|round(1)|string|replace('.', ',') }} %, frente a la meta del 50 %.</p>
+            <div class="barra-progreso" role="img" aria-label="82,7 % del personal docente capacitado"><span style="width:82.7%"></span></div>
+            <p class="small muted" style="margin-top:12px">Con apoyo de {{ contenido.desarrollo_docente.aliados|join(', ') }} y de docentes de la carrera que capacitaron a nivel intersedes, por ejemplo en fundamentos de Python.</p>
+          </div>
+          <div>
+            <h3>Módulos del plan</h3>
+            <ol class="lista-marcas" style="list-style:none">{% for m in contenido.desarrollo_docente.modulos %}<li>{{ m }}</li>{% endfor %}</ol>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+{% endblock %}

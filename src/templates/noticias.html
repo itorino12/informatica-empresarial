@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% from "_macros.html" import noticia %}
+{% block lede %}Acuerdos del Consejo de Carrera Intersedes, logros de acreditación, investigación y actividades de la comunidad.{% endblock %}
+{% block contenido %}
+<section class="seccion" aria-labelledby="h-lista">
+  <div class="contenedor">
+    <h2 id="h-lista" class="visually-hidden">Todas las noticias</h2>
+    {% set cats = noticias|map(attribute='categoria')|unique|sort %}
+    <div class="filtros" role="group" aria-label="Filtrar por categoría" data-filtros="lista-noticias">
+      <button class="filtro" type="button" data-valor="todas" aria-pressed="true">Todas</button>
+      {% for c in cats %}<button class="filtro" type="button" data-valor="{{ c }}" aria-pressed="false">{{ c }}</button>{% endfor %}
+    </div>
+    <div id="lista-noticias">
+      {% for n in noticias %}
+      <article class="articulo" id="{{ n.id }}" data-categoria="{{ n.categoria }}">
+        <div class="noticia" style="border:0;padding:0">
+          <div class="meta"><time datetime="{{ n.fecha }}">{{ n.fecha_texto or (n.fecha|fecha_larga) }}</time><span class="categoria">{{ n.categoria }}</span></div>
+        </div>
+        <h2>{{ n.titulo }}</h2>
+        <p class="lede" style="font-size:var(--t-base)">{{ n.resumen }}</p>
+        {% for p in n.cuerpo %}<p>{{ p }}</p>{% endfor %}
+        {% if n.enlace %}<p><a href="{{ n.enlace }}">Más información</a></p>{% endif %}
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block lede %}El personal docente de la carrera investiga, publica y trabaja con las comunidades de cada región. Esta sección reúne ese quehacer y crecerá con cada proyecto que las sedes reporten.{% endblock %}
+{% block contenido %}
+<section class="seccion" aria-labelledby="h-cifras">
+  <div class="contenedor">
+    <h2 id="h-cifras">Producción del período del Proyecto Especial de Mejora</h2>
+    <p class="muted">Noviembre de 2024 a abril de 2026, en las diez sedes y recintos.</p>
+    <div class="cifras" style="margin-top:20px">
+      <div class="cifra"><b>{{ site.cifras.proyectos_investigacion }}</b><span>proyectos de investigación inscritos o aprobados</span></div>
+      <div class="cifra"><b>{{ site.cifras.proyectos_accion_social }}</b><span>proyectos de acción social y extensión</span></div>
+      <div class="cifra"><b>≈ {{ site.cifras.publicaciones }}</b><span>publicaciones en revistas indexadas o en revisión</span></div>
+      <div class="cifra"><b>100 %</b><span>de las sedes alcanzó el mínimo de producción académica</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion seccion-tenue" aria-labelledby="h-dest">
+  <div class="contenedor">
+    <h2 id="h-dest">Proyectos destacados</h2>
+    {% for p in contenido.investigacion_destacada %}
+    <article style="max-width:72ch;margin-top:20px">
+      <p class="categoria" style="margin:0 0 6px">Investigación, {{ p.sede }}, proyecto {{ p.codigo }}</p>
+      <h3>{{ p.titulo }}</h3>
+      <p>{{ p.resumen }}</p>
+      <p class="small muted">Equipo: {{ p.equipo }}. Presentado al Consejo de Carrera en la sesión ordinaria 16-2026.</p>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="seccion" aria-labelledby="h-metas">
+  <div class="contenedor dos-col">
+    <div>
+      <h2 id="h-metas">Metas del Plan Estratégico 2026–2030</h2>
+      <ul class="lista-marcas">
+        <li>Mantener al menos un proyecto de investigación activo por recinto cada año</li>
+        <li>Lograr que el 50 % del personal docente a tiempo completo participe en publicaciones, investigación y acción social</li>
+        <li>Mantener vigente el Plan de Desarrollo Docente Intersedes</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Vinculación académica 2027–2028</h2>
+      <p>El Compromiso de Mejora 2027–2030 prevé sistematizar cada año los vínculos del profesorado con centros, redes y programas, y divulgarlos en un boletín digital de investigación. Esta sección será su canal de publicación.</p>
+      <p><a href="acreditacion.html#compromiso">Ver el Compromiso de Mejora</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion seccion-tenue" aria-labelledby="h-reportar">
+  <div class="contenedor prosa">
+    <h2 id="h-reportar">Reporte su proyecto</h2>
+    <p>Si usted es docente de la carrera y tiene un proyecto inscrito en la Vicerrectoría de Investigación o de Acción Social, o una publicación reciente, envíe estos datos para incluirlo aquí:</p>
+    <ul>
+      <li>Código y título del proyecto, o referencia completa de la publicación con su DOI</li>
+      <li>Sede o recinto, equipo y vigencia</li>
+      <li>Resumen de no más de 80 palabras y enlace público, si existe</li>
+    </ul>
+    <p><a class="boton boton-claro" href="mailto:{{ site.correo }}?subject=Proyecto%20para%20el%20sitio%20de%20la%20carrera">Enviar datos del proyecto</a></p>
+  </div>
+</section>
+{% endblock %}

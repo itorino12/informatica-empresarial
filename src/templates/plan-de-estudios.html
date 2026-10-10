@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% block lede %}{{ plan07.total_creditos }} créditos en diez ciclos, cinco áreas académicas y optativos por áreas de tendencia. Aprobado por la Resolución VD-13456-2025 y en vigor desde el III ciclo de 2025.{% endblock %}
+{% block contenido %}
+<section class="seccion" aria-labelledby="h-malla">
+  <div class="contenedor contenedor-ancho">
+    <div class="cabeza-seccion">
+      <div>
+        <h2 id="h-malla">Malla curricular</h2>
+        <p>Elija un curso para ver en azul su cadena de requisitos y, con el color de su área, los cursos que habilita. Con doble clic, o con Mayús + Intro, se abre la ficha del curso.</p>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button class="boton boton-claro" type="button" id="ver-detalle">Ver ficha del curso elegido</button>
+        <button class="boton boton-claro" type="button" id="limpiar-malla">Limpiar selección</button>
+      </div>
+    </div>
+
+    <div class="malla-controles" role="group" aria-label="Resaltar un área">
+      <button class="filtro" type="button" data-area-filtro="todas" aria-pressed="true">Todas las áreas</button>
+      {% for id, a in plan07.areas.items() %}
+      <button class="filtro" type="button" data-area-filtro="{{ id }}" aria-pressed="false" style="--c:{{ a.color }}"><i></i>{{ a.nombre }}</button>
+      {% endfor %}
+    </div>
+    <p class="small muted solo-movil">Deslice la malla horizontalmente para ver todos los ciclos.</p>
+    <p id="malla-estado" class="visually-hidden" aria-live="polite"></p>
+
+    <div class="malla" id="malla">
+      {% for anio, span in [(1,2),(2,3),(3,3),(4,2)] %}
+      <div class="anio" style="--span:{{ span }}">{{ ['Primer','Segundo','Tercer','Cuarto'][anio-1] }} año</div>
+      {% endfor %}
+      {% for ci in plan07.ciclos %}
+      <div class="ciclo{{ ' verano' if ci.verano }}">
+        <div class="ciclo-cabeza"><span>{{ ci.nombre }}</span><small>{{ ci.creditos }} cr.</small></div>
+        {% for c in plan07.cursos if c.ciclo == ci.n %}
+        <button type="button" id="curso-{{ c.sigla }}" class="curso{{ ' optativo' if c.optativo }}" data-sigla="{{ c.sigla }}" data-area="{{ c.area }}" aria-pressed="false" style="--c:{{ plan07.areas[c.area].color }}">
+          <span class="sigla">{{ 'Optativo' if c.optativo else c.sigla }}</span>
+          <span class="nombre">{{ c.nombre if not c.optativo else plan07.areas[c.area].nombre }}</span>
+          <span class="cr">{{ c.creditos }} {{ 'crédito' if c.creditos == 1 else 'créditos' }}</span>
+        </button>
+        {% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+    <p class="malla-leyenda">
+      <span><i style="box-shadow:0 0 0 3px var(--aviso)"></i>Curso elegido</span>
+      <span><i style="box-shadow:0 0 0 2px var(--enlace)"></i>Requisito previo</span>
+      <span><i style="background:var(--celeste-claro);box-shadow:0 0 0 2px var(--tinta-2)"></i>Curso que habilita</span>
+      <span><i style="border:1px dashed var(--tinta-2)"></i>Espacio para optativo</span>
+    </p>
+    <p class="small muted">{{ plan07.fuente }} Para graduarse se requieren además {{ plan07.tcu_horas }} horas de Trabajo Comunal Universitario.</p>
+  </div>
+  <dialog class="detalle-curso" id="detalle-curso" aria-labelledby="detalle-titulo"></dialog>
+</section>
+
+<section class="seccion seccion-tenue" id="optativos" aria-labelledby="h-opt">
+  <div class="contenedor">
+    <h2 id="h-opt">Optativos por áreas de tendencia</h2>
+    <p class="lede" style="margin-bottom:28px">Ocho espacios de la malla se completan con cursos optativos. Así cada persona estudiante profundiza en las áreas que más le interesan.</p>
+    <div class="dos-col" style="gap:32px">
+      {% for id, lista in plan07.optativos.items() %}
+      <div style="border-top:4px solid {{ plan07.areas[id].color }};padding-top:14px">
+        <h3 style="font-size:var(--t-md)">{{ plan07.areas[id].nombre }}</h3>
+        <ul class="lista-marcas">
+          {% for o in lista %}<li><b>{{ o.sigla }} {{ o.nombre }}</b><br><span class="small muted">{{ o.creditos }} créditos. Requisito: {{ o.req_alt }}. {{ o.desc }}</span></li>{% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="comparacion" aria-labelledby="h-comp">
+  <div class="contenedor">
+    <h2 id="h-comp">Qué cambió del Plan 01 al Plan 07</h2>
+    <p class="lede" style="margin-bottom:24px">El Plan 01 se diseñó en 1997. El Plan 07 responde a la consulta con estudiantes, docentes, personas graduadas y empleadoras, y a estándares internacionales del campo.</p>
+    <div class="tabla-envoltura">
+      <table class="tabla">
+        <thead><tr><th scope="col">Aspecto</th><th scope="col">Plan 01 (1997)</th><th scope="col">Plan 07 (2025)</th></tr></thead>
+        <tbody>{% for f in plan07.comparacion %}<tr><th scope="row">{{ f.aspecto }}</th><td>{{ f.p01 }}</td><td>{{ f.p07 }}</td></tr>{% endfor %}</tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="seccion seccion-tenue" id="transicion" aria-labelledby="h-trans">
+  <div class="contenedor">
+    <h2 id="h-trans">Traslado del Plan 01 al Plan 07</h2>
+    <p class="lede" style="margin-bottom:28px">El plan de transición de la Resolución VD-13456-2025 protege el avance de cada estudiante. Antes de decidir, consulte con la coordinación de su recinto.</p>
+    <div class="dos-col" style="gap:24px 48px">
+      {% for t in contenido.transicion %}
+      <div><h3 style="font-size:var(--t-md)">{{ t.titulo }}</h3><p class="muted" style="margin:0">{{ t.texto }}</p></div>
+      {% endfor %}
+    </div>
+    <div class="aviso" style="margin-top:32px">
+      <p><strong>Antes de trasladarse:</strong> el traslado requiere firmar un consentimiento informado. Las convalidaciones entre ambos planes están definidas en la resolución; por ejemplo, IF-1300 se convalida por IF-0002, mientras que LM-1030 no convalida ninguno de los nuevos cursos de inglés.</p>
+    </div>
+  </div>
+</section>
+{% endblock %}
+{% block scripts %}<script src="assets/js/datos.js" defer></script><script src="assets/js/malla.js" defer></script>{% endblock %}

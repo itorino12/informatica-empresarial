@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="es-CR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if pagina == 'index.html' %}{{ site.nombre_largo }} · UCR{% else %}{{ titulo }} · {{ site.nombre }} · UCR{% endif %}</title>
+  {% block base %}{% endblock %}
+  <meta name="description" content="{{ descripcion }}">
+  <meta name="theme-color" content="#41ade7">
+  <link rel="canonical" href="{{ site.base_url }}/{{ '' if pagina == 'index.html' else pagina }}">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_CR">
+  <meta property="og:site_name" content="{{ site.nombre_largo }}, Universidad de Costa Rica">
+  <meta property="og:title" content="{{ titulo }}">
+  <meta property="og:description" content="{{ descripcion }}">
+  <meta property="og:image" content="{{ site.base_url }}/assets/img/logo-cie.png">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/fira-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script>
+    /* Aplica tema y tamaño guardados antes de pintar para evitar parpadeos */
+    (function(){try{var r=document.documentElement,t=localStorage.getItem('cie:theme');
+      if(!t&&window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)t='dark';
+      if(t)r.setAttribute('data-theme',t);var e=localStorage.getItem('cie:escala');if(e)r.style.setProperty('--escala',e);}catch(e){}})();
+  </script>
+  {% block jsonld %}
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"EducationalOccupationalProgram",
+   "name":"{{ site.nombre_largo }}","programType":"Bachillerato universitario",
+   "educationalCredentialAwarded":"Bachillerato en Informática Empresarial",
+   "numberOfCredits":{{ plan07.total_creditos }},"timeToComplete":"P4Y","inLanguage":"es",
+   "provider":{"@type":"CollegeOrUniversity","name":"Universidad de Costa Rica","url":"https://www.ucr.ac.cr/"},
+   "url":"{{ site.base_url }}/"}
+  </script>
+  {% endblock %}
+</head>
+<body>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+
+<div class="barra-ucr">
+  <div class="contenedor">
+    <a class="ruta-ucr" href="https://www.ucr.ac.cr/">Universidad de Costa Rica<span>, Sedes Regionales</span></a>
+    <div class="herramientas">
+      <button type="button" data-abrir-busqueda aria-haspopup="dialog">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Buscar
+      </button>
+      <button type="button" data-abrir-panel="panel-accesibilidad" aria-controls="panel-accesibilidad">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="4.5" r="1.8"/><path d="M5 8.5l7 1.5 7-1.5M12 10v5m0 0-3 6m3-6 3 6"/></svg>Accesibilidad
+      </button>
+    </div>
+  </div>
+</div>
+
+<header class="cabecera">
+  <div class="contenedor">
+    <a class="marca" href="index.html" aria-label="Inicio: Carrera de Informática Empresarial, Sedes Regionales">
+      <img class="logo-claro" src="assets/img/logo-cie.png" alt="SR-CIE, Carrera de Informática Empresarial, Sedes Regionales" width="225" height="44">
+      <img class="logo-oscuro" src="assets/img/logo-cie-blanco.png" alt="SR-CIE, Carrera de Informática Empresarial, Sedes Regionales" width="225" height="44">
+    </a>
+    <button class="boton-menu" type="button" aria-expanded="false" aria-controls="nav-principal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>Menú
+    </button>
+    <nav class="nav-principal" id="nav-principal" aria-label="Principal">
+      <ul>
+      {% for item in site.nav %}
+        {% set urls_hijos = [] %}
+        {% if item.hijos %}{% for h in item.hijos if '#' not in h.url %}{% set _ = urls_hijos.append(h.url) %}{% endfor %}{% endif %}
+        {% if item.hijos %}
+        <li class="{{ 'activo' if pagina in urls_hijos }}">
+          <button class="desplegar" type="button" aria-expanded="false">{{ item.titulo }}
+            <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></button>
+          <ul class="submenu">
+            {% for h in item.hijos %}<li><a href="{{ h.url }}"{% if h.url == pagina %} aria-current="page"{% endif %}>{{ h.titulo }}</a></li>{% endfor %}
+          </ul>
+        </li>
+        {% else %}
+        <li><a href="{{ item.url }}"{% if item.url == pagina %} aria-current="page"{% endif %}>{{ item.titulo }}</a></li>
+        {% endif %}
+      {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido" tabindex="-1">
+{% block encabezado %}
+<div class="encabezado-pagina">
+  {% include "_patron.html" %}
+  <div class="contenedor">
+    <nav class="migas" aria-label="Ruta de navegación">
+      <ol>
+        <li><a href="index.html">Inicio</a></li>
+        {% if padre %}<li><a href="{{ padre[0] }}">{{ padre[1] }}</a></li>{% endif %}
+        <li aria-current="page">{{ titulo }}</li>
+      </ol>
+    </nav>
+    <h1>{% block h1 %}{{ titulo }}{% endblock %}</h1>
+    <p class="lede">{% block lede %}{{ descripcion }}{% endblock %}</p>
+  </div>
+</div>
+{% endblock %}
+{% block contenido %}{% endblock %}
+</main>
+
+<footer class="pie">
+  <div class="contenedor">
+    <div class="pie-columnas">
+      <div>
+        <img class="logo-pie" src="assets/img/logo-cie-blanco.png" alt="SR-CIE, Carrera de Informática Empresarial, Sedes Regionales" width="225" height="44">
+        <p>{{ site.nombre_largo }}, código {{ site.codigo_carrera }}. Propia de las Sedes de Guanacaste, del Atlántico, del Caribe, del Pacífico, de Occidente y del Sur, y administrada por el Consejo de Área de Sedes Regionales.</p>
+      </div>
+      <div>
+        <h2>La carrera</h2>
+        <ul>
+          <li><a href="carrera.html">Historia y propósito</a></li>
+          <li><a href="plan-de-estudios.html">Plan de estudios 07</a></li>
+          <li><a href="sedes.html">Sedes y recintos</a></li>
+          <li><a href="acreditacion.html">Calidad y acreditación</a></li>
+          <li><a href="investigacion.html">Investigación</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Servicios</h2>
+        <ul>
+          <li><a href="tramites.html">Convalidaciones</a></li>
+          <li><a href="docentes.html">Docentes elegibles</a></li>
+          <li><a href="graduados.html">Población graduada</a></li>
+          <li><a href="documentos.html">Documentos</a></li>
+          <li><a href="noticias.html">Noticias</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contacto</h2>
+        <ul>
+          <li>{{ site.organo }}</li>
+          <li><a href="mailto:{{ site.correo }}">{{ site.correo }}</a></li>
+          <li>Teléfono <a href="tel:+506{{ site.telefono|replace('-','') }}">{{ site.telefono }}</a></li>
+          <li><a href="contacto.html">Todas las coordinaciones</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pie-base">
+      <span>© {{ hoy[:4] }} Universidad de Costa Rica. Contenido actualizado el {{ site.actualizado|fecha_larga }}.</span>
+      <span class="enlaces-lista"><a href="accesibilidad.html">Accesibilidad</a><a href="https://www.ucr.ac.cr/">ucr.ac.cr</a></span>
+    </div>
+  </div>
+</footer>
+
+<button class="subir" type="button" aria-label="Volver al inicio de la página">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 19V5m-6 6 6-6 6 6"/></svg>
+</button>
+
+<div class="velo"></div>
+<aside class="panel" id="panel-accesibilidad" aria-hidden="true" aria-labelledby="titulo-accesibilidad">
+  <header>
+    <h2 id="titulo-accesibilidad">Accesibilidad</h2>
+    <button class="cerrar" type="button" data-cerrar-panel aria-label="Cerrar el panel de accesibilidad" style="position:static">×</button>
+  </header>
+  <div class="cuerpo">
+    <div class="grupo"><p>Tamaño del texto</p>
+      <div class="opciones">
+        <button class="opcion" type="button" data-pref="escala" data-valor="0.9">Pequeño</button>
+        <button class="opcion" type="button" data-pref="escala" data-valor="1">Normal</button>
+        <button class="opcion" type="button" data-pref="escala" data-valor="1.15">Grande</button>
+        <button class="opcion" type="button" data-pref="escala" data-valor="1.3">Muy grande</button>
+      </div></div>
+    <div class="grupo"><p>Modo de color</p>
+      <div class="opciones">
+        <button class="opcion" type="button" data-pref="theme" data-valor="light">Claro</button>
+        <button class="opcion" type="button" data-pref="theme" data-valor="dark">Oscuro</button>
+      </div></div>
+    <div class="grupo"><p>Contraste</p>
+      <div class="opciones">
+        <button class="opcion" type="button" data-pref="contrast" data-valor="normal">Normal</button>
+        <button class="opcion" type="button" data-pref="contrast" data-valor="high">Alto contraste</button>
+      </div></div>
+    <div class="grupo"><p>Enlaces</p>
+      <div class="opciones">
+        <button class="opcion" type="button" data-pref="links" data-valor="normal">Como están</button>
+        <button class="opcion" type="button" data-pref="links" data-valor="underline">Subrayar siempre</button>
+      </div></div>
+    <div class="grupo"><p>Animaciones</p>
+      <div class="opciones">
+        <button class="opcion" type="button" data-pref="motion" data-valor="normal">Permitir</button>
+        <button class="opcion" type="button" data-pref="motion" data-valor="reduce">Detener</button>
+      </div></div>
+    <div class="grupo"><p>Color</p>
+      <div class="opciones">
+        <button class="opcion" type="button" data-pref="filter" data-valor="none">A color</button>
+        <button class="opcion" type="button" data-pref="filter" data-valor="gray">Escala de grises</button>
+      </div></div>
+    <button class="boton boton-claro" type="button" id="restablecer-preferencias">Restablecer preferencias</button>
+    <p class="small muted" style="margin-top:20px">Las preferencias se guardan solo en este navegador. Atajo de búsqueda: tecla <kbd>/</kbd>.</p>
+  </div>
+</aside>
+
+<div class="busqueda" role="dialog" aria-modal="true" aria-label="Buscar en el sitio">
+  <div class="caja-busqueda">
+    <form role="search">
+      <label class="visually-hidden" for="q">Buscar en el sitio</label>
+      <input id="q" type="search" placeholder="Buscar en el sitio de la carrera" autocomplete="off">
+      <button type="button" data-cerrar-panel>Cerrar</button>
+    </form>
+    <ul class="resultados" aria-live="polite"></ul>
+  </div>
+</div>
+
+<script src="assets/js/indice-busqueda.js" defer></script>
+{% block scripts %}{% endblock %}
+<script src="assets/js/site.js" defer></script>
+</body>
+</html>

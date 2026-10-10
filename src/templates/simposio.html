@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block lede %}Cada año una sede recibe a estudiantes y docentes de todo el país. Es el lugar donde una carrera distribuida en diez recintos se encuentra en persona.{% endblock %}
+{% block contenido %}
+<section class="seccion" aria-labelledby="h-que">
+  <div class="contenedor dos-col">
+    <div class="prosa">
+      <h2 id="h-que">Un encuentro que rota entre las sedes</h2>
+      <p>El Simposio de Informática Empresarial reúne a toda la comunidad de la carrera para actualizarse, presentar proyectos estudiantiles y compartir resultados de investigación, acción social y procesos curriculares.</p>
+      <p>Lo organiza el <strong>Comité Organizador del Simposio</strong>, una instancia reconocida en la estructura organizativa de la carrera. La sede anfitriona coordina la agenda, la difusión y la logística.</p>
+      <p>Con la edición XIII, en 2025, el simposio completó su tercera vuelta por las sedes.</p>
+    </div>
+    <div>
+      <blockquote class="cita-grande">Informática Empresarial es, por diseño, una carrera descentralizada, presente en diez sedes y recintos. Este es el espacio donde esa red cobra vida.</blockquote>
+      <p class="fuente">Discurso de la coordinación del Consejo en el XIII Simposio, Sede del Pacífico, 2025.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion seccion-tenue" aria-labelledby="h-ediciones">
+  <div class="contenedor">
+    <h2 id="h-ediciones">Ediciones recientes</h2>
+    <ol class="linea-tiempo" style="margin-top:28px">
+      <li class="futuro"><div class="cuando">2027</div><div class="que"><h3>XV Simposio</h3><p>La comisión organizadora se conformó en la sesión ordinaria 17-2026, el 25 de septiembre de 2026. La sede y las fechas se anunciarán aquí.</p></div></li>
+      <li><div class="cuando">5–7 ago 2026</div><div class="que"><h3>XIV Simposio, Sede de Guanacaste, Liberia</h3><p>Lema: «Aprender, Innovar y Transformar». Coordinación local del Mag. César Gabriel Lara Vanegas. Aprobado por el Consejo en la sesión ordinaria 01-2026.</p></div></li>
+      <li><div class="cuando">2025</div><div class="que"><h3>XIII Simposio, Sede del Pacífico</h3><p>Tema: «Estrategias Digitales Integrales: Tecnología, Cultura y Gobernanza para el futuro del trabajo en la empresa inteligente». Coordinación local del Mag. Melber Dalorso Cruz.</p></div></li>
+      <li><div class="cuando">Ediciones I a XII</div><div class="que"><h3>Archivo histórico en construcción</h3><p>¿Tiene programas, fotografías o memorias de ediciones anteriores? <a href="mailto:{{ site.correo }}?subject=Archivo%20del%20Simposio">Compártalos con el Consejo</a> para completar la historia del simposio.</p></div></li>
+    </ol>
+  </div>
+</section>
+{% endblock %}

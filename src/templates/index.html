@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+{% from "_macros.html" import red_svg, noticia, evento %}
+{% block encabezado %}
+<section class="portada" aria-labelledby="titulo-portada">
+  <div class="contenedor">
+    <div>
+      <h1 id="titulo-portada">Una carrera, diez sedes y recintos</h1>
+      <p class="lede">Desde 1998, el Bachillerato en Informática Empresarial forma en las Sedes Regionales de la Universidad de Costa Rica a profesionales que unen la tecnología con la gestión de las organizaciones.</p>
+      <div class="acciones">
+        <a class="boton boton-primario" href="plan-de-estudios.html">Ver el plan de estudios</a>
+        <a class="boton boton-borde" href="sedes.html">Conocer las sedes</a>
+      </div>
+      <p class="dato-red">Cada punto del mapa es un recinto donde se imparte la carrera. Las líneas representan al Consejo de Carrera Intersedes, que los coordina como una sola carrera.</p>
+    </div>
+    <div>{{ red_svg(red, animar=true, titulo="Mapa de Costa Rica con los diez recintos donde se imparte Informática Empresarial") }}</div>
+  </div>
+</section>
+{% endblock %}
+
+{% block contenido %}
+<section class="seccion" aria-labelledby="titulo-publicos" style="padding-top:40px;padding-bottom:40px">
+  <div class="contenedor">
+    <h2 id="titulo-publicos" class="visually-hidden">Información según su perfil</h2>
+    <nav class="publicos" aria-label="Accesos por perfil">
+      <a href="carrera.html#admision"><strong>Quiero estudiar</strong><span>Qué se aprende, dónde se imparte y cómo ingresar</span></a>
+      <a href="tramites.html"><strong>Estudio en la carrera</strong><span>Convalidaciones, traslado al Plan 07 y preguntas frecuentes</span></a>
+      <a href="docentes.html"><strong>Quiero dar clases</strong><span>Registro Intersedes de Docentes Elegibles y perfiles por área</span></a>
+      <a href="graduados.html"><strong>Me gradué</strong><span>Charlas de actualización y vínculo con la carrera</span></a>
+    </nav>
+  </div>
+</section>
+
+<section class="seccion seccion-tenue" aria-labelledby="titulo-actualidad">
+  <div class="contenedor">
+    <div class="cabeza-seccion">
+      <div><h2 id="titulo-actualidad">Lo más reciente</h2><p>Acuerdos del Consejo, logros y actividades de la carrera.</p></div>
+      <a class="boton boton-claro" href="noticias.html">Ver todas las noticias</a>
+    </div>
+    <div class="dos-col ancho-izq">
+      <div class="noticias dos">
+        <div style="grid-column:1/-1">{{ noticia(noticias[0], principal=true) }}</div>
+        {% for n in noticias[1:5] %}{{ noticia(n) }}{% endfor %}
+      </div>
+      <div>
+        <h3>Agenda</h3>
+        <ul class="agenda">{% for e in contenido.eventos %}{{ evento(e) }}{% endfor %}</ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% set creditos_area = {} %}
+{% for c in plan07.cursos %}{% set _ = creditos_area.update({c.area: (creditos_area.get(c.area, 0) + c.creditos)}) %}{% endfor %}
+<section class="seccion" aria-labelledby="titulo-plan">
+  <div class="contenedor dos-col">
+    <div>
+      <h2 id="titulo-plan">El Plan 07 ya está en las aulas</h2>
+      <p class="lede">Es la primera actualización integral de una malla que tenía más de 20 años. Suma cuatro niveles de inglés, más análisis de datos, seguridad y gobernanza de TI, y optativos por áreas de tendencia.</p>
+      <p>Entró en vigor en el III ciclo de 2025. En 2026 se imparten el primer y el segundo año; el tercero se abre en 2027 y el cuarto a partir de 2028.</p>
+      <ul class="enlaces-lista"><li><a href="plan-de-estudios.html">Explorar la malla interactiva</a></li><li><a href="plan-de-estudios.html#transicion">Reglas de traslado desde el Plan 01</a></li></ul>
+    </div>
+    <div>
+      <h3>Cómo se reparten los {{ plan07.total_creditos }} créditos</h3>
+      <div role="img" aria-label="Distribución de créditos del Plan 07 por área" style="display:flex;height:28px;border-radius:6px;overflow:hidden;margin:16px 0 20px">
+        {% for id, a in plan07.areas.items() %}<span title="{{ a.nombre }}: {{ creditos_area[id] }} créditos" style="flex:{{ creditos_area[id] }};background:{{ a.color }}"></span>{% endfor %}
+      </div>
+      <ul class="lista-marcas sin-marca" style="margin:0">
+        {% for id, a in plan07.areas.items() %}
+        <li style="display:flex;justify-content:space-between;gap:16px"><span><i style="display:inline-block;width:10px;height:10px;border-radius:2px;background:{{ a.color }};margin-right:8px"></i>{{ a.nombre }}</span><b>{{ creditos_area[id] }}</b></li>
+        {% endfor %}
+      </ul>
+      <p class="small muted" style="margin-top:12px">Incluye los espacios de optativos de cada área.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion seccion-tenue" aria-labelledby="titulo-calidad">
+  <div class="contenedor">
+    <div class="cabeza-seccion">
+      <div><h2 id="titulo-calidad">Rumbo a la reacreditación</h2>
+        <p>La carrera fue acreditada por SINAES en 2019. En 2026 cerró el Proyecto Especial de Mejora y se prepara para la visita de pares evaluadores del II ciclo.</p></div>
+      <a class="boton boton-claro" href="acreditacion.html">Ver el proceso completo</a>
+    </div>
+    <div class="cifras">
+      <div class="cifra"><b>7 de 10</b><span>objetivos del Proyecto Especial de Mejora completos; 2 parciales y 1 mitigado</span></div>
+      <div class="cifra"><b>82,7 %</b><span>del personal docente participó en el plan de desarrollo docente (153 de 185)</span></div>
+      <div class="cifra"><b>{{ site.cifras.proyectos_investigacion }}</b><span>proyectos de investigación y {{ site.cifras.proyectos_accion_social }} de acción social durante el PEM</span></div>
+      <div class="cifra"><b>≈ {{ site.cifras.publicaciones }}</b><span>publicaciones académicas del personal docente</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" aria-labelledby="titulo-comunidad">
+  <div class="contenedor tres-col">
+    <div>
+      <h2 id="titulo-comunidad" style="font-size:var(--t-xl)">Simposio de Informática Empresarial</h2>
+      <p>Cada año una sede recibe a estudiantes y docentes de todo el país. El XIV Simposio se celebró en Liberia, del 5 al 7 de agosto de 2026; la comisión del 2027 ya está conformada.</p>
+      <a href="simposio.html">Conocer el simposio</a>
+    </div>
+    <div>
+      <h2 style="font-size:var(--t-xl)">Registro de docentes elegibles</h2>
+      <p>Un proceso público y estandarizado para los nombramientos interinos en todas las sedes. La convocatoria 2026 está prevista del 20 de octubre al 20 de noviembre.</p>
+      <a href="docentes.html">Ver requisitos y áreas</a>
+    </div>
+    <div>
+      <h2 style="font-size:var(--t-xl)">Población graduada</h2>
+      <p>Dos charlas de actualización al año, definidas a partir de consultas que en 2024 y 2025 sumaron {{ site.cifras.encuesta_graduados_2024 + site.cifras.encuesta_graduados_2025 }} respuestas.</p>
+      <a href="graduados.html">Próximas actividades</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

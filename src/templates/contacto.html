@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block lede %}Para trámites de su recinto, escriba a su coordinación. Para asuntos de toda la carrera, al Consejo de Carrera Intersedes.{% endblock %}
+{% block contenido %}
+<section class="seccion" aria-labelledby="h-form">
+  <div class="contenedor dos-col">
+    <div>
+      <h2 id="h-form">Escribir al Consejo</h2>
+      <p class="muted">El formulario prepara un correo en su aplicación de correo, dirigido a {{ site.correo }}.</p>
+      <form class="formulario" id="form-contacto" data-destino="{{ site.correo }}" novalidate>
+        <div class="fila">
+          <label class="campo" for="c-nombre">Nombre<input id="c-nombre" name="nombre" autocomplete="name" required></label>
+          <label class="campo" for="c-correo">Correo<input id="c-correo" name="correo" type="email" autocomplete="email" required></label>
+        </div>
+        <div class="fila">
+          <label class="campo" for="c-tema">Tema
+            <select id="c-tema" name="tema">
+              <option>Convalidaciones</option><option>Plan de estudios</option><option>Registro de elegibles</option>
+              <option>Población graduada</option><option>Investigación</option><option>Documentos</option><option>Otro</option>
+            </select></label>
+          <label class="campo" for="c-sede">Sede o recinto
+            <select id="c-sede" name="sede"><option value="">No aplica</option>{% for s in sedes %}<option>{{ s.recinto }}</option>{% endfor %}</select></label>
+        </div>
+        <label class="campo" for="c-mensaje">Mensaje<textarea id="c-mensaje" name="mensaje" required></textarea></label>
+        <p id="form-error" class="aviso" role="alert" hidden></p>
+        <p id="form-ok" class="small" role="status" hidden>Se abrió su aplicación de correo con el mensaje listo para enviar.</p>
+        <div><button class="boton boton-primario" type="submit">Preparar correo</button></div>
+      </form>
+    </div>
+    <div>
+      <h2>Consejo de Carrera Intersedes</h2>
+      <dl style="display:grid;grid-template-columns:auto 1fr;gap:10px 18px">
+        <dt class="muted">Correo</dt><dd style="margin:0"><a href="mailto:{{ site.correo }}">{{ site.correo }}</a></dd>
+        <dt class="muted">Teléfono</dt><dd style="margin:0"><a href="tel:+506{{ site.telefono|replace('-','') }}">{{ site.telefono }}</a></dd>
+        <dt class="muted">Coordinación</dt><dd style="margin:0">{{ site.coordinacion_consejo.nombre }}, {{ site.coordinacion_consejo.sede }}</dd>
+      </dl>
+      <p class="small muted">Las consultas que requieren un acuerdo se trasladan al pleno del Consejo en la sesión siguiente, y la respuesta se comunica por correo oficial.</p>
+    </div>
+  </div>
+</section>
+<section class="seccion seccion-tenue" id="sedes" aria-labelledby="h-coord">
+  <div class="contenedor">
+    <h2 id="h-coord">Coordinaciones por sede y recinto</h2>
+    <div class="personas" style="margin-top:20px">
+      {% for s in sedes %}
+      <div class="persona"><span class="inicial" aria-hidden="true">{{ s.coordinacion|iniciales }}</span>
+        <div><b>{{ s.recinto }}</b><span>{{ s.sede }}</span><span>{{ s.coordinacion }}</span><span><a href="mailto:{{ s.correo }}">{{ s.correo }}</a></span></div></div>
+      {% endfor %}
+    </div>
+    <p class="small muted" style="margin-top:16px">Para trámites de un recinto, escriba directamente a su coordinación. Para asuntos de toda la carrera, escriba a <a href="mailto:{{ site.correo }}">{{ site.correo }}</a>.</p>
+  </div>
+</section>
+{% endblock %}

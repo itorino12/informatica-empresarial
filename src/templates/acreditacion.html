@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block lede %}La carrera fue acreditada por el Sistema Nacional de Acreditación de la Educación Superior (SINAES) en 2019. Hoy está en proceso de reacreditación, con el Proyecto Especial de Mejora cumplido y la visita de pares prevista para el II ciclo de 2026.{% endblock %}
+{% block contenido %}
+<div class="seccion">
+  <div class="contenedor con-indice">
+    <nav class="indice" aria-label="En esta página">
+      <p>En esta página</p>
+      <ol>
+        <li><a href="#trayectoria">Trayectoria</a></li>
+        <li><a href="#pem">Proyecto Especial de Mejora</a></li>
+        <li><a href="#compromiso">Compromiso 2027–2030</a></li>
+        <li><a href="#comision">Quién conduce el proceso</a></li>
+      </ol>
+    </nav>
+    <div>
+      <section id="trayectoria" aria-labelledby="h-tray">
+        <h2 id="h-tray">Trayectoria de acreditación</h2>
+        <p class="lede" style="margin-bottom:28px">Proceso 187 ante SINAES. Cada etapa deja evidencia que se custodia en el archivo de la carrera.</p>
+        <ol class="linea-tiempo">
+          {% for h in contenido.acreditacion %}
+          <li class="{{ 'futuro' if h.futuro }}"><div class="cuando">{{ h.fecha }}</div><div class="que"><h3>{{ h.titulo }}</h3><p>{{ h.texto }}</p></div></li>
+          {% endfor %}
+        </ol>
+      </section>
+
+      <section id="pem" aria-labelledby="h-pem">
+        <h2 id="h-pem">Proyecto Especial de Mejora</h2>
+        <p>Mediante el ACUERDO-CNA-410-2024, SINAES dio a la carrera 18 meses para atender cinco aspectos antes de decidir sobre la reacreditación:</p>
+        <ol class="prosa" style="margin-bottom:28px">{% for m in contenido.pem_mandato %}<li>{{ m }}</li>{% endfor %}</ol>
+        <div class="cifras" style="margin-bottom:28px">
+          {% set n = {'Completo':0,'Parcial':0,'Mitigado':0} %}
+          {% for o in contenido.pem %}{% set _ = n.update({o.estado: n[o.estado] + 1}) %}{% endfor %}
+          <div class="cifra"><b class="estado-Completo">{{ n.Completo }}</b><span>objetivos completos</span></div>
+          <div class="cifra"><b class="estado-Parcial">{{ n.Parcial }}</b><span>objetivos con avance parcial</span></div>
+          <div class="cifra"><b class="estado-Mitigado">{{ n.Mitigado }}</b><span>objetivo mitigado con una solución alternativa</span></div>
+          <div class="cifra"><b>0</b><span>objetivos sin evidencia</span></div>
+        </div>
+        <div class="tabla-envoltura">
+          <table class="tabla">
+            <caption>Estado de cada objetivo al cierre del PEM, según el Informe de Logros presentado ante el CASR el 4 de mayo de 2026</caption>
+            <thead><tr><th scope="col">Objetivo</th><th scope="col">Tema</th><th scope="col">Estado</th><th scope="col">Resultado</th></tr></thead>
+            <tbody>
+              {% for o in contenido.pem %}
+              <tr><td>{{ o.obj }}</td><th scope="row">{{ o.nombre }}</th><td><span class="estado estado-{{ o.estado }}">{{ o.estado }}</span></td><td>{{ o.nota }}</td></tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="compromiso" aria-labelledby="h-comp">
+        <h2 id="h-comp">Compromiso de Mejora 2027–2030</h2>
+        <p class="lede" style="margin-bottom:24px">El compromiso pasó de ocho objetivos a cinco: los relacionados con el plan de estudios, el plan estratégico y el desarrollo docente se cerraron durante el PEM.</p>
+        <div class="dos-col" style="gap:28px 48px">
+          {% for c in contenido.compromiso %}
+          <div style="border-top:3px solid var(--celeste);padding-top:12px">
+            <h3 style="font-size:var(--t-md)">{{ c.n }}. {{ c.nombre }}</h3>
+            <p class="muted" style="margin-bottom:6px">{{ c.texto }}</p>
+            <p class="small" style="margin:0"><b>Plazo:</b> {{ c.plazo }}</p>
+          </div>
+          {% endfor %}
+        </div>
+        <div class="aviso" style="margin-top:32px"><p>Este sitio responde directamente al primer objetivo del compromiso: centraliza la malla, la información para el estudiantado y la divulgación de la carrera para todas las sedes.</p></div>
+      </section>
+
+      <section id="comision" aria-labelledby="h-com">
+        <h2 id="h-com">Quién conduce el proceso</h2>
+        <p class="prosa">La <strong>Comisión Intersedes de Autoevaluación y Gestión de la Calidad</strong>, con representación de cada sede y del estudiantado, conduce la autoevaluación, recolecta evidencias y elabora los informes. El Consejo de Carrera Intersedes los aprueba y los eleva al Consejo de Área de Sedes Regionales, que los remite al Centro de Evaluación Académica, a la Vicerrectoría de Docencia y a SINAES.</p>
+      </section>
+    </div>
+  </div>
+</div>
+{% endblock %}
