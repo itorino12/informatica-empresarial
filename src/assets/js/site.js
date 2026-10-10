@@ -178,7 +178,7 @@
       $$('.nodo', mapaSedes).forEach(function (n) { n.classList.toggle('sel', n.dataset.id === id); });
       ficha.innerHTML = (s.recinto !== s.sede ? '<p class="muted small" style="margin:0">' + s.sede + '</p>' : '') + '<h3>' + s.recinto + '</h3>' +
         (s.nota ? '<p class="small" style="margin:0">' + s.nota + '</p>' : '') +
-        '<dl><dt>Coordinación</dt><dd>' + s.coordinacion + '</dd><dt>Correo</dt><dd><a href="mailto:' + s.correo + '">' + s.correo + '</a></dd><dt>Correo</dt><dd><a href="mailto:' + s.correo + '">' + s.correo + '</a></dd><dt>Provincia</dt><dd>' + s.provincia + '</dd>' +
+        '<dl><dt>Coordinación</dt><dd>' + s.coordinacion + '</dd><dt>Correo</dt><dd><a href="mailto:' + s.correo + '">' + s.correo + '</a></dd><dt>Provincia</dt><dd>' + s.provincia + '</dd>' +
         '<dt>La sede imparte la carrera desde</dt><dd>' + s.sede_desde + '</dd></dl>' +
         '<p class="small" style="margin:16px 0 0"><a href="mailto:' + s.correo + '">Escribir a esta coordinación</a></p>';
     }
