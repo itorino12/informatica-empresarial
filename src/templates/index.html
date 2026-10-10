@@ -74,6 +74,26 @@
   </div>
 </section>
 
+<section class="seccion" id="accion-social" aria-labelledby="titulo-as">
+  <div class="contenedor">
+    <div class="cabeza-seccion">
+      <div><h2 id="titulo-as">Acción social: la carrera en las comunidades</h2>
+        <p>{{ site.cifras.proyectos_accion_social }} proyectos de Trabajo Comunal Universitario y extensión docente llevan la informática a escuelas, municipalidades, emprendimientos y organizaciones de seis regiones del país.</p></div>
+      <a class="boton boton-claro" href="accion-social.html">Ver todos los proyectos</a>
+    </div>
+    {% set destacados = ['TC-518', 'TC-764', 'ED-2980', 'ED-3676'] %}
+    <div class="proyectos-as portada-as">
+      {% for r in contenido.accion_social.regiones %}{% for p in r.proyectos if p.codigo in destacados %}
+      <article class="proyecto-as">
+        <p class="proyecto-as-meta"><span class="codigo">{{ p.codigo }}</span><span class="estado">{{ r.region }}, {{ r.recintos }}</span></p>
+        <h3>{{ p.titulo }}</h3>
+        <p class="small">{{ p.texto.split('. ')[0].rstrip('.') }}.</p>
+      </article>
+      {% endfor %}{% endfor %}
+    </div>
+  </div>
+</section>
+
 <section class="seccion seccion-tenue" aria-labelledby="titulo-calidad">
   <div class="contenedor">
     <div class="cabeza-seccion">
@@ -84,7 +104,7 @@
     <div class="cifras">
       <div class="cifra"><b>7 de 10</b><span>objetivos del Proyecto Especial de Mejora completos; 2 parciales y 1 mitigado</span></div>
       <div class="cifra"><b>82,7 %</b><span>del personal docente participó en el plan de desarrollo docente (153 de 185)</span></div>
-      <div class="cifra"><b>{{ site.cifras.proyectos_investigacion }}</b><span>proyectos de investigación y {{ site.cifras.proyectos_accion_social }} de acción social durante el PEM</span></div>
+      <div class="cifra"><b>{{ site.cifras.proyectos_investigacion }}</b><span>proyectos de investigación y {{ site.cifras.proyectos_accion_social }} de <a href="accion-social.html">acción social</a> durante el PEM</span></div>
       <div class="cifra"><b>≈ {{ site.cifras.publicaciones }}</b><span>publicaciones académicas del personal docente</span></div>
     </div>
   </div>

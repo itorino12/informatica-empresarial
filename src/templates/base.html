@@ -69,8 +69,8 @@
         <li class="{{ 'activo' if pagina in urls_hijos }}">
           <button class="desplegar" type="button" aria-expanded="false">{{ item.titulo }}
             <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></button>
-          <ul class="submenu">
-            {% for h in item.hijos %}<li><a href="{{ h.url }}"{% if h.url == pagina %} aria-current="page"{% endif %}>{{ h.titulo }}</a></li>{% endfor %}
+          <ul class="submenu{{ ' submenu-ancho' if item.hijos[0].desc }}">
+            {% for h in item.hijos %}<li><a href="{{ h.url }}"{% if h.url == pagina %} aria-current="page"{% endif %}{% if h.desc %} class="con-desc"{% endif %}>{{ h.titulo }}{% if h.desc %}<span class="sub-desc">{{ h.desc }}</span>{% endif %}</a></li>{% endfor %}
           </ul>
         </li>
         {% else %}

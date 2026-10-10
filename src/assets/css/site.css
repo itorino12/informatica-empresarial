@@ -136,7 +136,12 @@ p { margin: 0 0 1em; }
   background: var(--papel); border: 1px solid var(--linea); border-top: 3px solid var(--celeste); border-radius: 0 0 var(--radio) var(--radio); box-shadow: var(--sombra);
 }
 .desplegar[aria-expanded="true"] + .submenu { display: block; }
-.submenu a { display: block; padding: 9px 12px; font-weight: 400; }
+.submenu a { display: block; padding: 9px 12px; font-weight: 400; white-space: normal; }
+.submenu-ancho { min-width: 320px; }
+.submenu a.con-desc { font-weight: 600; padding: 10px 12px; }
+.sub-desc { display: block; margin-top: 2px; font-weight: 400; font-size: var(--t-xs); line-height: 1.35; color: var(--tinta-2); }
+.nav-principal > ul > li:nth-last-child(-n+3) > .submenu { left: auto; right: 0; }
+section[id] { scroll-margin-top: 90px; }
 .boton-menu { display: none; margin-left: auto; background: none; border: 1px solid var(--linea); border-radius: var(--radio); padding: 8px 12px; font: 500 var(--t-sm) var(--f-texto); color: var(--tinta); cursor: pointer; align-items: center; gap: 8px; }
 .boton-menu svg { width: 20px; height: 20px; }
 
@@ -588,10 +593,13 @@ dd, .pie li, .persona span { overflow-wrap: anywhere; }
 .proyectos-as { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 16px; margin-top: 16px; }
 .proyecto-as { border: 1px solid var(--linea); border-left: 4px solid var(--celeste); border-radius: 0 var(--radio) var(--radio) 0; padding: 16px 18px; background: var(--papel); }
 .proyecto-as.propuesta { border-left-style: dashed; border-left-color: var(--tinta-2); }
-.proyecto-as h4 { font-family: var(--f-titulo); font-size: var(--t-md); line-height: 1.2; margin: 6px 0 8px; color: var(--tinta); }
+.proyecto-as h4, .proyecto-as h3 { font-family: var(--f-titulo); font-size: var(--t-md); line-height: 1.2; margin: 6px 0 8px; color: var(--tinta); }
 .proyecto-as p.small { margin: 0; }
 .proyecto-as-meta { display: flex; flex-wrap: wrap; gap: 6px 10px; margin: 0; font-size: var(--t-xs); }
 .proyecto-as-meta .codigo { font-weight: 700; color: var(--enlace); letter-spacing: .02em; }
 .proyecto-as-meta .estado { color: var(--tinta-2); }
 .mini-cifras { list-style: none; padding: 0; margin: 12px 0 0; display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: var(--t-sm); }
 .mini-cifras b { font-family: var(--f-titulo); font-size: 1.25em; color: var(--enlace); }
+.portada-as { grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); margin-top: 24px; }
+.submenu [aria-current="page"] { box-shadow: inset 3px 0 0 var(--celeste); }
+.portada-as .proyecto-as-meta { flex-direction: column; gap: 2px; }

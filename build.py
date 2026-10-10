@@ -8,7 +8,7 @@ Uso:
 Todo el contenido vive en src/data/*.json. Para publicar una noticia, agregar un
 documento o cambiar una coordinación, edite el JSON correspondiente y vuelva a compilar.
 """
-import json, math, re, shutil, sys, html
+import json, math, re, shutil, sys, html, hashlib
 from datetime import date
 from pathlib import Path
 from jinja2 import Environment, FileSystemLoader, select_autoescape
@@ -195,6 +195,13 @@ def main():
     datos["noticias"].sort(key=lambda n: n["fecha"], reverse=True)
     red = construir_red(datos["sedes"])
 
+    # versión de recursos: cambia cuando cambia cualquier fuente, y obliga al navegador a descargar CSS y JS nuevos
+    huella = hashlib.sha1()
+    for f in sorted(list(SRC.rglob("*")) + list(GEO.glob("*"))):
+        if f.is_file():
+            huella.update(f.read_bytes())
+    version = huella.hexdigest()[:10]
+
     if DIST.exists():
         shutil.rmtree(DIST)
     shutil.copytree(SRC / "assets", DIST / "assets")
@@ -212,6 +219,7 @@ def main():
     for archivo, titulo, desc, padre in PAGINAS:
         plantilla = env.get_template(archivo)
         salida = plantilla.render(pagina=archivo, titulo=titulo, descripcion=desc, padre=padre, red=red, **datos)
+        salida = re.sub(r'(assets/(?:css|js)/[\w.-]+\.(?:css|js))"', rf'\1?v={version}"', salida)
         (DIST / archivo).write_text(salida, encoding="utf-8")
         if archivo not in ("404.html",):
             indice.append({"t": titulo, "u": archivo, "x": texto_plano(salida)[:6000]})

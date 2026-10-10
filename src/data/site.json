@@ -96,11 +96,60 @@
     },
     {
       "titulo": "Investigación",
-      "url": "investigacion.html"
+      "url": "investigacion.html",
+      "hijos": [
+        {
+          "titulo": "Producción académica",
+          "url": "investigacion.html",
+          "desc": "Proyectos y publicaciones del período de mejora"
+        },
+        {
+          "titulo": "Proyectos destacados",
+          "url": "investigacion.html#destacados",
+          "desc": "Lo que investigan los equipos docentes"
+        },
+        {
+          "titulo": "Metas y vinculación",
+          "url": "investigacion.html#metas",
+          "desc": "Compromisos al 2030 y redes académicas"
+        },
+        {
+          "titulo": "Reporte su proyecto",
+          "url": "investigacion.html#reportar",
+          "desc": "Sume su investigación o publicación al sitio"
+        }
+      ]
     },
     {
       "titulo": "Acción social",
-      "url": "accion-social.html"
+      "url": "accion-social.html",
+      "hijos": [
+        {
+          "titulo": "Panorama y cifras",
+          "url": "accion-social.html",
+          "desc": "14 proyectos y cómo trabaja la carrera con las comunidades"
+        },
+        {
+          "titulo": "Proyectos por región",
+          "url": "accion-social.html#proyectos",
+          "desc": "De Guanacaste al Caribe y el Pacífico Sur"
+        },
+        {
+          "titulo": "Trabajo Comunal Universitario",
+          "url": "accion-social.html#tcu",
+          "desc": "Las 300 horas de TCU y dónde realizarlas"
+        },
+        {
+          "titulo": "Compromisos de la carrera",
+          "url": "accion-social.html#compromisos",
+          "desc": "Metas del Plan Estratégico y del Compromiso de Mejora"
+        },
+        {
+          "titulo": "Proponga su proyecto",
+          "url": "accion-social.html#proponer",
+          "desc": "Envíe un proyecto para publicarlo aquí"
+        }
+      ]
     },
     {
       "titulo": "Calidad",
