@@ -82,7 +82,7 @@ Para HTTPS, solicite al Centro de Informática el certificado del dominio instit
 Estos datos no estaban en el Drive revisado o necesitan confirmación. Se dejaron redactados de forma neutral, sin inventar cifras:
 
 - [ ] **Dominio definitivo**: reemplazar `DOMINIO-POR-DEFINIR` en `site.json` (`base_url`). Se usa en sitemap, canonical y Open Graph.
-- [ ] **Convocatoria de elegibles 2026**: confirmar que el Consejo aprobó el boletín y las fechas (20/10–20/11). Luego agregar el enlace del formulario en `docentes.html` y en `contenido.json → eventos`. El formulario debe publicarse desde la cuenta institucional, no desde una cuenta personal.
+- [ ] **Convocatoria de elegibles 2026**: el enlace del formulario está en `site.json → formulario_elegibles` (se usa en la portada y en `docentes.html`). Al cerrar la convocatoria, cambiar el estado del evento en `contenido.json` y retirar o reemplazar el enlace. Verificar que el formulario pertenezca a una cuenta institucional.
 - [ ] **Boletín 01-2026**: corregir antes de publicar el código IF0029, que está repetido para Ética (el correcto es IF0021) y para Sistemas Operativos.
 - [ ] **Tiempo promedio de graduación y costos** (criterio SINAES 1.1.2): agregar el dato oficial en `tramites.html#informacion`.
 - [ ] **Correo de Guápiles**: verificar si es `informaticaempresarial.rgu@` (cuenta con acceso al Drive del Consejo) o `.rug@` (como aparece en la lista de copia).
@@ -94,3 +94,9 @@ Estos datos no estaban en el Drive revisado o necesitan confirmación. Se dejaro
 ## Privacidad
 
 Por decisión de diseño no se publican datos personales del estudiantado: nombres o carnés de convalidaciones, recursos ni casos individuales. Tampoco se publican nombres de personas oferentes del registro de elegibles; solo se muestran cifras agregadas.
+
+## Mapa de sedes
+
+La geografía del mapa (país, provincias, países vecinos y Lago de Nicaragua) proviene de **Natural Earth 1:10m**, de dominio público, y está recortada a Costa Rica en `geodatos/`. `build.py` la proyecta, recorta y simplifica en cada compilación; no hay que editar el SVG a mano. Las posiciones de los recintos salen de `lat`/`lng` en `src/data/sedes.json`, y la ubicación de las etiquetas, de `ETIQUETAS` en `build.py`. El rombo central representa al Consejo de Carrera Intersedes; su posición (`CONSEJO`) es simbólica.
+
+Un recinto se puede enlazar directamente: `sedes.html#guapiles` abre la página de sedes con esa ficha seleccionada.

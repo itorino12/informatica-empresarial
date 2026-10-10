@@ -169,25 +169,107 @@
     texto.addEventListener('input', filtrarDocs); tipo.addEventListener('change', filtrarDocs); filtrarDocs();
   }
 
-  /* ---------- Mapa de sedes ---------- */
-  var mapaSedes = $('[data-mapa-sedes]');
-  if (mapaSedes && window.SEDES) {
-    var ficha = $('#ficha-sede');
-    function mostrarSede(id) {
-      var s = window.SEDES.filter(function (x) { return x.id === id; })[0]; if (!s) return;
-      $$('.nodo', mapaSedes).forEach(function (n) { n.classList.toggle('sel', n.dataset.id === id); });
-      ficha.innerHTML = (s.recinto !== s.sede ? '<p class="muted small" style="margin:0">' + s.sede + '</p>' : '') + '<h3>' + s.recinto + '</h3>' +
-        (s.nota ? '<p class="small" style="margin:0">' + s.nota + '</p>' : '') +
-        '<dl><dt>Coordinación</dt><dd>' + s.coordinacion + '</dd><dt>Correo</dt><dd><a href="mailto:' + s.correo + '">' + s.correo + '</a></dd><dt>Provincia</dt><dd>' + s.provincia + '</dd>' +
-        '<dt>La sede imparte la carrera desde</dt><dd>' + s.sede_desde + '</dd></dl>' +
-        '<p class="small" style="margin:16px 0 0"><a href="mailto:' + s.correo + '">Escribir a esta coordinación</a></p>';
+  /* ---------- Mapa de sedes (portada y página de sedes) ---------- */
+  function esc(t) { return String(t).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  $$('[data-mapa]').forEach(function (mapa) {
+    var datos = JSON.parse($('.mapa-datos', mapa).textContent);
+    var porId = {}; datos.forEach(function (s) { porId[s.id] = s; });
+    var modo = mapa.dataset.modo;
+    var svg = $('svg', mapa), lienzo = $('.mapa-lienzo-svg', mapa), tip = $('.mapa-tip', mapa);
+    var ficha = document.getElementById(mapa.dataset.ficha);
+    var fichaInterna = ficha && ficha.classList.contains('mapa-ficha');
+    var actual = null;
+    // al terminar la animación de entrada se quita la clase para que los estados (atenuado, flujo) tomen el control
+    var finAnim = function () { svg.classList.remove('red-anim'); };
+    if (svg.classList.contains('red-anim')) setTimeout(finAnim, 2600);
+
+    function marcar(id, clase) {
+      $$('.nodo', svg).forEach(function (n) { n.classList.toggle(clase, n.dataset.id === id); });
+      $$('.arco', svg).forEach(function (a) { a.classList.toggle(clase, a.dataset.id === id); });
+      var prov = id ? porId[id].provincia : null;
+      $$('.prov', svg).forEach(function (p) { p.classList.toggle(clase, p.dataset.prov === prov); });
     }
-    $$('.nodo', mapaSedes).forEach(function (n) {
-      n.addEventListener('click', function () { mostrarSede(n.dataset.id); });
-      n.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); mostrarSede(n.dataset.id); } });
+
+    function contenidoFicha(s) {
+      var encabezado = (s.recinto !== s.sede ? '<p class="ficha-sede-eyebrow">' + esc(s.sede) + '</p>' : '') + '<p class="ficha-titulo h3">' + esc(s.recinto) + '</p>';
+      var correo = '<a href="mailto:' + esc(s.correo) + '">' + esc(s.correo) + '</a>';
+      if (fichaInterna) {
+        return '<button type="button" class="ficha-cerrar" aria-label="Cerrar ficha">×</button>' + encabezado +
+          '<p class="ficha-meta">Provincia de ' + esc(s.provincia) + ' · imparte la carrera desde ' + esc(s.sede_desde) + '</p>' +
+          '<dl><dt>Coordinación</dt><dd>' + esc(s.coordinacion) + '</dd><dt>Correo</dt><dd>' + correo + '</dd></dl>' +
+          '<p class="ficha-acciones"><a href="sedes.html#' + s.id + '">Ver la sede completa</a></p>';
+      }
+      return encabezado + (s.nota ? '<p class="small" style="margin:0">' + esc(s.nota) + '</p>' : '') +
+        '<dl><dt>Coordinación</dt><dd>' + esc(s.coordinacion) + '</dd><dt>Correo</dt><dd>' + correo + '</dd>' +
+        '<dt>Provincia</dt><dd>' + esc(s.provincia) + '</dd><dt>La sede imparte la carrera desde</dt><dd>' + esc(s.sede_desde) + '</dd></dl>' +
+        '<p class="small" style="margin:16px 0 0"><a href="mailto:' + esc(s.correo) + '">Escribir a esta coordinación</a></p>';
+    }
+
+    function seleccionar(id, opciones) {
+      opciones = opciones || {};
+      finAnim();
+      if (id && id === actual && !opciones.forzar) id = null;   // segundo toque: deselecciona
+      actual = id;
+      mapa.classList.toggle('con-sel', !!id);
+      marcar(id, 'sel');
+      $$('.chip-sede', mapa).forEach(function (c) { c.setAttribute('aria-pressed', c.dataset.id === id ? 'true' : 'false'); });
+      ocultarTip();
+      if (!ficha) return;
+      if (!id) {
+        if (fichaInterna) ficha.hidden = true;
+        if (modo === 'pagina' && location.hash) history.replaceState(null, '', location.pathname + location.search);
+        return;
+      }
+      ficha.innerHTML = contenidoFicha(porId[id]);
+      ficha.hidden = false;
+      // reinicia la animación de entrada
+      ficha.classList.remove('entra'); void ficha.offsetWidth; ficha.classList.add('entra');
+      var cerrar = $('.ficha-cerrar', ficha);
+      if (cerrar) cerrar.addEventListener('click', function () { var c = $('.chip-sede[data-id="' + actual + '"]', mapa); seleccionar(null); if (c) c.focus(); });
+      if (modo === 'pagina') history.replaceState(null, '', '#' + id);
+      if (opciones.desplazar) ficha.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
+
+    function mostrarTip(id) {
+      if (!tip) return;
+      var s = porId[id], nodo = $('.nodo[data-id="' + id + '"] .punto', svg);
+      tip.innerHTML = '<b>' + esc(s.recinto) + '</b><span>' + (s.recinto !== s.sede ? esc(s.sede) + ' · ' : '') + 'desde ' + esc(s.sede_desde) + '</span>';
+      tip.hidden = false;
+      var r = nodo.getBoundingClientRect(), base = lienzo.getBoundingClientRect();
+      var x = r.left + r.width / 2 - base.left, y = r.top - base.top;
+      tip.style.left = x + 'px'; tip.style.top = y + 'px';
+      // evita que se salga por los bordes
+      var ancho = tip.offsetWidth;
+      var izq = x - ancho / 2, der = x + ancho / 2, d = 0;
+      if (izq < 4) d = 4 - izq; else if (der > base.width - 4) d = base.width - 4 - der;
+      tip.style.setProperty('--desvio', d + 'px');
+    }
+    function ocultarTip() { if (tip) tip.hidden = true; }
+
+    $$('.nodo', svg).forEach(function (n) {
+      var id = n.dataset.id;
+      n.addEventListener('click', function (e) { e.stopPropagation(); seleccionar(id, { desplazar: modo === 'pagina' && innerWidth < 860 }); });
+      n.addEventListener('pointerenter', function (e) { if (e.pointerType !== 'mouse') return; marcar(id, 'hover'); mapa.classList.add('con-hover'); if (id !== actual) mostrarTip(id); });
+      n.addEventListener('pointerleave', function () { marcar(null, 'hover'); mapa.classList.remove('con-hover'); ocultarTip(); });
     });
-    $$('[data-ver-sede]').forEach(function (b) { b.addEventListener('click', function () { mostrarSede(b.dataset.verSede); ficha.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); }); });
-  }
+    $$('.chip-sede', mapa).forEach(function (c) {
+      c.addEventListener('click', function () { seleccionar(c.dataset.id); });
+      c.addEventListener('pointerenter', function () { marcar(c.dataset.id, 'hover'); mapa.classList.add('con-hover'); });
+      c.addEventListener('pointerleave', function () { marcar(null, 'hover'); mapa.classList.remove('con-hover'); });
+    });
+    // clic en el mar o en el país: cierra
+    svg.addEventListener('click', function () { if (actual) seleccionar(null); });
+    mapa.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && actual) { var c = $('.chip-sede[data-id="' + actual + '"]', mapa); seleccionar(null); if (c) c.focus(); }
+    });
+    // lista de la página de sedes
+    $$('[data-ver-sede]').forEach(function (b) { b.addEventListener('click', function () { seleccionar(b.dataset.verSede, { forzar: true, desplazar: true }); }); });
+    // enlace directo: sedes.html#guapiles
+    if (modo === 'pagina') {
+      var desdeHash = function () { var h = location.hash.slice(1); if (porId[h]) seleccionar(h, { forzar: true }); };
+      desdeHash(); addEventListener('hashchange', desdeHash);
+    }
+  });
 
   /* ---------- Formulario de contacto (abre el correo) ---------- */
   var form = $('#form-contacto');

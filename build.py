@@ -39,58 +39,130 @@ PAGINAS = [
     ("404.html", "Página no encontrada", "La página que busca no existe o cambió de dirección.", None),
 ]
 
-# Contorno simplificado de Costa Rica (lat, lng). Solo de referencia visual.
-COSTA_RICA = [
-    (11.07, -85.69), (11.12, -85.40), (11.20, -85.10), (11.08, -84.75), (10.95, -84.40), (10.80, -84.20),
-    (10.75, -83.90), (10.93, -83.66), (10.70, -83.55), (10.45, -83.48), (10.20, -83.30), (10.00, -83.05),
-    (9.78, -82.85), (9.57, -82.56), (9.48, -82.80), (9.25, -82.92), (8.95, -82.75), (8.60, -82.85),
-    (8.32, -82.88), (8.03, -82.90), (8.35, -83.08), (8.62, -83.22), (8.45, -83.40), (8.38, -83.70),
-    (8.66, -83.73), (9.00, -83.62), (9.25, -83.86), (9.42, -84.16), (9.62, -84.63), (9.80, -84.65),
-    (9.98, -84.84), (10.20, -85.22), (9.95, -85.05), (9.82, -84.93), (9.56, -85.11), (9.88, -85.53),
-    (10.00, -85.68), (10.30, -85.84), (10.55, -85.78), (10.80, -85.92), (10.95, -85.80), (11.07, -85.69),
-]
-ENLACES_RED = [("liberia", "pacifico"), ("liberia", "sanramon"), ("pacifico", "sanramon"), ("sanramon", "grecia"),
-               ("grecia", "guapiles"), ("grecia", "paraiso"), ("paraiso", "turrialba"), ("turrialba", "guapiles"),
-               ("guapiles", "siquirres"), ("siquirres", "limon"), ("turrialba", "siquirres"), ("pacifico", "sur"),
-               ("paraiso", "sur"), ("turrialba", "limon")]
+# ---------------------------------------------------------------------------
+# Mapa de la red de sedes
+# Geografía: Natural Earth 1:10m (dominio público), recortada a Costa Rica en
+# geodatos/. Se proyecta, recorta y simplifica en cada compilación.
+# ---------------------------------------------------------------------------
+GEO = RAIZ / "geodatos"
+CAJA = (-86.15, -82.45, 7.95, 11.32)          # lng mín, lng máx, lat mín, lat máx
+K = 160.0                                      # píxeles por grado de latitud
+COS = math.cos(math.radians(9.7))              # corrección de longitud a la latitud media
+ANCHO, ALTO = round((CAJA[1] - CAJA[0]) * K * COS), round((CAJA[3] - CAJA[2]) * K)
+CONSEJO = (9.93, -84.08)                       # punto simbólico del Consejo (sesiona de forma virtual)
 ETIQUETAS = {  # desplazamiento de la etiqueta respecto al nodo: dx, dy, ancla
-    "liberia": (12, -10, "start"), "pacifico": (-12, 22, "end"), "sanramon": (-12, -12, "end"),
-    "grecia": (4, -16, "middle"), "guapiles": (0, -16, "middle"), "siquirres": (12, -8, "start"),
-    "limon": (12, 18, "start"), "turrialba": (12, 18, "start"), "paraiso": (-12, 20, "end"), "sur": (12, 4, "start"),
+    "liberia": (12, -9, "start"), "pacifico": (-11, 20, "end"), "sanramon": (-12, -11, "end"),
+    "grecia": (6, -15, "middle"), "guapiles": (0, -15, "middle"), "siquirres": (12, -7, "start"),
+    "limon": (12, 17, "start"), "turrialba": (12, 17, "start"), "paraiso": (-12, 19, "end"), "sur": (12, 4, "start"),
 }
+ROTULOS = [  # (texto, lat, lng, clase)
+    ("NICARAGUA", 11.20, -84.95, "pais"), ("PANAMÁ", 8.55, -82.62, "pais"),
+    ("Mar Caribe", 10.55, -82.95, "mar"), ("Océano Pacífico", 8.45, -85.45, "mar"),
+]
 
 
-def proyectar(lat, lng, k=160.0):
-    return round((lng + 86.05) * k * 0.9857, 1), round((11.35 - lat) * k, 1)
+def proyectar(lat, lng):
+    return ((lng - CAJA[0]) * K * COS, (CAJA[3] - lat) * K)
 
 
-def suavizar(p, t=0.5):
-    """Convierte la poligonal cerrada en curvas Catmull-Rom para un contorno menos anguloso."""
-    n = len(p)
-    d = f"M{p[0][0]},{p[0][1]}"
-    for i in range(n):
-        p0, p1, p2, p3 = p[i - 1], p[i], p[(i + 1) % n], p[(i + 2) % n]
-        c1 = (round(p1[0] + (p2[0] - p0[0]) * t / 3, 1), round(p1[1] + (p2[1] - p0[1]) * t / 3, 1))
-        c2 = (round(p2[0] - (p3[0] - p1[0]) * t / 3, 1), round(p2[1] - (p3[1] - p1[1]) * t / 3, 1))
-        d += f" C{c1[0]},{c1[1]} {c2[0]},{c2[1]} {p2[0]},{p2[1]}"
-    return d + " Z"
+def recortar(anillo, x0=-30, y0=-30, x1=None, y1=None):
+    """Sutherland–Hodgman contra el rectángulo del lienzo."""
+    x1 = ANCHO + 30 if x1 is None else x1
+    y1 = ALTO + 30 if y1 is None else y1
+    bordes = [(lambda p: p[0] >= x0, lambda a, b: (x0, a[1] + (b[1] - a[1]) * (x0 - a[0]) / (b[0] - a[0]))),
+              (lambda p: p[0] <= x1, lambda a, b: (x1, a[1] + (b[1] - a[1]) * (x1 - a[0]) / (b[0] - a[0]))),
+              (lambda p: p[1] >= y0, lambda a, b: (a[0] + (b[0] - a[0]) * (y0 - a[1]) / (b[1] - a[1]), y0)),
+              (lambda p: p[1] <= y1, lambda a, b: (a[0] + (b[0] - a[0]) * (y1 - a[1]) / (b[1] - a[1]), y1))]
+    salida = anillo
+    for dentro, cruce in bordes:
+        entrada, salida = salida, []
+        if not entrada:
+            break
+        prev = entrada[-1]
+        for p in entrada:
+            if dentro(p):
+                if not dentro(prev):
+                    salida.append(cruce(prev, p))
+                salida.append(p)
+            elif dentro(prev):
+                salida.append(cruce(prev, p))
+            prev = p
+    return salida
+
+
+def simplificar(pts, tol):
+    """Douglas–Peucker iterativo."""
+    if len(pts) < 4:
+        return pts
+    marcar = [False] * len(pts)
+    marcar[0] = marcar[-1] = True
+    pila = [(0, len(pts) - 1)]
+    while pila:
+        i, j = pila.pop()
+        (ax, ay), (bx, by) = pts[i], pts[j]
+        dx, dy = bx - ax, by - ay
+        n = math.hypot(dx, dy) or 1e-9
+        mejor, idx = 0, None
+        for k in range(i + 1, j):
+            d = abs(dy * (pts[k][0] - ax) - dx * (pts[k][1] - ay)) / n
+            if d > mejor:
+                mejor, idx = d, k
+        if idx is not None and mejor > tol:
+            marcar[idx] = True
+            pila += [(i, idx), (idx, j)]
+    return [p for p, m in zip(pts, marcar) if m]
+
+
+def trazo(geom, tol=0.45, area_min=2.0):
+    """GeoJSON (Polygon/MultiPolygon) → atributo d de SVG, ya proyectado, recortado y simplificado."""
+    poligonos = geom["coordinates"] if geom["type"] == "MultiPolygon" else [geom["coordinates"]]
+    partes = []
+    for poligono in poligonos:
+        for anillo in poligono:
+            pts = recortar([proyectar(lat, lng) for lng, lat in anillo])
+            if len(pts) > 1 and pts[0] == pts[-1]:
+                pts = pts[:-1]
+            if len(pts) < 3:
+                continue
+            area = abs(sum(pts[i][0] * pts[i - 1][1] - pts[i - 1][0] * pts[i][1] for i in range(len(pts)))) / 2
+            if area < area_min:
+                continue
+            # anillo cerrado: se parte en el vértice más lejano al inicio y se simplifica cada mitad
+            m = max(range(len(pts)), key=lambda k: (pts[k][0] - pts[0][0]) ** 2 + (pts[k][1] - pts[0][1]) ** 2)
+            pts = simplificar(pts[:m + 1], tol)[:-1] + simplificar(pts[m:] + [pts[0]], tol)[:-1]
+            if len(pts) >= 3:
+                partes.append("M" + "L".join(f"{x:.1f},{y:.1f}" for x, y in pts) + "Z")
+    return "".join(partes)
 
 
 def construir_red(sedes):
-    puntos = [proyectar(la, ln) for la, ln in COSTA_RICA]
-    contorno = suavizar(puntos[:-1])
-    nodos = []
+    leer = lambda n: json.loads((GEO / f"{n}.geojson").read_text(encoding="utf-8"))["features"]
+    paises = {f["properties"]["ADM0_A3"]: f["geometry"] for f in leer("paises")}
+    vecinos = trazo(paises["NIC"], 0.8) + trazo(paises["PAN"], 0.8)
+    pais = trazo(paises["CRI"], 0.4)
+    lagos = "".join(trazo(f["geometry"], 0.8) for f in leer("lagos"))
+    provincias = sorted(({"nombre": f["properties"]["name"], "d": trazo(f["geometry"], 0.45)}
+                         for f in leer("provincias")), key=lambda p: p["nombre"])
+    hx, hy = proyectar(*CONSEJO)
+    nodos, arcos = [], []
     for i, s in enumerate(sedes):
         x, y = proyectar(s["lat"], s["lng"])
         dx, dy, ancla = ETIQUETAS.get(s["id"], (12, 4, "start"))
-        nodos.append({**s, "x": x, "y": y, "lx": x + dx, "ly": y + dy, "ancla": ancla, "i": i})
-    pos = {n["id"]: n for n in nodos}
-    enlaces = []
-    for i, (a, b) in enumerate(ENLACES_RED):
-        A, B = pos[a], pos[b]
-        largo = math.hypot(A["x"] - B["x"], A["y"] - B["y"])
-        enlaces.append({"x1": A["x"], "y1": A["y"], "x2": B["x"], "y2": B["y"], "l": round(largo), "i": i})
-    return {"contorno": contorno, "nodos": nodos, "enlaces": enlaces, "ancho": 575, "alto": 540}
+        nodos.append({**s, "x": round(x, 1), "y": round(y, 1), "lx": round(x + dx, 1), "ly": round(y + dy, 1),
+                      "ancla": ancla, "i": i})
+        # arco suave del recinto al Consejo: control desplazado en perpendicular
+        mx, my = (x + hx) / 2, (y + hy) / 2
+        vx, vy = hx - x, hy - y
+        largo = math.hypot(vx, vy) or 1
+        curva = min(38, largo * 0.22)
+        cx, cy = mx - vy / largo * curva, my + vx / largo * curva
+        arcos.append({"id": s["id"], "i": i, "l": round(largo * 1.08),
+                      "d": f"M{x:.1f},{y:.1f}Q{cx:.1f},{cy:.1f} {hx:.1f},{hy:.1f}"})
+    rotulos = [{"t": t, "x": round(proyectar(la, ln)[0], 1), "y": round(proyectar(la, ln)[1], 1), "c": c}
+               for t, la, ln, c in ROTULOS]
+    return {"vecinos": vecinos, "pais": pais, "lagos": lagos, "provincias": provincias, "nodos": nodos,
+            "arcos": arcos, "rotulos": rotulos, "hub": {"x": round(hx, 1), "y": round(hy, 1)},
+            "ancho": ANCHO, "alto": ALTO}
 
 
 def fecha_larga(iso):

@@ -21,7 +21,7 @@
   ],
 
   "eventos": [
-    {"inicio": "2026-10-20", "fin": "2026-11-20", "titulo": "Convocatoria 2026 al Registro de Docentes Elegibles", "lugar": "Formulario en línea", "modalidad": "Virtual", "estado": "Prevista", "enlace": "docentes.html"},
+    {"inicio": "2026-10-20", "fin": "2026-11-20", "titulo": "Convocatoria 2026 al Registro de Docentes Elegibles", "lugar": "Formulario en línea", "modalidad": "Virtual", "estado": "Prevista", "enlace": "docentes.html#convocatoria"},
     {"inicio": "2026-11-02", "fin": "2026-11-08", "titulo": "Charla de actualización para la población graduada, II ciclo 2026", "lugar": "Por confirmar", "modalidad": "Virtual", "estado": "Por confirmar", "enlace": "graduados.html"},
     {"inicio": "2026-08-01", "fin": "2026-12-15", "titulo": "Visita de pares evaluadores de SINAES", "lugar": "Sedes y recintos", "modalidad": "Presencial", "estado": "Fecha por confirmar", "texto_fecha": "II ciclo 2026", "enlace": "acreditacion.html"},
     {"inicio": "2027-08-01", "fin": "2027-08-31", "titulo": "XV Simposio de Informática Empresarial", "lugar": "Sede por definir", "modalidad": "Presencial", "estado": "En organización", "texto_fecha": "2027", "enlace": "simposio.html"}
@@ -182,7 +182,7 @@
     {"p": "¿Debo trasladarme del Plan 01 al Plan 07?", "r": "Depende de su avance. Revise las reglas del plan de transición y consulte con la coordinación de su recinto antes de firmar el consentimiento informado."},
     {"p": "¿Cómo solicito una convalidación?", "r": "Presente la solicitud con los programas oficiales de los cursos aprobados por los canales de su sede. El Consejo analiza cada curso con el instrumento de equivalencia curricular y resuelve en sesión."},
     {"p": "¿El inglés de la carrera se puede convalidar?", "r": "Los cursos de inglés del Plan 07 tienen objetivos de nivel definidos (A2 a B2+). Cada solicitud se analiza con el mismo instrumento; el curso LM-1030 del Plan 01 no convalida ninguno de los nuevos cursos de inglés."},
-    {"p": "¿Cómo puedo dar clases en la carrera?", "r": "Inscríbase en el Registro Intersedes de Docentes Elegibles cuando esté abierta la convocatoria. Las coordinaciones consultan el registro cuando tienen una necesidad docente."},
+    {"p": "¿Cómo puedo dar clases en la carrera?", "r": "Inscríbase en el Registro Intersedes de Docentes Elegibles mediante el formulario de la convocatoria vigente, enlazado en la página Docencia; la de 2026 recibe postulaciones del 20 de octubre al 20 de noviembre. Las coordinaciones consultan el registro cuando tienen una necesidad docente."},
     {"p": "¿Dónde se publican los acuerdos del Consejo?", "r": "Las noticias de este sitio resumen los acuerdos principales. Las actas oficiales se custodian en el archivo del Consejo y pueden solicitarse por correo."}
   ],
 

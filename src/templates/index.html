@@ -10,9 +10,9 @@
         <a class="boton boton-primario" href="plan-de-estudios.html">Ver el plan de estudios</a>
         <a class="boton boton-borde" href="sedes.html">Conocer las sedes</a>
       </div>
-      <p class="dato-red">Cada punto del mapa es un recinto donde se imparte la carrera. Las líneas representan al Consejo de Carrera Intersedes, que los coordina como una sola carrera.</p>
+      <p class="dato-red">Cada punto es un recinto donde se imparte la carrera; las líneas lo unen al Consejo de Carrera Intersedes, que coordina a los diez como una sola carrera. Toque un punto o elija un recinto para ver su coordinación.</p>
     </div>
-    <div>{{ red_svg(red, animar=true, titulo="Mapa de Costa Rica con los diez recintos donde se imparte Informática Empresarial") }}</div>
+    <div>{{ red_svg(red, animar=true, interactiva=true, modo="portada", titulo="Mapa de Costa Rica con los diez recintos donde se imparte Informática Empresarial") }}</div>
   </div>
 </section>
 {% endblock %}
@@ -99,8 +99,8 @@
     </div>
     <div>
       <h2 style="font-size:var(--t-xl)">Registro de docentes elegibles</h2>
-      <p>Un proceso público y estandarizado para los nombramientos interinos en todas las sedes. La convocatoria 2026 está prevista del 20 de octubre al 20 de noviembre.</p>
-      <a href="docentes.html">Ver requisitos y áreas</a>
+      <p>Un proceso público y estandarizado para los nombramientos interinos en todas las sedes. La convocatoria 2026 recibe postulaciones del 20 de octubre al 20 de noviembre.</p>
+      <ul class="enlaces-lista"><li><a href="{{ site.formulario_elegibles }}" rel="noopener" target="_blank">Formulario de inscripción<span class="visually-hidden"> (se abre en una pestaña nueva)</span></a></li><li><a href="docentes.html">Requisitos y áreas</a></li></ul>
     </div>
     <div>
       <h2 style="font-size:var(--t-xl)">Población graduada</h2>

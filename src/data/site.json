@@ -28,47 +28,156 @@
     "encuesta_graduados_2025": 399
   },
   "nav": [
-    {"titulo": "Inicio", "url": "index.html"},
-    {"titulo": "La carrera", "url": "carrera.html", "hijos": [
-      {"titulo": "Historia y propósito", "url": "carrera.html"},
-      {"titulo": "Plan de estudios 07", "url": "plan-de-estudios.html"},
-      {"titulo": "Sedes y recintos", "url": "sedes.html"},
-      {"titulo": "Cómo ingresar", "url": "carrera.html#admision"}
-    ]},
-    {"titulo": "Estudiantes", "url": "tramites.html", "hijos": [
-      {"titulo": "Convalidaciones y equiparaciones", "url": "tramites.html"},
-      {"titulo": "Traslado del Plan 01 al Plan 07", "url": "plan-de-estudios.html#transicion"},
-      {"titulo": "Información para el estudiantado", "url": "tramites.html#informacion"},
-      {"titulo": "Preguntas frecuentes", "url": "tramites.html#preguntas"}
-    ]},
-    {"titulo": "Docencia", "url": "docentes.html", "hijos": [
-      {"titulo": "Registro de docentes elegibles", "url": "docentes.html"},
-      {"titulo": "Perfiles por área", "url": "docentes.html#areas"},
-      {"titulo": "Desarrollo docente", "url": "docentes.html#desarrollo"}
-    ]},
-    {"titulo": "Investigación", "url": "investigacion.html"},
-    {"titulo": "Calidad", "url": "acreditacion.html", "hijos": [
-      {"titulo": "Acreditación SINAES", "url": "acreditacion.html"},
-      {"titulo": "Proyecto Especial de Mejora", "url": "acreditacion.html#pem"},
-      {"titulo": "Compromiso de Mejora 2027–2030", "url": "acreditacion.html#compromiso"},
-      {"titulo": "Plan Estratégico 2026–2030", "url": "gobierno.html#plan-estrategico"}
-    ]},
-    {"titulo": "Comunidad", "url": "noticias.html", "hijos": [
-      {"titulo": "Noticias", "url": "noticias.html"},
-      {"titulo": "Simposio de Informática Empresarial", "url": "simposio.html"},
-      {"titulo": "Población graduada", "url": "graduados.html"}
-    ]},
-    {"titulo": "Consejo", "url": "gobierno.html", "hijos": [
-      {"titulo": "Gestión y gobierno", "url": "gobierno.html"},
-      {"titulo": "Repositorio de documentos", "url": "documentos.html"},
-      {"titulo": "Contacto", "url": "contacto.html"}
-    ]}
+    {
+      "titulo": "Inicio",
+      "url": "index.html"
+    },
+    {
+      "titulo": "La carrera",
+      "url": "carrera.html",
+      "hijos": [
+        {
+          "titulo": "Historia y propósito",
+          "url": "carrera.html"
+        },
+        {
+          "titulo": "Plan de estudios 07",
+          "url": "plan-de-estudios.html"
+        },
+        {
+          "titulo": "Sedes y recintos",
+          "url": "sedes.html"
+        },
+        {
+          "titulo": "Cómo ingresar",
+          "url": "carrera.html#admision"
+        }
+      ]
+    },
+    {
+      "titulo": "Estudiantes",
+      "url": "tramites.html",
+      "hijos": [
+        {
+          "titulo": "Convalidaciones y equiparaciones",
+          "url": "tramites.html"
+        },
+        {
+          "titulo": "Traslado del Plan 01 al Plan 07",
+          "url": "plan-de-estudios.html#transicion"
+        },
+        {
+          "titulo": "Información para el estudiantado",
+          "url": "tramites.html#informacion"
+        },
+        {
+          "titulo": "Preguntas frecuentes",
+          "url": "tramites.html#preguntas"
+        }
+      ]
+    },
+    {
+      "titulo": "Docencia",
+      "url": "docentes.html",
+      "hijos": [
+        {
+          "titulo": "Registro de docentes elegibles",
+          "url": "docentes.html"
+        },
+        {
+          "titulo": "Perfiles por área",
+          "url": "docentes.html#areas"
+        },
+        {
+          "titulo": "Desarrollo docente",
+          "url": "docentes.html#desarrollo"
+        }
+      ]
+    },
+    {
+      "titulo": "Investigación",
+      "url": "investigacion.html"
+    },
+    {
+      "titulo": "Calidad",
+      "url": "acreditacion.html",
+      "hijos": [
+        {
+          "titulo": "Acreditación SINAES",
+          "url": "acreditacion.html"
+        },
+        {
+          "titulo": "Proyecto Especial de Mejora",
+          "url": "acreditacion.html#pem"
+        },
+        {
+          "titulo": "Compromiso de Mejora 2027–2030",
+          "url": "acreditacion.html#compromiso"
+        },
+        {
+          "titulo": "Plan Estratégico 2026–2030",
+          "url": "gobierno.html#plan-estrategico"
+        }
+      ]
+    },
+    {
+      "titulo": "Comunidad",
+      "url": "noticias.html",
+      "hijos": [
+        {
+          "titulo": "Noticias",
+          "url": "noticias.html"
+        },
+        {
+          "titulo": "Simposio de Informática Empresarial",
+          "url": "simposio.html"
+        },
+        {
+          "titulo": "Población graduada",
+          "url": "graduados.html"
+        }
+      ]
+    },
+    {
+      "titulo": "Consejo",
+      "url": "gobierno.html",
+      "hijos": [
+        {
+          "titulo": "Gestión y gobierno",
+          "url": "gobierno.html"
+        },
+        {
+          "titulo": "Repositorio de documentos",
+          "url": "documentos.html"
+        },
+        {
+          "titulo": "Contacto",
+          "url": "contacto.html"
+        }
+      ]
+    }
   ],
   "enlaces_ucr": [
-    {"titulo": "Universidad de Costa Rica", "url": "https://www.ucr.ac.cr/"},
-    {"titulo": "Oficina de Registro e Información", "url": "https://ori.ucr.ac.cr/"},
-    {"titulo": "Vicerrectoría de Docencia", "url": "https://vd.ucr.ac.cr/"},
-    {"titulo": "Sistema de Estudios de Posgrado", "url": "https://www.sep.ucr.ac.cr/"},
-    {"titulo": "SINAES", "url": "https://www.sinaes.ac.cr/"}
-  ]
+    {
+      "titulo": "Universidad de Costa Rica",
+      "url": "https://www.ucr.ac.cr/"
+    },
+    {
+      "titulo": "Oficina de Registro e Información",
+      "url": "https://ori.ucr.ac.cr/"
+    },
+    {
+      "titulo": "Vicerrectoría de Docencia",
+      "url": "https://vd.ucr.ac.cr/"
+    },
+    {
+      "titulo": "Sistema de Estudios de Posgrado",
+      "url": "https://www.sep.ucr.ac.cr/"
+    },
+    {
+      "titulo": "SINAES",
+      "url": "https://www.sinaes.ac.cr/"
+    }
+  ],
+  "formulario_elegibles": "https://forms.gle/SE47X2dZPM4HczFb6"
 }

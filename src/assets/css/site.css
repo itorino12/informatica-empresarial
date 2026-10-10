@@ -159,21 +159,101 @@ p { margin: 0 0 1em; }
 .portada .dato-red { margin-top: 28px; font-size: var(--t-sm); color: #9FB6CB; max-width: 46ch; }
 @media (max-width: 860px) { .portada .contenedor { grid-template-columns: 1fr; padding-top: 40px; } }
 
-.red { width: 100%; height: auto; display: block; }
-.red .costa { fill: rgba(65,173,231,.07); stroke: rgba(65,173,231,.45); stroke-width: 1.2; stroke-linejoin: round; }
-.red .enlace { stroke: var(--celeste); stroke-width: 1.4; opacity: .55; fill: none; }
-.red .nodo circle.punto { fill: #fff; stroke: var(--celeste); stroke-width: 3; }
-.red .nodo circle.halo { fill: var(--celeste); opacity: .18; }
-.red .nodo text { fill: #EAF4FB; font: 600 13px var(--f-texto); paint-order: stroke; stroke: var(--noche); stroke-width: 4px; }
-.red .nodo:focus-visible circle.punto, .red .nodo.sel circle.punto { fill: var(--aviso); }
-.red .nodo { cursor: pointer; }
-.red .nodo:focus { outline: none; }
-.red-anim .enlace { stroke-dasharray: var(--l, 400); stroke-dashoffset: var(--l, 400); animation: trazar 1.6s cubic-bezier(.4,.1,.2,1) forwards; animation-delay: calc(var(--i) * 70ms + 200ms); }
+/* ---------- Mapa de la red de sedes ---------- */
+.mapa { container-type: inline-size; }
+.mapa-lienzo-svg { position: relative; }
+.red { width: 100%; height: auto; display: block; overflow: hidden; }
+.red .mar { fill: transparent; }
+.red .reticula { stroke: rgba(65,173,231,.07); stroke-width: 1; }
+.red .vecino { fill: rgba(255,255,255,.035); stroke: rgba(159,182,203,.28); stroke-width: .8; stroke-linejoin: round; }
+.red .lago { fill: var(--noche); stroke: rgba(159,182,203,.25); stroke-width: .6; }
+.red .prov { fill: rgba(65,173,231,.10); stroke: rgba(65,173,231,.30); stroke-width: .7; stroke-linejoin: round; transition: fill .35s ease; }
+.red .prov.hover { fill: rgba(65,173,231,.17); }
+.red .prov.sel { fill: rgba(65,173,231,.30); }
+.red .pais { fill: none; stroke: rgba(130,200,240,.85); stroke-width: 1.3; stroke-linejoin: round; pointer-events: none; }
+.red .rotulo { pointer-events: none; fill: rgba(159,182,203,.55); font-family: var(--f-texto); }
+.red .rotulo-pais { font-size: 11px; font-weight: 600; letter-spacing: .32em; }
+.red .rotulo-mar { font-size: 12px; font-style: italic; letter-spacing: .08em; fill: rgba(120,190,235,.5); }
+.red .arco { fill: none; stroke: var(--celeste); stroke-width: 1.3; opacity: .5; transition: opacity .3s ease, stroke-width .3s ease; pointer-events: none; }
+.red .hub { pointer-events: none; }
+.red .hub-marca { fill: var(--noche); stroke: var(--celeste); stroke-width: 2.5; }
+.red .hub-onda { fill: none; stroke: var(--celeste); stroke-width: 1.5; opacity: 0; transform-box: fill-box; transform-origin: center; animation: onda 3.2s ease-out infinite 2s; }
+@keyframes onda { 0% { transform: scale(.8); opacity: .7; } 100% { transform: scale(3); opacity: 0; } }
+.red .nodo { cursor: pointer; transition: opacity .3s ease; }
+.red .nodo .blanco { fill: transparent; }
+.red .nodo circle.punto { fill: #fff; stroke: var(--celeste); stroke-width: 3; transform-box: fill-box; transform-origin: center; transition: transform .25s cubic-bezier(.3,1.6,.5,1), fill .2s; }
+.red .nodo circle.halo { fill: var(--celeste); opacity: .2; transform-box: fill-box; transform-origin: center; transition: transform .3s ease, opacity .3s; }
+.red .nodo text { fill: #EAF4FB; font: 600 13px var(--f-texto); paint-order: stroke; stroke: var(--noche); stroke-width: 4px; stroke-linejoin: round; pointer-events: none; transition: fill .2s; }
+.red .nodo.hover circle.punto { transform: scale(1.25); }
+.red .nodo.hover circle.halo { transform: scale(1.3); opacity: .32; }
+.red .nodo.sel circle.punto { fill: var(--aviso); stroke: #fff; transform: scale(1.35); }
+.red .nodo.sel circle.halo { opacity: .45; transform: scale(1.6); animation: latido 1.8s ease-in-out infinite; }
+.red .nodo.sel text { fill: #fff; font-weight: 700; }
+@keyframes latido { 50% { transform: scale(2); opacity: .15; } }
+.mapa.con-sel .nodo:not(.sel):not(.hover) { opacity: .5; }
+.mapa.con-sel .arco:not(.sel) { opacity: .12; }
+.mapa.con-hover:not(.con-sel) .arco:not(.hover) { opacity: .25; }
+.red .arco.hover { opacity: .9; }
+.red .arco.sel { opacity: 1; stroke-width: 2.2; stroke-dasharray: 6 7; animation: flujo 1s linear infinite; }
+@keyframes flujo { to { stroke-dashoffset: -13; } }
+
+/* entrada animada (portada) */
+.red-anim .arco { stroke-dasharray: var(--l, 400); stroke-dashoffset: var(--l, 400); animation: trazar 1.4s cubic-bezier(.4,.1,.2,1) forwards; animation-delay: calc(var(--i) * 70ms + 500ms); }
+.red-anim .arco.sel { stroke-dasharray: 6 7; animation: flujo 1s linear infinite; }
 .red-anim .nodo { opacity: 0; animation: aparecer .5s ease-out forwards; animation-delay: calc(var(--i) * 80ms); }
+.red-anim .prov, .red-anim .pais { animation: aparecer 1s ease-out both; }
+.red-anim .hub { opacity: 0; animation: aparecer .6s ease-out forwards 1.4s; }
+
 @keyframes trazar { to { stroke-dashoffset: 0; } }
-@keyframes aparecer { to { opacity: 1; } }
-@media (prefers-reduced-motion: reduce) { .red-anim .enlace, .red-anim .nodo { animation: none; opacity: 1; stroke-dashoffset: 0; } }
-:root[data-motion="reduce"] .red-anim .enlace, :root[data-motion="reduce"] .red-anim .nodo { animation: none; opacity: 1; stroke-dashoffset: 0; }
+@keyframes aparecer { from { opacity: 0; } to { opacity: 1; } }
+
+/* globo al pasar el cursor */
+.mapa-tip { position: absolute; z-index: 3; transform: translate(calc(-50% + var(--desvio, 0px)), calc(-100% - 14px)); background: #fff; color: var(--noche); border-radius: 6px; padding: 7px 11px; box-shadow: 0 6px 20px rgba(0,0,0,.3); pointer-events: none; white-space: nowrap; font-size: var(--t-sm); line-height: 1.3; }
+.mapa-tip b { display: block; font-weight: 700; }
+.mapa-tip span { color: #4A5F73; font-size: .86em; }
+
+/* ficha superpuesta en el Pacífico (portada) */
+.mapa-ficha { position: absolute; left: 0; bottom: 0; width: min(310px, 52%); z-index: 2; background: #fff; color: #10263D; border-radius: var(--radio); padding: 16px 18px 14px; box-shadow: 0 14px 40px rgba(0,0,0,.35); border-top: 4px solid var(--celeste); }
+.mapa-ficha.entra { animation: fichaEntra .32s cubic-bezier(.2,.8,.3,1); }
+@keyframes fichaEntra { from { opacity: 0; transform: translateY(10px); } }
+.mapa-ficha h3 { font-size: var(--t-lg); margin: 0 28px 0 0; color: var(--noche); }
+.ficha-sede-eyebrow { margin: 0; font-size: var(--t-xs, .78rem); font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: #0A6AA6; }
+.ficha-sede .ficha-sede-eyebrow { color: var(--tinta-2); }
+.ficha-sede .ficha-titulo { font: 700 var(--t-lg)/1.15 var(--f-titulo); color: var(--tinta); margin: 0 0 4px; }
+.ficha-meta { margin: 2px 0 0; font-size: var(--t-xs); color: #4A5F73; }
+.mapa-ficha dl { margin: 12px 0 0; font-size: var(--t-sm); }
+.mapa-ficha dt { color: #4A5F73; font-size: .75rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; margin-top: 8px; }
+.mapa-ficha dt:first-child { margin-top: 0; }
+.mapa-ficha dd { margin: 1px 0 0; font-weight: 600; overflow-wrap: anywhere; line-height: 1.35; }
+.mapa-ficha a { color: #0A6AA6; }
+.mapa-ficha .ficha-titulo { font: 700 var(--t-lg)/1.15 var(--f-titulo, inherit); margin: 0 28px 0 0; color: #0F2C4A; }
+.ficha-acciones { margin: 12px 0 0; font-size: var(--t-sm); font-weight: 600; }
+.ficha-acciones a::after { content: " →"; }
+.ficha-cerrar { position: absolute; top: 8px; right: 8px; width: 32px; height: 32px; border: 0; border-radius: 50%; background: transparent; color: #4A5F73; font-size: 22px; line-height: 1; cursor: pointer; }
+.ficha-cerrar:hover { background: var(--niebla); color: var(--noche); }
+.ficha-cerrar:focus-visible { outline: 3px solid var(--celeste); }
+@container (max-width: 520px) {
+  .mapa-ficha { position: relative; width: auto; bottom: auto; margin-top: 12px; }
+}
+
+/* selector de recintos */
+.mapa-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+.chip-sede { font: 600 var(--t-sm)/1 var(--f-texto); color: #D5E6F3; background: rgba(65,173,231,.1); border: 1px solid rgba(65,173,231,.35); border-radius: 999px; padding: 8px 13px; cursor: pointer; transition: background .2s, border-color .2s, color .2s; min-height: 34px; }
+.chip-sede:hover { background: rgba(65,173,231,.22); border-color: var(--celeste); color: #fff; }
+.chip-sede[aria-pressed="true"] { background: var(--celeste); border-color: var(--celeste); color: var(--noche); }
+.chip-sede:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+.mapa-leyenda { display: flex; flex-wrap: wrap; gap: 6px 20px; margin: 12px 0 0; font-size: var(--t-xs, .78rem); color: #9FB6CB; }
+.mapa-leyenda small { font-size: 1em; opacity: .8; }
+.ley-punto, .ley-hub { display: inline-block; vertical-align: -1px; margin-right: 7px; }
+.ley-punto { width: 10px; height: 10px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 2.5px var(--celeste); }
+.ley-hub { width: 9px; height: 9px; border: 2px solid var(--celeste); transform: rotate(45deg); }
+
+@media (prefers-reduced-motion: reduce) {
+  .red-anim .arco, .red-anim .nodo, .red-anim .prov, .red-anim .pais, .red-anim .hub { animation: none; opacity: 1; stroke-dashoffset: 0; }
+  .red .hub-onda, .red .nodo.sel circle.halo, .red .arco.sel, .mapa-ficha.entra { animation: none; }
+}
+:root[data-motion="reduce"] .red-anim .arco, :root[data-motion="reduce"] .red-anim .nodo, :root[data-motion="reduce"] .red-anim .prov, :root[data-motion="reduce"] .red-anim .pais, :root[data-motion="reduce"] .red-anim .hub { animation: none; opacity: 1; stroke-dashoffset: 0; }
+:root[data-motion="reduce"] .red .hub-onda, :root[data-motion="reduce"] .red .nodo.sel circle.halo, :root[data-motion="reduce"] .red .arco.sel, :root[data-motion="reduce"] .mapa-ficha.entra { animation: none; }
 
 /* -------------------------------------------------------------- Botones */
 .boton {

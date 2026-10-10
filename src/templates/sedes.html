@@ -6,10 +6,10 @@
   <div class="contenedor">
     <h2 id="h-mapa" class="visually-hidden">Mapa de sedes y recintos</h2>
     <div class="mapa-sedes">
-      <div class="mapa-lienzo">{{ red_svg(red, interactiva=true, titulo="Mapa interactivo: elija un recinto para ver su coordinación") }}</div>
+      <div class="mapa-lienzo">{{ red_svg(red, interactiva=true, modo="pagina", ficha_externa="ficha-sede", titulo="Mapa de Costa Rica con las sedes y recintos de la carrera") }}</div>
       <div class="ficha-sede" id="ficha-sede" aria-live="polite">
         <h3>Elija un recinto</h3>
-        <p class="muted">Seleccione un punto del mapa, o un recinto de la lista, para ver su coordinación y sus datos.</p>
+        <p class="muted">Toque un punto del mapa o elija un recinto debajo de él para ver su coordinación y sus datos.</p>
       </div>
     </div>
   </div>
@@ -35,4 +35,4 @@
 </section>
 {% endblock %}
 
-{% block scripts %}<script src="assets/js/datos.js" defer></script>{% endblock %}
+
