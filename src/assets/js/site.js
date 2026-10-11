@@ -195,13 +195,15 @@
       var correo = '<a href="mailto:' + esc(s.correo) + '">' + esc(s.correo) + '</a>';
       if (fichaInterna) {
         return '<button type="button" class="ficha-cerrar" aria-label="Cerrar ficha">×</button>' + encabezado +
-          '<p class="ficha-meta">Provincia de ' + esc(s.provincia) + ' · imparte la carrera desde ' + esc(s.sede_desde) + '</p>' +
+          '<p class="ficha-meta">Provincia de ' + esc(s.provincia) + ' · imparte la carrera desde ' + esc(s.recinto_desde || s.sede_desde) + '</p>' +
           '<dl><dt>Coordinación</dt><dd>' + esc(s.coordinacion) + '</dd><dt>Correo</dt><dd>' + correo + '</dd></dl>' +
-          '<p class="ficha-acciones"><a href="sedes.html#' + s.id + '">Ver la sede completa</a></p>';
+          '<p class="ficha-acciones"><a href="' + esc(s.web) + '" target="_blank" rel="noopener">' + (/^Recinto/.test(s.web_nombre) ? 'Ir al sitio del ' : 'Ir al sitio de la ') + esc(s.web_nombre) + '<span class="visually-hidden"> (pestaña nueva)</span></a></p>';
       }
       return encabezado + (s.nota ? '<p class="small" style="margin:0">' + esc(s.nota) + '</p>' : '') +
         '<dl><dt>Coordinación</dt><dd>' + esc(s.coordinacion) + '</dd><dt>Correo</dt><dd>' + correo + '</dd>' +
-        '<dt>Provincia</dt><dd>' + esc(s.provincia) + '</dd><dt>La sede imparte la carrera desde</dt><dd>' + esc(s.sede_desde) + '</dd></dl>' +
+        '<dt>Provincia</dt><dd>' + esc(s.provincia) + '</dd><dt>La sede imparte la carrera desde</dt><dd>' + esc(s.sede_desde) + '</dd>' +
+        (s.recinto_desde ? '<dt>Este recinto, desde</dt><dd>' + esc(s.recinto_desde) + '</dd>' : '') +
+        '<dt>Sitio web</dt><dd><a href="' + esc(s.web) + '" target="_blank" rel="noopener">' + esc(s.web.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')) + '<span class="visually-hidden"> (pestaña nueva)</span></a></dd></dl>' +
         '<p class="small" style="margin:16px 0 0"><a href="mailto:' + esc(s.correo) + '">Escribir a esta coordinación</a></p>';
     }
 
@@ -233,7 +235,7 @@
     function mostrarTip(id) {
       if (!tip) return;
       var s = porId[id], nodo = $('.nodo[data-id="' + id + '"] .punto', svg);
-      tip.innerHTML = '<b>' + esc(s.recinto) + '</b><span>' + (s.recinto !== s.sede ? esc(s.sede) + ' · ' : '') + 'desde ' + esc(s.sede_desde) + '</span>';
+      tip.innerHTML = '<b>' + esc(s.recinto) + '</b><span>' + (s.recinto !== s.sede ? esc(s.sede) + ' · ' : '') + 'desde ' + esc(s.recinto_desde || s.sede_desde) + '</span>';
       tip.hidden = false;
       var r = nodo.getBoundingClientRect(), base = lienzo.getBoundingClientRect();
       var x = r.left + r.width / 2 - base.left, y = r.top - base.top;

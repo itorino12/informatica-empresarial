@@ -10,7 +10,9 @@
   "coordinacion": "MSc. Itorino Espinoza Torres",
   "nota": "Coordina además el Consejo de Carrera Intersedes",
   "sede_desde": "1998",
-  "correo": "informaticaempresarial.sedecaribe@ucr.ac.cr"
+  "correo": "informaticaempresarial.sedecaribe@ucr.ac.cr",
+  "web": "https://sedecaribe.ucr.ac.cr/",
+  "web_nombre": "Sede del Caribe"
  },
  {
   "id": "siquirres",
@@ -23,7 +25,10 @@
   "coordinacion": "MCi. Walter Felipe Jenkins Cruz",
   "nota": "",
   "sede_desde": "1998",
-  "correo": "informaticaempresarial.siquirres@ucr.ac.cr"
+  "correo": "informaticaempresarial.siquirres@ucr.ac.cr",
+  "web": "https://sedecaribe.ucr.ac.cr/",
+  "web_nombre": "Sede del Caribe",
+  "recinto_desde": "2013"
  },
  {
   "id": "guapiles",
@@ -36,7 +41,9 @@
   "coordinacion": "Mag. Wilber Rodríguez Recinos",
   "nota": "",
   "sede_desde": "1998",
-  "correo": "informaticaempresarial.rgu@ucr.ac.cr"
+  "correo": "informaticaempresarial.rgu@ucr.ac.cr",
+  "web": "https://www.sa.ucr.ac.cr/",
+  "web_nombre": "Sede del Atlántico"
  },
  {
   "id": "turrialba",
@@ -49,7 +56,9 @@
   "coordinacion": "Mag. Álvaro Mena Monge",
   "nota": "",
   "sede_desde": "1998",
-  "correo": "informaticaempresarial.rt@sa.ucr.ac.cr"
+  "correo": "informaticaempresarial.rt@sa.ucr.ac.cr",
+  "web": "https://www.sa.ucr.ac.cr/",
+  "web_nombre": "Sede del Atlántico"
  },
  {
   "id": "paraiso",
@@ -62,7 +71,9 @@
   "coordinacion": "Mag. Livieth Gamboa Solano",
   "nota": "",
   "sede_desde": "1998",
-  "correo": "informaticaempresarial.rp@ucr.ac.cr"
+  "correo": "informaticaempresarial.rp@ucr.ac.cr",
+  "web": "https://www.sa.ucr.ac.cr/",
+  "web_nombre": "Sede del Atlántico"
  },
  {
   "id": "sanramon",
@@ -75,7 +86,9 @@
   "coordinacion": "Mag. Rafael Ángel García Chevez",
   "nota": "",
   "sede_desde": "1998",
-  "correo": "informaticaempresarial.so@ucr.ac.cr"
+  "correo": "informaticaempresarial.so@ucr.ac.cr",
+  "web": "https://so.ucr.ac.cr/",
+  "web_nombre": "Sede de Occidente"
  },
  {
   "id": "grecia",
@@ -88,7 +101,9 @@
   "coordinacion": "Mag. Sindy Porras Santamaría",
   "nota": "",
   "sede_desde": "1998",
-  "correo": "informaticaempresarial.rg@ucr.ac.cr"
+  "correo": "informaticaempresarial.rg@ucr.ac.cr",
+  "web": "https://grecia.so.ucr.ac.cr/",
+  "web_nombre": "Recinto de Grecia"
  },
  {
   "id": "pacifico",
@@ -101,7 +116,9 @@
   "coordinacion": "Mag. Melber Dalorso Cruz",
   "nota": "",
   "sede_desde": "1998",
-  "correo": "informaticaempresarial.sp@ucr.ac.cr"
+  "correo": "informaticaempresarial.sp@ucr.ac.cr",
+  "web": "https://srp.ucr.ac.cr/",
+  "web_nombre": "Sede del Pacífico"
  },
  {
   "id": "liberia",
@@ -114,7 +131,9 @@
   "coordinacion": "Mag. César Gabriel Lara Vanegas",
   "nota": "Sede anfitriona del XIV Simposio (2026)",
   "sede_desde": "1998",
-  "correo": "informaticaempresarial.sg@ucr.ac.cr"
+  "correo": "informaticaempresarial.sg@ucr.ac.cr",
+  "web": "https://sedeguanacaste.ucr.ac.cr/",
+  "web_nombre": "Sede de Guanacaste"
  },
  {
   "id": "sur",
@@ -127,6 +146,8 @@
   "coordinacion": "Mag. Mainor Cruz Alvarado",
   "nota": "Propietaria de la carrera desde 2021",
   "sede_desde": "2006",
-  "correo": "informatica.ssur@ucr.ac.cr"
+  "correo": "informatica.ssur@ucr.ac.cr",
+  "web": "https://sededelsur.ucr.ac.cr/",
+  "web_nombre": "Sede del Sur"
  }
 ]

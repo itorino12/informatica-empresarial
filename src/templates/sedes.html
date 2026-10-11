@@ -24,7 +24,7 @@
         <h3>{{ sede }}</h3>
         <ul class="lista-marcas">
           {% for s in grupo %}
-          <li><button type="button" class="enlace-boton" data-ver-sede="{{ s.id }}" style="all:unset;cursor:pointer;color:var(--enlace);font-weight:600">{{ s.recinto }}</button><br><span class="small muted">{{ s.coordinacion }}</span><br><a class="small" href="mailto:{{ s.correo }}">{{ s.correo }}</a></li>
+          <li><button type="button" class="enlace-boton" data-ver-sede="{{ s.id }}" style="all:unset;cursor:pointer;color:var(--enlace);font-weight:600">{{ s.recinto }}</button><br><span class="small muted">{{ s.coordinacion }}</span><br><a class="small" href="mailto:{{ s.correo }}">{{ s.correo }}</a><br><a class="small" href="{{ s.web }}" target="_blank" rel="noopener">Sitio web: {{ s.web_nombre }}<span class="visually-hidden"> (pestaña nueva)</span></a>{% if s.recinto_desde %}<br><span class="small muted">Imparte la carrera desde {{ s.recinto_desde }}</span>{% endif %}</li>
           {% endfor %}
         </ul>
       </div>
