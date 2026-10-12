@@ -612,3 +612,4 @@ dd, .pie li, .persona span { overflow-wrap: anywhere; }
 .selector-correo a:hover, .selector-correo button:hover, .selector-correo a:focus-visible, .selector-correo button:focus-visible { background: var(--niebla); outline: none; box-shadow: inset 3px 0 0 var(--celeste); }
 .selector-correo .selector-cerrar { color: var(--tinta-2); border-top: 1px solid var(--linea); border-radius: 0; margin-top: 4px; }
 .ficha-acciones a[target]::after { content: " ↗"; }
+.programa-curso { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; margin: 18px 0 0; }

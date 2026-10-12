@@ -100,3 +100,13 @@ Por decisión de diseño no se publican datos personales del estudiantado: nombr
 La geografía del mapa (país, provincias, países vecinos y Lago de Nicaragua) proviene de **Natural Earth 1:10m**, de dominio público, y está recortada a Costa Rica en `geodatos/`. `build.py` la proyecta, recorta y simplifica en cada compilación; no hay que editar el SVG a mano. Las posiciones de los recintos salen de `lat`/`lng` en `src/data/sedes.json`, y la ubicación de las etiquetas, de `ETIQUETAS` en `build.py`. El rombo central representa al Consejo de Carrera Intersedes; su posición (`CONSEJO`) es simbólica.
 
 Un recinto se puede enlazar directamente: `sedes.html#guapiles` abre la página de sedes con esa ficha seleccionada.
+
+## Programas de curso
+
+Cada curso de la malla del Plan 07 enlaza a su programa vigente en PDF (versión oficial con logo).
+
+- Los PDF están en `src/assets/programas/` con el nombre `IF0004_programa_II-2026.pdf`.
+- `src/data/programas.json` indica, por sigla, qué archivo corresponde y de qué ciclo es.
+- Para actualizar un programa cada ciclo: copie el PDF nuevo en `src/assets/programas/`, cambie la entrada en `programas.json` (archivo y ciclo), borre el PDF anterior y publique.
+- Los cursos sin entrada muestran: «El programa se publicará cuando el curso se imparta por primera vez en el Plan 07».
+- Origen: carpeta de planificación de cursos en Drive, subcarpetas «Programas de cursos … / Programas … oficiales - con Logo».

@@ -191,7 +191,7 @@ def texto_plano(h):
 
 def main():
     datos = {n: json.loads((SRC / "data" / f"{n}.json").read_text(encoding="utf-8"))
-             for n in ["site", "sedes", "plan07", "noticias", "contenido", "documentos"]}
+             for n in ["site", "sedes", "plan07", "noticias", "contenido", "documentos", "programas"]}
     datos["noticias"].sort(key=lambda n: n["fecha"], reverse=True)
     red = construir_red(datos["sedes"])
 
@@ -210,6 +210,16 @@ def main():
                       trim_blocks=True, lstrip_blocks=True)
     env.filters.update(fecha_larga=fecha_larga, dia=dia, mes_corto=mes_corto, iniciales=iniciales)
     env.globals.update(site=datos["site"], hoy=date.today().isoformat())
+
+    # programa vigente de cada curso (src/data/programas.json → PDF en assets/programas/)
+    progs = datos["programas"]
+    for c in datos["plan07"]["cursos"]:
+        if c["sigla"] in progs:
+            c["programa"] = progs[c["sigla"]]
+    for lista in datos["plan07"]["optativos"].values():
+        for o in lista:
+            if o["sigla"] in progs:
+                o["programa"] = progs[o["sigla"]]
 
     js_datos = ("window.PLAN07=" + json.dumps(datos["plan07"], ensure_ascii=False) + ";\n" +
                 "window.SEDES=" + json.dumps(datos["sedes"], ensure_ascii=False) + ";\n")

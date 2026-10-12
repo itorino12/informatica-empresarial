@@ -51,15 +51,21 @@
     if (c.optativo) {
       var ops = P.optativos[c.area] || [];
       html += '<p>En este espacio la persona estudiante elige uno de estos cursos:</p><ul>' + ops.map(function (o) {
-        return '<li><b>' + o.sigla + ' ' + o.nombre + '</b> (' + o.creditos + ' créditos; requisito: ' + o.req_alt + '). ' + o.desc + '</li>';
+        return '<li><b>' + o.sigla + ' ' + o.nombre + '</b> (' + o.creditos + ' créditos; requisito: ' + o.req_alt + '). ' + o.desc +
+          (o.programa ? ' <a href="' + o.programa.archivo + '" target="_blank" rel="noopener">Programa, ' + o.programa.ciclo + ' (PDF)</a>' : '') + '</li>';
       }).join('') + '</ul>';
     }
     html += '<dl><dt>Ciclo</dt><dd>' + c.ciclo + '</dd><dt>Créditos</dt><dd>' + c.creditos + '</dd>';
     if (c.t !== undefined) html += '<dt>Horas semanales</dt><dd>' + c.t + ' de teoría y ' + c.p + ' de práctica</dd>';
     var req = c.req_alt || (c.req && c.req.length ? c.req.join(', ') : 'Ninguno');
     html += '<dt>Requisitos</dt><dd>' + req + '</dd>';
-    var hab = (dependientes[sigla] || []).map(function (s) { return porSigla[s].optativo ? porSigla[s].nombre : s; });
+    var hab = (dependientes[sigla] || []).map(function (s) { return porSigla[s].optativo ? porSigla[s].nombre : s + ' ' + porSigla[s].nombre; });
     html += '<dt>Habilita</dt><dd>' + (hab.length ? hab.join(', ') : '—') + '</dd></dl>';
+    if (!c.optativo && /^IF-/.test(c.sigla)) {
+      html += c.programa
+        ? '<p class="programa-curso"><a class="boton boton-primario" href="' + c.programa.archivo + '" target="_blank" rel="noopener">Ver el programa del curso<span class="visually-hidden"> (PDF, se abre en una pestaña nueva)</span></a><span class="small muted">Versión vigente: ' + c.programa.ciclo + ' · PDF de ' + c.programa.kb + ' kB</span></p>'
+        : '<p class="programa-curso small muted">El programa se publicará cuando el curso se imparta por primera vez en el Plan 07.</p>';
+    }
     html += '<p class="small muted" style="margin-top:16px">Cuando el requisito indica «o», el curso equivalente del Plan 01 también lo cumple.</p></div>';
     dlg.innerHTML = html;
     dlg.querySelector('.cerrar').addEventListener('click', function () { dlg.close(); });
