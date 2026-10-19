@@ -664,6 +664,11 @@
    "p07": "144 créditos"
   },
   {
+   "aspecto": "Matemática",
+   "p01": "Lógica para informáticos, Estructuras matemáticas discretas, Cálculo diferencial e integral, Álgebra lineal, Métodos numéricos y Estadística para informáticos, en su mayoría cursos de la Escuela de Matemática",
+   "p07": "Matemática Básica, Matemáticas Discretas, Cálculo I, Álgebra Lineal y Métodos Numéricos y Análisis Computacional, todos propios de la carrera y orientados a la informática; la estadística pasa al área de Ingeniería de Datos"
+  },
+  {
    "aspecto": "Inglés",
    "p01": "Dos cursos de estrategias de lectura",
    "p07": "Inglés I, II, III y IV obligatorios, del nivel A2 al B2+"
