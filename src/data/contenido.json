@@ -914,14 +914,14 @@
         "detalle": "Guápiles, Paraíso y Turrialba",
         "enlace": "https://guapiles.ucr.ac.cr/wp-content/uploads/2025/08/requisitos_graduacion.pdf",
         "enlace_t": "Requisitos del Recinto de Guápiles",
-        "contacto": "registro.rgu@ucr.ac.cr (Guápiles)"
+        "contacto": "registro.rgu@ucr.ac.cr · 2511-7606 (Guápiles)"
       },
       {
         "sede": "Sede del Caribe",
         "detalle": "Limón y Siquirres",
         "enlace": "https://sedecaribe.ucr.ac.cr/",
         "enlace_t": "Sitio de la Sede del Caribe",
-        "contacto": "Registro de la sede"
+        "contacto": "graduaciones.sedecaribe@ucr.ac.cr · 2511-7304"
       },
       {
         "sede": "Sede de Occidente",
@@ -935,7 +935,7 @@
         "detalle": "Liberia",
         "enlace": "https://sedeguanacaste.ucr.ac.cr/",
         "enlace_t": "Sitio de la Sede de Guanacaste",
-        "contacto": "Registro de la sede"
+        "contacto": "registro.sg@ucr.ac.cr · 2511-9555"
       },
       {
         "sede": "Sede del Pacífico",
@@ -949,7 +949,7 @@
         "detalle": "Golfito",
         "enlace": "https://sededelsur.ucr.ac.cr/",
         "enlace_t": "Sitio de la Sede del Sur",
-        "contacto": "registro.ssur@ucr.ac.cr"
+        "contacto": "registro.ssur@ucr.ac.cr · 2511-7704"
       }
     ],
     "faq": [
