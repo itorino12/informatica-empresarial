@@ -115,16 +115,19 @@ p { margin: 0 0 1em; }
 
 /* -------------------------------------------------------------- Cabecera */
 .cabecera { background: var(--papel); border-bottom: 1px solid var(--linea); position: sticky; top: 0; z-index: 40; }
-.cabecera .contenedor { display: flex; align-items: center; gap: 24px; min-height: 76px; }
+.cabecera .contenedor { display: flex; align-items: center; gap: 24px; min-height: 76px; max-width: 1320px; }
+@media (min-width: 1280px) { .cabecera .contenedor { padding: 0 28px; } }
 .marca { display: flex; align-items: center; gap: 14px; text-decoration: none; color: inherit; flex-shrink: 0; }
-.marca img { height: 44px; width: auto; }
+.marca img { height: 40px; width: auto; }
+.marca-ucr { display: flex; align-items: center; flex-shrink: 0; padding-right: 18px; margin-right: -6px; border-right: 1px solid var(--linea); }
+.marca-ucr img { height: 40px; width: 77px; max-width: none; display: block; }
 :root[data-theme="dark"] .marca .logo-claro, .marca .logo-oscuro { display: none; }
 :root[data-theme="dark"] .marca .logo-oscuro { display: block; }
 .nav-principal { margin-left: auto; }
 .nav-principal > ul { list-style: none; display: flex; gap: 2px; margin: 0; padding: 0; }
 .nav-principal li { position: relative; }
 .nav-principal a, .nav-principal .desplegar {
-  display: inline-flex; align-items: center; gap: 4px; padding: 10px 9px; font: 500 var(--t-sm)/1.2 var(--f-texto); white-space: nowrap;
+  display: inline-flex; align-items: center; gap: 4px; padding: 10px 6px; font: 500 var(--t-sm)/1.2 var(--f-texto); white-space: nowrap;
   color: var(--tinta); text-decoration: none; background: none; border: 0; cursor: pointer; border-radius: var(--radio);
 }
 .nav-principal a:hover, .nav-principal .desplegar:hover, .nav-principal .desplegar[aria-expanded="true"] { background: var(--niebla); }
@@ -144,7 +147,7 @@ section[id] { scroll-margin-top: 90px; }
 .boton-menu { display: none; margin-left: auto; background: none; border: 1px solid var(--linea); border-radius: var(--radio); padding: 8px 12px; font: 500 var(--t-sm) var(--f-texto); color: var(--tinta); cursor: pointer; align-items: center; gap: 8px; }
 .boton-menu svg { width: 20px; height: 20px; }
 
-@media (max-width: 1239px) {
+@media (max-width: 1279px) {
   .boton-menu { display: inline-flex; }
   .nav-principal { display: none; position: absolute; left: 0; right: 0; top: 100%; background: var(--papel); border-bottom: 1px solid var(--linea); max-height: calc(100vh - 120px); overflow: auto; }
   .nav-principal.abierto { display: block; }
@@ -152,7 +155,12 @@ section[id] { scroll-margin-top: 90px; }
   .nav-principal a, .nav-principal .desplegar { width: 100%; justify-content: space-between; padding: 12px; font-size: var(--t-base); }
   .submenu { position: static; box-shadow: none; border: 0; border-left: 3px solid var(--celeste); border-radius: 0; margin: 0 0 8px 12px; padding: 0; }
 }
-@media (max-width: 480px) { .marca img { height: 34px; } }
+@media (max-width: 480px) {
+  .cabecera .contenedor { gap: 14px; }
+  .marca img, .marca-ucr img { height: 30px; }
+  .marca-ucr img { width: 58px; }
+  .marca-ucr { padding-right: 12px; margin-right: -2px; }
+}
 
 /* -------------------------------------------------------------- Portada */
 .portada { background: var(--noche); color: #fff; position: relative; overflow: hidden; }
@@ -556,7 +564,10 @@ dialog.detalle-curso::backdrop { background: rgba(10,30,51,.55); }
 .pie-columnas { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr; gap: 40px; }
 .pie h2 { color: #fff; font-size: var(--t-md); margin-bottom: 14px; }
 .pie ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
-.pie .logo-pie { height: 44px; width: auto; margin-bottom: 16px; }
+.marcas-pie { display: flex; align-items: center; gap: 18px; margin-bottom: 18px; }
+.marcas-pie a { display: flex; flex-shrink: 0; padding-right: 18px; border-right: 1px solid rgba(255,255,255,.35); }
+.logo-ucr-pie { height: 44px; width: 85px; max-width: none; display: block; }
+.pie .logo-pie { height: auto; width: 190px; max-width: 100%; display: block; }
 .pie-base { border-top: 1px solid rgba(255,255,255,.15); margin-top: 40px; padding-top: 20px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; color: #9FB6CB; }
 @media (max-width: 960px) { .pie-columnas { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 560px) { .pie-columnas { grid-template-columns: 1fr; } }
