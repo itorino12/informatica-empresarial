@@ -639,3 +639,6 @@ dd, .pie li, .persona span { overflow-wrap: anywhere; }
 .mini-poblacion dd { margin: 0; font: 700 1.05rem/1.2 var(--f-titulo); color: var(--tinta); font-variant-numeric: tabular-nums; }
 .ficha-sede .mini-poblacion { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
 .ficha-sede .mini-poblacion dd { font-size: 1.3rem; }
+.pasos-grad { padding-left: 1.4em; margin: 0 0 8px; display: grid; gap: 10px; }
+.pasos-grad li { padding-left: 4px; }
+#graduacion h3 { margin-top: 28px; }

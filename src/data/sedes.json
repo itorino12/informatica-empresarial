@@ -56,8 +56,8 @@
   "nota": "",
   "sede_desde": "1998",
   "correo": "informaticaempresarial.rgu@ucr.ac.cr",
-  "web": "https://www.sa.ucr.ac.cr/",
-  "web_nombre": "Sede del Atlántico",
+  "web": "https://guapiles.ucr.ac.cr/",
+  "web_nombre": "Recinto de Guápiles",
   "poblacion": {
    "activos_p01": 92,
    "activos_p07": 123,
@@ -100,8 +100,8 @@
   "nota": "",
   "sede_desde": "1998",
   "correo": "informaticaempresarial.rp@ucr.ac.cr",
-  "web": "https://www.sa.ucr.ac.cr/",
-  "web_nombre": "Sede del Atlántico",
+  "web": "https://paraiso.ucr.ac.cr/",
+  "web_nombre": "Recinto de Paraíso",
   "poblacion": {
    "activos_p01": 67,
    "activos_p07": 92,
