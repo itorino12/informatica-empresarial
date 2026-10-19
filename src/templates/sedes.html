@@ -9,6 +9,8 @@
       <div class="mapa-lienzo">{{ red_svg(red, interactiva=true, modo="pagina", ficha_externa="ficha-sede", titulo="Mapa de Costa Rica con las sedes y recintos de la carrera") }}</div>
       <div class="ficha-sede" id="ficha-sede" aria-live="polite">
         <h3>Elija un recinto</h3>
+        <dl class="mini-poblacion" style="margin:12px 0 16px"><div><dt>Estudiantes activos</dt><dd>{{ site.cifras.estudiantes_activos|miles }}</dd></div><div><dt>Personas graduadas</dt><dd>{{ site.cifras.graduados_total|miles }}</dd></div><div><dt>Admisión 2026</dt><dd>{{ site.cifras.admision_2026|miles }}</dd></div></dl>
+        <p class="small muted" style="margin:0 0 8px">Totales de la carrera en las diez sedes y recintos. <a href="#poblacion">Ver la tabla por recinto</a>.</p>
         <p class="muted">Toque un punto del mapa o elija un recinto debajo de él para ver su coordinación y sus datos.</p>
       </div>
     </div>
@@ -24,7 +26,8 @@
         <h3>{{ sede }}</h3>
         <ul class="lista-marcas">
           {% for s in grupo %}
-          <li><button type="button" class="enlace-boton" data-ver-sede="{{ s.id }}" style="all:unset;cursor:pointer;color:var(--enlace);font-weight:600">{{ s.recinto }}</button><br><span class="small muted">{{ s.coordinacion }}</span><br><a class="small" href="mailto:{{ s.correo }}">{{ s.correo }}</a><br><a class="small" href="{{ s.web }}" target="_blank" rel="noopener">Sitio web: {{ s.web_nombre }}<span class="visually-hidden"> (pestaña nueva)</span></a>{% if s.recinto_desde %}<br><span class="small muted">Imparte la carrera desde {{ s.recinto_desde }}</span>{% endif %}</li>
+          <li><button type="button" class="enlace-boton" data-ver-sede="{{ s.id }}" style="all:unset;cursor:pointer;color:var(--enlace);font-weight:600">{{ s.recinto }}</button><br><span class="small muted">{{ s.coordinacion }}</span><br><a class="small" href="mailto:{{ s.correo }}">{{ s.correo }}</a><br><a class="small" href="{{ s.web }}" target="_blank" rel="noopener">Sitio web: {{ s.web_nombre }}<span class="visually-hidden"> (pestaña nueva)</span></a>{% if s.recinto_desde %}<br><span class="small muted">Imparte la carrera desde {{ s.recinto_desde }}</span>{% endif %}
+            <dl class="mini-poblacion"><div><dt>Activos</dt><dd>{{ s.poblacion.activos|miles }}</dd></div><div><dt>Graduados</dt><dd>{{ s.poblacion.graduados|miles }}</dd></div><div><dt>Admisión 2026</dt><dd>{{ s.poblacion.admision_2026|miles }}</dd></div></dl></li>
           {% endfor %}
         </ul>
       </div>

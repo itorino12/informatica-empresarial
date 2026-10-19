@@ -632,3 +632,9 @@ dd, .pie li, .persona span { overflow-wrap: anywhere; }
 .envoltura-tabla { overflow-x: auto; }
 .mapa-ficha h3, .mapa-ficha .ficha-titulo { font-size: 1.3rem !important; }
 .mapa-ficha dl:not(.ficha-cifras) { margin-top: 8px; }
+.mini-poblacion { display: flex; flex-wrap: wrap; gap: 4px 18px; margin: 8px 0 4px; }
+.mini-poblacion div { display: flex; flex-direction: column-reverse; }
+.mini-poblacion dt { font-size: .7rem; text-transform: uppercase; letter-spacing: .05em; color: var(--tinta-2); font-weight: 600; }
+.mini-poblacion dd { margin: 0; font: 700 1.05rem/1.2 var(--f-titulo); color: var(--tinta); font-variant-numeric: tabular-nums; }
+.ficha-sede .mini-poblacion { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.ficha-sede .mini-poblacion dd { font-size: 1.3rem; }
