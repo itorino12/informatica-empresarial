@@ -110,3 +110,12 @@ Cada curso de la malla del Plan 07 enlaza a su programa vigente en PDF (versión
 - Para actualizar un programa cada ciclo: copie el PDF nuevo en `src/assets/programas/`, cambie la entrada en `programas.json` (archivo y ciclo), borre el PDF anterior y publique.
 - Los cursos sin entrada muestran: «El programa se publicará cuando el curso se imparta por primera vez en el Plan 07».
 - Origen: carpeta de planificación de cursos en Drive, subcarpetas «Programas de cursos … / Programas … oficiales - con Logo».
+
+## Servidor de producción
+
+- Dirección: https://informaticaempresarial.ucr.ac.cr (IP 163.178.170.75), máquina virtual «Informatica_Empresarial_Intersedes» en el vCenter de la UCR (CDI).
+- Ubuntu 24.04 LTS, nginx, firewall ufw (SSH, 80 y 443), actualizaciones de seguridad automáticas.
+- Código en `/opt/cie-web`; archivos publicados en `/var/www/cie`.
+- Certificado HTTPS de Let's Encrypt (certbot), con renovación automática. Revisar con `sudo certbot renew --dry-run`.
+- Acceso: `ssh gestion@163.178.170.75` desde la red de la UCR, o la consola del vCenter.
+- Actualizar el sitio después de subir cambios a GitHub: `sudo bash /opt/cie-web/desplegar.sh`.
