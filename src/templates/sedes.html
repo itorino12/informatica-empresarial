@@ -47,13 +47,13 @@
           <tr class="fila-sede"><td>{{ nombre }}</td>
             <td>{{ grupo|sum(attribute="poblacion.activos_p01")|miles }}</td><td>{{ grupo|sum(attribute="poblacion.activos_p07")|miles }}</td>
             <td>{{ grupo|sum(attribute="poblacion.activos")|miles }}</td>
-            <td>{{ grupo|selectattr("poblacion.graduados")|sum(attribute="poblacion.graduados")|miles }}</td>
+            <td>{{ grupo|sum(attribute="poblacion.graduados")|miles }}</td>
             <td>{{ grupo|sum(attribute="poblacion.admision_2026")|miles }}</td></tr>
           {% endif %}
           {% for x in grupo %}{% set p = x.poblacion %}
           <tr{% if grupo|length == 1 %} class="fila-sede"{% endif %}><td>{% if grupo|length > 1 %}<span style="padding-left:16px">{{ x.recinto }}</span>{% else %}{{ nombre }}{% endif %}</td>
             <td>{{ p.activos_p01|miles }}</td><td>{{ p.activos_p07|miles }}</td><td>{{ p.activos|miles }}</td>
-            <td>{% if p.graduados is none %}<span title="Incluidas en el Recinto de Limón">—*</span>{% else %}{{ p.graduados|miles }}{% endif %}</td>
+            <td>{{ p.graduados|miles }}</td>
             <td>{{ p.admision_2026|miles }}</td></tr>
           {% endfor %}
         {% endfor %}
@@ -63,7 +63,6 @@
           <td>{{ site.cifras.estudiantes_activos|miles }}</td><td>{{ site.cifras.graduados_total|miles }}</td><td>{{ site.cifras.admision_2026|miles }}</td></tr></tfoot>
       </table>
     </div>
-    <p class="small muted" style="margin-top:12px">* Las personas graduadas del Aula Desconcentrada de Siquirres se contabilizan en el Recinto de Limón.</p>
   </div>
 </section>
 {% endblock %}
