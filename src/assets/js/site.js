@@ -207,7 +207,12 @@
           '<dl><dt>Coordinación</dt><dd>' + esc(s.coordinacion) + '</dd><dt>Correo</dt><dd>' + correo + '</dd></dl>' +
           '<p class="ficha-acciones"><a href="' + esc(s.web) + '" target="_blank" rel="noopener">' + (/^Recinto/.test(s.web_nombre) ? 'Ir al sitio del ' : 'Ir al sitio de la ') + esc(s.web_nombre) + '<span class="visually-hidden"> (pestaña nueva)</span></a></p>';
       }
-      return encabezado + (s.nota ? '<p class="small" style="margin:0">' + esc(s.nota) + '</p>' : '') +
+      var pob = s.poblacion ? '<dl class="mini-poblacion" style="margin:14px 0 4px">' +
+          '<div><dt>Activos</dt><dd>' + miles(s.poblacion.activos) + '</dd></div>' +
+          '<div><dt>Graduados</dt><dd>' + (s.poblacion.graduados == null ? '—' : miles(s.poblacion.graduados)) + '</dd></div>' +
+          '<div><dt>Admisión 2026</dt><dd>' + miles(s.poblacion.admision_2026) + '</dd></div></dl>' +
+          '<p class="small muted" style="margin:0">Activos por plan: Plan 01, ' + miles(s.poblacion.activos_p01) + '; Plan 07, ' + miles(s.poblacion.activos_p07) + '.</p>' : '';
+      return encabezado + (s.nota ? '<p class="small" style="margin:0">' + esc(s.nota) + '</p>' : '') + pob +
         '<dl><dt>Coordinación</dt><dd>' + esc(s.coordinacion) + '</dd><dt>Correo</dt><dd>' + correo + '</dd>' +
         '<dt>Provincia</dt><dd>' + esc(s.provincia) + '</dd><dt>La sede imparte la carrera desde</dt><dd>' + esc(s.sede_desde) + '</dd>' +
         (s.recinto_desde ? '<dt>Este recinto, desde</dt><dd>' + esc(s.recinto_desde) + '</dd>' : '') +
