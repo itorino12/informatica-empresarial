@@ -914,42 +914,78 @@
         "detalle": "Guápiles, Paraíso y Turrialba",
         "enlace": "https://guapiles.ucr.ac.cr/wp-content/uploads/2025/08/requisitos_graduacion.pdf",
         "enlace_t": "Requisitos del Recinto de Guápiles",
-        "contacto": "registro.rgu@ucr.ac.cr · 2511-7606 (Guápiles)"
+        "contactos": [
+          {
+            "correo": "registro.sa@ucr.ac.cr",
+            "tel": "2511-9207",
+            "nota": "Registro de la sede"
+          },
+          {
+            "correo": "registro.rgu@ucr.ac.cr",
+            "tel": "2511-7606",
+            "nota": "Recinto de Guápiles"
+          }
+        ]
       },
       {
         "sede": "Sede del Caribe",
         "detalle": "Limón y Siquirres",
         "enlace": "https://sedecaribe.ucr.ac.cr/",
         "enlace_t": "Sitio de la Sede del Caribe",
-        "contacto": "graduaciones.sedecaribe@ucr.ac.cr · 2511-7304"
+        "contactos": [
+          {
+            "correo": "graduaciones.sedecaribe@ucr.ac.cr",
+            "tel": "2511-7304"
+          }
+        ]
       },
       {
         "sede": "Sede de Occidente",
         "detalle": "San Ramón y Grecia",
         "enlace": "https://www.so.ucr.ac.cr/es/tramite/graduacion",
         "enlace_t": "Trámite de graduación",
-        "contacto": "graduaciones.so@ucr.ac.cr · 2511-9024"
+        "contactos": [
+          {
+            "correo": "graduaciones.so@ucr.ac.cr",
+            "tel": "2511-9024"
+          }
+        ]
       },
       {
         "sede": "Sede de Guanacaste",
         "detalle": "Liberia",
         "enlace": "https://sedeguanacaste.ucr.ac.cr/",
         "enlace_t": "Sitio de la Sede de Guanacaste",
-        "contacto": "registro.sg@ucr.ac.cr · 2511-9555"
+        "contactos": [
+          {
+            "correo": "registro.sg@ucr.ac.cr",
+            "tel": "2511-9555"
+          }
+        ]
       },
       {
         "sede": "Sede del Pacífico",
         "detalle": "Puntarenas",
         "enlace": "https://srp.ucr.ac.cr/vida-estudiantil/registro-e-informacion/calendario-fechas-de-actos-de-graduacion/",
         "enlace_t": "Calendario y requisitos",
-        "contacto": "registro.sp@ucr.ac.cr · 2511-7405"
+        "contactos": [
+          {
+            "correo": "registro.sp@ucr.ac.cr",
+            "tel": "2511-7405"
+          }
+        ]
       },
       {
         "sede": "Sede del Sur",
         "detalle": "Golfito",
         "enlace": "https://sededelsur.ucr.ac.cr/",
         "enlace_t": "Sitio de la Sede del Sur",
-        "contacto": "registro.ssur@ucr.ac.cr · 2511-7704"
+        "contactos": [
+          {
+            "correo": "registro.ssur@ucr.ac.cr",
+            "tel": "2511-7704"
+          }
+        ]
       }
     ],
     "faq": [

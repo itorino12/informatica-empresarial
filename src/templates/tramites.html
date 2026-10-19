@@ -72,7 +72,7 @@
               {% for s in g.sedes %}
               <tr><th scope="row">{{ s.sede }}<br><span class="small muted" style="font-weight:400">{{ s.detalle }}</span></th>
                 <td><a href="{{ s.enlace }}" target="_blank" rel="noopener">{{ s.enlace_t }}<span class="visually-hidden"> (pestaña nueva)</span></a></td>
-                <td>{% if '@' in s.contacto %}{% set partes = s.contacto.split(' ') %}<a href="mailto:{{ partes[0] }}">{{ partes[0] }}</a> {{ partes[1:]|join(' ') }}{% else %}{{ s.contacto }}{% endif %}</td></tr>
+                <td>{% for c in s.contactos %}<div><a href="mailto:{{ c.correo }}">{{ c.correo }}</a>{% if c.tel %} · {{ c.tel }}{% endif %}{% if c.nota %} <span class="small muted">({{ c.nota }})</span>{% endif %}</div>{% endfor %}</td></tr>
               {% endfor %}
             </tbody>
           </table>
