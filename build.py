@@ -205,6 +205,11 @@ def main():
     if DIST.exists():
         shutil.rmtree(DIST)
     shutil.copytree(SRC / "assets", DIST / "assets")
+    # archivos que deben quedar en la raíz del sitio (verificación de Google Search Console, etc.)
+    if (SRC / "raiz").is_dir():
+        for f in (SRC / "raiz").iterdir():
+            if f.is_file():
+                shutil.copy2(f, DIST / f.name)
 
     env = Environment(loader=FileSystemLoader(SRC / "templates"), autoescape=select_autoescape(["html"]),
                       trim_blocks=True, lstrip_blocks=True)
