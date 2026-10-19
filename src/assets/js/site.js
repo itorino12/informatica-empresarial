@@ -170,6 +170,7 @@
   }
 
   /* ---------- Mapa de sedes (portada y página de sedes) ---------- */
+  function miles(n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '\u00a0'); }
   function esc(t) { return String(t).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
   $$('[data-mapa]').forEach(function (mapa) {
     var datos = JSON.parse($('.mapa-datos', mapa).textContent);
@@ -190,12 +191,19 @@
       $$('.prov', svg).forEach(function (p) { p.classList.toggle(clase, p.dataset.prov === prov); });
     }
 
+    function poblacionCompacta(s) {
+      var p = s.poblacion; if (!p) return '';
+      return '<dl class="ficha-cifras"><div><dt>Activos</dt><dd>' + miles(p.activos) + '</dd></div>' +
+        '<div><dt>Graduados</dt><dd>' + (p.graduados == null ? '<span title="Incluidos en el Recinto de Limón">—</span>' : miles(p.graduados)) + '</dd></div>' +
+        '<div><dt>Admisión 2026</dt><dd>' + miles(p.admision_2026) + '</dd></div></dl>';
+    }
     function contenidoFicha(s) {
       var encabezado = (s.recinto !== s.sede ? '<p class="ficha-sede-eyebrow">' + esc(s.sede) + '</p>' : '') + '<p class="ficha-titulo h3">' + esc(s.recinto) + '</p>';
       var correo = '<a href="mailto:' + esc(s.correo) + '">' + esc(s.correo) + '</a>';
       if (fichaInterna) {
         return '<button type="button" class="ficha-cerrar" aria-label="Cerrar ficha">×</button>' + encabezado +
           '<p class="ficha-meta">Provincia de ' + esc(s.provincia) + ' · imparte la carrera desde ' + esc(s.recinto_desde || s.sede_desde) + '</p>' +
+          poblacionCompacta(s) +
           '<dl><dt>Coordinación</dt><dd>' + esc(s.coordinacion) + '</dd><dt>Correo</dt><dd>' + correo + '</dd></dl>' +
           '<p class="ficha-acciones"><a href="' + esc(s.web) + '" target="_blank" rel="noopener">' + (/^Recinto/.test(s.web_nombre) ? 'Ir al sitio del ' : 'Ir al sitio de la ') + esc(s.web_nombre) + '<span class="visually-hidden"> (pestaña nueva)</span></a></p>';
       }
@@ -235,7 +243,7 @@
     function mostrarTip(id) {
       if (!tip) return;
       var s = porId[id], nodo = $('.nodo[data-id="' + id + '"] .punto', svg);
-      tip.innerHTML = '<b>' + esc(s.recinto) + '</b><span>' + (s.recinto !== s.sede ? esc(s.sede) + ' · ' : '') + 'desde ' + esc(s.recinto_desde || s.sede_desde) + '</span>';
+      tip.innerHTML = '<b>' + esc(s.recinto) + '</b><span>' + (s.recinto !== s.sede ? esc(s.sede) + ' · ' : '') + 'desde ' + esc(s.recinto_desde || s.sede_desde) + (s.poblacion ? ' · ' + miles(s.poblacion.activos) + ' estudiantes activos' : '') + '</span>';
       tip.hidden = false;
       var r = nodo.getBoundingClientRect(), base = lienzo.getBoundingClientRect();
       var x = r.left + r.width / 2 - base.left, y = r.top - base.top;

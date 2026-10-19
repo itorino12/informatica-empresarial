@@ -217,7 +217,7 @@ section[id] { scroll-margin-top: 90px; }
 .mapa-tip span { color: #4A5F73; font-size: .86em; }
 
 /* ficha superpuesta en el Pacífico (portada) */
-.mapa-ficha { position: absolute; left: 0; bottom: 0; width: min(310px, 52%); z-index: 2; background: #fff; color: #10263D; border-radius: var(--radio); padding: 16px 18px 14px; box-shadow: 0 14px 40px rgba(0,0,0,.35); border-top: 4px solid var(--celeste); }
+.mapa-ficha { position: absolute; left: 0; bottom: 0; width: min(350px, 58%); z-index: 2; background: #fff; color: #10263D; border-radius: var(--radio); padding: 16px 18px 14px; box-shadow: 0 14px 40px rgba(0,0,0,.35); border-top: 4px solid var(--celeste); }
 .mapa-ficha.entra { animation: fichaEntra .32s cubic-bezier(.2,.8,.3,1); }
 @keyframes fichaEntra { from { opacity: 0; transform: translateY(10px); } }
 .mapa-ficha h3 { font-size: var(--t-lg); margin: 0 28px 0 0; color: var(--noche); }
@@ -613,3 +613,22 @@ dd, .pie li, .persona span { overflow-wrap: anywhere; }
 .selector-correo .selector-cerrar { color: var(--tinta-2); border-top: 1px solid var(--linea); border-radius: 0; margin-top: 4px; }
 .ficha-acciones a[target]::after { content: " ↗"; }
 .programa-curso { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; margin: 18px 0 0; }
+
+/* Cifras de población */
+.cifras-portada { display: flex; flex-wrap: wrap; gap: 12px 32px; margin: 28px 0 0; }
+.cifras-portada div { display: flex; flex-direction: column-reverse; }
+.cifras-portada dt { font-size: var(--t-xs); color: #9FB6CB; text-transform: uppercase; letter-spacing: .06em; font-weight: 600; }
+.cifras-portada dd { margin: 0; font: 700 clamp(1.6rem, 3vw, 2.1rem)/1.1 var(--f-titulo); color: #fff; font-variant-numeric: tabular-nums; }
+.ficha-cifras { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin: 10px 0 0 !important; padding: 8px 0; border-block: 1px solid #DCE6EF; }
+.ficha-cifras div { display: flex; flex-direction: column-reverse; }
+.mapa-ficha .ficha-cifras dt { margin: 0; font-size: .68rem; letter-spacing: .04em; }
+.mapa-ficha .ficha-cifras dd { margin: 0; font: 700 1.15rem/1.1 var(--f-titulo); color: #0F2C4A; font-variant-numeric: tabular-nums; }
+.tabla-poblacion { width: 100%; border-collapse: collapse; font-size: var(--t-sm); font-variant-numeric: tabular-nums; }
+.tabla-poblacion th, .tabla-poblacion td { padding: 9px 12px; border-bottom: 1px solid var(--linea); text-align: right; }
+.tabla-poblacion th:first-child, .tabla-poblacion td:first-child { text-align: left; }
+.tabla-poblacion thead th { font-size: var(--t-xs); text-transform: uppercase; letter-spacing: .05em; color: var(--tinta-2); border-bottom: 2px solid var(--linea); }
+.tabla-poblacion .fila-sede td { font-weight: 700; background: var(--niebla); }
+.tabla-poblacion tfoot td { font-weight: 700; border-top: 2px solid var(--tinta); border-bottom: 0; }
+.envoltura-tabla { overflow-x: auto; }
+.mapa-ficha h3, .mapa-ficha .ficha-titulo { font-size: 1.3rem !important; }
+.mapa-ficha dl:not(.ficha-cifras) { margin-top: 8px; }

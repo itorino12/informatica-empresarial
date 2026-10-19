@@ -12,7 +12,14 @@
   "sede_desde": "1998",
   "correo": "informaticaempresarial.sedecaribe@ucr.ac.cr",
   "web": "https://sedecaribe.ucr.ac.cr/",
-  "web_nombre": "Sede del Caribe"
+  "web_nombre": "Sede del Caribe",
+  "poblacion": {
+   "activos_p01": 53,
+   "activos_p07": 215,
+   "activos": 268,
+   "graduados": 493,
+   "admision_2026": 109
+  }
  },
  {
   "id": "siquirres",
@@ -28,7 +35,14 @@
   "correo": "informaticaempresarial.siquirres@ucr.ac.cr",
   "web": "https://sedecaribe.ucr.ac.cr/",
   "web_nombre": "Sede del Caribe",
-  "recinto_desde": "2013"
+  "recinto_desde": "2013",
+  "poblacion": {
+   "activos_p01": 53,
+   "activos_p07": 141,
+   "activos": 194,
+   "graduados": null,
+   "admision_2026": 76
+  }
  },
  {
   "id": "guapiles",
@@ -43,7 +57,14 @@
   "sede_desde": "1998",
   "correo": "informaticaempresarial.rgu@ucr.ac.cr",
   "web": "https://www.sa.ucr.ac.cr/",
-  "web_nombre": "Sede del Atlántico"
+  "web_nombre": "Sede del Atlántico",
+  "poblacion": {
+   "activos_p01": 92,
+   "activos_p07": 123,
+   "activos": 215,
+   "graduados": 237,
+   "admision_2026": 52
+  }
  },
  {
   "id": "turrialba",
@@ -58,7 +79,14 @@
   "sede_desde": "1998",
   "correo": "informaticaempresarial.rt@sa.ucr.ac.cr",
   "web": "https://www.sa.ucr.ac.cr/",
-  "web_nombre": "Sede del Atlántico"
+  "web_nombre": "Sede del Atlántico",
+  "poblacion": {
+   "activos_p01": 93,
+   "activos_p07": 151,
+   "activos": 244,
+   "graduados": 501,
+   "admision_2026": 54
+  }
  },
  {
   "id": "paraiso",
@@ -73,7 +101,14 @@
   "sede_desde": "1998",
   "correo": "informaticaempresarial.rp@ucr.ac.cr",
   "web": "https://www.sa.ucr.ac.cr/",
-  "web_nombre": "Sede del Atlántico"
+  "web_nombre": "Sede del Atlántico",
+  "poblacion": {
+   "activos_p01": 67,
+   "activos_p07": 92,
+   "activos": 159,
+   "graduados": 349,
+   "admision_2026": 53
+  }
  },
  {
   "id": "sanramon",
@@ -88,7 +123,14 @@
   "sede_desde": "1998",
   "correo": "informaticaempresarial.so@ucr.ac.cr",
   "web": "https://so.ucr.ac.cr/",
-  "web_nombre": "Sede de Occidente"
+  "web_nombre": "Sede de Occidente",
+  "poblacion": {
+   "activos_p01": 85,
+   "activos_p07": 131,
+   "activos": 216,
+   "graduados": 559,
+   "admision_2026": 70
+  }
  },
  {
   "id": "grecia",
@@ -103,7 +145,14 @@
   "sede_desde": "1998",
   "correo": "informaticaempresarial.rg@ucr.ac.cr",
   "web": "https://grecia.so.ucr.ac.cr/",
-  "web_nombre": "Recinto de Grecia"
+  "web_nombre": "Recinto de Grecia",
+  "poblacion": {
+   "activos_p01": 72,
+   "activos_p07": 125,
+   "activos": 197,
+   "graduados": 341,
+   "admision_2026": 70
+  }
  },
  {
   "id": "pacifico",
@@ -118,7 +167,14 @@
   "sede_desde": "1998",
   "correo": "informaticaempresarial.sp@ucr.ac.cr",
   "web": "https://srp.ucr.ac.cr/",
-  "web_nombre": "Sede del Pacífico"
+  "web_nombre": "Sede del Pacífico",
+  "poblacion": {
+   "activos_p01": 195,
+   "activos_p07": 195,
+   "activos": 390,
+   "graduados": 728,
+   "admision_2026": 99
+  }
  },
  {
   "id": "liberia",
@@ -133,7 +189,14 @@
   "sede_desde": "1998",
   "correo": "informaticaempresarial.sg@ucr.ac.cr",
   "web": "https://sedeguanacaste.ucr.ac.cr/",
-  "web_nombre": "Sede de Guanacaste"
+  "web_nombre": "Sede de Guanacaste",
+  "poblacion": {
+   "activos_p01": 187,
+   "activos_p07": 143,
+   "activos": 330,
+   "graduados": 612,
+   "admision_2026": 96
+  }
  },
  {
   "id": "sur",
@@ -148,6 +211,13 @@
   "sede_desde": "2006",
   "correo": "informatica.ssur@ucr.ac.cr",
   "web": "https://sededelsur.ucr.ac.cr/",
-  "web_nombre": "Sede del Sur"
+  "web_nombre": "Sede del Sur",
+  "poblacion": {
+   "activos_p01": 73,
+   "activos_p07": 97,
+   "activos": 170,
+   "graduados": 151,
+   "admision_2026": 62
+  }
  }
 ]

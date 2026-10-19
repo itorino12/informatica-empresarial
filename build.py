@@ -175,6 +175,11 @@ def dia(iso): return str(date.fromisoformat(iso).day)
 def mes_corto(iso): d = date.fromisoformat(iso); return f"{MESES_CORTOS[d.month - 1]} {d.year}"
 
 
+def miles(n):
+    """2383 -> '2 383' con espacio duro, como en los documentos de la UCR."""
+    return f"{int(n):,}".replace(",", "\u00a0")
+
+
 def iniciales(nombre):
     partes = [p for p in re.sub(r"^(MSc\.|Mag\.|Dra\.|Dr\.|MCi\.|Licda\.|Lic\.)\s*", "", nombre).split() if p[0].isupper()]
     return (partes[0][0] + (partes[1][0] if len(partes) > 1 else "")).upper()
@@ -213,7 +218,7 @@ def main():
 
     env = Environment(loader=FileSystemLoader(SRC / "templates"), autoescape=select_autoescape(["html"]),
                       trim_blocks=True, lstrip_blocks=True)
-    env.filters.update(fecha_larga=fecha_larga, dia=dia, mes_corto=mes_corto, iniciales=iniciales)
+    env.filters.update(fecha_larga=fecha_larga, dia=dia, mes_corto=mes_corto, iniciales=iniciales, miles=miles)
     env.globals.update(site=datos["site"], hoy=date.today().isoformat())
 
     # programa vigente de cada curso (src/data/programas.json → PDF en assets/programas/)

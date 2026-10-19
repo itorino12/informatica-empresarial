@@ -10,6 +10,11 @@
         <a class="boton boton-primario" href="plan-de-estudios.html">Ver el plan de estudios</a>
         <a class="boton boton-borde" href="sedes.html">Conocer las sedes</a>
       </div>
+      <dl class="cifras-portada">
+        <div><dt>Estudiantes activos</dt><dd>{{ site.cifras.estudiantes_activos|miles }}</dd></div>
+        <div><dt>Personas graduadas</dt><dd>{{ site.cifras.graduados_total|miles }}</dd></div>
+        <div><dt>Admisión 2026</dt><dd>{{ site.cifras.admision_2026|miles }}</dd></div>
+      </dl>
       <p class="dato-red">Cada punto es un recinto donde se imparte la carrera; las líneas lo unen al Consejo de Carrera Intersedes, que coordina a los diez como una sola carrera. Toque un punto o elija un recinto para ver su coordinación.</p>
     </div>
     <div>{{ red_svg(red, animar=true, interactiva=true, modo="portada", titulo="Mapa de Costa Rica con los diez recintos donde se imparte Informática Empresarial") }}</div>

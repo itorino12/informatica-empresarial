@@ -25,7 +25,10 @@
     "proyectos_accion_social": 14,
     "publicaciones": 35,
     "encuesta_graduados_2024": 474,
-    "encuesta_graduados_2025": 399
+    "encuesta_graduados_2025": 399,
+    "estudiantes_activos": 2383,
+    "graduados_total": 3971,
+    "admision_2026": 741
   },
   "nav": [
     {
@@ -253,5 +256,6 @@
       "url": "https://www.sinaes.ac.cr/"
     }
   ],
-  "formulario_elegibles": "https://forms.gle/SE47X2dZPM4HczFb6"
+  "formulario_elegibles": "https://forms.gle/SE47X2dZPM4HczFb6",
+  "poblacion_fuente": "Población estudiantil activa por plan, población graduada y admisión a carrera 2026, por sede y recinto. Datos del Consejo de Carrera Intersedes, 2026."
 }
