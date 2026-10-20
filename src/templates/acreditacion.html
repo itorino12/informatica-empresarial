@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block lede %}La carrera fue acreditada por el Sistema Nacional de Acreditación de la Educación Superior (SINAES) en 2019. Hoy está en proceso de reacreditación, con el Proyecto Especial de Mejora cumplido y la visita de pares prevista para el II ciclo de 2026.{% endblock %}
+{% block lede %}La carrera fue acreditada por el Sistema Nacional de Acreditación de la Educación Superior (SINAES) en 2019. Hoy está en proceso de reacreditación, tras cerrar el Proyecto Especial de Mejora y recibir la visita de pares del 21 al 25 de septiembre de 2026.{% endblock %}
 {% block contenido %}
 <div class="seccion">
   <div class="contenedor con-indice">
@@ -13,6 +13,10 @@
       </ol>
     </nav>
     <div>
+      <div class="sello-acreditacion" style="margin-bottom:32px">
+        <img src="assets/img/sello-sinaes.webp" alt="Sello de carrera acreditada por SINAES, Costa Rica" width="96" height="96">
+        <p><strong>Carrera acreditada desde 2019.</strong> Acreditada por el SINAES el 10 de diciembre de 2019; recibió la visita de pares para la reacreditación del 21 al 25 de septiembre de 2026.</p>
+      </div>
       <section id="trayectoria" aria-labelledby="h-tray">
         <h2 id="h-tray">Trayectoria de acreditación</h2>
         <p class="lede" style="margin-bottom:28px">Proceso 187 ante SINAES. Cada etapa deja evidencia que se custodia en el archivo de la carrera.</p>
@@ -34,7 +38,7 @@
           <div class="cifra"><b class="estado-En-proceso">{{ n['En proceso'] }}</b><span>{{ 'objetivo' if n['En proceso'] == 1 else 'objetivos' }} en proceso, con planes vigentes en todas las sedes</span></div>
           <div class="cifra"><b>0</b><span>objetivos sin evidencia</span></div>
         </div>
-        <div class="tabla-envoltura">
+        <div class="tabla-envoltura" tabindex="0">
           <table class="tabla">
             <caption>Estado de cada objetivo al cierre del PEM, según el Informe de Logros presentado ante el CASR el 4 de mayo de 2026</caption>
             <thead><tr><th scope="col">Objetivo</th><th scope="col">Tema</th><th scope="col">Estado</th><th scope="col">Resultado</th></tr></thead>

@@ -72,7 +72,7 @@
   <div class="contenedor">
     <h2 id="h-comp">Qué cambió del Plan 01 al Plan 07</h2>
     <p class="lede" style="margin-bottom:24px">El Plan 01 se diseñó en 1997. El Plan 07 responde a la consulta con estudiantes, docentes, personas graduadas y empleadoras, y a estándares internacionales del campo.</p>
-    <div class="tabla-envoltura">
+    <div class="tabla-envoltura" tabindex="0">
       <table class="tabla">
         <thead><tr><th scope="col">Aspecto</th><th scope="col">Plan 01 (1997)</th><th scope="col">Plan 07 (2025)</th></tr></thead>
         <tbody>{% for f in plan07.comparacion %}<tr><th scope="row">{{ f.aspecto }}</th><td>{{ f.p01 }}</td><td>{{ f.p07 }}</td></tr>{% endfor %}</tbody>
