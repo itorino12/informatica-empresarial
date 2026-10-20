@@ -118,4 +118,8 @@ Cada curso de la malla del Plan 07 enlaza a su programa vigente en PDF (versión
 - Código en `/opt/cie-web`; archivos publicados en `/var/www/cie`.
 - Certificado HTTPS de Let's Encrypt (certbot), con renovación automática. Revisar con `sudo certbot renew --dry-run`.
 - Acceso: `ssh gestion@163.178.170.75` desde la red de la UCR, o la consola del vCenter.
-- Actualizar el sitio después de subir cambios a GitHub: `sudo bash /opt/cie-web/desplegar.sh`.
+- Publicación automática: el temporizador `cie-desplegar.timer` revisa GitHub cada 5 minutos y, si `main` tiene cambios nuevos, ejecuta `desplegar.sh`. Si la compilación falla, el sitio en línea no se toca.
+  - Instalar (una sola vez): `sudo bash /opt/cie-web/servidor/instalar-auto-despliegue.sh`
+  - Ver qué se publicó: `journalctl -u cie-desplegar --no-pager -n 30`
+  - Apagar: `sudo systemctl disable --now cie-desplegar.timer`
+- Publicar a mano sin esperar al temporizador: `sudo bash /opt/cie-web/desplegar.sh`.
