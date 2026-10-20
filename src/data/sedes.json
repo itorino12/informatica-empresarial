@@ -19,6 +19,12 @@
    "activos": 268,
    "graduados": 385,
    "admision_2026": 109
+  },
+  "foto": {
+   "base": "assets/fotos/sedes/limon",
+   "ancho_max": 896,
+   "alt": "Entrada principal de la Sede del Caribe de la Universidad de Costa Rica, en Limón",
+   "credito": ""
   }
  },
  {
@@ -86,6 +92,12 @@
    "activos": 244,
    "graduados": 501,
    "admision_2026": 54
+  },
+  "foto": {
+   "base": "assets/fotos/sedes/turrialba",
+   "ancho_max": 540,
+   "alt": "Entrada de la Sede del Atlántico de la Universidad de Costa Rica, en Turrialba, con el muro rotulado y una parada techada",
+   "credito": ""
   }
  },
  {

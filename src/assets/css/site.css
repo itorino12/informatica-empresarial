@@ -653,3 +653,12 @@ dd, .pie li, .persona span { overflow-wrap: anywhere; }
 .pasos-grad { padding-left: 1.4em; margin: 0 0 8px; display: grid; gap: 10px; }
 .pasos-grad li { padding-left: 4px; }
 #graduacion h3 { margin-top: 28px; }
+
+/* Foto del recinto en las fichas del mapa */
+.ficha-foto { margin: 0 0 14px; }
+.ficha-foto img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: calc(var(--radio) - 2px); background: var(--niebla); }
+.ficha-foto figcaption { margin-top: 4px; font-size: var(--t-xs, .78rem); color: var(--tinta-2); }
+.mapa-ficha .ficha-foto { margin: -16px -18px 12px; }
+.mapa-ficha .ficha-foto img { aspect-ratio: 5 / 2; border-radius: var(--radio) var(--radio) 0 0; }
+.mapa-ficha .ficha-foto figcaption { padding: 0 18px; color: #4a5d70; }
+.mapa-ficha .ficha-cerrar { z-index: 1; background: rgba(255,255,255,.92); color: #10263D; box-shadow: 0 1px 4px rgba(0,0,0,.25); }

@@ -197,11 +197,16 @@
         '<div><dt>Graduados</dt><dd>' + (p.graduados == null ? '<span title="Incluidos en el Recinto de Limón">—</span>' : miles(p.graduados)) + '</dd></div>' +
         '<div><dt>Admisión 2026</dt><dd>' + miles(p.admision_2026) + '</dd></div></dl>';
     }
+    function fotoFicha(s) {
+      var f = s.foto; if (!f) return '';
+      return '<figure class="ficha-foto"><img src="' + esc(f.base) + '-480.webp" srcset="' + esc(f.base) + '-480.webp 480w, ' + esc(f.base) + '-960.webp ' + f.ancho_max + 'w" sizes="(max-width: 860px) 92vw, 380px" width="480" height="320" alt="' + esc(f.alt) + '" decoding="async">' +
+        (f.credito ? '<figcaption>Foto: ' + esc(f.credito) + '</figcaption>' : '') + '</figure>';
+    }
     function contenidoFicha(s) {
       var encabezado = (s.recinto !== s.sede ? '<p class="ficha-sede-eyebrow">' + esc(s.sede) + '</p>' : '') + '<p class="ficha-titulo h3">' + esc(s.recinto) + '</p>';
       var correo = '<a href="mailto:' + esc(s.correo) + '">' + esc(s.correo) + '</a>';
       if (fichaInterna) {
-        return '<button type="button" class="ficha-cerrar" aria-label="Cerrar ficha">×</button>' + encabezado +
+        return '<button type="button" class="ficha-cerrar" aria-label="Cerrar ficha">×</button>' + fotoFicha(s) + encabezado +
           '<p class="ficha-meta">Provincia de ' + esc(s.provincia) + ' · imparte la carrera desde ' + esc(s.recinto_desde || s.sede_desde) + '</p>' +
           poblacionCompacta(s) +
           '<dl><dt>Coordinación</dt><dd>' + esc(s.coordinacion) + '</dd><dt>Correo</dt><dd>' + correo + '</dd></dl>' +
@@ -212,7 +217,7 @@
           '<div><dt>Graduados</dt><dd>' + (s.poblacion.graduados == null ? '—' : miles(s.poblacion.graduados)) + '</dd></div>' +
           '<div><dt>Admisión 2026</dt><dd>' + miles(s.poblacion.admision_2026) + '</dd></div></dl>' +
           '<p class="small muted" style="margin:0">Activos por plan: Plan 01, ' + miles(s.poblacion.activos_p01) + '; Plan 07, ' + miles(s.poblacion.activos_p07) + '.</p>' : '';
-      return encabezado + (s.nota ? '<p class="small" style="margin:0">' + esc(s.nota) + '</p>' : '') + pob +
+      return fotoFicha(s) + encabezado + (s.nota ? '<p class="small" style="margin:0">' + esc(s.nota) + '</p>' : '') + pob +
         '<dl><dt>Coordinación</dt><dd>' + esc(s.coordinacion) + '</dd><dt>Correo</dt><dd>' + correo + '</dd>' +
         '<dt>Provincia</dt><dd>' + esc(s.provincia) + '</dd><dt>La sede imparte la carrera desde</dt><dd>' + esc(s.sede_desde) + '</dd>' +
         (s.recinto_desde ? '<dt>Este recinto, desde</dt><dd>' + esc(s.recinto_desde) + '</dd>' : '') +
