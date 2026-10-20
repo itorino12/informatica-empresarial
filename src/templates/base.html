@@ -10,11 +10,16 @@
   <link rel="canonical" href="{{ site.base_url }}/{{ '' if pagina == 'index.html' else pagina }}">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_CR">
-  <meta property="og:site_name" content="{{ site.nombre_largo }}, Universidad de Costa Rica">
+  <meta property="og:site_name" content="Informática Empresarial UCR">
   <meta property="og:title" content="{{ titulo }}">
   <meta property="og:description" content="{{ descripcion }}">
   <meta property="og:image" content="{{ site.base_url }}/assets/img/logo-cie.png">
+  <link rel="icon" href="favicon.ico" sizes="48x48">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#0F2C4A">
   <link rel="preload" href="assets/fonts/fira-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/site.css">
   <script>
@@ -23,6 +28,13 @@
       if(!t&&window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)t='dark';
       if(t)r.setAttribute('data-theme',t);var e=localStorage.getItem('cie:escala');if(e)r.style.setProperty('--escala',e);}catch(e){}})();
   </script>
+  {% if pagina == 'index.html' %}
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebSite","name":"Informática Empresarial UCR",
+   "alternateName":["Carrera de Informática Empresarial UCR","Bachillerato en Informática Empresarial UCR"],
+   "url":"{{ site.base_url }}/"}
+  </script>
+  {% endif %}
   {% block jsonld %}
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"EducationalOccupationalProgram",
