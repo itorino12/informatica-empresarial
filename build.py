@@ -194,6 +194,29 @@ def texto_plano(h):
     return re.sub(r"\s+", " ", html.unescape(h)).strip()
 
 
+def entradas_busqueda(salida, archivo, titulo):
+    """Una entrada por página (inicio del texto) y otra por cada sección con id,
+    para que el buscador encuentre contenido largo y enlace directo a la sección."""
+    m = re.search(r"<main[^>]*>(.*)</main>", salida, re.S)
+    cuerpo = m.group(1) if m else salida
+    cortes = [(x.start(), x.group(1)) for x in re.finditer(r'<section\b[^>]*\bid="([^"]+)"', cuerpo)]
+    inicio = cortes[0][0] if cortes else len(cuerpo)
+    entradas = [{"t": titulo, "u": archivo, "x": texto_plano("<main>" + cuerpo[:inicio] + "</main>")[:3000]
+                 or texto_plano(salida)[:3000]}]
+    for i, (pos, ident) in enumerate(cortes):
+        fin = cortes[i + 1][0] if i + 1 < len(cortes) else len(cuerpo)
+        trozo = cuerpo[pos:fin]
+        h = re.search(r"<h[2-4][^>]*>(.*?)</h[2-4]>", trozo, re.S)
+        if not h:
+            continue
+        sub = texto_plano("<main>" + h.group(1) + "</main>")
+        texto = texto_plano("<main>" + trozo + "</main>")
+        if len(texto) < 40:
+            continue
+        entradas.append({"t": f"{sub} · {titulo}", "u": f"{archivo}#{ident}", "x": texto[:8000]})
+    return entradas
+
+
 def main():
     datos = {n: json.loads((SRC / "data" / f"{n}.json").read_text(encoding="utf-8"))
              for n in ["site", "sedes", "plan07", "noticias", "contenido", "documentos", "programas"]}
@@ -242,7 +265,7 @@ def main():
         salida = re.sub(r'(assets/(?:css|js)/[\w.-]+\.(?:css|js))"', rf'\1?v={version}"', salida)
         (DIST / archivo).write_text(salida, encoding="utf-8")
         if archivo not in ("404.html",):
-            indice.append({"t": titulo, "u": archivo, "x": texto_plano(salida)[:6000]})
+            indice.extend(entradas_busqueda(salida, archivo, titulo))
         print(f"  ✓ {archivo}")
 
     for n in datos["noticias"]:
