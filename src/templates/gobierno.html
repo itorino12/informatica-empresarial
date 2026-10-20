@@ -28,11 +28,14 @@
 
       <section id="estructura" aria-labelledby="h-est">
         <h2 id="h-est">Estructura organizativa</h2>
-        <p>Aprobada por el Consejo de Área de Sedes Regionales mediante el oficio CASR-8-2026 del 13 de abril de 2026.</p>
-        <ul style="list-style:none;padding:0;margin:24px 0 0">
+        <p class="prosa">{{ contenido.estructura_origen }}</p>
+        <ul class="estructura">
           {% for e in contenido.estructura %}
-          <li style="margin-left:{{ e.nivel * 28 }}px;padding:14px 18px;border-left:4px solid {{ 'var(--noche)' if e.nivel == 0 else ('var(--celeste)' if e.nivel == 1 else 'var(--linea)') }};background:{{ 'var(--niebla)' if e.nivel < 2 else 'transparent' }};margin-bottom:8px;border-radius:0 6px 6px 0">
-            <b>{{ e.nombre }}</b><br><span class="small muted">{{ e.texto }}</span>
+          <li class="estructura-nivel-{{ e.nivel }}">
+            <b>{{ e.nombre }}</b>
+            {% if e.jornada %}<span class="estructura-jornada">Jornada: {{ e.jornada }}</span>{% endif %}
+            <p class="small muted">{{ e.texto }}</p>
+            {% if e.funciones %}<details><summary>Funciones</summary><ul class="lista-marcas small">{% for f in e.funciones %}<li>{{ f }}</li>{% endfor %}</ul></details>{% endif %}
           </li>
           {% endfor %}
         </ul>

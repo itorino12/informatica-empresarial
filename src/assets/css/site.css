@@ -671,3 +671,16 @@ dd, .pie li, .persona span { overflow-wrap: anywhere; }
 .sello-acreditacion img { flex-shrink: 0; width: 96px; height: 96px; }
 .sello-acreditacion p { margin: 0; }
 @media (max-width: 480px) { .sello-acreditacion img { width: 72px; height: 72px; } }
+
+/* Estructura organizativa */
+.estructura { list-style: none; padding: 0; margin: 24px 0 0; }
+.estructura > li { padding: 14px 18px; margin-bottom: 8px; border-left: 4px solid var(--linea); border-radius: 0 6px 6px 0; }
+.estructura-nivel-0 { border-left-color: var(--noche) !important; background: var(--niebla); }
+.estructura-nivel-1 { margin-left: 28px; border-left-color: var(--celeste) !important; background: var(--niebla); }
+.estructura-nivel-2 { margin-left: 56px; }
+.estructura p { margin: 4px 0 0; }
+.estructura-jornada { display: block; width: fit-content; margin: 6px 0 0; padding: 2px 10px; border-radius: 999px; font-size: var(--t-xs, .78rem); font-weight: 600; background: var(--niebla); color: var(--tinta); border: 1px solid var(--linea); }
+.estructura details { margin-top: 8px; }
+.estructura summary { cursor: pointer; font-size: var(--t-sm); font-weight: 600; color: var(--enlace); }
+.estructura details ul { margin: 8px 0 0; }
+@media (max-width: 560px) { .estructura-nivel-1 { margin-left: 12px; } .estructura-nivel-2 { margin-left: 24px; } }
