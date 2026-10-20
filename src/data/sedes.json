@@ -22,8 +22,8 @@
   },
   "foto": {
    "base": "assets/fotos/sedes/limon",
-   "ancho_max": 896,
    "alt": "Entrada principal de la Sede del Caribe de la Universidad de Costa Rica, en Limón",
+   "pos": "50% 60%",
    "credito": ""
   }
  },
@@ -48,6 +48,12 @@
    "activos": 194,
    "graduados": 108,
    "admision_2026": 76
+  },
+  "foto": {
+   "base": "assets/fotos/sedes/siquirres",
+   "alt": "Edificio del Aula Desconcentrada de Siquirres, con el rótulo de la Universidad de Costa Rica frente a la calle",
+   "pos": "50% 60%",
+   "credito": ""
   }
  },
  {
@@ -70,6 +76,12 @@
    "activos": 215,
    "graduados": 237,
    "admision_2026": 52
+  },
+  "foto": {
+   "base": "assets/fotos/sedes/guapiles",
+   "alt": "Entrada del Recinto de Guápiles de la Sede del Atlántico, con su muro rotulado y las banderas",
+   "pos": "60% 50%",
+   "credito": ""
   }
  },
  {
@@ -95,8 +107,8 @@
   },
   "foto": {
    "base": "assets/fotos/sedes/turrialba",
-   "ancho_max": 540,
    "alt": "Entrada de la Sede del Atlántico de la Universidad de Costa Rica, en Turrialba, con el muro rotulado y una parada techada",
+   "pos": "60% 50%",
    "credito": ""
   }
  },
@@ -120,6 +132,12 @@
    "activos": 159,
    "graduados": 349,
    "admision_2026": 53
+  },
+  "foto": {
+   "base": "assets/fotos/sedes/paraiso",
+   "alt": "Vista aérea del Recinto de Paraíso de la Sede del Atlántico, con sus edificios y zonas verdes",
+   "pos": "50% 55%",
+   "credito": ""
   }
  },
  {
@@ -142,6 +160,12 @@
    "activos": 216,
    "graduados": 559,
    "admision_2026": 70
+  },
+  "foto": {
+   "base": "assets/fotos/sedes/sanramon",
+   "alt": "Entrada de la Sede de Occidente de la Universidad de Costa Rica, en San Ramón, pintada de azul y rodeada de árboles",
+   "pos": "50% 50%",
+   "credito": ""
   }
  },
  {
@@ -164,6 +188,12 @@
    "activos": 197,
    "graduados": 341,
    "admision_2026": 70
+  },
+  "foto": {
+   "base": "assets/fotos/sedes/grecia",
+   "alt": "Edificio del Recinto de Grecia de la Sede de Occidente, con el monumento rotulado en la entrada",
+   "pos": "50% 70%",
+   "credito": ""
   }
  },
  {
@@ -186,6 +216,12 @@
    "activos": 390,
    "graduados": 728,
    "admision_2026": 99
+  },
+  "foto": {
+   "base": "assets/fotos/sedes/pacifico",
+   "alt": "Muro de entrada de la Sede del Pacífico Arnoldo Ferreto Segura, en Puntarenas, con las letras UCR",
+   "pos": "50% 72%",
+   "credito": ""
   }
  },
  {
@@ -208,6 +244,12 @@
    "activos": 330,
    "graduados": 612,
    "admision_2026": 96
+  },
+  "foto": {
+   "base": "assets/fotos/sedes/liberia",
+   "alt": "Portón de piedra de la Sede de Guanacaste de la Universidad de Costa Rica, en Liberia, con su rótulo y las banderas",
+   "pos": "70% 70%",
+   "credito": ""
   }
  },
  {
@@ -230,6 +272,12 @@
    "activos": 170,
    "graduados": 151,
    "admision_2026": 62
+  },
+  "foto": {
+   "base": "assets/fotos/sedes/sur",
+   "alt": "Edificio principal de la Sede del Sur de la Universidad de Costa Rica, en Golfito, con sus rótulos y la montaña al fondo",
+   "pos": "50% 60%",
+   "credito": ""
   }
  }
 ]

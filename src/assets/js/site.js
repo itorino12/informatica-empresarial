@@ -199,7 +199,7 @@
     }
     function fotoFicha(s) {
       var f = s.foto; if (!f) return '';
-      return '<figure class="ficha-foto"><img src="' + esc(f.base) + '-480.webp" srcset="' + esc(f.base) + '-480.webp 480w, ' + esc(f.base) + '-960.webp ' + f.ancho_max + 'w" sizes="(max-width: 860px) 92vw, 380px" width="480" height="320" alt="' + esc(f.alt) + '" decoding="async">' +
+      return '<figure class="ficha-foto"><img src="' + esc(f.base) + '-480.webp" srcset="' + esc(f.base) + '-480.webp 480w, ' + esc(f.base) + '-960.webp 960w" sizes="(max-width: 860px) 92vw, 380px" width="480" height="320" alt="' + esc(f.alt) + '"' + (f.pos ? ' style="object-position:' + esc(f.pos) + '"' : '') + ' decoding="async">' +
         (f.credito ? '<figcaption>Foto: ' + esc(f.credito) + '</figcaption>' : '') + '</figure>';
     }
     function contenidoFicha(s) {
