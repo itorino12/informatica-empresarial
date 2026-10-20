@@ -78,9 +78,14 @@
       "texto": "La carrera entrega el Informe de Logros del PEM y el Compromiso de Mejora 2027–2030."
     },
     {
-      "fecha": "II ciclo 2026",
+      "fecha": "21–25 sep 2026",
       "titulo": "Visita de pares evaluadores",
-      "texto": "Evaluación externa de SINAES para decidir sobre la reacreditación.",
+      "texto": "Evaluación externa de SINAES para decidir sobre la reacreditación."
+    },
+    {
+      "fecha": "II ciclo 2026",
+      "titulo": "En espera de resolución",
+      "texto": "La carrera espera la resolución de SINAES sobre la reacreditación.",
       "futuro": true
     }
   ],
@@ -102,16 +107,6 @@
       "modalidad": "Virtual",
       "estado": "Por confirmar",
       "enlace": "graduados.html"
-    },
-    {
-      "inicio": "2026-08-01",
-      "fin": "2026-12-15",
-      "titulo": "Visita de pares evaluadores de SINAES",
-      "lugar": "Sedes y recintos",
-      "modalidad": "Presencial",
-      "estado": "Fecha por confirmar",
-      "texto_fecha": "II ciclo 2026",
-      "enlace": "acreditacion.html"
     },
     {
       "inicio": "2027-08-01",
@@ -162,8 +157,6 @@
     }
   ],
   "plan_estrategico": {
-    "aprobacion": "Aprobado por el Consejo de Carrera en la sesión 04-2025 (23 de mayo de 2025) y por el Consejo de Área de Sedes Regionales mediante el oficio CASR-8-2026 (13 de abril de 2026).",
-    "proceso": "Construido de febrero a abril de 2025 con la Oficina de Planificación Universitaria (OPLAU), en talleres con docentes, representación estudiantil y comisiones de la carrera.",
     "ejes": [
       {
         "nombre": "Excelencia académica",
@@ -194,7 +187,14 @@
           "Realizar dos actividades de actualización por año para la población graduada"
         ]
       }
-    ]
+    ],
+    "parrafos": [
+      "El Plan Estratégico 2026–2030 de la carrera de Bachillerato en Informática Empresarial se construyó entre febrero y abril de 2025, en un esfuerzo arduo y participativo coordinado por la Comisión Intersedes de Autoevaluación y Gestión de la Calidad (CAGC), con el aval del Consejo de Carrera y la asesoría técnica de la Oficina de Planificación Universitaria (OPLAU). En su elaboración participaron representantes del Consejo de Carrera, la Comisión Curricular, la CAGC, personal docente y representación estudiantil.",
+      "Su formulación se sustentó en un diagnóstico interno y externo, que integró los resultados del proceso de autoevaluación, los compromisos de mejora y el análisis de contexto de la carrera. Este último consideró tendencias internacionales de la disciplina, programas académicos comparables, buenas prácticas, proyectos de investigación y acción social, convenios, publicaciones y características del personal académico.",
+      "El plan se formuló en concordancia con las políticas y objetivos institucionales de la Universidad de Costa Rica, el Plan Estratégico Institucional y los planes estratégicos de las unidades académicas donde se imparte la carrera, para articular la planificación de la carrera con la de las sedes. Su plan de acción se organiza en los ejes de Excelencia Académica, Excelencia en la Gestión y Vida Universitaria, con metas, indicadores y responsables definidos.",
+      "El documento fue aprobado en firme por el Consejo de Carrera en la sesión extraordinaria 04-2025, celebrada el 23 de mayo de 2025, y posteriormente por el Consejo de Área de Sedes Regionales mediante el oficio CASR-8-2026, del 13 de abril de 2026."
+    ],
+    "operativo": "Su ejecución se concreta mediante planes operativos anuales y un seguimiento sistemático que permite valorar avances, revisar indicadores y ajustar acciones y prioridades cuando corresponda. El Plan Operativo 2026 es el primer instrumento derivado del Plan Estratégico para trasladar sus objetivos a acciones concretas, medibles y verificables."
   },
   "acreditacion": [
     {
@@ -233,9 +233,14 @@
       "texto": "Envío por medio del Centro de Evaluación Académica, la Vicerrectoría de Docencia y la Rectoría."
     },
     {
-      "fecha": "II ciclo 2026",
+      "fecha": "21–25 sep 2026",
       "titulo": "Visita de pares",
-      "texto": "Evaluación externa y decisión sobre la reacreditación.",
+      "texto": "Evaluación externa de SINAES en las sedes y recintos."
+    },
+    {
+      "fecha": "II ciclo 2026",
+      "titulo": "En espera de resolución",
+      "texto": "La carrera espera la resolución de SINAES sobre la reacreditación.",
       "futuro": true
     }
   ],
@@ -256,8 +261,8 @@
     {
       "obj": "4 y 5",
       "nombre": "Investigación, acción social y publicaciones",
-      "estado": "Parcial",
-      "nota": "19 proyectos de investigación, 14 de acción social y unas 35 publicaciones. Un proyecto de investigación en trámite y propuestas de acción social en dos sedes."
+      "estado": "Completo",
+      "nota": "Objetivos cumplidos: 19 proyectos de investigación, 14 de acción social y unas 35 publicaciones, además de un proyecto de investigación en trámite y propuestas de acción social en dos sedes."
     },
     {
       "obj": "6",
@@ -274,14 +279,14 @@
     {
       "obj": "8",
       "nombre": "Desarrollo del personal administrativo",
-      "estado": "Parcial",
-      "nota": "Avance heterogéneo: varias sedes inician sus planes 2026–2030."
+      "estado": "En proceso",
+      "nota": "Todas las sedes y recintos cuentan con un plan de desarrollo del personal administrativo; en el caso de la Sede del Sur, se acoge al plan institucional de Recursos Humanos."
     },
     {
       "obj": "9",
       "nombre": "Taller de redes en la Sede de Guanacaste",
-      "estado": "Mitigado",
-      "nota": "El nuevo pabellón no se entregó; se acondicionaron los laboratorios 1 y 2 en febrero de 2026."
+      "estado": "Completo",
+      "nota": "Se acondicionaron los laboratorios 1 y 2 para las prácticas de redes en febrero de 2026. Las tres metas sobre gestión de espacio y acondicionamiento se cumplieron a cabalidad."
     },
     {
       "obj": "10",

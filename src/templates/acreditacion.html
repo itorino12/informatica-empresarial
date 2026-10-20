@@ -28,11 +28,10 @@
         <p>Mediante el ACUERDO-CNA-410-2024, SINAES dio a la carrera 18 meses para atender cinco aspectos antes de decidir sobre la reacreditación:</p>
         <ol class="prosa" style="margin-bottom:28px">{% for m in contenido.pem_mandato %}<li>{{ m }}</li>{% endfor %}</ol>
         <div class="cifras" style="margin-bottom:28px">
-          {% set n = {'Completo':0,'Parcial':0,'Mitigado':0} %}
-          {% for o in contenido.pem %}{% set _ = n.update({o.estado: n[o.estado] + 1}) %}{% endfor %}
-          <div class="cifra"><b class="estado-Completo">{{ n.Completo }}</b><span>objetivos completos</span></div>
-          <div class="cifra"><b class="estado-Parcial">{{ n.Parcial }}</b><span>objetivos con avance parcial</span></div>
-          <div class="cifra"><b class="estado-Mitigado">{{ n.Mitigado }}</b><span>objetivo mitigado con una solución alternativa</span></div>
+          {% set n = {'Completo':0,'En proceso':0} %}
+          {% for o in contenido.pem %}{% set _ = n.update({o.estado: n.get(o.estado, 0) + 1}) %}{% endfor %}
+          <div class="cifra"><b class="estado-Completo">{{ n['Completo'] }}</b><span>objetivos completos</span></div>
+          <div class="cifra"><b class="estado-En-proceso">{{ n['En proceso'] }}</b><span>{{ 'objetivo' if n['En proceso'] == 1 else 'objetivos' }} en proceso, con planes vigentes en todas las sedes</span></div>
           <div class="cifra"><b>0</b><span>objetivos sin evidencia</span></div>
         </div>
         <div class="tabla-envoltura">
@@ -41,7 +40,7 @@
             <thead><tr><th scope="col">Objetivo</th><th scope="col">Tema</th><th scope="col">Estado</th><th scope="col">Resultado</th></tr></thead>
             <tbody>
               {% for o in contenido.pem %}
-              <tr><td>{{ o.obj }}</td><th scope="row">{{ o.nombre }}</th><td><span class="estado estado-{{ o.estado }}">{{ o.estado }}</span></td><td>{{ o.nota }}</td></tr>
+              <tr><td>{{ o.obj }}</td><th scope="row">{{ o.nombre }}</th><td><span class="estado estado-{{ o.estado|replace(' ', '-') }}">{{ o.estado }}</span></td><td>{{ o.nota }}</td></tr>
               {% endfor %}
             </tbody>
           </table>
@@ -49,8 +48,9 @@
       </section>
 
       <section id="compromiso" aria-labelledby="h-comp">
-        <h2 id="h-comp">Compromiso de Mejora 2027–2030</h2>
-        <p class="lede" style="margin-bottom:24px">El compromiso pasó de ocho objetivos a cinco: los relacionados con el plan de estudios, el plan estratégico y el desarrollo docente se cerraron durante el PEM.</p>
+        <h2 id="h-comp">Compromiso de Mejora 2027–2030 <span class="etiqueta-revision">Propuesta en revisión</span></h2>
+        <div class="aviso" style="margin-bottom:20px"><p>Esta es una propuesta preliminar: aún no está aprobada y puede cambiar con la respuesta de SINAES.</p></div>
+        <p class="lede" style="margin-bottom:24px">En la propuesta, el compromiso pasa de ocho objetivos a cinco: los relacionados con el plan de estudios, el plan estratégico y el desarrollo docente se cerraron durante el PEM.</p>
         <div class="dos-col" style="gap:28px 48px">
           {% for c in contenido.compromiso %}
           <div style="border-top:3px solid var(--celeste);padding-top:12px">

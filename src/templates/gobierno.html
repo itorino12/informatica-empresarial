@@ -40,7 +40,7 @@
 
       <section id="plan-estrategico" aria-labelledby="h-pe">
         <h2 id="h-pe">Plan Estratégico 2026–2030</h2>
-        <p>{{ contenido.plan_estrategico.proceso }} {{ contenido.plan_estrategico.aprobacion }}</p>
+        <div class="prosa">{% for p in contenido.plan_estrategico.parrafos %}<p>{{ p }}</p>{% endfor %}</div>
         <div class="tres-col" style="margin-top:24px;gap:28px">
           {% for e in contenido.plan_estrategico.ejes %}
           <div>
@@ -50,6 +50,8 @@
           </div>
           {% endfor %}
         </div>
+        <h3 style="margin-top:28px">Cómo se ejecuta</h3>
+        <p class="prosa">{{ contenido.plan_estrategico.operativo }}</p>
       </section>
 
       <section id="sesiones" aria-labelledby="h-ses">
