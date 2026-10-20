@@ -153,7 +153,6 @@
     {
       "nombre": "Coordinaciones de carrera por sede y recinto",
       "nivel": 2,
-      "jornada": "3/8 de tiempo completo en la Sede del Caribe y 1/4 de tiempo completo en las demás sedes y recintos",
       "texto": "Lideran la gestión académica local de la carrera y son el enlace entre cada recinto, su sede, el Consejo y las autoridades universitarias. Cada coordinación es miembro del Consejo de Carrera Intersedes.",
       "funciones": [
         "Programar los cursos de cada ciclo y gestionar la prematrícula, la matrícula y los cupos.",
@@ -167,7 +166,6 @@
     {
       "nombre": "Comisión Intersedes de Autoevaluación y Gestión de la Calidad",
       "nivel": 2,
-      "jornada": "1/4 de tiempo completo",
       "texto": "Integrada por una persona representante de cada recinto, nombrada por la dirección de su sede. Sus competencias se rigen por la Resolución VD-R-9227-2015 de la Vicerrectoría de Docencia.",
       "funciones": [
         "Solicitar información a las instancias universitarias y recolectar las evidencias del proceso.",
@@ -180,8 +178,7 @@
     {
       "nombre": "Comisión de Desarrollo Curricular Intersedes",
       "nivel": 2,
-      "jornada": "1/4 de tiempo completo",
-      "texto": "Integrada por una persona docente representante de cada sede regional, con nombramiento de al menos medio tiempo, por dos años prorrogables. La preside quien elija la coordinación del Consejo a partir de una terna propuesta por la comisión. Se reúne al menos una vez al mes.",
+      "texto": "Integrada por una persona docente representante de cada sede regional, nombrada por dos años prorrogables. La preside quien elija la coordinación del Consejo a partir de una terna propuesta por la comisión. Se reúne al menos una vez al mes.",
       "funciones": [
         "Recomendar al Consejo nuevos cursos para la oferta académica, en especial optativos.",
         "Revisar periódicamente la estructura curricular según las demandas del entorno.",
@@ -1056,5 +1053,5 @@
       }
     ]
   },
-  "estructura_origen": "La estructura nació del I Congreso de Gestión Organizativa y Académica en Informática Empresarial (CIE-2023), realizado el 12 y 13 de julio de 2023, donde el profesorado de todas las sedes discutió cómo organizar una carrera intersedes y qué jornada requiere su gestión colegiada. El Consejo de Carrera aprobó su propuesta en la sesión 37, del 22 de septiembre de 2023, y el Consejo de Área de Sedes Regionales aprobó la estructura vigente, de forma unánime y en firme, en la sesión CASR-44-2026 del 13 de abril de 2026 (oficio CASR-8-2026). Con ello se cumplió el objetivo 12 del Proyecto Especial de Mejora."
+  "estructura_origen": "La estructura nació del I Congreso de Gestión Organizativa y Académica en Informática Empresarial (CIE-2023), realizado el 12 y 13 de julio de 2023, donde el profesorado de todas las sedes discutió cómo organizar la gestión colegiada de una carrera intersedes. El Consejo de Carrera aprobó su propuesta en la sesión 37, del 22 de septiembre de 2023, y el Consejo de Área de Sedes Regionales aprobó la estructura vigente, de forma unánime y en firme, en la sesión CASR-44-2026 del 13 de abril de 2026 (oficio CASR-8-2026). Con ello se cumplió el objetivo 12 del Proyecto Especial de Mejora."
 }
