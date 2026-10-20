@@ -22,7 +22,7 @@
       <p class="categoria" style="margin:0 0 6px">Investigación, {{ p.sede }}, proyecto {{ p.codigo }}</p>
       <h3>{{ p.titulo }}</h3>
       <p>{{ p.resumen }}</p>
-      <p class="small muted">Equipo: {{ p.equipo }}. Presentado al Consejo de Carrera en la sesión ordinaria 16-2026.</p>
+      <p class="small muted">Equipo: {{ p.equipo }}. Presentado al Consejo de Carrera en {{ p.presentado }}.</p>
     </article>
     {% endfor %}
   </div>

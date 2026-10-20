@@ -35,6 +35,7 @@
             <b>{{ e.nombre }}</b>
             {% if e.jornada %}<span class="estructura-jornada">Jornada: {{ e.jornada }}</span>{% endif %}
             <p class="small muted">{{ e.texto }}</p>
+            {% if e.actual %}<p class="small" style="margin-top:8px"><b>En qué trabaja actualmente</b></p><ul class="lista-marcas small">{% for f in e.actual %}<li>{{ f }}</li>{% endfor %}</ul>{% endif %}
             {% if e.funciones %}<details><summary>Funciones</summary><ul class="lista-marcas small">{% for f in e.funciones %}<li>{{ f }}</li>{% endfor %}</ul></details>{% endif %}
           </li>
           {% endfor %}
@@ -66,7 +67,7 @@
           </div>
           <div class="cifras" style="grid-template-columns:1fr 1fr;border-bottom:0">
             <div class="cifra"><b>20</b><span>sesiones del Consejo en 2025</span></div>
-            <div class="cifra"><b>17</b><span>sesiones del Consejo en 2026, a septiembre</span></div>
+            <div class="cifra"><b>18</b><span>sesiones del Consejo en 2026, al 15 de octubre</span></div>
             <div class="cifra"><b>23</b><span>talleres de trabajo en 2026, al 9 de octubre</span></div>
             <div class="cifra"><b>6</b><span>personas coordinadoras forman quórum</span></div>
           </div>

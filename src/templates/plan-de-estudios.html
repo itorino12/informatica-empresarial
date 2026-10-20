@@ -81,6 +81,21 @@
   </div>
 </section>
 
+<section class="seccion" id="aprobacion" aria-labelledby="h-aprob">
+  <div class="contenedor">
+    <h2 id="h-aprob">Cómo se aprobó</h2>
+    <p class="lede" style="margin-bottom:24px">La Revisión Integral del Plan de Estudios, elaborada por la comisión curricular intersedes, recibió el aval del Consejo de Carrera en la sesión extraordinaria 03-2025 y fue aprobada por las asambleas de las seis sedes, cada una de las cuales asumió su implementación. La Vicerrectoría de Docencia la oficializó mediante la Resolución VD-13456-2025.</p>
+    <div class="tabla-envoltura" tabindex="0">
+      <table class="tabla">
+        <thead><tr><th scope="col">Instancia</th><th scope="col">Sesión</th><th scope="col">Fecha</th></tr></thead>
+        <tbody>
+          {% for a in contenido.aprobacion_plan07 %}<tr><th scope="row">{{ a.instancia }}</th><td>{{ a.sesion }}</td><td>{{ a.fecha }}</td></tr>{% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
 <section class="seccion seccion-tenue" id="transicion" aria-labelledby="h-trans">
   <div class="contenedor">
     <h2 id="h-trans">Traslado del Plan 01 al Plan 07</h2>

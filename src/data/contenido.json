@@ -184,6 +184,12 @@
         "Revisar periódicamente la estructura curricular según las demandas del entorno.",
         "Evaluar el contenido y el perfil de los cursos y proponer mejoras.",
         "Examinar solicitudes de convalidación cuando corresponda."
+      ],
+      "actual": [
+        "Da seguimiento al informe curricular CEA-46-2025 y a la implementación del Plan 07 en todas las sedes y recintos.",
+        "Trabaja el abordaje de los ejes transversales de la carrera, con la asesoría técnica solicitada al Centro de Evaluación Académica.",
+        "Recopila métricas académicas por sede para el seguimiento del Plan 07 y la reacreditación.",
+        "Prepara los ajustes al Plan 07 previstos para 2027, entre ellos nuevos requisitos entre cursos y la incorporación en Matemáticas Discretas de contenidos de Lógica."
       ]
     },
     {
@@ -235,7 +241,7 @@
       "El plan se formuló en concordancia con las políticas y objetivos institucionales de la Universidad de Costa Rica, el Plan Estratégico Institucional y los planes estratégicos de las unidades académicas donde se imparte la carrera, para articular la planificación de la carrera con la de las sedes. Su plan de acción se organiza en los ejes de Excelencia Académica, Excelencia en la Gestión y Vida Universitaria, con metas, indicadores y responsables definidos.",
       "El documento fue aprobado en firme por el Consejo de Carrera en la sesión extraordinaria 04-2025, celebrada el 23 de mayo de 2025, y posteriormente por el Consejo de Área de Sedes Regionales mediante el oficio CASR-8-2026, del 13 de abril de 2026."
     ],
-    "operativo": "Su ejecución se concreta mediante planes operativos anuales y un seguimiento sistemático que permite valorar avances, revisar indicadores y ajustar acciones y prioridades cuando corresponda. El Plan Operativo 2026 es el primer instrumento derivado del Plan Estratégico para trasladar sus objetivos a acciones concretas, medibles y verificables."
+    "operativo": "Su ejecución se concreta mediante planes operativos anuales y un seguimiento sistemático que permite valorar avances, revisar indicadores y ajustar acciones y prioridades cuando corresponda. El Plan Operativo 2026, aprobado por el Consejo de Carrera en la sesión ordinaria 16-2025 del 14 de noviembre de 2025, es el primer instrumento derivado del Plan Estratégico para trasladar sus objetivos a acciones concretas, medibles y verificables."
   },
   "acreditacion": [
     {
@@ -669,6 +675,10 @@
     {
       "p": "¿Dónde se publican los acuerdos del Consejo?",
       "r": "Las noticias de este sitio resumen los acuerdos principales. Las actas oficiales se custodian en el archivo del Consejo y pueden solicitarse por correo."
+    },
+    {
+      "p": "¿Puedo convalidar los cursos de inglés con el Examen de Diagnóstico de Inglés (EDI)?",
+      "r": "Solo IF0013 Inglés I para Informática Empresarial. Para convalidarlo con el EDI 2027 debe obtener al menos nivel A1 en las cuatro destrezas: comprensión auditiva, comprensión de lectura, expresión oral y expresión escrita. IF0014 Inglés II, IF0018 Inglés III e IF0020 Inglés IV para Informática Empresarial no se convalidan con el EDI; si quiere aprobarlos sin matricularlos, la vía es el examen por suficiencia que indica cada programa."
     }
   ],
   "charlas": [
@@ -689,8 +699,9 @@
     },
     {
       "periodo": "II ciclo 2025",
-      "titulo": "Ética e IA responsable",
-      "persona": "M.Sc. Wells, Amazon"
+      "titulo": "Ética e Inteligencia Artificial Responsable",
+      "persona": "M.Sc. Irvin Wells Flores, Amazon, egresado de la carrera",
+      "detalle": "20 de noviembre de 2025. Participaron 28 personas egresadas, con una satisfacción superior a 4,6 de 5."
     },
     {
       "periodo": "I ciclo 2026",
@@ -705,7 +716,16 @@
       "titulo": "Factores que influyen en la intención de investigar de docentes de la carrera de Bachillerato en Informática Empresarial de las sedes regionales de la Universidad de Costa Rica",
       "sede": "Sede del Sur",
       "equipo": "Mag. Mainor Cruz Alvarado, Mag. Emilio Montero Núñez, MGH. Luis Carlos Núñez Masís, Mag. Yendry Lezcano Calderón",
-      "resumen": "Busca evidencia empírica sobre por qué las personas docentes deciden investigar o no, con la Teoría del Comportamiento Planificado como marco."
+      "resumen": "Busca evidencia empírica sobre por qué las personas docentes deciden investigar o no, con la Teoría del Comportamiento Planificado como marco.",
+      "presentado": "la sesión ordinaria 16-2026"
+    },
+    {
+      "codigo": "Pry01-536-2021",
+      "titulo": "Análisis de la experiencia profesional de personas estudiantes y graduadas de la carrera de Bachillerato en Informática Empresarial de la Universidad de Costa Rica, que laboran o han laborado en el exterior entre el 2015 y el 2021",
+      "sede": "Centro de Investigaciones sobre Diversidad Cultural y Estudios Regionales (CIDICER)",
+      "equipo": "Mag. Sindy Porras Santamaría (investigadora responsable), Mag. Wendy Ramírez González, Mag. Nury Leitón Baltodano, Mag. Álvaro Mena Monge, Mag. Aarón Galagarza Carrillo y Mag. Rafael García Chévez",
+      "resumen": "Caracteriza la importancia de las habilidades blandas y de las áreas de conocimiento en el trabajo de quienes se han desempeñado fuera del país, identifica en qué áreas recibieron o no formación en la carrera y señala brechas. El Consejo acordó usar estos hallazgos como insumo para la actualización curricular, el desarrollo de competencias y el vínculo con la población graduada.",
+      "presentado": "la sesión ordinaria 10-2025, del 8 de agosto de 2025"
     }
   ],
   "perfil": {
@@ -1053,5 +1073,37 @@
       }
     ]
   },
-  "estructura_origen": "La estructura nació del I Congreso de Gestión Organizativa y Académica en Informática Empresarial (CIE-2023), realizado el 12 y 13 de julio de 2023, donde el profesorado de todas las sedes discutió cómo organizar la gestión colegiada de una carrera intersedes. El Consejo de Carrera aprobó su propuesta en la sesión 37, del 22 de septiembre de 2023, y el Consejo de Área de Sedes Regionales aprobó la estructura vigente, de forma unánime y en firme, en la sesión CASR-44-2026 del 13 de abril de 2026 (oficio CASR-8-2026). Con ello se cumplió el objetivo 12 del Proyecto Especial de Mejora."
+  "estructura_origen": "La estructura nació del I Congreso de Gestión Organizativa y Académica en Informática Empresarial (CIE-2023), realizado el 12 y 13 de julio de 2023, donde el profesorado de todas las sedes discutió cómo organizar la gestión colegiada de una carrera intersedes. El Consejo de Carrera aprobó su propuesta en la sesión 37, del 22 de septiembre de 2023, y el Consejo de Área de Sedes Regionales aprobó la estructura vigente, de forma unánime y en firme, en la sesión CASR-44-2026 del 13 de abril de 2026 (oficio CASR-8-2026). Con ello se cumplió el objetivo 12 del Proyecto Especial de Mejora.",
+  "aprobacion_plan07": [
+    {
+      "instancia": "Asamblea de la Sede del Atlántico",
+      "sesion": "Sesión ordinaria 572-2025",
+      "fecha": "21 de mayo de 2025"
+    },
+    {
+      "instancia": "Asamblea de la Sede del Caribe",
+      "sesion": "Sesión 305-2025",
+      "fecha": "23 de mayo de 2025"
+    },
+    {
+      "instancia": "Asamblea de la Sede de Guanacaste",
+      "sesion": "Sesión 18-2025",
+      "fecha": "28 de mayo de 2025"
+    },
+    {
+      "instancia": "Asamblea de la Sede del Pacífico",
+      "sesion": "Sesión extraordinaria 01-2025",
+      "fecha": "29 de mayo de 2025"
+    },
+    {
+      "instancia": "Asamblea de la Sede de Occidente",
+      "sesion": "Sesión 629",
+      "fecha": "4 de junio de 2025"
+    },
+    {
+      "instancia": "Asamblea de la Sede del Sur",
+      "sesion": "Sesión ordinaria 58",
+      "fecha": "4 de junio de 2025"
+    }
+  ]
 }

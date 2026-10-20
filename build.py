@@ -220,6 +220,8 @@ def entradas_busqueda(salida, archivo, titulo):
 def main():
     datos = {n: json.loads((SRC / "data" / f"{n}.json").read_text(encoding="utf-8"))
              for n in ["site", "sedes", "plan07", "noticias", "contenido", "documentos", "programas"]}
+    # Las noticias con fecha futura quedan programadas: se publican en el primer build desde esa fecha.
+    datos["noticias"] = [n for n in datos["noticias"] if n["fecha"] <= date.today().isoformat()]
     datos["noticias"].sort(key=lambda n: n["fecha"], reverse=True)
     red = construir_red(datos["sedes"])
 

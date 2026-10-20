@@ -185,5 +185,41 @@
   ],
   "enlace": "simposio.html",
   "fecha_texto": "Septiembre de 2025"
+ },
+ {
+  "id": "edi-2027",
+  "fecha": "2026-10-15",
+  "categoria": "Estudiantes",
+  "titulo": "Inglés I se podrá convalidar con el Examen de Diagnóstico de Inglés 2027",
+  "resumen": "Para convalidar IF0013 Inglés I para Informática Empresarial se requiere nivel A1 en las cuatro destrezas; los demás cursos de inglés siguen por suficiencia.",
+  "cuerpo": [
+   "En su sesión extraordinaria 18-2026, el Consejo de Carrera Intersedes respondió a la Vicerrectoría de Docencia que el curso IF0013 Inglés I para Informática Empresarial podrá convalidarse con los resultados del Examen de Diagnóstico de Inglés (EDI) 2027. La persona estudiante debe obtener al menos nivel A1, según el Marco Común Europeo de Referencia, en comprensión auditiva, comprensión de lectura, expresión oral y expresión escrita.",
+   "IF0014 Inglés II, IF0018 Inglés III e IF0020 Inglés IV para Informática Empresarial no se convalidan con el EDI. Quien quiera aprobarlos sin matricularlos puede hacerlo mediante el examen por suficiencia que establece cada programa. Es el mismo criterio que se aplicó para el EDI 2026."
+  ],
+  "enlace": "tramites.html#preguntas"
+ },
+ {
+  "id": "charla-etica-ia-2025",
+  "fecha": "2025-11-28",
+  "categoria": "Comunidad",
+  "titulo": "Egresado de la carrera conversa con la población graduada sobre ética e inteligencia artificial",
+  "resumen": "La charla «Ética e Inteligencia Artificial Responsable» reunió a 28 personas egresadas de distintas sedes, con una satisfacción superior a 4,6 de 5.",
+  "cuerpo": [
+   "El 20 de noviembre de 2025, el M.Sc. Irvin Wells Flores, gerente de desarrollo de software en Amazon y egresado de la carrera, impartió por Zoom la charla «Ética e Inteligencia Artificial Responsable», dirigida a la población graduada del Bachillerato en Informática Empresarial.",
+   "La sesión combinó ejercicios interactivos y análisis de casos reales sobre los retos éticos de la inteligencia artificial en la práctica tecnológica. Fue la segunda actividad de actualización de 2025, con la que se cumplió la meta del Plan Estratégico de realizar dos al año. El Consejo de Carrera aprobó el informe de la actividad en la sesión ordinaria 18-2025."
+  ],
+  "enlace": "graduados.html"
+ },
+ {
+  "id": "sitio-web-oficial",
+  "fecha": "2026-10-23",
+  "categoria": "Consejo",
+  "titulo": "La carrera estrena su sitio web oficial",
+  "resumen": "informaticaempresarial.ucr.ac.cr reúne en un solo lugar la información de la carrera para las diez sedes y recintos.",
+  "cuerpo": [
+   "El Consejo de Carrera Intersedes puso en línea el sitio web oficial del Bachillerato en Informática Empresarial, alojado en un servidor institucional de la Universidad de Costa Rica cuya solicitud aprobó el Consejo en la sesión ordinaria 16-2026, del 28 de agosto de 2026.",
+   "El sitio centraliza la malla curricular del Plan 07 con los programas de curso, los trámites para el estudiantado, la información de cada sede y recinto, la investigación, la acción social y el proceso de acreditación. Responde a la meta del Plan Estratégico 2026–2030 de contar con un sitio web institucional que divulgue el quehacer de toda la carrera, y al primer objetivo del Compromiso de Mejora 2027–2030."
+  ],
+  "enlace": "index.html"
  }
 ]
