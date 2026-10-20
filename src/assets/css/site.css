@@ -288,7 +288,7 @@ section[id] { scroll-margin-top: 90px; }
 .migas li + li::before { content: "/"; margin-right: 6px; color: #7E9BB5; }
 .migas a { color: #BFE3F7; }
 .migas [aria-current] { color: #fff; }
-.encabezado-pagina .patron { position: absolute; right: -40px; top: -20px; width: 420px; opacity: .22; pointer-events: none; }
+.encabezado-pagina .patron { position: absolute; right: max(16px, calc((100% - var(--ancho)) / 2)); top: 50%; transform: translateY(-50%); height: 92%; width: auto; max-width: 34%; opacity: .28; pointer-events: none; }
 @media (max-width: 720px) { .encabezado-pagina .patron { display: none; } }
 
 /* -------------------------------------------------------------- Secciones */
