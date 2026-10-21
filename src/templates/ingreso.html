@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% set a = contenido.admision %}
+{% block lede %}Se ingresa por el proceso de admisión de la Universidad de Costa Rica. Al concursar elige la carrera y el recinto: el plan de estudios es el mismo en los diez.{% endblock %}
+{% block contenido %}
+<div class="seccion">
+  <div class="contenedor con-indice">
+    <nav class="indice" aria-label="En esta página">
+      <p>En esta página</p>
+      <ol>
+        <li><a href="#para-quien">¿Es para usted?</a></li>
+        <li><a href="#proceso">Proceso de admisión {{ a.proceso }}</a></li>
+        <li><a href="#cortes">Cortes de ingreso</a></li>
+        <li><a href="#recintos">Dónde estudiar</a></li>
+        <li><a href="#traslados">Si ya estudia en la UCR</a></li>
+      </ol>
+    </nav>
+    <div>
+      <section id="para-quien" aria-labelledby="h-para">
+        <h2 id="h-para">¿Es para usted?</h2>
+        <p>Informática Empresarial une la computación con la gestión de las organizaciones. Es para quien disfruta resolver problemas con tecnología y quiere entender cómo funcionan las empresas e instituciones que la usan.</p>
+        <div class="dos-col" style="gap:28px">
+          <div>
+            <h3 style="font-size:var(--t-md)">Lo que aprenderá a hacer</h3>
+            <ul class="lista-marcas">{% for c in contenido.perfil.capacidades %}<li>{{ c }}</li>{% endfor %}</ul>
+          </div>
+          <div class="caja">
+            <h3 style="font-size:var(--t-md)">En datos</h3>
+            <dl style="display:grid;grid-template-columns:auto 1fr;gap:10px 18px;margin:0">
+              <dt class="muted">Título</dt><dd style="margin:0">Bachillerato en Informática Empresarial, código {{ site.codigo_carrera }}</dd>
+              <dt class="muted">Duración</dt><dd style="margin:0">Cuatro años: ocho ciclos lectivos y dos de verano</dd>
+              <dt class="muted">Plan</dt><dd style="margin:0"><a href="plan-de-estudios.html">Plan 07, {{ plan07.total_creditos }} créditos</a></dd>
+              <dt class="muted">Calidad</dt><dd style="margin:0"><a href="acreditacion.html">Acreditada por SINAES desde 2019</a></dd>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section id="proceso" aria-labelledby="h-proceso">
+        <h2 id="h-proceso">Proceso de admisión {{ a.proceso }}</h2>
+        <p>Es el proceso para ingresar a la Universidad en 2027. Lo administra la Oficina de Registro e Información (ORI); la carrera no recibe solicitudes directamente.</p>
+        <ol class="linea-tiempo" style="margin-top:20px">
+          {% for p in a.pasos %}
+          {% set pasado = p.hasta < hoy %}
+          <li class="{{ 'futuro' if not pasado }}"><div class="cuando">{{ p.fecha }}</div><div class="que"><h3>{{ p.titulo }}</h3>{% if pasado %}<p class="small muted">Etapa concluida.</p>{% endif %}</div></li>
+          {% endfor %}
+        </ol>
+        <p class="small muted">Fuente: {{ a.fuente }} Las fechas pueden ajustarse; confirme siempre en el sitio de la ORI.</p>
+        <p><a class="boton boton-claro" href="{{ a.instructivo }}" target="_blank" rel="noopener">Instructivo del proceso de admisión<span class="visually-hidden"> (PDF, pestaña nueva)</span></a> <a class="boton boton-claro" href="https://ori.ucr.ac.cr/" target="_blank" rel="noopener">Oficina de Registro e Información<span class="visually-hidden"> (pestaña nueva)</span></a></p>
+      </section>
+
+      <section id="cortes" aria-labelledby="h-cortes">
+        <h2 id="h-cortes">Cortes de ingreso</h2>
+        <p>Cada recinto tiene su propio corte de ingreso. Se define en el concurso a partir de los cupos del recinto y de las notas de admisión de quienes lo eligen, por eso cambia de un año a otro y de un recinto a otro. Elegir un recinto con menos demanda puede facilitar el ingreso, y la formación es la misma en todos.</p>
+        <p>La ORI publica los cortes oficiales de cada año. Para no mostrar cifras desactualizadas, este sitio enlaza directamente a esa fuente:</p>
+        <ul class="lista-marcas">
+          <li><a href="https://consultasic.ucr.ac.cr/cortespi/" target="_blank" rel="noopener">Consulta de cortes de ingreso a carrera, ORI<span class="visually-hidden"> (pestaña nueva)</span></a> (se habilita en cada período de consulta)</li>
+          <li><a href="https://ori.ucr.ac.cr/sites/default/files/2025-11/2025-cortes_ordinaria.pdf" target="_blank" rel="noopener">Cortes de ingreso a carrera, admisión ordinaria 2025<span class="visually-hidden"> (PDF, pestaña nueva)</span></a></li>
+        </ul>
+        <p class="small muted">Busque «Informática Empresarial» y el recinto de su interés.</p>
+      </section>
+
+      <section id="recintos" aria-labelledby="h-recintos">
+        <h2 id="h-recintos">Dónde estudiar</h2>
+        <p>La carrera se imparte en diez sedes y recintos. Puede conocer cada uno y escribir a su coordinación antes de concursar.</p>
+        <ul class="etiquetas">{% for s in sedes %}<li><a href="sedes.html#{{ s.id }}">{{ s.recinto }}</a></li>{% endfor %}</ul>
+        <p><a href="https://feriavocacional.ucr.ac.cr/informatica-empresarial/" target="_blank" rel="noopener">Ficha de la carrera en la Feria Vocacional de la UCR<span class="visually-hidden"> (pestaña nueva)</span></a></p>
+      </section>
+
+      <section id="traslados" aria-labelledby="h-traslados">
+        <h2 id="h-traslados">Si ya estudia en la UCR</h2>
+        <p>Puede solicitar el traslado a Informática Empresarial desde otra carrera en los períodos que define la ORI. Quien ingresa hoy, por admisión o por traslado, queda inscrito en el Plan 07, y los cursos aprobados en otra carrera pueden <a href="tramites.html#convalidaciones">convalidarse</a>.</p>
+        <p>Si estudia en el Plan 01 de esta carrera y quiere pasar al Plan 07, use el <a href="mi-avance.html#traslado">simulador de traslado</a>.</p>
+      </section>
+    </div>
+  </div>
+</div>
+{% endblock %}

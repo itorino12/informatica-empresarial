@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block lede %}Las personas graduadas de Informática Empresarial combinan desarrollo de software, datos e infraestructura con gestión organizacional. Su organización puede recibirlas desde la Práctica Empresarial Supervisada.{% endblock %}
+{% block contenido %}
+<div class="seccion">
+  <div class="contenedor con-indice">
+    <nav class="indice" aria-label="En esta página">
+      <p>En esta página</p>
+      <ol>
+        <li><a href="#perfil">Perfil profesional</a></li>
+        <li><a href="#practica">Práctica Empresarial Supervisada</a></li>
+        <li><a href="#ofrecer">Cómo ofrecer un espacio</a></li>
+        <li><a href="#otras">Otras formas de colaborar</a></li>
+      </ol>
+    </nav>
+    <div>
+      <section id="perfil" aria-labelledby="h-perfil">
+        <h2 id="h-perfil">Perfil profesional</h2>
+        <p>{{ contenido.perfil.areas }}</p>
+        <ul class="lista-marcas">{% for c in contenido.perfil.capacidades %}<li>{{ c }}</li>{% endfor %}</ul>
+        <h3 style="margin-top:24px">Áreas de formación del Plan 07</h3>
+        <div class="dos-col" style="gap:20px 32px">
+          {% for k, ar in plan07.areas.items() if k != 'FG' %}
+          <div style="border-left:4px solid {{ ar.color }};padding-left:14px"><h4 style="margin:0 0 4px">{{ ar.nombre }}</h4><p class="small muted" style="margin:0">{{ ar.descripcion }}</p></div>
+          {% endfor %}
+        </div>
+        <p style="margin-top:20px">La carrera está <a href="acreditacion.html">acreditada por SINAES desde 2019</a> y se imparte en <a href="sedes.html">diez sedes y recintos</a>, de modo que hay estudiantes y personas graduadas en todas las regiones del país.</p>
+      </section>
+
+      <section id="practica" aria-labelledby="h-practica">
+        <h2 id="h-practica">Práctica Empresarial Supervisada</h2>
+        <p>Es el curso con el que el estudiantado cierra su formación aplicando lo aprendido en una organización real, bajo la supervisión de una persona docente de la Universidad. En el Plan 01 es el curso IF-8100 (VIII ciclo). En el Plan 07 será IF-0022 Práctica Empresarial Supervisada, de 11 créditos, cuando se abra el cuarto año.</p>
+        <h3 style="font-size:var(--t-md)">Tres modalidades</h3>
+        <ol class="pasos-grad">
+          <li><b>Como persona colaboradora.</b> La persona estudiante se integra a un equipo de su organización durante 16 semanas, con al menos 20 horas semanales.</li>
+          <li><b>Como desarrollo externo.</b> La persona estudiante desarrolla una aplicación que su organización necesita, con requerimientos claros y una persona usuaria que los facilite.</li>
+          <li><b>Como proyecto innovador.</b> La persona estudiante desarrolla una aplicación propia, sustentada en un estudio de factibilidad o de mercado.</li>
+        </ol>
+        <div class="dos-col" style="gap:28px;margin-top:20px">
+          <div class="caja">
+            <h3 style="font-size:var(--t-md)">Qué se espera de la organización</h3>
+            <ul class="lista-marcas small">
+              <li>Estar formalmente constituida y en operación.</li>
+              <li>Asignar una persona responsable de la práctica, de preferencia con formación en computación o informática.</li>
+              <li>Facilitar los recursos tecnológicos y la información necesarios, con licencias vigentes.</li>
+              <li>Si es posible, apoyar a la persona estudiante con un subsidio para transporte, alimentación o conexión.</li>
+            </ul>
+          </div>
+          <div class="caja">
+            <h3 style="font-size:var(--t-md)">Qué aporta la Universidad</h3>
+            <ul class="lista-marcas small">
+              <li>Una persona docente que supervisa el avance cada semana y se comunica con la persona responsable de la organización.</li>
+              <li>Un plan de trabajo acordado en las dos primeras semanas.</li>
+              <li>Cartas de solicitud y de formalización, bitácora de avance y una guía de evaluación para la organización.</li>
+              <li>Tres momentos de retroalimentación sobre el desempeño y una actividad de cierre.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="ofrecer" aria-labelledby="h-ofrecer">
+        <h2 id="h-ofrecer">Cómo ofrecer un espacio</h2>
+        <p>Escriba a la coordinación del recinto más cercano a su organización con el nombre de la organización, la persona de contacto, el área donde se integraría la persona estudiante y la modalidad que le interesa. La práctica se organiza por ciclo lectivo, así que conviene escribir antes de que inicie el semestre.</p>
+        <div class="tabla-envoltura" tabindex="0">
+          <table class="tabla">
+            <thead><tr><th scope="col">Sede o recinto</th><th scope="col">Correo de la coordinación</th></tr></thead>
+            <tbody>
+              {% for s in sedes %}<tr><th scope="row">{{ s.recinto }}{% if s.recinto != s.sede %} <span class="small muted" style="font-weight:400">· {{ s.sede }}</span>{% endif %}</th><td><a href="mailto:{{ s.correo }}?subject=Espacio%20para%20Pr%C3%A1ctica%20Empresarial%20Supervisada">{{ s.correo }}</a></td></tr>{% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="otras" aria-labelledby="h-otras">
+        <h2 id="h-otras">Otras formas de colaborar</h2>
+        <ul class="lista-marcas">
+          <li><b>Charlas para la población graduada.</b> Si su equipo puede compartir experiencia en un tema de actualidad, <a href="graduados.html">proponga una charla</a>.</li>
+          <li><b>Docencia.</b> Profesionales con posgrado pueden inscribirse en el <a href="docentes.html">Registro de docentes elegibles</a>.</li>
+          <li><b>Acción social.</b> Instituciones y organizaciones comunitarias pueden plantear necesidades para los <a href="accion-social.html">proyectos y el Trabajo Comunal Universitario</a>.</li>
+        </ul>
+        <p>Para cualquier otra propuesta, <a href="contacto.html">escriba al Consejo de Carrera Intersedes</a>.</p>
+      </section>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1105,5 +1105,54 @@
       "sesion": "Sesión ordinaria 58",
       "fecha": "4 de junio de 2025"
     }
-  ]
+  ],
+  "admision": {
+    "proceso": "2026-2027",
+    "fuente": "Instructivo del proceso de admisión UCR 2026-2027, Oficina de Registro e Información.",
+    "instructivo": "https://ori.ucr.ac.cr/sites/default/files/archivos-2026/instructivo_proceso_de_admision_ucr_2026-2027_0.pdf",
+    "pasos": [
+      {
+        "desde": "2026-02-16",
+        "hasta": "2026-03-20",
+        "fecha": "16 de febrero al 20 de marzo de 2026",
+        "titulo": "Inscripción a la Prueba de Aptitud Académica"
+      },
+      {
+        "desde": "2026-06-12",
+        "hasta": "2026-06-17",
+        "fecha": "12 al 17 de junio de 2026",
+        "titulo": "Obtención de la cita de examen"
+      },
+      {
+        "desde": "2026-09-27",
+        "hasta": "2026-10-19",
+        "fecha": "27 de setiembre al 19 de octubre de 2026",
+        "titulo": "Aplicación de la Prueba de Aptitud Académica"
+      },
+      {
+        "desde": "2026-11-16",
+        "hasta": "2026-11-16",
+        "fecha": "16 de noviembre de 2026, 4:00 p. m.",
+        "titulo": "Publicación de la nota de admisión"
+      },
+      {
+        "desde": "2026-11-17",
+        "hasta": "2026-11-19",
+        "fecha": "17 al 19 de noviembre de 2026",
+        "titulo": "Consultas sobre el resultado"
+      },
+      {
+        "desde": "2026-11-01",
+        "hasta": "2026-11-30",
+        "fecha": "Noviembre de 2026",
+        "titulo": "Publicación de la normativa del concurso a carrera y de la solicitud de beca socioeconómica"
+      },
+      {
+        "desde": "2026-12-01",
+        "hasta": "2026-12-31",
+        "fecha": "Diciembre de 2026",
+        "titulo": "Concurso de ingreso a carrera y recinto: aquí se elige Informática Empresarial y el recinto"
+      }
+    ]
+  }
 }

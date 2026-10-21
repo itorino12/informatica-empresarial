@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% block lede %}Dos herramientas de consulta para el estudiantado: marque lo que ya aprobó y vea qué puede matricular en el Plan 07, o simule cómo se reconocerían sus cursos del Plan 01 si se traslada.{% endblock %}
+{% block contenido %}
+<div class="seccion">
+  <div class="contenedor con-indice">
+    <nav class="indice" aria-label="En esta página">
+      <p>En esta página</p>
+      <ol>
+        <li><a href="#avance">Mi avance en el Plan 07</a></li>
+        <li><a href="#traslado">Simulador de traslado</a></li>
+        <li><a href="#importante">Antes de decidir</a></li>
+      </ol>
+    </nav>
+    <div>
+      <noscript><div class="aviso"><p>Estas herramientas necesitan JavaScript activado en el navegador.</p></div></noscript>
+
+      <section id="avance" aria-labelledby="h-avance">
+        <h2 id="h-avance">Mi avance en el Plan 07</h2>
+        <p>Toque cada curso que ya aprobó. El sitio le indica qué cursos puede matricular según los requisitos y cuánto le falta. En los espacios de optativos, márquelo cuando haya aprobado un curso de esa área.</p>
+        <p class="small muted">Lo que marque se guarda solo en este navegador; no se envía a ningún servidor.</p>
+
+        <div class="avance-resumen" aria-live="polite">
+          <div class="avance-cifras">
+            <div><b id="av-creditos">0</b><span>de {{ plan07.total_creditos }} créditos aprobados</span></div>
+            <div><b id="av-cursos">0</b><span>cursos aprobados</span></div>
+            <div><b id="av-disponibles">0</b><span>cursos que puede matricular</span></div>
+          </div>
+          <div class="barra-progreso" role="img" id="av-barra-etq" aria-label="0 % del plan aprobado"><span id="av-barra" style="width:0%"></span></div>
+        </div>
+
+        <div class="avance-leyenda" aria-hidden="true">
+          <span><i class="ley ley-ok"></i>Aprobado</span><span><i class="ley ley-disp"></i>Puede matricularlo</span><span><i class="ley ley-blq"></i>Le faltan requisitos</span>
+        </div>
+
+        <div class="avance-ciclos" id="avance-ciclos">
+          {% for ci in plan07.ciclos %}
+          <div class="avance-ciclo">
+            <h3>{{ ci.nombre }} <span class="muted small">· año {{ ci.anio }}</span></h3>
+            <ul>
+              {% for c in plan07.cursos if c.ciclo == ci.n %}
+              <li><button type="button" class="av-curso" data-sigla="{{ c.sigla }}" aria-pressed="false">
+                <span class="av-sigla">{{ c.sigla if not c.sigla.startswith('OPT-') else 'Optativo' }}</span>
+                <span class="av-nombre">{{ c.nombre }}</span>
+                <span class="av-estado small"></span>
+              </button></li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endfor %}
+        </div>
+
+        <div class="dos-col" style="gap:28px;margin-top:24px">
+          <div class="caja">
+            <h3 style="font-size:var(--t-md)">Puede matricular ahora</h3>
+            <ul class="lista-marcas small" id="av-lista-disp"><li>Marque sus cursos aprobados.</li></ul>
+          </div>
+          <div class="caja">
+            <h3 style="font-size:var(--t-md)">Detalle del curso</h3>
+            <p class="small muted" id="av-detalle">Pase el cursor o enfoque un curso con el teclado para ver sus requisitos.</p>
+          </div>
+        </div>
+        <p style="margin-top:16px"><button type="button" class="boton boton-claro" id="av-limpiar">Borrar lo marcado</button></p>
+      </section>
+
+      <section id="traslado" aria-labelledby="h-traslado">
+        <h2 id="h-traslado">Simulador de traslado del Plan 01 al Plan 07</h2>
+        <p>Marque los cursos del Plan 01 que ya aprobó. El simulador aplica la tabla de convalidaciones de la Resolución VD-13456-2025 y le muestra qué se reconoce, qué no tiene equivalente y qué le quedaría pendiente en el Plan 07.</p>
+
+        <div class="traslado-grid">
+          <form class="traslado-cursos" id="tr-form" aria-label="Cursos aprobados del Plan 01">
+            {% for ci in ['I','II','III','IV','V','VI','VII','VIII','Optativos'] %}
+            <fieldset>
+              <legend>{{ 'Optativos del Plan 01' if ci == 'Optativos' else ci ~ ' ciclo' }}</legend>
+              {% for c in traslado.plan01 if c.ciclo == ci %}
+              <label class="tr-item"><input type="checkbox" value="{{ c.sigla }}"> <span><b>{{ c.sigla }}</b> {{ c.nombre }}</span></label>
+              {% endfor %}
+            </fieldset>
+            {% endfor %}
+            <p><button type="button" class="enlace-boton small" id="tr-ano1">Marcar todo el primer año</button> · <button type="button" class="enlace-boton small" id="tr-limpiar">Desmarcar todo</button></p>
+          </form>
+
+          <div class="traslado-resultado" aria-live="polite" id="tr-resultado">
+            <div class="caja" id="tr-caso"><p class="muted" style="margin:0">Marque sus cursos aprobados para ver el resultado.</p></div>
+            <div id="tr-detalle"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="importante" aria-labelledby="h-importante">
+        <h2 id="h-importante">Antes de decidir</h2>
+        <ul class="lista-marcas">
+          <li>Estas herramientas son orientativas. El reconocimiento oficial lo hace la unidad académica con el estudio de su expediente, y el traslado requiere firmar el consentimiento informado.</li>
+          <li>El Plan 07 se abre de forma gradual: en 2026 se ofrecen primero y segundo año; en 2027, hasta tercer año; desde 2028, los cuatro años.</li>
+          <li>El Plan 01 se ofrece hasta el III ciclo 2029. En el I ciclo 2030, quien siga en el Plan 01 con cursos pendientes pasa al Plan 07 con las convalidaciones correspondientes, salvo que solo le falte el Trabajo Comunal Universitario.</li>
+          <li>Los optativos que aparecen como reconocidos ocupan el espacio de optativo de su área en el Plan 07.</li>
+        </ul>
+        <p><a href="plan-de-estudios.html#transicion">Ver las reglas completas de transición</a> · <a href="sedes.html">Consultar a la coordinación de su recinto</a></p>
+        <p class="small muted">{{ traslado.fuente }}</p>
+      </section>
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block scripts %}<script src="assets/js/datos.js" defer></script><script src="assets/js/avance.js" defer></script>{% endblock %}

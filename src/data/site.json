@@ -56,8 +56,8 @@
         },
         {
           "titulo": "Cómo ingresar",
-          "url": "carrera.html#admision",
-          "desc": "Admisión, perfil y salida profesional"
+          "url": "ingreso.html",
+          "desc": "Admisión, cortes y recintos"
         }
       ]
     },
@@ -71,9 +71,9 @@
           "desc": "Requisitos, pasos y criterios"
         },
         {
-          "titulo": "Traslado del Plan 01 al Plan 07",
-          "url": "plan-de-estudios.html#transicion",
-          "desc": "Reglas y equivalencias de transición"
+          "titulo": "Mi avance y traslado de plan",
+          "url": "mi-avance.html",
+          "desc": "Requisitos pendientes y simulador"
         },
         {
           "titulo": "Estudio de graduación",
@@ -214,6 +214,11 @@
           "titulo": "Población graduada",
           "url": "graduados.html",
           "desc": "Charlas y vínculo con la carrera"
+        },
+        {
+          "titulo": "Empleadores y organizaciones",
+          "url": "empleadores.html",
+          "desc": "Práctica supervisada y perfil"
         }
       ]
     },

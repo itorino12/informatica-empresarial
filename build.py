@@ -24,8 +24,10 @@ PAGINAS = [
     ("index.html", "Inicio", "Bachillerato en Informática Empresarial de la Universidad de Costa Rica: una carrera, diez sedes y recintos, coordinada por el Consejo de Carrera Intersedes.", None),
     ("carrera.html", "La carrera", "Historia, propósito, aspiración, perfil profesional y cómo ingresar al Bachillerato en Informática Empresarial.", None),
     ("plan-de-estudios.html", "Plan de estudios 07", "Malla curricular interactiva del Plan 07: 144 créditos, cinco áreas académicas, optativos por áreas de tendencia y plan de transición.", ("carrera.html", "La carrera")),
+    ("ingreso.html", "Ingreso a la carrera", "Cómo ingresar al Bachillerato en Informática Empresarial: proceso de admisión de la UCR, recintos, cortes de ingreso y traslados.", ("carrera.html", "La carrera")),
     ("sedes.html", "Sedes y recintos", "Las diez sedes y recintos donde se imparte la carrera y sus coordinaciones.", ("carrera.html", "La carrera")),
     ("tramites.html", "Convalidaciones y trámites", "Cómo se analizan las convalidaciones y equiparaciones, información para el estudiantado y preguntas frecuentes.", None),
+    ("mi-avance.html", "Mi avance y traslado de plan", "Marque los cursos aprobados para ver qué puede matricular en el Plan 07 y simule cómo se reconocen sus cursos del Plan 01.", ("tramites.html", "Estudiantes")),
     ("docentes.html", "Registro de docentes elegibles", "Proceso, áreas, requisitos y criterios del Registro Intersedes de Docentes Elegibles, y plan de desarrollo docente.", None),
     ("investigacion.html", "Investigación", "Proyectos de investigación y producción académica del personal docente de la carrera.", None),
     ("accion-social.html", "Acción social", "Trabajo Comunal Universitario, extensión docente y proyectos con comunidades de la carrera de Informática Empresarial en todas las regiones.", None),
@@ -33,6 +35,7 @@ PAGINAS = [
     ("gobierno.html", "Gestión y gobierno", "Consejo de Carrera Intersedes, estructura organizativa, coordinaciones y Plan Estratégico 2026–2030.", None),
     ("simposio.html", "Simposio de Informática Empresarial", "El simposio anual que rota entre las sedes y reúne a toda la comunidad de la carrera.", ("noticias.html", "Comunidad")),
     ("graduados.html", "Población graduada", "Actividades de actualización profesional, consultas y vínculo con las personas graduadas de la carrera.", ("noticias.html", "Comunidad")),
+    ("empleadores.html", "Empleadores y organizaciones", "Perfil de las personas graduadas y cómo recibir estudiantes en la Práctica Empresarial Supervisada de Informática Empresarial.", ("noticias.html", "Comunidad")),
     ("noticias.html", "Noticias", "Acuerdos del Consejo, logros y actividades de la carrera de Informática Empresarial.", None),
     ("documentos.html", "Repositorio de documentos", "Normativa, planes, protocolos e informes de la carrera de Informática Empresarial.", ("gobierno.html", "Consejo")),
     ("contacto.html", "Contacto", "Escriba al Consejo de Carrera Intersedes o a la coordinación de su sede o recinto.", ("gobierno.html", "Consejo")),
@@ -219,7 +222,7 @@ def entradas_busqueda(salida, archivo, titulo):
 
 def main():
     datos = {n: json.loads((SRC / "data" / f"{n}.json").read_text(encoding="utf-8"))
-             for n in ["site", "sedes", "plan07", "noticias", "contenido", "documentos", "programas"]}
+             for n in ["site", "sedes", "plan07", "noticias", "contenido", "documentos", "programas", "traslado"]}
     # Las noticias con fecha futura quedan programadas: se publican en el primer build desde esa fecha.
     datos["noticias"] = [n for n in datos["noticias"] if n["fecha"] <= date.today().isoformat()]
     datos["noticias"].sort(key=lambda n: n["fecha"], reverse=True)
@@ -257,7 +260,8 @@ def main():
                 o["programa"] = progs[o["sigla"]]
 
     js_datos = ("window.PLAN07=" + json.dumps(datos["plan07"], ensure_ascii=False) + ";\n" +
-                "window.SEDES=" + json.dumps(datos["sedes"], ensure_ascii=False) + ";\n")
+                "window.SEDES=" + json.dumps(datos["sedes"], ensure_ascii=False) + ";\n" +
+                "window.TRASLADO=" + json.dumps(datos["traslado"], ensure_ascii=False) + ";\n")
     (DIST / "assets/js/datos.js").write_text(js_datos, encoding="utf-8")
 
     indice = []
