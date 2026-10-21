@@ -51,12 +51,17 @@
       <section id="cortes" aria-labelledby="h-cortes">
         <h2 id="h-cortes">Cortes de ingreso</h2>
         <p>Cada recinto tiene su propio corte de ingreso. Se define en el concurso a partir de los cupos del recinto y de las notas de admisión de quienes lo eligen, por eso cambia de un año a otro y de un recinto a otro. Elegir un recinto con menos demanda puede facilitar el ingreso, y la formación es la misma en todos.</p>
-        <p>La ORI publica los cortes oficiales de cada año. Para no mostrar cifras desactualizadas, este sitio enlaza directamente a esa fuente:</p>
-        <ul class="lista-marcas">
-          <li><a href="https://consultasic.ucr.ac.cr/cortespi/" target="_blank" rel="noopener">Consulta de cortes de ingreso a carrera, ORI<span class="visually-hidden"> (pestaña nueva)</span></a> (se habilita en cada período de consulta)</li>
-          <li><a href="https://ori.ucr.ac.cr/sites/default/files/2025-11/2025-cortes_ordinaria.pdf" target="_blank" rel="noopener">Cortes de ingreso a carrera, admisión ordinaria 2025<span class="visually-hidden"> (PDF, pestaña nueva)</span></a></li>
-        </ul>
-        <p class="small muted">Busque «Informática Empresarial» y el recinto de su interés.</p>
+        {% set k = a.cortes %}
+        <div class="tabla-envoltura" tabindex="0">
+          <table class="tabla">
+            <caption>Cortes de ingreso y cupos de {{ k.anio }} en Informática Empresarial, de mayor a menor</caption>
+            <thead><tr><th scope="col">Recinto</th><th scope="col">Sede</th><th scope="col" class="num">Corte {{ k.anio }}</th><th scope="col" class="num">Cupos</th></tr></thead>
+            <tbody>
+              {% for id, r, sede, corte, cupo in k.filas %}<tr><th scope="row"><a href="sedes.html#{{ id }}">{{ r }}</a></th><td>{{ sede }}</td><td class="num">{{ corte }}</td><td class="num">{{ cupo }}</td></tr>{% endfor %}
+            </tbody>
+          </table>
+        </div>
+        <p class="small muted">Fuente: <a href="{{ k.url }}" target="_blank" rel="noopener">{{ k.fuente }}<span class="visually-hidden"> (pestaña nueva)</span></a>. El corte de cada año se conoce hasta que termina el concurso; el de {{ k.anio + 1 }} puede ser distinto. Los cortes de años anteriores se pueden consultar en la <a href="https://consultasic.ucr.ac.cr/cortespi/" target="_blank" rel="noopener">consulta de cortes de la ORI<span class="visually-hidden"> (pestaña nueva)</span></a>.</p>
       </section>
 
       <section id="recintos" aria-labelledby="h-recintos">

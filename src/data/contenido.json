@@ -1153,6 +1153,83 @@
         "fecha": "Diciembre de 2026",
         "titulo": "Concurso de ingreso a carrera y recinto: aquí se elige Informática Empresarial y el recinto"
       }
-    ]
+    ],
+    "cortes": {
+      "anio": 2026,
+      "fuente": "Feria Vocacional de la Universidad de Costa Rica",
+      "url": "https://feriavocacional.ucr.ac.cr/informatica-empresarial/",
+      "filas": [
+        [
+          "sanramon",
+          "Recinto de San Ramón",
+          "Sede de Occidente",
+          "579,34",
+          60
+        ],
+        [
+          "grecia",
+          "Recinto de Grecia",
+          "Sede de Occidente",
+          "558,66",
+          60
+        ],
+        [
+          "guapiles",
+          "Recinto de Guápiles",
+          "Sede del Atlántico",
+          "552,88",
+          45
+        ],
+        [
+          "paraiso",
+          "Recinto de Paraíso",
+          "Sede del Atlántico",
+          "551,32",
+          45
+        ],
+        [
+          "turrialba",
+          "Recinto de Turrialba",
+          "Sede del Atlántico",
+          "544,07",
+          47
+        ],
+        [
+          "liberia",
+          "Recinto de Liberia",
+          "Sede de Guanacaste",
+          "539,44",
+          78
+        ],
+        [
+          "pacifico",
+          "Recinto de Puntarenas",
+          "Sede del Pacífico",
+          "518,26",
+          85
+        ],
+        [
+          "siquirres",
+          "Aula Desconcentrada de Siquirres",
+          "Sede del Caribe",
+          "504,41",
+          65
+        ],
+        [
+          "limon",
+          "Recinto de Limón",
+          "Sede del Caribe",
+          "492,09",
+          93
+        ],
+        [
+          "sur",
+          "Recinto de Golfito",
+          "Sede del Sur",
+          "439,25",
+          52
+        ]
+      ]
+    }
   }
 }
