@@ -31,14 +31,14 @@ PAGINAS = [
     ("docentes.html", "Registro de docentes elegibles", "Proceso, áreas, requisitos y criterios del Registro Intersedes de Docentes Elegibles, y plan de desarrollo docente.", None),
     ("investigacion.html", "Investigación", "Proyectos de investigación y producción académica del personal docente de la carrera.", None),
     ("accion-social.html", "Acción social", "Trabajo Comunal Universitario, extensión docente y proyectos con comunidades de la carrera de Informática Empresarial en todas las regiones.", None),
-    ("acreditacion.html", "Calidad y acreditación", "Trayectoria de acreditación ante SINAES, Proyecto Especial de Mejora y Compromiso de Mejora 2027–2030.", None),
+    ("acreditacion.html", "Calidad y acreditación", "Trayectoria de acreditación ante SINAES, Proyecto Especial de Mejora y Compromiso de Mejora 2027–2030.", ("gobierno.html", "Gestión de la carrera")),
     ("gobierno.html", "Gestión y gobierno", "Consejo de Carrera Intersedes, estructura organizativa, coordinaciones y Plan Estratégico 2026–2030.", None),
-    ("simposio.html", "Simposio de Informática Empresarial", "El simposio anual que rota entre las sedes y reúne a toda la comunidad de la carrera.", ("noticias.html", "Comunidad")),
+    ("simposio.html", "Simposio de Informática Empresarial", "El simposio anual que rota entre las sedes y reúne a toda la comunidad de la carrera.", None),
     ("graduados.html", "Población graduada", "Actividades de actualización profesional, consultas y vínculo con las personas graduadas de la carrera.", ("noticias.html", "Comunidad")),
     ("empleadores.html", "Empleadores y organizaciones", "Perfil de las personas graduadas y cómo recibir estudiantes en la Práctica Empresarial Supervisada de Informática Empresarial.", ("noticias.html", "Comunidad")),
     ("noticias.html", "Noticias", "Acuerdos del Consejo, logros y actividades de la carrera de Informática Empresarial.", None),
-    ("documentos.html", "Repositorio de documentos", "Normativa, planes, protocolos e informes de la carrera de Informática Empresarial.", ("gobierno.html", "Consejo")),
-    ("contacto.html", "Contacto", "Escriba al Consejo de Carrera Intersedes o a la coordinación de su sede o recinto.", ("gobierno.html", "Consejo")),
+    ("documentos.html", "Repositorio de documentos", "Normativa, planes, protocolos e informes de la carrera de Informática Empresarial.", ("gobierno.html", "Gestión de la carrera")),
+    ("contacto.html", "Contacto", "Escriba al Consejo de Carrera Intersedes o a la coordinación de su sede o recinto.", ("gobierno.html", "Gestión de la carrera")),
     ("accesibilidad.html", "Declaración de accesibilidad", "Compromiso de accesibilidad del sitio y herramientas disponibles.", None),
     ("404.html", "Página no encontrada", "La página que busca no existe o cambió de dirección.", None),
 ]
@@ -220,8 +220,18 @@ def entradas_busqueda(salida, archivo, titulo):
     return entradas
 
 
+def sin_pendientes(x):
+    """Quita de cualquier lista los elementos marcados con "publicar": false.
+    Sirve para dejar contenido en espera (p. ej., hasta que salga una resolución) sin borrarlo."""
+    if isinstance(x, dict):
+        return {k: sin_pendientes(v) for k, v in x.items()}
+    if isinstance(x, list):
+        return [sin_pendientes(v) for v in x if not (isinstance(v, dict) and v.get("publicar") is False)]
+    return x
+
+
 def main():
-    datos = {n: json.loads((SRC / "data" / f"{n}.json").read_text(encoding="utf-8"))
+    datos = {n: sin_pendientes(json.loads((SRC / "data" / f"{n}.json").read_text(encoding="utf-8")))
              for n in ["site", "sedes", "plan07", "noticias", "contenido", "documentos", "programas", "traslado"]}
     # Las noticias con fecha futura quedan programadas: se publican en el primer build desde esa fecha.
     datos["noticias"] = [n for n in datos["noticias"] if n["fecha"] <= date.today().isoformat()]

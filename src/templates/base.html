@@ -22,12 +22,7 @@
   <meta name="theme-color" content="#0F2C4A">
   <link rel="preload" href="assets/fonts/fira-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/site.css">
-  <script>
-    /* Aplica tema y tamaño guardados antes de pintar para evitar parpadeos */
-    (function(){try{var r=document.documentElement,t=localStorage.getItem('cie:theme');
-      if(!t&&window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)t='dark';
-      if(t)r.setAttribute('data-theme',t);var e=localStorage.getItem('cie:escala');if(e)r.style.setProperty('--escala',e);}catch(e){}})();
-  </script>
+  <script src="assets/js/tema.js"></script>
   {% if pagina == 'index.html' %}
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebSite","name":"Informática Empresarial UCR",
@@ -65,7 +60,6 @@
 
 <header class="cabecera">
   <div class="contenedor">
-    <a class="marca-ucr" href="https://www.ucr.ac.cr/"><img src="assets/img/ucr-celeste.svg" alt="Universidad de Costa Rica" width="77" height="40"></a>
     <a class="marca" href="index.html" aria-label="Inicio: Carrera de Informática Empresarial, Sedes Regionales">
       <img class="logo-claro" src="assets/img/logo-cie.png" alt="SR-CIE, Carrera de Informática Empresarial, Sedes Regionales" width="225" height="44">
       <img class="logo-oscuro" src="assets/img/logo-cie-blanco.png" alt="SR-CIE, Carrera de Informática Empresarial, Sedes Regionales" width="225" height="44">

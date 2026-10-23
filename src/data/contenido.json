@@ -91,15 +91,17 @@
   ],
   "eventos": [
     {
-      "inicio": "2026-10-20",
+      "inicio": "2026-10-23",
       "fin": "2026-11-20",
       "titulo": "Convocatoria 2026 al Registro de Docentes Elegibles",
-      "lugar": "Formulario en línea",
+      "lugar": "Formulario en línea con cierre a las 23:00",
       "modalidad": "Virtual",
-      "estado": "Prevista",
+      "estado": "Abierta",
       "enlace": "docentes.html#convocatoria"
     },
     {
+      "publicar": false,
+      "pendiente": "Expositor por confirmar.",
       "inicio": "2026-11-02",
       "fin": "2026-11-08",
       "titulo": "Charla de actualización para la población graduada, II ciclo 2026",
@@ -109,6 +111,8 @@
       "enlace": "graduados.html"
     },
     {
+      "publicar": false,
+      "pendiente": "El Consejo aún no ha tratado sede ni fechas.",
       "inicio": "2027-08-01",
       "fin": "2027-08-31",
       "titulo": "XV Simposio de Informática Empresarial",
@@ -222,7 +226,7 @@
         "nombre": "Excelencia en la gestión",
         "metas": 3,
         "ejemplos": [
-          "Desarrollar un sitio web institucional que divulgue el quehacer académico, investigativo y de proyección social de toda la carrera",
+          "Desarrollar un sitio web institucional que divulgue el quehacer académico, investigativo y de proyección social de toda la carrera (cumplida: el Consejo aprobó su publicación el 23 de octubre de 2026)",
           "Garantizar equipo tecnológico actualizado en laboratorios especializados y de uso común",
           "Analizar con cada sede la gestión organizativa según la Resolución VD-12928-2024"
         ]
@@ -309,7 +313,7 @@
       "obj": "4 y 5",
       "nombre": "Investigación, acción social y publicaciones",
       "estado": "Completo",
-      "nota": "Objetivos cumplidos: 19 proyectos de investigación, 14 de acción social y unas 35 publicaciones, además de un proyecto de investigación en trámite y propuestas de acción social en dos sedes."
+      "nota": "Objetivos cumplidos: 19 proyectos de investigación, 14 de acción social y unas 35 publicaciones."
     },
     {
       "obj": "6",
@@ -677,6 +681,8 @@
       "r": "Las noticias de este sitio resumen los acuerdos principales. Las actas oficiales se custodian en el archivo del Consejo y pueden solicitarse por correo."
     },
     {
+      "publicar": false,
+      "pendiente": "Resolución de la Vicerrectoría de Docencia sobre el EDI.",
       "p": "¿Puedo convalidar los cursos de inglés con el Examen de Diagnóstico de Inglés (EDI)?",
       "r": "Solo IF0013 Inglés I para Informática Empresarial. Para convalidarlo con el EDI 2027 debe obtener al menos nivel A1 en las cuatro destrezas: comprensión auditiva, comprensión de lectura, expresión oral y expresión escrita. IF0014 Inglés II, IF0018 Inglés III e IF0020 Inglés IV para Informática Empresarial no se convalidan con el EDI; si quiere aprobarlos sin matricularlos, la vía es el examen por suficiencia que indica cada programa."
     }
@@ -823,18 +829,24 @@
           },
           {
             "codigo": "Pry01-279-2027",
+            "publicar": false,
+            "pendiente": "En la Vicerrectoría de Acción Social con ajustes solicitados; publicar al quedar aprobado.",
             "titulo": "Explorador@s de píxeles: habilidades escolares en ciencias y matemáticas mediante el diseño 3D",
             "estado": "En trámite ante la Comisión de Acción Social",
             "texto": "Propuesta del Recinto de Turrialba en la modalidad de educación permanente y servicios."
           },
           {
             "codigo": "Pry01-328-2027",
+            "publicar": false,
+            "pendiente": "En formalización; publicar al quedar aprobado por la Vicerrectoría de Acción Social.",
             "titulo": "Semillas de pensamiento computacional",
             "estado": "En formalización",
             "texto": "Propuesta del Recinto de Guápiles."
           },
           {
             "codigo": "Pry01-330-2027",
+            "publicar": false,
+            "pendiente": "Propuesta; publicar al quedar aprobada por la Vicerrectoría de Acción Social.",
             "titulo": "Feria tecnológica como estrategia de alfabetización digital y formación STEAM en educación primaria y secundaria",
             "estado": "Propuesta",
             "texto": "Propuesta del Recinto de Paraíso."

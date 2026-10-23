@@ -119,8 +119,6 @@ p { margin: 0 0 1em; }
 @media (min-width: 1280px) { .cabecera .contenedor { padding: 0 28px; } }
 .marca { display: flex; align-items: center; gap: 14px; text-decoration: none; color: inherit; flex-shrink: 0; }
 .marca img { height: 40px; width: auto; }
-.marca-ucr { display: flex; align-items: center; flex-shrink: 0; padding-right: 18px; margin-right: -6px; border-right: 1px solid var(--linea); }
-.marca-ucr img { height: 40px; width: 77px; max-width: none; display: block; }
 :root[data-theme="dark"] .marca .logo-claro, .marca .logo-oscuro { display: none; }
 :root[data-theme="dark"] .marca .logo-oscuro { display: block; }
 .nav-principal { margin-left: auto; }
@@ -157,9 +155,7 @@ section[id] { scroll-margin-top: 90px; }
 }
 @media (max-width: 480px) {
   .cabecera .contenedor { gap: 14px; }
-  .marca img, .marca-ucr img { height: 30px; }
-  .marca-ucr img { width: 58px; }
-  .marca-ucr { padding-right: 12px; margin-right: -2px; }
+  .marca img { height: 30px; }
 }
 
 /* -------------------------------------------------------------- Portada */

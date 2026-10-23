@@ -60,6 +60,8 @@ En todas las páginas hay buscador interno (tecla `/` o Ctrl+K), panel de accesi
 3. Revise localmente: `python3 build.py --servir` y abra http://localhost:8000
 4. Publique el contenido de `dist/`.
 
+**Contenido en espera.** Cualquier elemento de una lista en los JSON (noticia, pregunta frecuente, proyecto, evento) puede llevar `"publicar": false` y una nota `"pendiente"`: `build.py` lo omite del sitio y del buscador, pero queda en el repositorio. Se usa para lo que aún no tiene la aprobación de la última instancia (p. ej., la convalidación con el EDI o proyectos en trámite); al aprobarse, basta con quitar ese campo.
+
 Los documentos del repositorio tienen un campo `url`. Si está vacío, el sitio ofrece «Solicitar» por correo. Cuando un documento sea público, súbalo a `src/assets/docs/` y ponga `"url": "assets/docs/archivo.pdf"`.
 
 ## Publicación en el servidor `Informatica_Empresarial_Intersedes` (Ubuntu)
@@ -110,6 +112,17 @@ Cada curso de la malla del Plan 07 enlaza a su programa vigente en PDF (versión
 - Para actualizar un programa cada ciclo: copie el PDF nuevo en `src/assets/programas/`, cambie la entrada en `programas.json` (archivo y ciclo), borre el PDF anterior y publique.
 - Los cursos sin entrada muestran: «El programa se publicará cuando el curso se imparta por primera vez en el Plan 07».
 - Origen: carpeta de planificación de cursos en Drive, subcarpetas «Programas de cursos … / Programas … oficiales - con Logo».
+
+## Seguridad (revisión OWASP Top 10 2025)
+
+`nginx-cie.conf` refleja la configuración real del servidor (HTTPS con Certbot) e incluye HSTS, CSP sin `'unsafe-inline'` en scripts, `server_tokens off` y cabeceras de seguridad en todas las respuestas. Para aplicarla y activar fail2ban:
+
+```bash
+sudo bash /opt/cie-web/servidor/endurecer.sh               # nginx + fail2ban + sin root por SSH
+sudo bash /opt/cie-web/servidor/endurecer.sh --solo-llaves # además, SSH solo con llave
+```
+
+El script respalda la configuración anterior y la restaura si `nginx -t` falla. No use scripts en línea en las plantillas: la CSP los bloquea (el tema se aplica desde `assets/js/tema.js`).
 
 ## Servidor de producción
 

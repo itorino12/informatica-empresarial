@@ -1,6 +1,21 @@
 [
  {
+  "id": "convocatoria-elegibles-2026-abierta",
+  "fecha": "2026-10-23",
+  "categoria": "Docencia",
+  "titulo": "Abierta la convocatoria 2026 al Registro Intersedes de Docentes Elegibles",
+  "resumen": "Hasta el 20 de noviembre de 2026 se reciben postulaciones para los perfiles del Plan 07. El Boletín N.º 01-2026 detalla los cursos, los requisitos y el puntaje.",
+  "cuerpo": [
+   "El Consejo de Carrera Intersedes aprobó el 23 de octubre de 2026 el Boletín N.º 01-2026 del Registro Intersedes de Docentes Elegibles. La convocatoria está dirigida a profesionales en Informática y áreas afines interesados en impartir cursos del Plan 07 en cualquiera de las sedes y recintos de la carrera.",
+   "Las postulaciones se reciben del 23 de octubre al 20 de noviembre de 2026, hasta las 11:00 p. m., únicamente por medio del formulario oficial. La documentación (carta de interés, currículo, títulos, certificaciones y constancias de experiencia) se adjunta en un solo archivo .zip.",
+   "El boletín describe, curso por curso, la jornada, los requisitos académicos y los requisitos deseables con su puntaje. Estar en el registro no implica un nombramiento: cuando una sede o recinto tiene una necesidad docente, su coordinación solicita al Consejo una terna del área correspondiente. Las consultas se atienden en consejoinformaticaempresarial@ucr.ac.cr."
+  ],
+  "enlace": "docentes.html#convocatoria"
+ },
+ {
   "id": "convocatoria-elegibles-2026",
+  "publicar": false,
+  "pendiente": "Reemplazada por la noticia de la convocatoria abierta (23 de octubre de 2026); sus fechas previstas ya no coinciden con el boletín.",
   "fecha": "2026-10-09",
   "categoria": "Docencia",
   "titulo": "El Consejo prepara la convocatoria 2026 del Registro Intersedes de Docentes Elegibles",
@@ -188,6 +203,8 @@
  },
  {
   "id": "edi-2027",
+  "publicar": false,
+  "pendiente": "Se publica cuando la Vicerrectoría de Docencia emita la resolución sobre la convalidación de IF0013 Inglés I para Informática Empresarial con el EDI.",
   "fecha": "2026-10-15",
   "categoria": "Estudiantes",
   "titulo": "Inglés I se podrá convalidar con el Examen de Diagnóstico de Inglés 2027",
@@ -214,11 +231,11 @@
   "id": "sitio-web-oficial",
   "fecha": "2026-10-23",
   "categoria": "Consejo",
-  "titulo": "La carrera estrena su sitio web oficial",
-  "resumen": "informaticaempresarial.ucr.ac.cr reúne en un solo lugar la información de la carrera para las diez sedes y recintos.",
+  "titulo": "El Consejo de Carrera aprueba la publicación del sitio web de la carrera",
+  "resumen": "Con el acuerdo del 23 de octubre de 2026, informaticaempresarial.ucr.ac.cr queda como el sitio web de la carrera para las diez sedes y recintos.",
   "cuerpo": [
-   "El Consejo de Carrera Intersedes puso en línea el sitio web oficial del Bachillerato en Informática Empresarial, alojado en un servidor institucional de la Universidad de Costa Rica cuya solicitud aprobó el Consejo en la sesión ordinaria 16-2026, del 28 de agosto de 2026.",
-   "El sitio centraliza la malla curricular del Plan 07 con los programas de curso, los trámites para el estudiantado, la información de cada sede y recinto, la investigación, la acción social y el proceso de acreditación. Responde a la meta del Plan Estratégico 2026–2030 de contar con un sitio web institucional que divulgue el quehacer de toda la carrera, y al primer objetivo del Compromiso de Mejora 2027–2030."
+   "El Consejo de Carrera Intersedes aprobó el 23 de octubre de 2026 la publicación del sitio web del Bachillerato en Informática Empresarial. El sitio está alojado en un servidor institucional de la Universidad de Costa Rica, cuya solicitud aprobó el Consejo en la sesión ordinaria 16-2026, del 28 de agosto de 2026.",
+   "El sitio centraliza la malla curricular del Plan 07 con los programas de curso, los trámites para el estudiantado, la información de cada sede y recinto, la investigación, la acción social y el proceso de acreditación. Con él se cumple la meta del Plan Estratégico 2026–2030 de contar con un sitio web institucional que divulgue el quehacer de toda la carrera. La información se actualiza a partir de los acuerdos del Consejo y solo se publica lo que ya cuenta con la aprobación de la instancia correspondiente."
   ],
   "enlace": "index.html"
  }

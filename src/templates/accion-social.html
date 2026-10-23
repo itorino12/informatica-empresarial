@@ -34,7 +34,8 @@
     </nav>
     <div>
       <h2 id="h-as-proy">Proyectos por región</h2>
-      <p class="muted">Los códigos TC corresponden a Trabajo Comunal Universitario, ED a extensión docente y Pry01 a propuestas en trámite ante la Vicerrectoría de Acción Social.</p>
+      {% set ns = namespace(pry=false) %}{% for r in a.regiones %}{% for p in r.proyectos if p.codigo.startswith('Pry') %}{% set ns.pry = true %}{% endfor %}{% endfor %}
+      <p class="muted">Los códigos TC corresponden a Trabajo Comunal Universitario{{ ',' if ns.pry else ' y' }} ED a extensión docente{% if ns.pry %} y Pry01 a propuestas en trámite ante la Vicerrectoría de Acción Social{% endif %}.</p>
       {% for r in a.regiones %}
       <section id="region-{{ loop.index }}" class="region-as" aria-labelledby="h-reg-{{ loop.index }}">
         <h3 id="h-reg-{{ loop.index }}">{{ r.region }} <span class="muted small" style="font-weight:500">{{ r.recintos }}</span></h3>

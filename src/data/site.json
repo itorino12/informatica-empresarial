@@ -9,7 +9,7 @@
   "correo": "consejoinformaticaempresarial@ucr.ac.cr",
   "telefono": "2511-7330",
   "telefono_nota": "Coordinación del Consejo, Universidad de Costa Rica, Sede del Caribe",
-  "actualizado": "2026-10-21",
+  "actualizado": "2026-10-23",
   "coordinacion_consejo": {
     "nombre": "MSc. Itorino Espinoza Torres",
     "sede": "Sede del Caribe"
@@ -93,108 +93,29 @@
       ]
     },
     {
-      "titulo": "Docencia",
+      "titulo": "Quehacer académico",
       "url": "docentes.html",
       "hijos": [
         {
-          "titulo": "Registro de docentes elegibles",
+          "titulo": "Docencia",
           "url": "docentes.html",
-          "desc": "Convocatoria 2026 y requisitos"
+          "desc": "Registro de elegibles, perfiles y desarrollo docente"
         },
         {
-          "titulo": "Perfiles por área",
-          "url": "docentes.html#areas",
-          "desc": "Formación requerida en cada área"
-        },
-        {
-          "titulo": "Desarrollo docente",
-          "url": "docentes.html#desarrollo",
-          "desc": "Capacitación del personal docente"
-        }
-      ]
-    },
-    {
-      "titulo": "Investigación",
-      "url": "investigacion.html",
-      "hijos": [
-        {
-          "titulo": "Producción académica",
+          "titulo": "Investigación",
           "url": "investigacion.html",
-          "desc": "Proyectos y publicaciones recientes"
+          "desc": "Proyectos y producción académica"
         },
         {
-          "titulo": "Proyectos destacados",
-          "url": "investigacion.html#destacados",
-          "desc": "Lo que investigan los equipos"
-        },
-        {
-          "titulo": "Metas y vinculación",
-          "url": "investigacion.html#metas",
-          "desc": "Compromisos al 2030 y redes"
-        },
-        {
-          "titulo": "Reporte su proyecto",
-          "url": "investigacion.html#reportar",
-          "desc": "Sume su investigación al sitio"
-        }
-      ]
-    },
-    {
-      "titulo": "Acción social",
-      "url": "accion-social.html",
-      "hijos": [
-        {
-          "titulo": "Panorama y cifras",
+          "titulo": "Acción social",
           "url": "accion-social.html",
-          "desc": "14 proyectos con las comunidades"
-        },
-        {
-          "titulo": "Proyectos por región",
-          "url": "accion-social.html#proyectos",
-          "desc": "De Guanacaste al Caribe y el Sur"
-        },
-        {
-          "titulo": "Trabajo Comunal Universitario",
-          "url": "accion-social.html#tcu",
-          "desc": "Las 300 horas y dónde realizarlas"
-        },
-        {
-          "titulo": "Compromisos de la carrera",
-          "url": "accion-social.html#compromisos",
-          "desc": "Metas del Plan y del Compromiso"
-        },
-        {
-          "titulo": "Proponga su proyecto",
-          "url": "accion-social.html#proponer",
-          "desc": "Envíe un proyecto para publicarlo"
+          "desc": "TCU y proyectos con las comunidades"
         }
       ]
     },
     {
-      "titulo": "Calidad",
-      "url": "acreditacion.html",
-      "hijos": [
-        {
-          "titulo": "Acreditación SINAES",
-          "url": "acreditacion.html",
-          "desc": "Trayectoria desde 2019"
-        },
-        {
-          "titulo": "Proyecto Especial de Mejora",
-          "url": "acreditacion.html#pem",
-          "desc": "Diez objetivos y sus resultados"
-        },
-        {
-          "titulo": "Compromiso de Mejora 2027–2030",
-          "url": "acreditacion.html#compromiso",
-          "desc": "Propuesta en revisión ante SINAES"
-        },
-        {
-          "titulo": "Plan Estratégico 2026–2030",
-          "url": "gobierno.html#plan-estrategico",
-          "desc": "Ejes y metas de la carrera"
-        }
-      ]
+      "titulo": "Simposio",
+      "url": "simposio.html"
     },
     {
       "titulo": "Comunidad",
@@ -204,11 +125,6 @@
           "titulo": "Noticias",
           "url": "noticias.html",
           "desc": "Acuerdos, logros y actividades"
-        },
-        {
-          "titulo": "Simposio de Informática Empresarial",
-          "url": "simposio.html",
-          "desc": "El encuentro anual de la carrera"
         },
         {
           "titulo": "Población graduada",
@@ -223,13 +139,23 @@
       ]
     },
     {
-      "titulo": "Consejo",
+      "titulo": "Gestión de la carrera",
       "url": "gobierno.html",
       "hijos": [
         {
-          "titulo": "Gestión y gobierno",
+          "titulo": "Consejo de Carrera",
           "url": "gobierno.html",
-          "desc": "Consejo, estructura y coordinaciones"
+          "desc": "Integración, estructura y coordinaciones"
+        },
+        {
+          "titulo": "Acreditación y calidad",
+          "url": "acreditacion.html",
+          "desc": "SINAES y Proyecto Especial de Mejora"
+        },
+        {
+          "titulo": "Plan Estratégico 2026–2030",
+          "url": "gobierno.html#plan-estrategico",
+          "desc": "Ejes y metas de la carrera"
         },
         {
           "titulo": "Repositorio de documentos",
@@ -266,6 +192,7 @@
       "url": "https://www.sinaes.ac.cr/"
     }
   ],
-  "formulario_elegibles": "https://forms.gle/SE47X2dZPM4HczFb6",
+  "formulario_elegibles": "https://forms.gle/hvm6k6EP3hPJm4Bo6",
+  "boletin_elegibles": "assets/docs/boletin-01-2026-registro-elegibles.pdf",
   "poblacion_fuente": "Población estudiantil activa por plan, población graduada y admisión a carrera 2026, por sede y recinto. Datos del Consejo de Carrera Intersedes, 2026."
 }
