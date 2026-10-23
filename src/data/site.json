@@ -194,5 +194,14 @@
   ],
   "formulario_elegibles": "https://forms.gle/hvm6k6EP3hPJm4Bo6",
   "boletin_elegibles": "assets/docs/boletin-01-2026-registro-elegibles.pdf",
-  "poblacion_fuente": "Población estudiantil activa por plan, población graduada y admisión a carrera 2026, por sede y recinto. Datos del Consejo de Carrera Intersedes, 2026."
+  "poblacion_fuente": "Población estudiantil activa por plan, población graduada y admisión a carrera 2026, por sede y recinto. Datos del Consejo de Carrera Intersedes, 2026.",
+  "franja": {
+    "etiqueta": "Convocatoria abierta",
+    "titulo": "Registro Intersedes de Docentes Elegibles 2026",
+    "texto": "Postulaciones del 23 de octubre al 20 de noviembre de 2026, hasta las 11:00 p. m., para impartir cursos del Plan 07 en las diez sedes y recintos.",
+    "boton": "Ver la convocatoria",
+    "url": "docentes.html#convocatoria",
+    "inicio": "2026-10-23",
+    "fin": "2026-11-20T23:00:00-06:00"
+  }
 }

@@ -23,6 +23,18 @@
 {% endblock %}
 
 {% block contenido %}
+{% set f = site.franja %}{% if f and f.inicio <= hoy <= f.fin[:10] %}
+<section class="franja-aviso" aria-labelledby="franja-titulo" data-fin="{{ f.fin }}">
+  <div class="contenedor">
+    <div>
+      <p class="franja-etiqueta">{{ f.etiqueta }}</p>
+      <h2 id="franja-titulo">{{ f.titulo }}</h2>
+      <p>{{ f.texto }}</p>
+    </div>
+    <a class="boton franja-boton" href="{{ f.url }}">{{ f.boton }}<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2"/></svg></a>
+  </div>
+</section>
+{% endif %}
 <section class="seccion" aria-labelledby="titulo-publicos" style="padding-top:40px;padding-bottom:40px">
   <div class="contenedor">
     <h2 id="titulo-publicos" class="visually-hidden">Información según su perfil</h2>

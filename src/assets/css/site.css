@@ -115,8 +115,8 @@ p { margin: 0 0 1em; }
 
 /* -------------------------------------------------------------- Cabecera */
 .cabecera { background: var(--papel); border-bottom: 1px solid var(--linea); position: sticky; top: 0; z-index: 40; }
-.cabecera .contenedor { display: flex; align-items: center; gap: 24px; min-height: 76px; max-width: 1320px; }
-@media (min-width: 1280px) { .cabecera .contenedor { padding: 0 28px; } }
+/* Mismo ancho que el resto del contenido: el logo queda alineado con la barra superior y los títulos */
+.cabecera .contenedor { display: flex; align-items: center; gap: 24px; min-height: 76px; }
 .marca { display: flex; align-items: center; gap: 14px; text-decoration: none; color: inherit; flex-shrink: 0; }
 .marca img { height: 40px; width: auto; }
 :root[data-theme="dark"] .marca .logo-claro, .marca .logo-oscuro { display: none; }
@@ -127,6 +127,11 @@ p { margin: 0 0 1em; }
 .nav-principal a, .nav-principal .desplegar {
   display: inline-flex; align-items: center; gap: 4px; padding: 10px 6px; font: 500 var(--t-sm)/1.2 var(--f-texto); white-space: nowrap;
   color: var(--tinta); text-decoration: none; background: none; border: 0; cursor: pointer; border-radius: var(--radio);
+}
+/* En la barra horizontal, el texto del menú crece como máximo al 115 % para que no se desborde con la letra al 130 %;
+   los submenús y el menú móvil sí crecen completos */
+@media (min-width: 1280px) {
+  .nav-principal > ul > li > a, .nav-principal > ul > li > .desplegar { font-size: calc(var(--t-sm) * min(var(--escala), 1.15) / var(--escala)); }
 }
 .nav-principal a:hover, .nav-principal .desplegar:hover, .nav-principal .desplegar[aria-expanded="true"] { background: var(--niebla); }
 .nav-principal [aria-current="page"], .nav-principal .activo > .desplegar { box-shadow: inset 0 -3px 0 var(--celeste); }
@@ -157,6 +162,21 @@ section[id] { scroll-margin-top: 90px; }
   .cabecera .contenedor { gap: 14px; }
   .marca img { height: 30px; }
 }
+
+/* -------------------------------------------------------------- Franja de aviso (portada) */
+/* Colores fijos: se ve igual en modo claro y oscuro (texto #0F2C4A sobre #E8A317 = 6,6:1) */
+.franja-aviso { background: #E8A317; color: #0F2C4A; }
+.franja-aviso .contenedor { display: flex; align-items: center; justify-content: space-between; gap: 16px 32px; flex-wrap: wrap; padding-top: 22px; padding-bottom: 22px; }
+.franja-aviso h2 { color: #0F2C4A; font-size: var(--t-lg); margin: 0 0 4px; }
+.franja-aviso p { margin: 0; max-width: 68ch; }
+.franja-etiqueta { font-size: var(--t-xs); font-weight: 700; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 4px !important; }
+.franja-boton { background: #0F2C4A; color: #fff; display: inline-flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.franja-boton:hover, .franja-boton:focus-visible { background: #17395C; color: #fff; }
+.franja-boton:focus-visible { outline: 3px solid #0F2C4A; outline-offset: 3px; }
+.franja-boton svg { width: 16px; height: 16px; }
+:root[data-contrast="high"] .franja-aviso { background: #FFD24D; color: #000; }
+:root[data-contrast="high"] .franja-aviso h2 { color: #000; }
+:root[data-contrast="high"] .franja-boton { background: #000; }
 
 /* -------------------------------------------------------------- Portada */
 .portada { background: var(--noche); color: #fff; position: relative; overflow: hidden; }

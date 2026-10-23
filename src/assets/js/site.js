@@ -369,4 +369,10 @@
     window.addEventListener('scroll', function () { subir.classList.toggle('visible', window.scrollY > 900); }, { passive: true });
     subir.addEventListener('click', function () { window.scrollTo({ top: 0 }); $('#contenido').focus({ preventScroll: true }); });
   }
+
+  /* La franja de aviso se oculta sola al vencer, aunque no se haya vuelto a compilar el sitio */
+  document.querySelectorAll('[data-fin]').forEach(function (el) {
+    var fin = Date.parse(el.getAttribute('data-fin'));
+    if (!isNaN(fin) && Date.now() > fin) el.hidden = true;
+  });
 })();
