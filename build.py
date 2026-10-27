@@ -31,7 +31,7 @@ PAGINAS = [
     ("docentes.html", "Registro de docentes elegibles", "Proceso, áreas, requisitos y criterios del Registro Intersedes de Docentes Elegibles, y plan de desarrollo docente.", None),
     ("investigacion.html", "Investigación", "Proyectos de investigación y producción académica del personal docente de la carrera.", None),
     ("accion-social.html", "Acción social", "Trabajo Comunal Universitario, extensión docente y proyectos con comunidades de la carrera de Informática Empresarial en todas las regiones.", None),
-    ("acreditacion.html", "Calidad y acreditación", "Trayectoria de acreditación ante SINAES, Proyecto Especial de Mejora y Compromiso de Mejora 2027–2030.", ("gobierno.html", "Gestión de la carrera")),
+    ("acreditacion.html", "Calidad y acreditación", "Trayectoria de acreditación ante SINAES y Proyecto Especial de Mejora.", ("gobierno.html", "Gestión de la carrera")),
     ("gobierno.html", "Gestión y gobierno", "Consejo de Carrera Intersedes, estructura organizativa, coordinaciones y Plan Estratégico 2026–2030.", None),
     ("simposio.html", "Simposio de Informática Empresarial", "El simposio anual que rota entre las sedes y reúne a toda la comunidad de la carrera.", None),
     ("graduados.html", "Población graduada", "Actividades de actualización profesional, consultas y vínculo con las personas graduadas de la carrera.", ("noticias.html", "Comunidad")),

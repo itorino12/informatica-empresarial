@@ -8,7 +8,7 @@
       <ol>
         <li><a href="#trayectoria">Trayectoria</a></li>
         <li><a href="#pem">Proyecto Especial de Mejora</a></li>
-        <li><a href="#compromiso">Compromiso 2027–2030</a></li>
+        {% if contenido.compromiso_publicado %}<li><a href="#compromiso">Compromiso 2027–2030</a></li>{% endif %}
         <li><a href="#comision">Quién conduce el proceso</a></li>
       </ol>
     </nav>
@@ -51,6 +51,7 @@
         </div>
       </section>
 
+      {% if contenido.compromiso_publicado %}
       <section id="compromiso" aria-labelledby="h-comp">
         <h2 id="h-comp">Compromiso de Mejora 2027–2030 <span class="etiqueta-revision">Propuesta en revisión</span></h2>
         <div class="aviso" style="margin-bottom:20px"><p>Esta es una propuesta preliminar: aún no está aprobada y puede cambiar con la respuesta de SINAES.</p></div>
@@ -66,6 +67,7 @@
         </div>
         <div class="aviso" style="margin-top:32px"><p>Este sitio responde directamente al primer objetivo del compromiso: centraliza la malla, la información para el estudiantado y la divulgación de la carrera para todas las sedes.</p></div>
       </section>
+      {% endif %}
 
       <section id="comision" aria-labelledby="h-com">
         <h2 id="h-com">Quién conduce el proceso</h2>

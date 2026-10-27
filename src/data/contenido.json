@@ -266,7 +266,7 @@
     {
       "fecha": "Nov 2024",
       "titulo": "Decisión diferida",
-      "texto": "El ACUERDO-CNA-410-2024 ordena un Proyecto Especial de Mejora de 18 meses con cinco acciones mínimas."
+      "texto": "El ACUERDO-CNA-410-2024 ordena un Proyecto Especial de Mejora de 18 meses con cinco acciones."
     },
     {
       "fecha": "21 abr 2026",
@@ -364,6 +364,8 @@
       "nota": "Protocolo en ejecución, encuestas con 474 y 399 respuestas y cuatro charlas en 2024–2025."
     }
   ],
+  "compromiso_publicado": false,
+  "compromiso_pendiente": "Se publica cuando SINAES apruebe el Compromiso de Mejora 2027–2030 (observación de la CAGC, 27-10-2026).",
   "compromiso": [
     {
       "n": 1,
@@ -944,6 +946,8 @@
         "texto": "Incentivar la participación del 50 % del personal docente a tiempo completo en publicaciones académicas, proyectos de investigación y acción social."
       },
       {
+        "publicar": false,
+        "pendiente": "Compromiso de Mejora 2027–2030 aún no aprobado por SINAES.",
         "fuente": "Compromiso de Mejora 2027–2030, objetivo 3",
         "texto": "Dar continuidad a la vinculación académica mediante convenios, redes y programas de docencia, investigación y acción social, con un listado anual de docentes vinculados y un boletín digital, ambos en 2028."
       }

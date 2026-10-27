@@ -29,7 +29,7 @@
 </section>
 
 <section class="seccion" id="metas" aria-labelledby="h-metas">
-  <div class="contenedor dos-col">
+  <div class="contenedor{% if contenido.compromiso_publicado %} dos-col{% endif %}">
     <div>
       <h2 id="h-metas">Metas del Plan Estratégico 2026–2030</h2>
       <ul class="lista-marcas">
@@ -38,11 +38,13 @@
         <li>Mantener vigente el Plan de Desarrollo Docente Intersedes</li>
       </ul>
     </div>
+    {% if contenido.compromiso_publicado %}
     <div>
       <h2>Vinculación académica 2027–2028</h2>
       <p>El Compromiso de Mejora 2027–2030 prevé sistematizar cada año los vínculos del profesorado con centros, redes y programas, y divulgarlos en un boletín digital de investigación. Esta sección será su canal de publicación.</p>
       <p><a href="acreditacion.html#compromiso">Ver el Compromiso de Mejora</a></p>
     </div>
+    {% endif %}
   </div>
 </section>
 
