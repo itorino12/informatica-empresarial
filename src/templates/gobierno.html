@@ -31,7 +31,7 @@
         <p class="prosa">{{ contenido.estructura_origen }}</p>
         <ul class="estructura">
           {% for e in contenido.estructura %}
-          <li class="estructura-nivel-{{ e.nivel }}">
+          <li class="estructura-nivel-{{ e.nivel }}"{% if e.id %} id="{{ e.id }}"{% endif %}>
             <b>{{ e.nombre }}</b>
             {% if e.jornada %}<span class="estructura-jornada">Jornada: {{ e.jornada }}</span>{% endif %}
             <p class="small muted">{{ e.texto }}</p>

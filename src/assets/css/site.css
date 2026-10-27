@@ -146,13 +146,13 @@ p { margin: 0 0 1em; }
 .submenu a.con-desc { font-weight: 600; padding: 10px 12px; }
 .sub-desc { display: block; margin-top: 2px; font-weight: 400; font-size: var(--t-xs); line-height: 1.35; color: var(--tinta-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .nav-principal > ul > li:nth-last-child(-n+3) > .submenu { left: auto; right: 0; }
-section[id] { scroll-margin-top: 90px; }
+section[id], .estructura li[id] { scroll-margin-top: 90px; }
 .boton-menu { display: none; margin-left: auto; background: none; border: 1px solid var(--linea); border-radius: var(--radio); padding: 8px 12px; font: 500 var(--t-sm) var(--f-texto); color: var(--tinta); cursor: pointer; align-items: center; gap: 8px; }
 .boton-menu svg { width: 20px; height: 20px; }
 
 @media (max-width: 1279px) {
   .boton-menu { display: inline-flex; }
-  .nav-principal { display: none; position: absolute; left: 0; right: 0; top: 100%; background: var(--papel); border-bottom: 1px solid var(--linea); max-height: calc(100vh - 120px); overflow: auto; }
+  .nav-principal { display: none; position: absolute; left: 0; right: 0; top: 100%; background: var(--papel); border-bottom: 1px solid var(--linea); max-height: calc(100vh - 120px); max-height: calc(100dvh - 120px); overflow: auto; overscroll-behavior: contain; }
   .nav-principal.abierto { display: block; }
   .nav-principal > ul { flex-direction: column; padding: 8px var(--gutter) 16px; }
   .nav-principal a, .nav-principal .desplegar { width: 100%; justify-content: space-between; padding: 12px; font-size: var(--t-base); }

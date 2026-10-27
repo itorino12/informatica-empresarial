@@ -168,6 +168,7 @@
       ]
     },
     {
+      "id": "comision-autoevaluacion",
       "nombre": "Comisión Intersedes de Autoevaluación y Gestión de la Calidad",
       "nivel": 2,
       "texto": "Integrada por una persona representante de cada recinto, nombrada por la dirección de su sede. Sus competencias se rigen por la Resolución VD-R-9227-2015 de la Vicerrectoría de Docencia.",
@@ -180,6 +181,7 @@
       ]
     },
     {
+      "id": "comision-curricular",
       "nombre": "Comisión de Desarrollo Curricular Intersedes",
       "nivel": 2,
       "texto": "Integrada por una persona docente representante de cada sede regional, nombrada por dos años prorrogables. La preside quien elija la coordinación del Consejo a partir de una terna propuesta por la comisión. Se reúne al menos una vez al mes.",

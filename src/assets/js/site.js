@@ -58,9 +58,27 @@
 
   /* ---------- Menú principal ---------- */
   var botonMenu = $('.boton-menu'), nav = $('.nav-principal');
-  if (botonMenu) botonMenu.addEventListener('click', function () {
+  var yAlAbrir = 0;
+  function cerrarMenu(devolverFoco) {
+    if (!nav || !nav.classList.contains('abierto')) return;
+    nav.classList.remove('abierto'); botonMenu.setAttribute('aria-expanded', 'false');
+    $$('.desplegar').forEach(function (o) { o.setAttribute('aria-expanded', 'false'); });
+    if (devolverFoco) botonMenu.focus();
+  }
+  if (botonMenu) botonMenu.addEventListener('click', function (e) {
+    e.stopPropagation();
     var abierto = nav.classList.toggle('abierto');
     botonMenu.setAttribute('aria-expanded', String(abierto));
+    yAlAbrir = window.scrollY;
+  });
+  // En móvil, el menú desplegado se recoge solo al desplazarse por la página,
+  // al tocar fuera de él o al elegir un enlace (el menú tiene su propio desplazamiento interno).
+  window.addEventListener('scroll', function () {
+    if (nav && nav.classList.contains('abierto') && Math.abs(window.scrollY - yAlAbrir) > 60) cerrarMenu(false);
+  }, { passive: true });
+  if (nav) nav.addEventListener('click', function (e) { if (e.target.closest('a')) cerrarMenu(false); });
+  document.addEventListener('click', function (e) {
+    if (nav && nav.classList.contains('abierto') && !e.target.closest('.nav-principal') && !e.target.closest('.boton-menu')) cerrarMenu(false);
   });
   $$('.desplegar').forEach(function (b) {
     b.addEventListener('click', function (e) {
@@ -76,6 +94,7 @@
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') {
       $$('.desplegar[aria-expanded="true"]').forEach(function (o) { o.setAttribute('aria-expanded', 'false'); o.focus(); });
+      if (nav && nav.classList.contains('abierto') && !document.activeElement.closest('.nav-principal .submenu')) cerrarMenu(true);
       cerrarPaneles();
     }
     if ((e.key === 'k' && (e.ctrlKey || e.metaKey)) || (e.key === '/' && !/input|textarea|select/i.test(document.activeElement.tagName))) {
