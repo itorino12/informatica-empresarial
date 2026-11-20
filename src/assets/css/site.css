@@ -376,6 +376,10 @@ section[id], .estructura li[id] { scroll-margin-top: 90px; }
 .articulo.con-foto { max-width: 1080px; display: grid; grid-template-columns: minmax(0, 70ch) 340px; column-gap: 56px; align-items: start; }
 .articulo-foto { margin: 0; position: sticky; top: 96px; }
 .articulo-foto a { display: block; }
+.figura-cuerpo { margin: 8px 0 28px; max-width: 460px; }
+.figura-cuerpo a { display: block; }
+.figura-cuerpo img { display: block; width: 100%; height: auto; border-radius: var(--radio); border: 1px solid var(--linea); box-shadow: 0 8px 24px rgba(15, 44, 74, .16); }
+.figura-cuerpo figcaption { margin-top: 10px; font-size: var(--t-sm, .9rem); color: var(--texto-suave, inherit); }
 .articulo-foto img { display: block; width: 100%; height: auto; border-radius: var(--radio); border: 1px solid var(--linea); box-shadow: 0 8px 24px rgba(15, 44, 74, .16); }
 .articulo-foto figcaption { margin-top: 10px; font-size: var(--t-sm); color: var(--tinta-2); }
 .articulo-texto h3 { margin-top: 1.6em; }
