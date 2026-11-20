@@ -1,5 +1,96 @@
 [
  {
+  "id": "acreditacion-sinaes-2026",
+  "fecha": "2026-11-20",
+  "categoria": "Acreditación",
+  "titulo": "El SINAES acredita la carrera de Informática Empresarial por el período 2026–2030",
+  "resumen": "Es una reacreditación para los recintos acreditados desde 2019 y la primera acreditación para la Sede del Sur. La decisión cierra un proceso de siete años de mejora continua, que fue posible gracias al trabajo de toda la Universidad de Costa Rica.",
+  "imagen": {
+   "archivo": "assets/fotos/noticias/acreditacion-2026",
+   "ancho": 1080,
+   "alto": 1350,
+   "alt": "Sello de carrera acreditada por el SINAES junto al texto: Bachillerato en Informática Empresarial, Universidad de Costa Rica, acreditada por el SINAES por el período 2026–2030, ACUERDO-CNA-305-2026. Reacreditación para los recintos acreditados desde 2019 y primera acreditación para la Sede del Sur.",
+   "pie": "Sello de carrera acreditada por el SINAES."
+  },
+  "ficha_titulo": "Datos de la acreditación",
+  "ficha": [
+   [
+    "Acuerdo",
+    "ACUERDO-CNA-305-2026, Proceso 187"
+   ],
+   [
+    "Decisión",
+    "Consejo Nacional de Acreditación, sesión del 3 de noviembre de 2026 (acta 1994-2026, artículo 6)"
+   ],
+   [
+    "Notificación",
+    "10 de noviembre de 2026"
+   ],
+   [
+    "Vigencia",
+    "Del 3 de noviembre de 2026 al 3 de noviembre de 2030"
+   ],
+   [
+    "Reacreditación",
+    "Sede del Atlántico (Recintos de Guápiles, Paraíso y Turrialba), Sede del Caribe (Recinto de Limón), Sede de Guanacaste (Recinto de Liberia), Sede de Occidente (Recintos de San Ramón y Grecia) y Sede del Pacífico"
+   ],
+   [
+    "Primera acreditación",
+    "Sede del Sur"
+   ],
+   [
+    "Próximo informe",
+    "Avance del Compromiso de Mejoramiento, noviembre de 2028"
+   ]
+  ],
+  "acciones": [
+   {
+    "texto": "Ver la trayectoria de acreditación",
+    "url": "acreditacion.html#trayectoria",
+    "primaria": true
+   }
+  ],
+  "cuerpo": [
+   "El Consejo Nacional de Acreditación (CNA) del Sistema Nacional de Acreditación de la Educación Superior (SINAES) acordó, en su sesión del 3 de noviembre de 2026, acreditar el Bachillerato en Informática Empresarial de la Universidad de Costa Rica por cuatro años. La decisión se comunicó a la Rectoría el 10 de noviembre mediante el ACUERDO-CNA-305-2026.",
+   {
+    "h": "Reacreditación y primera acreditación"
+   },
+   "El acuerdo tiene un significado distinto según la sede. Para los recintos que obtuvieron la acreditación en 2019 —Guápiles, Paraíso y Turrialba, de la Sede del Atlántico; Limón, de la Sede del Caribe; Liberia, de la Sede de Guanacaste; San Ramón y Grecia, de la Sede de Occidente, y la Sede del Pacífico—, se trata de una reacreditación.",
+   "Para la Sede del Sur es su primera acreditación. La sede no formó parte de la evaluación de 2019; desde entonces se sumó a todo el trabajo de mejora de la carrera, pero hasta ahora no contaba con el sello del SINAES.",
+   {
+    "h": "Un camino de mejora continua"
+   },
+   "La carrera inició sus procesos de autoevaluación años antes de 2019. Ese trabajo llevó a la primera acreditación y abrió un ciclo de mejora que no se detuvo desde entonces:",
+   {
+    "lista": [
+     "10 de diciembre de 2019: primera acreditación, con un Compromiso de Mejoramiento de 14 objetivos.",
+     "De 2019 a junio de 2024: ejecución del Compromiso de Mejoramiento, cuya vigencia se extendió hasta junio de 2024.",
+     "Junio de 2024: la carrera presenta al SINAES el informe de autoevaluación con miras a la reacreditación.",
+     "Octubre de 2024: evaluación externa virtual, del 8 al 15 de octubre, con pares de México, Argentina y Costa Rica.",
+     "Noviembre de 2024: mediante el ACUERDO-CNA-410-2024, el CNA difiere su decisión y pide un Proyecto Especial de Mejora (PEM) de 18 meses.",
+     "Mayo de 2026: la carrera entrega el Informe de Logros del PEM (ILPEM) y la versión actualizada de su Compromiso de Mejoramiento.",
+     "Setiembre de 2026: reuniones con la par evaluadora del ILPEM.",
+     "3 de noviembre de 2026: el CNA acuerda la acreditación por el período 2026–2030."
+    ]
+   },
+   {
+    "h": "Lo que pidió el Proyecto Especial de Mejora"
+   },
+   "El PEM se concentró en cinco acciones: completar lo pendiente del compromiso anterior, presentar un plan de estudios actualizado y aprobado, impulsar la investigación y la extensión en todos los recintos, elaborar e implementar un plan estratégico y valorar la jornada de las coordinaciones de carrera.",
+   "Al cierre, la carrera reportó, entre otros resultados, el Plan 07 aprobado y en ejecución desde el III ciclo de 2025, el Plan Estratégico 2026–2030, 153 de 185 docentes capacitados (82,7 %), 19 proyectos de investigación, 14 de acción social y unas 35 publicaciones académicas.",
+   {
+    "h": "Lo que sigue"
+   },
+   "La carrera entregará al SINAES su Compromiso de Mejoramiento final y, en noviembre de 2028, un informe de avance. Entre sus recomendaciones, el CNA pidió asegurar una implementación homogénea del plan de estudios en las sedes y recintos, dar seguimiento a la gestión de una carrera que se imparte en varias sedes y fortalecer la sostenibilidad del personal, los recursos académicos y el vínculo con la población graduada.",
+   {
+    "h": "Un logro de toda la Universidad"
+   },
+   "Esta acreditación no es obra de una sola instancia. Detrás hay estudiantes, docentes, personal administrativo, personas graduadas y empleadoras que participaron en consultas y entrevistas; direcciones y coordinaciones de sedes y recintos; la Comisión Intersedes de Autoevaluación y Gestión de la Calidad y el Consejo de Carrera Intersedes; y muchas instancias universitarias que acompañaron la evaluación, la planificación, la capacitación docente y el desarrollo del personal. A cada una de esas personas, gracias.",
+   "Bachillerato en Informática Empresarial, Universidad de Costa Rica: Sede del Atlántico (Recintos de Guápiles, Paraíso y Turrialba), Sede del Caribe (Recinto de Limón), Sede de Guanacaste (Recinto de Liberia), Sede de Occidente (Recintos de San Ramón y Grecia), Sede del Pacífico y Sede del Sur, acreditada por el Sistema Nacional de Acreditación de la Educación Superior -SINAES- por el período 2026–2030."
+  ],
+  "enlace": "acreditacion.html"
+ },
+ {
   "id": "charla-egresados-sismologia-2026",
   "fecha": "2026-11-20",
   "categoria": "Graduados",

@@ -78,15 +78,14 @@
       "texto": "La carrera entrega el Informe de Logros del PEM y el Compromiso de Mejora 2027–2030."
     },
     {
-      "fecha": "21–25 sep 2026",
-      "titulo": "Visita de pares evaluadores",
-      "texto": "Evaluación externa de SINAES para decidir sobre la reacreditación."
+      "fecha": "Set 2026",
+      "titulo": "Revisión del Informe de Logros",
+      "texto": "Reuniones con la par evaluadora del ILPEM designada por SINAES."
     },
     {
-      "fecha": "II ciclo 2026",
-      "titulo": "En espera de resolución",
-      "texto": "La carrera espera la resolución de SINAES sobre la reacreditación.",
-      "futuro": true
+      "fecha": "3 nov 2026",
+      "titulo": "Acreditación 2026–2030",
+      "texto": "SINAES acredita la carrera hasta 2030: reacreditación para los recintos acreditados desde 2019 y primera acreditación para la Sede del Sur."
     }
   ],
   "eventos": [
@@ -249,19 +248,29 @@
   },
   "acreditacion": [
     {
-      "fecha": "2018–2022",
+      "fecha": "Antes de 2019",
       "titulo": "Autoevaluación",
-      "texto": "Informe de autoevaluación de la carrera, Proceso 187 de SINAES."
+      "texto": "La carrera inicia los procesos de autoevaluación del Proceso 187 que llevan a su primera acreditación."
     },
     {
       "fecha": "10 dic 2019",
       "titulo": "Primera acreditación",
-      "texto": "Con un Compromiso de Mejoramiento 2019–2023 de 14 objetivos y 57 actividades."
+      "texto": "Con un Compromiso de Mejoramiento de 14 objetivos y 57 actividades. La Sede del Sur no formó parte de esta evaluación."
     },
     {
       "fecha": "May 2022",
       "titulo": "Revisión de avance",
       "texto": "SINAES revisa el avance de medio período del compromiso (ACUERDO-CNA-139-2022)."
+    },
+    {
+      "fecha": "Jun 2024",
+      "titulo": "Cierre del compromiso y nueva autoevaluación",
+      "texto": "La vigencia del Compromiso de Mejoramiento se extiende hasta junio de 2024. La carrera presenta el informe de autoevaluación con miras a la reacreditación."
+    },
+    {
+      "fecha": "8–15 oct 2024",
+      "titulo": "Evaluación externa",
+      "texto": "Visita virtual de pares de México, Argentina y Costa Rica."
     },
     {
       "fecha": "Nov 2024",
@@ -284,14 +293,19 @@
       "texto": "Envío por medio del Centro de Evaluación Académica, la Vicerrectoría de Docencia y la Rectoría."
     },
     {
-      "fecha": "21–25 sep 2026",
-      "titulo": "Visita de pares",
-      "texto": "Evaluación externa de SINAES en las sedes y recintos."
+      "fecha": "Set 2026",
+      "titulo": "Revisión del ILPEM",
+      "texto": "Reuniones con la par evaluadora del Informe de Logros, Mag. Sonia Angélica Mora González."
     },
     {
-      "fecha": "II ciclo 2026",
-      "titulo": "En espera de resolución",
-      "texto": "La carrera espera la resolución de SINAES sobre la reacreditación.",
+      "fecha": "3 nov 2026",
+      "titulo": "Acreditación 2026–2030",
+      "texto": "El ACUERDO-CNA-305-2026 acredita la carrera hasta el 3 de noviembre de 2030: reacreditación para los recintos acreditados desde 2019 y primera acreditación para la Sede del Sur."
+    },
+    {
+      "fecha": "Nov 2028",
+      "titulo": "Informe de avance",
+      "texto": "La carrera presentará el avance de su Compromiso de Mejoramiento.",
       "futuro": true
     }
   ],
@@ -1247,5 +1261,6 @@
         ]
       ]
     }
-  }
+  },
+  "leyenda_acreditacion": "Bachillerato en Informática Empresarial, Universidad de Costa Rica: Sede del Atlántico (Recintos de Guápiles, Paraíso y Turrialba), Sede del Caribe (Recinto de Limón), Sede de Guanacaste (Recinto de Liberia), Sede de Occidente (Recintos de San Ramón y Grecia), Sede del Pacífico y Sede del Sur, acreditada por el Sistema Nacional de Acreditación de la Educación Superior -SINAES- por el período 2026–2030."
 }

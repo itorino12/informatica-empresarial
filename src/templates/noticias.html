@@ -21,7 +21,7 @@
         <p class="lede" style="font-size:var(--t-base)">{{ n.resumen }}</p>
         {% if n.ficha %}
         <div class="caja ficha-noticia">
-          <h3>Datos de la actividad</h3>
+          <h3>{{ n.ficha_titulo or "Datos de la actividad" }}</h3>
           <dl>{% for k, v in n.ficha %}<div><dt>{{ k }}</dt><dd>{{ v }}</dd></div>{% endfor %}</dl>
           {% if n.acciones %}<p class="acciones">{% for a in n.acciones %}<a class="boton {{ 'boton-primario' if a.primaria else 'boton-claro' }}" href="{{ a.url }}"{% if a.externo %} target="_blank" rel="noopener"{% endif %}>{{ a.texto }}{% if a.externo %}<span class="visually-hidden"> (se abre en una pestaña nueva)</span>{% endif %}</a>{% endfor %}</p>{% endif %}
         </div>
