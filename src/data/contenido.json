@@ -100,15 +100,13 @@
       "enlace": "docentes.html#convocatoria"
     },
     {
-      "publicar": false,
-      "pendiente": "Expositor por confirmar.",
-      "inicio": "2026-11-02",
-      "fin": "2026-11-08",
-      "titulo": "Charla de actualización para la población graduada, II ciclo 2026",
-      "lugar": "Por confirmar",
+      "inicio": "2026-12-02",
+      "fin": "2026-12-02",
+      "titulo": "Charla con la población egresada: de las señales de la Tierra a la sismología inteligente",
+      "lugar": "Zoom, 5:30 p. m. (ID 853 3123 4407)",
       "modalidad": "Virtual",
-      "estado": "Por confirmar",
-      "enlace": "graduados.html"
+      "estado": "Aprobada",
+      "enlace": "noticias.html#charla-egresados-sismologia-2026"
     },
     {
       "publicar": false,

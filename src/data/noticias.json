@@ -1,5 +1,92 @@
 [
  {
+  "id": "charla-egresados-sismologia-2026",
+  "fecha": "2026-11-20",
+  "categoria": "Graduados",
+  "titulo": "Charla con la población egresada: de las señales de la Tierra a la sismología inteligente",
+  "resumen": "El miércoles 2 de diciembre de 2026, a las 5:30 p. m., el M.Sc. Sebastián Gamboa Chacón, investigador del OVSICORI-UNA, explicará por Zoom cómo la inteligencia artificial y el reconocimiento de patrones están transformando el análisis sismológico en Costa Rica.",
+  "imagen": {
+   "archivo": "assets/fotos/noticias/charla-sismologia",
+   "ancho": 1080,
+   "alto": 1350,
+   "alt": "Flyer de la sesión técnica para población graduada «De las señales de la Tierra a la sismología inteligente», con fotografía del M.Sc. Sebastián Gamboa Chacón. Miércoles 2 de diciembre, 5:30 p. m., hora de Costa Rica, virtual por Zoom, ID 853 3123 4407.",
+   "pie": "Flyer de la actividad. Puede escanear el código QR para conectarse por Zoom.",
+   "descarga": "assets/docs/flyer-charla-egresados-2026-12-02.pdf"
+  },
+  "ficha": [
+   [
+    "Actividad",
+    "Sesión técnica para la población graduada"
+   ],
+   [
+    "Fecha",
+    "Miércoles 2 de diciembre de 2026"
+   ],
+   [
+    "Hora",
+    "5:30 p. m. (hora de Costa Rica)"
+   ],
+   [
+    "Modalidad",
+    "Virtual, por Zoom"
+   ],
+   [
+    "ID de reunión",
+    "853 3123 4407"
+   ],
+   [
+    "Persona expositora",
+    "M.Sc. Sebastián Gamboa Chacón, investigador del OVSICORI-UNA"
+   ],
+   [
+    "Dirigida a",
+    "Población graduada de Informática Empresarial de todas las sedes y recintos"
+   ],
+   [
+    "Organiza",
+    "Consejo de Carrera Intersedes de Informática Empresarial"
+   ]
+  ],
+  "acciones": [
+   {
+    "texto": "Unirse por Zoom",
+    "url": "https://udecr.zoom.us/j/85331234407",
+    "externo": true,
+    "primaria": true
+   },
+   {
+    "texto": "Descargar el flyer (PDF)",
+    "url": "assets/docs/flyer-charla-egresados-2026-12-02.pdf",
+    "externo": true
+   }
+  ],
+  "cuerpo": [
+   "El Consejo de Carrera Intersedes de Informática Empresarial aprobó, con acuerdo en firme, en su sesión ordinaria 22-2026 del 20 de noviembre de 2026, una sesión técnica para la población graduada de la carrera. Se realizará el miércoles 2 de diciembre de 2026, a las 5:30 p. m. (hora de Costa Rica), de forma virtual por Zoom, bajo el título «De las señales de la Tierra a la sismología inteligente: evolución de la inteligencia artificial y el reconocimiento de patrones en sismología».",
+   {
+    "h": "De qué trata la charla"
+   },
+   "Costa Rica es un país de elevada actividad sísmica, y vigilar de forma continua lo que ocurre bajo nuestros pies es clave para comprender los procesos tectónicos y reducir el impacto de los sismos en la población. Ese monitoreo tiene un costo computacional: desde 2016, la red de instrumentación del Observatorio Vulcanológico y Sismológico de Costa Rica (OVSICORI-UNA) ha crecido hasta superar, en 2026, las 100 estaciones sísmicas fijas activas, complementadas por nodos portátiles distribuidos en distintas regiones del país. Todas esas estaciones generan formas de onda continuas que hay que procesar de manera eficiente, precisa y confiable.",
+   "El expositor presentará la solución desarrollada para enfrentar ese desafío: OKSP, un flujo de procesamiento automatizado que es fruto del trabajo conjunto entre el OVSICORI-UNA, el Instituto Tecnológico de Costa Rica (TEC) y el Centro Nacional de Alta Tecnología (CeNAT-CNCA). Su arquitectura integra redes neuronales profundas que detectan eventos sísmicos y que identifican los tiempos de llegada de las ondas primarias (P) y secundarias (S).",
+   "Como los modelos preentrenados pueden generalizar mal en regiones con condiciones geológicas y de ruido particulares, el equipo los adaptó mediante fine-tuning con datos sísmicos regionales, lo que mejoró su desempeño sobre registros locales. A ello se suma DECA, un algoritmo de aprendizaje profundo para la asociación automática de fases sísmicas: determina cuáles de las llegadas detectadas pertenecen a un mismo evento. Después, algoritmos convencionales calculan la localización hipocentral y estiman la magnitud, hasta obtener un catálogo sísmico automático.",
+   "Hoy OKSP opera de manera continua en el servidor del OVSICORI-UNA y genera catálogos preliminares, con los eventos detectados, las fases identificadas, las localizaciones y las magnitudes, que luego revisan analistas especializados. La charla mostrará cómo estos avances reducen las tareas manuales repetitivas, aceleran el procesamiento de datos continuos y fortalecen la capacidad operativa del monitoreo sísmico nacional.",
+   {
+    "h": "Quién la imparte"
+   },
+   "El M.Sc. Sebastián Gamboa Chacón es ingeniero en Electrónica y máster en Computación con énfasis en Ciencias de la Computación, ambos títulos del Instituto Tecnológico de Costa Rica, y cursa estudios avanzados del Bachillerato en Física en la Universidad de Costa Rica. Su trabajo de investigación se centra en la sismología computacional: la aplicación de inteligencia artificial y aprendizaje profundo al procesamiento y análisis de señales sísmicas, al reconocimiento automatizado de fases y a la generación de catálogos de eventos.",
+   "Participó en proyectos del Centro Nacional de Alta Tecnología (CeNAT) orientados a desarrollar, implementar y evaluar algoritmos de inteligencia artificial para datos sismológicos, con publicaciones científicas y presentaciones en conferencias internacionales, entre ellas la Conferencia Iberoamericana de Reconocimiento de Patrones (CIARP 2025). Actualmente es investigador del OVSICORI-UNA, donde desarrolla, adapta y evalúa algoritmos para detectar eventos, identificar fases y asociarlas; integra herramientas computacionales y sismológicas en los procesos de monitoreo, y automatiza flujos de trabajo para procesar grandes volúmenes de datos con recursos de cómputo de alto rendimiento.",
+   {
+    "h": "Por qué una charla para la población graduada"
+   },
+   "La carrera mantiene un vínculo permanente con las personas que se graduaron de ella, y estas sesiones técnicas son una de sus formas de actualización profesional. Esta actividad se enmarca, además, en las acciones de relación con la población graduada que la carrera desarrolla dentro de sus procesos de acreditación. Será una oportunidad para ver, aplicados a un problema real y de interés nacional, temas como el aprendizaje profundo, la automatización de flujos de datos y el cómputo de alto rendimiento.",
+   {
+    "h": "Cómo participar"
+   },
+   "La sesión es virtual. Puede conectarse con el botón «Unirse por Zoom» de esta noticia, escaneando el código QR del flyer o ingresando el ID de reunión 853 3123 4407 en la aplicación de Zoom. La convocatoria y las invitaciones se enviarán por correo electrónico a la población graduada. Si cambió su correo o su lugar de trabajo, actualice sus datos con la coordinación de la sede o recinto donde se graduó para recibir la invitación.",
+   "Las consultas se atienden en consejoinformaticaempresarial@ucr.ac.cr. El Consejo agradece al M.Sc. Gamboa Chacón su colaboración para impartir esta charla."
+  ],
+  "enlace": "graduados.html"
+ },
+ {
   "id": "convocatoria-elegibles-2026-abierta",
   "fecha": "2026-10-23",
   "categoria": "Docencia",

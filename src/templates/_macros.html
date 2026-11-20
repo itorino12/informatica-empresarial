@@ -47,10 +47,18 @@
 {% endmacro %}
 
 {% macro noticia(n, principal=false) %}
-<article class="noticia{{ ' principal' if principal }}" data-categoria="{{ n.categoria }}">
-  <div class="meta"><time datetime="{{ n.fecha }}">{{ n.fecha_texto or (n.fecha|fecha_larga) }}</time><span class="categoria">{{ n.categoria }}</span></div>
-  <h3><a href="noticias.html#{{ n.id }}">{{ n.titulo }}</a></h3>
-  <p>{{ n.resumen }}</p>
+<article class="noticia{{ ' principal' if principal }}{{ ' con-foto' if n.imagen }}" data-categoria="{{ n.categoria }}">
+  {% if n.imagen %}
+  <a class="noticia-miniatura" href="noticias.html#{{ n.id }}" tabindex="-1" aria-hidden="true">
+    <img src="{{ n.imagen.archivo }}-540.webp" srcset="{{ n.imagen.archivo }}-540.webp 540w, {{ n.imagen.archivo }}-1080.webp 1080w" sizes="(max-width: 620px) 70vw, 240px" width="540" height="{{ (540 * n.imagen.alto / n.imagen.ancho)|round|int }}" alt="" loading="lazy" decoding="async">
+  </a>
+  {% endif %}
+  <div class="noticia-texto">
+    <div class="meta"><time datetime="{{ n.fecha }}">{{ n.fecha_texto or (n.fecha|fecha_larga) }}</time><span class="categoria">{{ n.categoria }}</span></div>
+    <h3><a href="noticias.html#{{ n.id }}">{{ n.titulo }}</a></h3>
+    <p>{{ n.resumen }}</p>
+    {% if n.imagen and principal %}<p class="noticia-mas"><a href="noticias.html#{{ n.id }}">Leer la noticia completa<span class="visually-hidden">: {{ n.titulo }}</span></a></p>{% endif %}
+  </div>
 </article>
 {% endmacro %}
 

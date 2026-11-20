@@ -1,8 +1,8 @@
 {
  "IF-0001": {
-  "archivo": "assets/programas/IF0001_programa_II-2026.pdf",
-  "ciclo": "II ciclo 2026",
-  "kb": 577
+  "archivo": "assets/programas/IF0001_programa_III-2026.pdf",
+  "ciclo": "III ciclo 2026",
+  "kb": 1768
  },
  "IF-0002": {
   "archivo": "assets/programas/IF0002_programa_I-2026.pdf",
@@ -10,34 +10,34 @@
   "kb": 590
  },
  "IF-0003": {
-  "archivo": "assets/programas/IF0003_programa_II-2026.pdf",
-  "ciclo": "II ciclo 2026",
-  "kb": 597
+  "archivo": "assets/programas/IF0003_programa_III-2026.pdf",
+  "ciclo": "III ciclo 2026",
+  "kb": 1793
  },
  "IF-0004": {
-  "archivo": "assets/programas/IF0004_programa_II-2026.pdf",
-  "ciclo": "II ciclo 2026",
-  "kb": 577
+  "archivo": "assets/programas/IF0004_programa_III-2026.pdf",
+  "ciclo": "III ciclo 2026",
+  "kb": 1762
  },
  "IF-0005": {
-  "archivo": "assets/programas/IF0005_programa_II-2026.pdf",
-  "ciclo": "II ciclo 2026",
-  "kb": 582
+  "archivo": "assets/programas/IF0005_programa_III-2026.pdf",
+  "ciclo": "III ciclo 2026",
+  "kb": 1770
  },
  "IF-0006": {
-  "archivo": "assets/programas/IF0006_programa_I-2026.pdf",
-  "ciclo": "I ciclo 2026",
-  "kb": 604
+  "archivo": "assets/programas/IF0006_programa_III-2026.pdf",
+  "ciclo": "III ciclo 2026",
+  "kb": 1791
  },
  "IF-0007": {
-  "archivo": "assets/programas/IF0007_programa_I-2026.pdf",
-  "ciclo": "I ciclo 2026",
-  "kb": 602
+  "archivo": "assets/programas/IF0007_programa_III-2026.pdf",
+  "ciclo": "III ciclo 2026",
+  "kb": 1787
  },
  "IF-0008": {
-  "archivo": "assets/programas/IF0008_programa_II-2026.pdf",
-  "ciclo": "II ciclo 2026",
-  "kb": 534
+  "archivo": "assets/programas/IF0008_programa_III-2026.pdf",
+  "ciclo": "III ciclo 2026",
+  "kb": 1745
  },
  "IF-0009": {
   "archivo": "assets/programas/IF0009_programa_II-2026.pdf",
@@ -55,9 +55,14 @@
   "kb": 540
  },
  "IF-0012": {
-  "archivo": "assets/programas/IF0012_programa_II-2026.pdf",
-  "ciclo": "II ciclo 2026",
-  "kb": 569
+  "archivo": "assets/programas/IF0012_programa_III-2026.pdf",
+  "ciclo": "III ciclo 2026",
+  "kb": 287
+ },
+ "IF-0013": {
+  "archivo": "assets/programas/IF0013_programa_III-2026.pdf",
+  "ciclo": "III ciclo 2026",
+  "kb": 1745
  },
  "IF-0014": {
   "archivo": "assets/programas/IF0014_programa_II-2026.pdf",
@@ -68,6 +73,11 @@
   "archivo": "assets/programas/IF0017_programa_II-2026.pdf",
   "ciclo": "II ciclo 2026",
   "kb": 534
+ },
+ "IF-0018": {
+  "archivo": "assets/programas/IF0018_programa_III-2026.pdf",
+  "ciclo": "III ciclo 2026",
+  "kb": 1719
  },
  "IF-0019": {
   "archivo": "assets/programas/IF0019_programa_II-2026.pdf",
@@ -95,13 +105,13 @@
   "kb": 578
  },
  "IF-7100": {
-  "archivo": "assets/programas/IF7100_programa_I-2026.pdf",
-  "ciclo": "I ciclo 2026",
-  "kb": 621
+  "archivo": "assets/programas/IF7100_programa_III-2026.pdf",
+  "ciclo": "III ciclo 2026",
+  "kb": 1809
  },
  "IF-7201": {
-  "archivo": "assets/programas/IF7201_programa_I-2026.pdf",
-  "ciclo": "I ciclo 2026",
-  "kb": 579
+  "archivo": "assets/programas/IF7201_programa_III-2026.pdf",
+  "ciclo": "III ciclo 2026",
+  "kb": 1766
  }
 }

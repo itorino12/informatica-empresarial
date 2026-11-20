@@ -9,7 +9,7 @@
   "correo": "consejoinformaticaempresarial@ucr.ac.cr",
   "telefono": "2511-7330",
   "telefono_nota": "Coordinación del Consejo, Universidad de Costa Rica, Sede del Caribe",
-  "actualizado": "2026-10-27",
+  "actualizado": "2026-11-20",
   "coordinacion_consejo": {
     "nombre": "MSc. Itorino Espinoza Torres",
     "sede": "Sede del Caribe"
@@ -201,12 +201,12 @@
   "boletin_elegibles": "assets/docs/boletin-01-2026-registro-elegibles.pdf?v=2",
   "poblacion_fuente": "Población estudiantil activa por plan, población graduada y admisión a carrera 2026, por sede y recinto. Datos del Consejo de Carrera Intersedes, 2026.",
   "franja": {
-    "etiqueta": "Convocatoria abierta",
-    "titulo": "Registro Intersedes de Docentes Elegibles 2026",
-    "texto": "Postulaciones del 23 de octubre al 20 de noviembre de 2026, hasta las 11:00 p. m., para impartir cursos del Plan 07 en las diez sedes y recintos.",
-    "boton": "Ver la convocatoria",
-    "url": "docentes.html#convocatoria",
-    "inicio": "2026-10-23",
-    "fin": "2026-11-20T23:00:00-06:00"
+    "etiqueta": "Charla con la población egresada",
+    "titulo": "De las señales de la Tierra a la sismología inteligente",
+    "texto": "Miércoles 2 de diciembre de 2026, 5:30 p. m., virtual por Zoom, con el M.Sc. Sebastián Gamboa Chacón (OVSICORI-UNA). Dirigida a la población graduada de todas las sedes y recintos.",
+    "boton": "Ver la noticia",
+    "url": "noticias.html#charla-egresados-sismologia-2026",
+    "inicio": "2026-11-20",
+    "fin": "2026-12-02T23:59:00-06:00"
   }
 }

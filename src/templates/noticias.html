@@ -12,14 +12,29 @@
     </div>
     <div id="lista-noticias">
       {% for n in noticias %}
-      <article class="articulo" id="{{ n.id }}" data-categoria="{{ n.categoria }}">
+      <article class="articulo{{ ' con-foto' if n.imagen }}" id="{{ n.id }}" data-categoria="{{ n.categoria }}">
+        <div class="articulo-texto">
         <div class="noticia" style="border:0;padding:0">
           <div class="meta"><time datetime="{{ n.fecha }}">{{ n.fecha_texto or (n.fecha|fecha_larga) }}</time><span class="categoria">{{ n.categoria }}</span></div>
         </div>
         <h2>{{ n.titulo }}</h2>
         <p class="lede" style="font-size:var(--t-base)">{{ n.resumen }}</p>
-        {% for p in n.cuerpo %}<p>{{ p }}</p>{% endfor %}
+        {% if n.ficha %}
+        <div class="caja ficha-noticia">
+          <h3>Datos de la actividad</h3>
+          <dl>{% for k, v in n.ficha %}<div><dt>{{ k }}</dt><dd>{{ v }}</dd></div>{% endfor %}</dl>
+          {% if n.acciones %}<p class="acciones">{% for a in n.acciones %}<a class="boton {{ 'boton-primario' if a.primaria else 'boton-claro' }}" href="{{ a.url }}"{% if a.externo %} target="_blank" rel="noopener"{% endif %}>{{ a.texto }}{% if a.externo %}<span class="visually-hidden"> (se abre en una pestaña nueva)</span>{% endif %}</a>{% endfor %}</p>{% endif %}
+        </div>
+        {% endif %}
+        {% for p in n.cuerpo %}{% if p is string %}<p>{{ p }}</p>{% elif p.h %}<h3>{{ p.h }}</h3>{% elif p.lista %}<ul>{% for i in p.lista %}<li>{{ i }}</li>{% endfor %}</ul>{% endif %}{% endfor %}
         {% if n.enlace %}<p><a href="{{ n.enlace }}">Más información</a></p>{% endif %}
+        </div>
+        {% if n.imagen %}
+        <figure class="articulo-foto">
+          <a href="{{ n.imagen.archivo }}-1080.webp" target="_blank" rel="noopener"><img src="{{ n.imagen.archivo }}-1080.webp" srcset="{{ n.imagen.archivo }}-540.webp 540w, {{ n.imagen.archivo }}-1080.webp 1080w" sizes="(max-width: 900px) 90vw, 340px" width="{{ n.imagen.ancho }}" height="{{ n.imagen.alto }}" alt="{{ n.imagen.alt }}" loading="lazy" decoding="async"><span class="visually-hidden"> (ampliar la imagen en una pestaña nueva)</span></a>
+          {% if n.imagen.pie %}<figcaption>{{ n.imagen.pie }}{% if n.imagen.descarga %} <a href="{{ n.imagen.descarga }}" target="_blank" rel="noopener">Descargar en PDF<span class="visually-hidden"> (se abre en una pestaña nueva)</span></a>{% endif %}</figcaption>{% endif %}
+        </figure>
+        {% endif %}
       </article>
       {% endfor %}
     </div>

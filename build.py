@@ -285,7 +285,8 @@ def main():
         print(f"  ✓ {archivo}")
 
     for n in datos["noticias"]:
-        indice.append({"t": n["titulo"], "u": f"noticias.html#{n['id']}", "x": " ".join([n["resumen"]] + n["cuerpo"])})
+        texto_n = [n["resumen"]] + [p if isinstance(p, str) else p.get("h", "") + " ".join(p.get("lista", [])) for p in n["cuerpo"]] + [v for _, v in n.get("ficha", [])]
+        indice.append({"t": n["titulo"], "u": f"noticias.html#{n['id']}", "x": " ".join(texto_n)})
     for c in datos["plan07"]["cursos"]:
         if c["sigla"].startswith("IF"):
             indice.append({"t": f"{c['sigla']} {c['nombre']}", "u": f"plan-de-estudios.html#curso-{c['sigla']}",
