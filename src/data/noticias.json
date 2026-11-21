@@ -1,7 +1,7 @@
 [
  {
   "id": "acreditacion-sinaes-2026",
-  "fecha": "2026-11-20",
+  "fecha": "2026-11-10",
   "categoria": "Acreditación",
   "titulo": "El SINAES acredita la carrera de Informática Empresarial por el período 2026–2030",
   "resumen": "Es una reacreditación para los recintos acreditados desde 2019 y la primera acreditación para la Sede del Sur. La decisión cierra un proceso de siete años de mejora continua, que fue posible gracias al trabajo de toda la Universidad de Costa Rica.",
@@ -52,6 +52,24 @@
   ],
   "cuerpo": [
    "El Consejo Nacional de Acreditación (CNA) del Sistema Nacional de Acreditación de la Educación Superior (SINAES) acordó, en su sesión del 3 de noviembre de 2026, acreditar el Bachillerato en Informática Empresarial de la Universidad de Costa Rica por cuatro años. La decisión se comunicó a la Rectoría el 10 de noviembre mediante el ACUERDO-CNA-305-2026.",
+   {
+    "video": {
+     "archivo": "assets/video/acreditacion-sinaes-2026.mp4",
+     "portada": "assets/video/acreditacion-sinaes-2026-portada.webp",
+     "ancho": 720,
+     "alto": 1280,
+     "titulo": "Video: la carrera, acreditada por el SINAES hasta 2030 (46 segundos, con subtítulos incrustados)",
+     "transcripcion": [
+      "Es oficial.",
+      "El SINAES acreditó el Bachillerato en Informática Empresarial de la Universidad de Costa Rica hasta el año 2030.",
+      "Para la Sede del Sur, es su primera acreditación. Para los recintos acreditados desde 2019, es la reacreditación.",
+      "Detrás hay un camino de mejora continua: la primera acreditación en 2019, un compromiso de mejora, una nueva evaluación externa y un proyecto especial de 18 meses.",
+      "Este logro es de toda la Universidad de Costa Rica. Gracias a cada persona e instancia que lo hizo posible.",
+      "Conozca la historia completa en el sitio de la carrera.",
+      "Informática Empresarial, UCR. Calidad acreditada."
+     ]
+    }
+   },
    {
     "h": "Reacreditación y primera acreditación"
    },

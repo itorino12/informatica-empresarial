@@ -392,6 +392,45 @@
   /* La franja de aviso se oculta sola al vencer, aunque no se haya vuelto a compilar el sitio */
   document.querySelectorAll('[data-fin]').forEach(function (el) {
     var fin = Date.parse(el.getAttribute('data-fin'));
-    if (!isNaN(fin) && Date.now() > fin) el.hidden = true;
+    if (!isNaN(fin) && Date.now() > fin) { el.hidden = true; el.classList.add('vencida'); }
   });
+
+  /* Carrusel de la franja: cambia solo cada N segundos; se detiene con el puntero o el foco encima,
+     con el botón de pausa y si la persona prefiere menos movimiento */
+  var car = $('.franja-carrusel');
+  if (car) {
+    var items = Array.prototype.filter.call(car.querySelectorAll('.franja-item'), function (el) { return !el.classList.contains('vencida'); });
+    var pausa = car.querySelector('.franja-pausa');
+    var i = 0, timer = null, encima = false, detenido = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var mostrar = function (k) {
+      items.forEach(function (el, j) {
+        var on = j === k;
+        el.classList.toggle('activa', on);
+        if (on) el.removeAttribute('aria-hidden'); else el.setAttribute('aria-hidden', 'true');
+        var a = el.querySelector('a'); if (a) { if (on) a.removeAttribute('tabindex'); else a.setAttribute('tabindex', '-1'); }
+      });
+      i = k;
+    };
+    var seg = (parseFloat(car.getAttribute('data-intervalo')) || 7) * 1000;
+    var programar = function () {
+      clearInterval(timer); timer = null;
+      if (!detenido && !encima && items.length > 1) timer = setInterval(function () { mostrar((i + 1) % items.length); }, seg);
+    };
+    if (items.length < 2) { if (pausa) pausa.hidden = true; if (items[0]) mostrar(0); }
+    else {
+      mostrar(0);
+      if (detenido && pausa) pausa.setAttribute('aria-pressed', 'true');
+      if (pausa) pausa.addEventListener('click', function () {
+        detenido = pausa.getAttribute('aria-pressed') !== 'true';
+        pausa.setAttribute('aria-pressed', detenido ? 'true' : 'false');
+        pausa.querySelector('.visually-hidden').textContent = detenido ? 'Reanudar el cambio automático de avisos' : 'Pausar el cambio automático de avisos';
+        programar();
+      });
+      car.addEventListener('mouseenter', function () { encima = true; programar(); });
+      car.addEventListener('mouseleave', function () { encima = false; programar(); });
+      car.addEventListener('focusin', function () { encima = true; programar(); });
+      car.addEventListener('focusout', function (e) { if (!car.contains(e.relatedTarget)) { encima = false; programar(); } });
+      programar();
+    }
+  }
 })();

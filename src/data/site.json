@@ -200,13 +200,25 @@
   "formulario_elegibles": "https://forms.gle/DV4S6mfwHCEVVodP9",
   "boletin_elegibles": "assets/docs/boletin-01-2026-registro-elegibles.pdf?v=2",
   "poblacion_fuente": "Población estudiantil activa por plan, población graduada y admisión a carrera 2026, por sede y recinto. Datos del Consejo de Carrera Intersedes, 2026.",
-  "franja": {
-    "etiqueta": "Charla con la población egresada",
-    "titulo": "De las señales de la Tierra a la sismología inteligente",
-    "texto": "Miércoles 2 de diciembre de 2026, 5:30 p. m., virtual por Zoom, con el M.Sc. Sebastián Gamboa Chacón (OVSICORI-UNA). Dirigida a la población graduada de todas las sedes y recintos.",
-    "boton": "Ver la noticia",
-    "url": "noticias.html#charla-egresados-sismologia-2026",
-    "inicio": "2026-11-20",
-    "fin": "2026-12-02T23:59:00-06:00"
-  }
+  "franjas": [
+    {
+      "etiqueta": "Acreditación SINAES",
+      "titulo": "Carrera acreditada por el período 2026–2030",
+      "texto": "Reacreditación para los recintos acreditados desde 2019 y primera acreditación para la Sede del Sur, según el ACUERDO-CNA-305-2026. Conozca el camino recorrido y vea el video.",
+      "boton": "Ver la noticia",
+      "url": "noticias.html#acreditacion-sinaes-2026",
+      "inicio": "2026-11-10",
+      "fin": "2026-12-31T23:59:00-06:00"
+    },
+    {
+      "etiqueta": "Charla con la población egresada",
+      "titulo": "De las señales de la Tierra a la sismología inteligente",
+      "texto": "Miércoles 2 de diciembre de 2026, 5:30 p. m., virtual por Zoom, con el M.Sc. Sebastián Gamboa Chacón (OVSICORI-UNA). Dirigida a la población graduada de todas las sedes y recintos.",
+      "boton": "Ver la noticia",
+      "url": "noticias.html#charla-egresados-sismologia-2026",
+      "inicio": "2026-11-20",
+      "fin": "2026-12-02T23:59:00-06:00"
+    }
+  ],
+  "franja_intervalo": 7
 }
