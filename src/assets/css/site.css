@@ -177,7 +177,7 @@ section[id], .estructura li[id] { scroll-margin-top: 90px; }
 /* Carrusel de la franja: los avisos se apilan en la misma celda para que la altura no salte */
 .franja-aviso { position: relative; }
 .franja-pista { display: grid; }
-.franja-pista > .franja-item { grid-area: 1 / 1; }
+.franja-pista > .franja-item { grid-area: 1 / 1; width: 100%; }
 .franja-carrusel .franja-item { transition: opacity .6s ease, visibility .6s; }
 .franja-carrusel .franja-item:not(.activa) { opacity: 0; visibility: hidden; }
 .franja-pausa { position: absolute; right: 12px; bottom: 10px; width: 30px; height: 30px; display: grid; place-items: center; border: 0; border-radius: 50%; background: rgba(15, 44, 74, .14); color: #0F2C4A; cursor: pointer; padding: 0; }
