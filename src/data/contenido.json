@@ -90,6 +90,8 @@
   ],
   "eventos": [
     {
+      "publicar": false,
+      "pendiente": "Convocatoria cerrada el 20 de noviembre de 2026; el registro se habilita cada uno o dos años. Reactivar solo si se abre una nueva.",
       "inicio": "2026-10-23",
       "fin": "2026-11-20",
       "titulo": "Convocatoria 2026 al Registro de Docentes Elegibles",
@@ -690,7 +692,7 @@
     },
     {
       "p": "¿Cómo puedo dar clases en la carrera?",
-      "r": "Inscríbase en el Registro Intersedes de Docentes Elegibles mediante el formulario de la convocatoria vigente, enlazado en la página Docencia; la de 2026 recibe postulaciones del 20 de octubre al 20 de noviembre. Las coordinaciones consultan el registro cuando tienen una necesidad docente."
+      "r": "Mediante el Registro Intersedes de Docentes Elegibles. La inscripción se habilita cada uno o dos años; cuando hay una convocatoria abierta, el boletín y el formulario se publican en la página Docencia. Las coordinaciones consultan el registro cuando tienen una necesidad docente."
     },
     {
       "p": "¿Dónde se publican los acuerdos del Consejo?",
